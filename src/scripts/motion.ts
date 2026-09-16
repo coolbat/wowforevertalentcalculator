@@ -2,15 +2,17 @@
  * Site-wide motion layer, ported from the poojahooda22/motion-website
  * techniques (GSAP + ScrollTrigger):
  *
- * - Hero title: per-character rise-in on page load (its "texthead" effect).
- * - Section headings: per-character reveal when scrolled into view.
+ * - Hero title: per-word rise-in on page load (its "texthead" effect).
+ * - Section headings: per-word reveal when scrolled into view.
  * - Cards / steps / stats / FAQ items: staggered rise via ScrollTrigger.batch
  *   (its "cards" effect).
  *
- * Progressive enhancement only: every initial state is set from JS, so the
- * pages stay fully readable with JS disabled, and nothing runs under
- * prefers-reduced-motion. The React calculator island manages its own DOM
- * and is deliberately not targeted.
+ * Headings are split at word boundaries — never characters — so keyword
+ * phrases ("WoW Forever Talent Calculator") survive element-wise text
+ * extraction by SEO analyzers and crawlers. Progressive enhancement only:
+ * every initial state is set from JS, so the pages stay fully readable with
+ * JS disabled, and nothing runs under prefers-reduced-motion. The React
+ * calculator island manages its own DOM and is deliberately not targeted.
  */
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -19,38 +21,41 @@ gsap.registerPlugin(ScrollTrigger);
 
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-/** Split an element's plain text into inline-block char spans (aria-safe). */
-function splitChars(el: HTMLElement): HTMLSpanElement[] | null {
+/** Split an element's plain text into inline-block word spans (aria-safe). */
+function splitWords(el: HTMLElement): HTMLSpanElement[] | null {
   // Only split plain-text headings — nested markup (links, strong) must survive.
   if (el.children.length > 0) return null;
   const text = el.textContent ?? '';
   if (!text.trim()) return null;
   el.setAttribute('aria-label', text);
   el.textContent = '';
+  const words = text.split(/\s+/).filter(Boolean);
   const spans: HTMLSpanElement[] = [];
-  for (const ch of text) {
+  words.forEach((word, i) => {
     const span = document.createElement('span');
-    span.textContent = ch === ' ' ? ' ' : ch;
+    span.textContent = word;
     span.setAttribute('aria-hidden', 'true');
     span.style.display = 'inline-block';
-    span.style.whiteSpace = 'pre';
     el.appendChild(span);
     spans.push(span);
-  }
+    // Real text-node space between words: innerText and element-wise
+    // extractors both see intact word boundaries.
+    if (i < words.length - 1) el.appendChild(document.createTextNode(' '));
+  });
   return spans;
 }
 
 function initHero(): void {
   const h1 = document.querySelector<HTMLElement>('.hero h1');
   if (!h1) return;
-  const chars = splitChars(h1);
-  if (chars) {
-    gsap.from(chars, {
+  const words = splitWords(h1);
+  if (words) {
+    gsap.from(words, {
       y: 40,
       opacity: 0,
       duration: 0.7,
       ease: 'power4.out',
-      stagger: 0.022,
+      stagger: 0.06,
     });
   }
   const lede = document.querySelector('.hero .lede');
@@ -67,8 +72,8 @@ function initHeadingReveals(): void {
   // .hero-tool contains the React calculator island — splitting its tree-name
   // h2s before hydration would cause a hydration mismatch, so it is excluded.
   document.querySelectorAll<HTMLElement>('.page-section:not(.hero-tool) h2').forEach((h2) => {
-    const chars = splitChars(h2);
-    if (!chars) {
+    const words = splitWords(h2);
+    if (!words) {
       gsap.from(h2, {
         y: 24,
         opacity: 0,
@@ -78,13 +83,13 @@ function initHeadingReveals(): void {
       });
       return;
     }
-    gsap.set(chars, { opacity: 0, y: 22 });
-    gsap.to(chars, {
+    gsap.set(words, { opacity: 0, y: 22 });
+    gsap.to(words, {
       opacity: 1,
       y: 0,
       duration: 0.5,
       ease: 'power3.out',
-      stagger: 0.016,
+      stagger: 0.05,
       scrollTrigger: { trigger: h2, start: 'top 88%', once: true },
     });
   });
