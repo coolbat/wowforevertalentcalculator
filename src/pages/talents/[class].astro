@@ -30,7 +30,7 @@ const coverage = rankCoverage(snapshot);
 const stage = stageLabel(manifest.stage);
 const published = formatDate(manifest.publishedAt);
 
-const title = `WoW Forever ${cls.name} Talents — ${treeNames.join(', ')} Reference`;
+const title = `WoW Forever ${cls.name} Talents — Full List & Rank Effects`;
 const description = `Complete WoW Forever ${cls.name} talent reference: every ${joinNames(treeNames)} talent with rank text, row position, source status, and Classic comparison from snapshot ${manifest.snapshotId}.`;
 
 function classicLine(talent: TalentNode): string | null {
