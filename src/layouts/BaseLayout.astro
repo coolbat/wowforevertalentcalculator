@@ -128,6 +128,18 @@ if (breadcrumbs && breadcrumbs.length > 0) {
     <meta name="theme-color" content="#101419" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
+    <!-- Google tag (gtag.js) — GA4 property "WoW Forever Talent Calculator" -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8QSF02T2RF"
+    ></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'G-8QSF02T2RF');
+    </script>
+
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content={ogType} />

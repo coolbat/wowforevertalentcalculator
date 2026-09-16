@@ -4,7 +4,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
 <BaseLayout
   title="Privacy — WoW Forever Talent Calculator"
-  description="Privacy notes for this site: builds are stored in your browser's local storage, share links contain no personal fields, there are no accounts, and no third-party analytics are currently enabled."
+  description="Privacy notes for this site: builds are stored in your browser's local storage, share links contain no personal fields, there are no accounts, and usage is measured with Google Analytics 4."
   breadcrumbs={[
     { name: 'Home', url: '/' },
     { name: 'Privacy', url: '/privacy/' },
@@ -50,21 +50,26 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   <section class="page-section prose" aria-labelledby="analytics">
     <h2 id="analytics">Analytics</h2>
     <p>
-      Third-party analytics are <strong>not currently enabled</strong> on this
-      site. If aggregated, session-level usage measurement is introduced later
-      (for example, anonymous page-view counts to see which class pages need
-      work), this page will be updated before it goes live. No advertising
-      trackers are used.
+      This site uses Google Analytics 4 (measurement ID G-8QSF02T2RF) to
+      collect aggregated, session-level usage statistics — page views,
+      scrolls, and outbound clicks — so we can see which pages need work.
+      Google Analytics sets a small number of first-party cookies (such as
+      <code>_ga</code>) to distinguish sessions; no advertising trackers are
+      used, and no personal fields from your builds are sent. See
+      {' '}<a href="https://policies.google.com/privacy" rel="external">
+        Google's privacy policy
+      </a>
+      {' '}for how Google processes this data.
     </p>
   </section>
 
   <section class="page-section prose" aria-labelledby="cookies">
     <h2 id="cookies">Cookies</h2>
     <p>
-      The site itself does not set tracking cookies. It is served as static
-      files; the hosting provider may process standard connection logs
-      (IP address, user agent) for security and delivery purposes under its
-      own policies.
+      Besides the Google Analytics cookies described above, the site itself
+      does not set tracking cookies. It is served as static files; the hosting
+      provider may process standard connection logs (IP address, user agent)
+      for security and delivery purposes under its own policies.
     </p>
   </section>
 
