@@ -3,5 +3,4 @@ dist/
 .astro/
 playwright-report/
 test-results/
-data-raw/
 .DS_Store
