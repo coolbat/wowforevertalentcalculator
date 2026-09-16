@@ -147,16 +147,59 @@
   font-family: ui-monospace, monospace;
 }
 
-.statusLine {
-  margin: var(--space-1) 0;
-  color: var(--color-ok);
+/* ---------- toast (floating feedback; never shifts the tree grid) ---------- */
+
+.toast {
+  position: fixed;
+  z-index: 70;
+  left: 50%;
+  bottom: var(--space-6);
+  transform: translateX(-50%);
+  max-width: min(480px, calc(100vw - var(--space-8)));
+  padding: var(--space-2) var(--space-4);
+  background: rgb(14 14 16 / 0.96);
+  border: 1px solid #5a4a1e;
+  border-left-width: 4px;
+  border-radius: 4px;
+  box-shadow: 0 8px 24px rgb(0 0 0 / 0.6);
   font-size: 0.9rem;
+  text-align: center;
+  pointer-events: none;
 }
 
-.errorLine {
-  margin: var(--space-1) 0;
-  color: var(--color-danger);
-  font-size: 0.9rem;
+.toastError {
+  border-color: var(--color-danger);
+  color: #ffb3ab;
+}
+
+.toastOk {
+  border-color: var(--color-ok);
+  color: #c5e8b7;
+}
+
+@media (max-width: 767px) {
+  /* bottom is occupied by the fixed detail panel on mobile */
+  .toast {
+    bottom: auto;
+    top: calc(64px + env(safe-area-inset-top));
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .toast {
+    animation: toastIn 160ms ease-out;
+  }
+}
+
+@keyframes toastIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 8px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
 }
 
 /* ---------- buttons (game style: dark + gold rim, brighten on hover) ---------- */

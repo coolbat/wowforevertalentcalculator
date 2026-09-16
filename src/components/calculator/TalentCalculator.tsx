@@ -52,6 +52,14 @@ export interface TalentCalculatorProps {
 }
 
 const HISTORY_LIMIT = 50;
+const TOAST_MS = 4000;
+
+type ToastKind = 'error' | 'ok';
+interface Toast {
+  kind: ToastKind;
+  message: string;
+  id: number;
+}
 
 type PageState =
   | { status: 'ready'; readOnly: boolean }
@@ -72,13 +80,11 @@ export default function TalentCalculator(props: TalentCalculatorProps): JSX.Elem
   const [future, setFuture] = useState<Build[]>([]);
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [activeTreeId, setActiveTreeId] = useState(snapshot.trees[0]?.treeId ?? '');
-  const [actionError, setActionError] = useState<string | null>(null);
+  const [toast, setToast] = useState<Toast | null>(null);
   const [storageWarning, setStorageWarning] = useState(false);
   const [levelText, setLevelText] = useState(String(ruleset.defaultLevel));
   const [saveName, setSaveName] = useState('');
-  const [saveMsg, setSaveMsg] = useState<string | null>(null);
   const [shareUrl, setShareUrl] = useState<string | null>(null);
-  const [shareMsg, setShareMsg] = useState<string | null>(null);
 
   const isMobile = useMediaQuery('(max-width: 767px)');
   const nodeRefs = useRef<Map<string, HTMLButtonElement>>(new Map());
@@ -102,6 +108,23 @@ export default function TalentCalculator(props: TalentCalculatorProps): JSX.Elem
   useEffect(() => {
     setLevelText(String(build.level));
   }, [build.level]);
+
+  // ---- Toast: transient feedback (rule errors, save/share confirmations)
+  // shown as a floating overlay so the tree grid never shifts. ----
+  const toastTimerRef = useRef<number | null>(null);
+
+  const showToast = useCallback((kind: ToastKind, message: string) => {
+    setToast((prev) => ({ kind, message, id: (prev?.id ?? 0) + 1 }));
+  }, []);
+
+  useEffect(() => {
+    if (!toast) return;
+    if (toastTimerRef.current !== null) window.clearTimeout(toastTimerRef.current);
+    toastTimerRef.current = window.setTimeout(() => setToast(null), TOAST_MS);
+    return () => {
+      if (toastTimerRef.current !== null) window.clearTimeout(toastTimerRef.current);
+    };
+  }, [toast]);
 
   const resetHistory = useCallback(() => {
     pastRef.current = [];
@@ -173,7 +196,7 @@ export default function TalentCalculator(props: TalentCalculatorProps): JSX.Elem
       const result = applyAction(prevBuild, action, snapshot, ruleset);
       if (!result.ok) {
         const first = result.errors[0];
-        setActionError(first ? ruleErrorMessage(first, ruleset) : 'That change is not allowed.');
+        showToast('error', first ? ruleErrorMessage(first, ruleset) : 'That change is not allowed.');
         return false;
       }
       const newPast = [...pastRef.current.slice(-(HISTORY_LIMIT - 1)), prevBuild];
@@ -183,10 +206,10 @@ export default function TalentCalculator(props: TalentCalculatorProps): JSX.Elem
       setFuture([]);
       buildRef.current = result.build;
       setBuild(result.build);
-      setActionError(null);
+      setToast((t) => (t?.kind === 'error' ? null : t));
       return true;
     },
-    [snapshot, ruleset, structureOk],
+    [snapshot, ruleset, structureOk, showToast],
   );
 
   const handleAdd = useCallback((id: string) => dispatch({ type: 'add', talentId: id }), [dispatch]);
@@ -319,10 +342,10 @@ export default function TalentCalculator(props: TalentCalculatorProps): JSX.Elem
   const onSaveNamed = () => {
     const result = saveNamedBuild(buildRef.current, saveName);
     if (result.ok) {
-      setSaveMsg(`Saved “${result.value.name}”. Find it under My Builds.`);
+      showToast('ok', `Saved “${result.value.name}”. Find it under My Builds.`);
       setSaveName('');
     } else {
-      setSaveMsg(`Could not save: ${result.error.message}`);
+      showToast('error', `Could not save: ${result.error.message}`);
       if (result.error.code === 'STORAGE_UNAVAILABLE') setStorageWarning(true);
     }
   };
@@ -333,12 +356,12 @@ export default function TalentCalculator(props: TalentCalculatorProps): JSX.Elem
       setShareUrl(url);
       try {
         await navigator.clipboard.writeText(url);
-        setShareMsg('Share link copied to clipboard.');
+        showToast('ok', 'Share link copied to clipboard.');
       } catch {
-        setShareMsg('Copy the full link below.');
+        showToast('ok', 'Copy the full link below.');
       }
     } catch {
-      setShareMsg('Could not create a share link for this build.');
+      showToast('error', 'Could not create a share link for this build.');
     }
   };
 
@@ -579,20 +602,15 @@ export default function TalentCalculator(props: TalentCalculatorProps): JSX.Elem
               onFocus={(e) => e.currentTarget.select()}
             />
           ) : null}
-          {shareMsg ? (
-            <p className={styles.statusLine} role="status">
-              {shareMsg}
-            </p>
-          ) : null}
-          {saveMsg ? (
-            <p className={styles.statusLine} role="status">
-              {saveMsg}
-            </p>
-          ) : null}
-          {actionError ? (
-            <p className={styles.errorLine} role="alert">
-              {actionError}
-            </p>
+          {toast ? (
+            <div
+              key={toast.id}
+              className={`${styles.toast} ${toast.kind === 'error' ? styles.toastError : styles.toastOk}`}
+              role={toast.kind === 'error' ? 'alert' : 'status'}
+              data-testid="action-toast"
+            >
+              {toast.message}
+            </div>
           ) : null}
 
           <p className="visually-hidden" role="status" aria-live="polite">

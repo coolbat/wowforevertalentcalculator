@@ -64,7 +64,9 @@ function initHero(): void {
 }
 
 function initHeadingReveals(): void {
-  document.querySelectorAll<HTMLElement>('.page-section h2').forEach((h2) => {
+  // .hero-tool contains the React calculator island — splitting its tree-name
+  // h2s before hydration would cause a hydration mismatch, so it is excluded.
+  document.querySelectorAll<HTMLElement>('.page-section:not(.hero-tool) h2').forEach((h2) => {
     const chars = splitChars(h2);
     if (!chars) {
       gsap.from(h2, {
