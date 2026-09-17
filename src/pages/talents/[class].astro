@@ -5,8 +5,10 @@ import {
   CLASSIC_STATUS_LABELS,
   EVIDENCE_BADGE,
   formatDate,
+  formatRankRanges,
   joinNames,
   rankCoverage,
+  splitRanksByText,
   stageLabel,
   talentIconUrl,
   treeTalents,
@@ -29,6 +31,16 @@ const treeNames = snapshot.trees.map((t) => t.name);
 const coverage = rankCoverage(snapshot);
 const stage = stageLabel(manifest.stage);
 const published = formatDate(manifest.publishedAt);
+
+const treeSections = snapshot.trees.map((tree) => {
+  const talents = treeTalents(snapshot, tree).map((talent) => ({
+    talent,
+    ...splitRanksByText(talent),
+  }));
+  const total = talents.reduce((n, t) => n + t.talent.rankEffects.length, 0);
+  const withText = talents.reduce((n, t) => n + t.confirmed.length, 0);
+  return { tree, talents, withText, total };
+});
 
 const title = `WoW Forever ${cls.name} Talents — Full List & Rank Effects`;
 const description = `Complete WoW Forever ${cls.name} talent reference: every ${joinNames(treeNames)} talent with rank text, row position, source status, and Classic comparison from snapshot ${manifest.snapshotId}.`;
@@ -68,7 +80,8 @@ function prereqLine(talent: TalentNode): string | null {
       Every {cls.name} talent in the current snapshot — rank text, grid
       position, source status, and Classic comparison. Rank text coverage:
       {' '}{coverage.withText} of {coverage.total} ranks; ranks without
-      confirmed text are marked explicitly.
+      confirmed text are collapsed into a short per-talent note rather than
+      repeated as placeholders.
     </p>
     <p>
       <span class="stage-badge">
@@ -83,9 +96,13 @@ function prereqLine(talent: TalentNode): string | null {
   </section>
 
   {
-    snapshot.trees.map((tree) => (
+    treeSections.map(({ tree, talents, withText, total }) => (
       <section class="page-section" aria-labelledby={`tree-${tree.treeId}`}>
         <h2 id={`tree-${tree.treeId}`}>{tree.name}</h2>
+        <p class="talent-meta">
+          {tree.name} rank text coverage: {withText} of {total} ranks have
+          confirmed effect text.
+        </p>
         <div class="table-scroll">
           <table class="data-table">
             <thead>
@@ -97,7 +114,7 @@ function prereqLine(talent: TalentNode): string | null {
               </tr>
             </thead>
             <tbody>
-              {treeTalents(snapshot, tree).map((talent) => (
+              {talents.map(({ talent, confirmed, unknownRanks }) => (
                 <tr>
                   <td>
                     <img
@@ -128,18 +145,27 @@ function prereqLine(talent: TalentNode): string | null {
                     <div class="talent-meta">Max rank {talent.maxRank}</div>
                   </td>
                   <td>
-                    <ol class="rank-list">
-                      {talent.rankEffects.map((rank) => (
-                        <li>
-                          Rank {rank.rank}/{talent.maxRank} —{' '}
-                          {rank.text ??
-                            'Effect at this rank is not yet confirmed.'}{' '}
-                          <span class={`badge badge-${rank.evidenceStatus}`}>
-                            {EVIDENCE_BADGE[rank.evidenceStatus]}
-                          </span>
-                        </li>
-                      ))}
-                    </ol>
+                    {confirmed.length > 0 && (
+                      <ol class="rank-list">
+                        {confirmed.map((rank) => (
+                          <li>
+                            Rank {rank.rank}/{talent.maxRank} — {rank.text}{' '}
+                            <span class={`badge badge-${rank.evidenceStatus}`}>
+                              {EVIDENCE_BADGE[rank.evidenceStatus]}
+                            </span>
+                          </li>
+                        ))}
+                      </ol>
+                    )}
+                    {unknownRanks.length > 0 && (
+                      <p class="rank-unknown-note">
+                        Ranks {formatRankRanges(unknownRanks)}: effect text not
+                        yet confirmed.{' '}
+                        <span class="badge badge-unknown">
+                          {EVIDENCE_BADGE.unknown}
+                        </span>
+                      </p>
+                    )}
                   </td>
                   <td>
                     {talent.classic ? (

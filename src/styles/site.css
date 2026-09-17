@@ -554,9 +554,37 @@ table.data-table {
   margin-bottom: var(--space-2);
 }
 
+.rank-unknown-note {
+  margin: var(--space-2) 0 0;
+  color: var(--color-text-dim);
+  font-size: 0.82rem;
+}
+
 .talent-meta {
   color: var(--color-text-dim);
   font-size: 0.82rem;
+}
+
+/* ---------- Class directory (home) ---------- */
+
+.class-directory {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--space-4);
+}
+
+.class-directory-list {
+  margin: 0;
+  padding-left: var(--space-4);
+}
+
+.class-directory-list li {
+  margin-bottom: var(--space-2);
+}
+
+.class-directory-list a {
+  border-left: 3px solid var(--card-class-color, var(--color-border));
+  padding-left: var(--space-2);
 }
 
 /* ---------- Islands & noscript ---------- */

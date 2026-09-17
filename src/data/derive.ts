@@ -7,6 +7,7 @@ import type {
   ClassSnapshot,
   DatasetManifest,
   EvidenceStatus,
+  RankEffect,
   TalentNode,
   TalentTree,
 } from '@domain/talents/types';
@@ -125,6 +126,43 @@ export function rankCoverage(snapshot: ClassSnapshot): {
     }
   }
   return { withText, total };
+}
+
+/**
+ * Splits a talent's ranks into the ones with confirmed effect text (rendered
+ * in full) and the ones without (collapsed into a single summary line, so
+ * repeated "not yet confirmed" placeholders don't dominate the page body).
+ */
+export function splitRanksByText(talent: TalentNode): {
+  confirmed: RankEffect[];
+  unknownRanks: number[];
+} {
+  const confirmed: RankEffect[] = [];
+  const unknownRanks: number[] = [];
+  for (const rank of talent.rankEffects) {
+    if (rank.text !== null) confirmed.push(rank);
+    else unknownRanks.push(rank.rank);
+  }
+  return { confirmed, unknownRanks };
+}
+
+/** [2, 3, 4, 6] → "2–4, 6" */
+export function formatRankRanges(ranks: number[]): string {
+  const sorted = [...ranks].sort((a, b) => a - b);
+  if (sorted.length === 0) return '';
+  const ranges: string[] = [];
+  let start = sorted[0];
+  let prev = sorted[0];
+  for (const r of sorted.slice(1)) {
+    if (r === prev + 1) {
+      prev = r;
+      continue;
+    }
+    ranges.push(start === prev ? `${start}` : `${start}–${prev}`);
+    start = prev = r;
+  }
+  ranges.push(start === prev ? `${start}` : `${start}–${prev}`);
+  return ranges.join(', ');
 }
 
 export function joinNames(names: string[]): string {

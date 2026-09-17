@@ -11,7 +11,7 @@ import {
 
 const manifest = loadManifest();
 const snapshots = loadAllSnapshots();
-const defaultSnapshot = loadClassSnapshot('mage');
+const defaultSnapshot = loadClassSnapshot('warrior');
 
 const classes = snapshots.map((s) => ({
   classId: s.classDef.classId,
@@ -257,5 +257,43 @@ const ruleset = manifest.ruleset;
         "Unknown" instead of being filled with guesses.
       </p>
     </details>
+  </section>
+  <section class="page-section" aria-labelledby="class-directory">
+    <h2 id="class-directory">
+      WoW Forever Talent Calculators &amp; References by Class
+    </h2>
+    <div class="class-directory">
+      <div class="panel">
+        <h3>Interactive talent calculators</h3>
+        <ul class="class-directory-list">
+          {
+            classes.map((c) => (
+              <li>
+                <a
+                  href={`/${c.classId}/`}
+                  style={`--card-class-color: ${c.color};`}
+                >
+                  {c.name} Talent Calculator for WoW Forever
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+      <div class="panel">
+        <h3>Static talent references</h3>
+        <ul class="class-directory-list">
+          {
+            classes.map((c) => (
+              <li>
+                <a href={`/talents/${c.classId}/`}>
+                  WoW Forever {c.name} talents — full list &amp; rank effects
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
   </section>
 </BaseLayout>

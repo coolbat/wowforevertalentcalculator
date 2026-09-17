@@ -7,9 +7,9 @@ test('home page: tool usable in first screen without navigation', async ({ page 
   await page.evaluate(() => localStorage.clear());
   await page.reload();
 
-  // Default class (mage) calculator is right there — no click needed.
+  // Default class (warrior) calculator is right there — no click needed.
   await expect(page.getByTestId('points-remaining')).toHaveText(/^\s*51\s*\/\s*51\s*$/);
-  const node = page.getByRole('button', { name: /^Wand Specialization, rank/ });
+  const node = page.getByRole('button', { name: /^Improved Heroic Strike, rank/ });
   await node.click();
   await expect(page.getByTestId('points-remaining')).toHaveText(/^\s*50\s*\/\s*51\s*$/);
   expect(page.url()).toMatch(/localhost:4321\/$/);
@@ -19,11 +19,11 @@ test('home page: tool usable in first screen without navigation', async ({ page 
   await expect(page.getByTestId('home-class-tab-shaman')).toHaveAttribute('aria-current', 'true');
   await expect(page.getByTestId('points-remaining')).toHaveText(/^\s*51\s*\/\s*51\s*$/);
   expect(page.url()).toMatch(/localhost:4321\/$/);
-  // Shaman tree is rendered (no Mage talents).
-  await expect(page.getByRole('button', { name: /^Wand Specialization,/ })).toHaveCount(0);
+  // Shaman tree is rendered (no Warrior talents).
+  await expect(page.getByRole('button', { name: /^Improved Heroic Strike,/ })).toHaveCount(0);
 
-  // Switch back to mage: the draft (1 point) is still there.
-  await page.getByTestId('home-class-tab-mage').click();
+  // Switch back to warrior: the draft (1 point) is still there.
+  await page.getByTestId('home-class-tab-warrior').click();
   await expect(page.getByTestId('points-remaining')).toHaveText(/^\s*50\s*\/\s*51\s*$/);
 });
 

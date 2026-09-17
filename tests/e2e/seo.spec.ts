@@ -91,11 +91,27 @@ test('home page has WebApplication JSON-LD without fabricated ratings', async ({
   expect(webPage.author).toBeTruthy();
 });
 
+test('home links one hop to all 18 class pages with descriptive anchors', async ({ request }) => {
+  const classes = ['warrior', 'paladin', 'hunter', 'rogue', 'priest', 'shaman', 'mage', 'warlock', 'druid'];
+  const html = await (await request.get('/')).text();
+  for (const c of classes) {
+    expect(html).toContain(`href="/${c}/"`);
+    expect(html).toContain(`href="/talents/${c}/"`);
+  }
+  expect(html).toContain('Warrior Talent Calculator for WoW Forever');
+});
+
 test('sitemap excludes noindex pages; robots.txt references sitemap', async ({ request }) => {
   const sitemap = await (await request.get('/sitemap-0.xml')).text();
   expect(sitemap).toContain('/mage/');
   expect(sitemap).not.toContain('/compare/');
   expect(sitemap).not.toContain('/my-builds/');
+  // All 18 class pages (9 calculators + 9 references) are listed.
+  const classes = ['warrior', 'paladin', 'hunter', 'rogue', 'priest', 'shaman', 'mage', 'warlock', 'druid'];
+  for (const c of classes) {
+    expect(sitemap).toContain(`/${c}/</loc>`);
+    expect(sitemap).toContain(`/talents/${c}/</loc>`);
+  }
 
   // Plain /sitemap.xml exists alongside the integration's sitemap-index.xml.
   const plain = await (await request.get('/sitemap.xml')).text();
