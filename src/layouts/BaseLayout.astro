@@ -67,6 +67,14 @@ const jsonLd: Record<string, unknown>[] = [
     url: new URL('/', site).href,
     publisher: { '@id': orgId },
     inLanguage: lang,
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate: `${new URL('/', site).href}?q={search_term_string}`,
+      },
+      'query-input': 'required name=search_term_string',
+    },
   },
   {
     '@context': 'https://schema.org',

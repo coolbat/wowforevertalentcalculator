@@ -55,18 +55,27 @@ const ruleset = manifest.ruleset;
 
 <BaseLayout
   title="WoW Forever Talent Calculator — Free Online, No Sign-Up"
-  description="Free WoW Forever talent calculator for all 9 classes. Plan 51-point talent builds, compare and share setups online — no sign-up, no login, no download."
+  description="wowforevertalentcalculator.com — The free WoW Forever talent calculator. Plan 51-point talent builds for all 9 classes, compare and share setups with a link — no sign-up required."
 >
+  <!-- Backs the WebSite SearchAction schema: ?q=warrior jumps to the class page. -->
+  <script define:vars={{ classIds: classes.map((c) => c.classId) }}>
+    const q = new URLSearchParams(window.location.search).get('q');
+    if (q) {
+      const needle = q.toLowerCase().trim();
+      const hit = classIds.find((id) => needle.includes(id));
+      if (hit) window.location.replace(`/${hit}/`);
+    }
+  </script>
   <section class="hero">
     <h1>WoW Forever Talent Calculator</h1>
     <p class="lede">
-      Plan your WoW Forever talents for all 9 classes: spend all 51 talent
-      points across three trees per class, compare and share builds with a
-      link, and keep setups saved locally — 100% free, no sign-up, no login
-      required. Whether you searched for a WoW Forever talent calculator or a
-      Warcraft Forever talent calculator, this free fan-made planner shows
-      every rank's source status so you can see what is confirmed and what is
-      still unknown.
+      wowforevertalentcalculator.com is a free WoW Forever talent calculator
+      for all 9 classes. Plan your 51-point talent builds across three trees
+      per class, compare and share setups with a link, and keep builds saved
+      locally — no sign-up, no login required. Whether you searched for a WoW
+      Forever talent calculator or a Warcraft Forever talent calculator, this
+      free fan-made planner shows every rank's source status so you can see
+      what is confirmed and what is still unknown.
     </p>
     <p>
       <span class="stage-badge">
