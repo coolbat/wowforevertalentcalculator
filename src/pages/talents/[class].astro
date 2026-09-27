@@ -42,8 +42,8 @@ const treeSections = snapshot.trees.map((tree) => {
   return { tree, talents, withText, total };
 });
 
-const title = `WoW Forever ${cls.name} Talents — Full List & Rank Effects`;
-const description = `Complete WoW Forever ${cls.name} talent reference: every ${joinNames(treeNames)} talent with rank text, row position, source status, and Classic comparison from snapshot ${manifest.snapshotId}.`;
+const title = `WoW Forever ${cls.name} Talent Tree & Talents — Full List`;
+const description = `Complete WoW Forever ${cls.name} talent tree reference: every talent in the ${joinNames(treeNames)} trees with rank text, row position, source status, and Classic comparison from snapshot ${manifest.snapshotId}.`;
 
 function classicLine(talent: TalentNode): string | null {
   const c = talent.classic;
@@ -75,7 +75,7 @@ function prereqLine(talent: TalentNode): string | null {
   ]}
 >
   <section class="page-head">
-    <h1>WoW Forever {cls.name} Talents</h1>
+    <h1>WoW Forever {cls.name} Talent Tree &amp; Talents</h1>
     <p class="lede">
       Every {cls.name} talent in the current snapshot — rank text, grid
       position, source status, and Classic comparison. Rank text coverage:
