@@ -13,6 +13,8 @@ import type {
 } from '@domain/talents/types';
 import { compareBuilds, spentPoints, validateBuild } from '@domain/talents/rules';
 import { decodeBuild, payloadFromHash } from '@domain/sharing/codec';
+import { allowedSnapshotIds, migrateBuild } from '@domain/sharing/migrate';
+import { talentRegistry } from '@data/talentRegistry';
 import { getBuild, listBuilds } from '@features/builds/storage';
 import type { SiteManifest } from '@data/loadSnapshot';
 import { ruleErrorMessage } from '@components/calculator/messages';
@@ -84,7 +86,7 @@ export default function CompareApp({ manifest }: CompareAppProps): JSX.Element {
           message: `${sideName}: could not find a share payload in that input. Paste a full link or the #b= payload.`,
         };
       }
-      const decoded = decodeBuild(payload, [manifest.snapshotId], ruleset);
+      const decoded = decodeBuild(payload, allowedSnapshotIds(manifest), ruleset);
       if (!decoded.ok) {
         return { ok: false, message: `${sideName}: ${ruleErrorMessage(decoded.error, ruleset)}` };
       }
@@ -117,15 +119,6 @@ export default function CompareApp({ manifest }: CompareAppProps): JSX.Element {
       );
       return;
     }
-    if (
-      a.side.build.snapshotId !== b.side.build.snapshotId ||
-      a.side.build.snapshotId !== manifest.snapshotId
-    ) {
-      setError(
-        'Builds were saved on different data snapshots. Open each on its original snapshot instead — this page does not silently align versions.',
-      );
-      return;
-    }
     const file = manifest.classes.find((c) => c.classId === a.side.build.classId);
     if (!file) {
       setError(`Class ${a.side.build.classId} is not in the current manifest.`);
@@ -134,8 +127,22 @@ export default function CompareApp({ manifest }: CompareAppProps): JSX.Element {
     setLoading(true);
     try {
       const snapshot = await fetchSnapshot(file.path);
-      const validA = validateBuild(a.side.build, snapshot, ruleset);
-      const validB = validateBuild(b.side.build, snapshot, ruleset);
+      const buildA = migrateBuild(
+        a.side.build,
+        manifest.snapshotId,
+        talentRegistry,
+        snapshot,
+        ruleset,
+      ).build;
+      const buildB = migrateBuild(
+        b.side.build,
+        manifest.snapshotId,
+        talentRegistry,
+        snapshot,
+        ruleset,
+      ).build;
+      const validA = validateBuild(buildA, snapshot, ruleset);
+      const validB = validateBuild(buildB, snapshot, ruleset);
       if (!validA.valid) {
         setError(
           `Build A is not valid under the current rules: ${validA.errors[0] ? ruleErrorMessage(validA.errors[0], ruleset) : 'unknown reason'}`,
@@ -148,7 +155,7 @@ export default function CompareApp({ manifest }: CompareAppProps): JSX.Element {
         );
         return;
       }
-      const cmp = compareBuilds(a.side.build, b.side.build, snapshot);
+      const cmp = compareBuilds(buildA, buildB, snapshot);
       if ('error' in cmp) {
         setError(ruleErrorMessage(cmp.error, ruleset));
         return;

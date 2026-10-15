@@ -55,6 +55,25 @@ const CLASSIC_STATUS_MAP = {
   new: 'new',
 };
 
+/** This import publishes the 2026-10-14 upstream file (beta build 70291). */
+const PUBLISHED_AT = '2026-10-15';
+const GAME_BUILD = '70291';
+const RECORDED_AT = '2026-10-14';
+
+/**
+ * Previous talent IDs whose talent continues under a new name.
+ * Checked against build 70291: same tree, and either the same cell or
+ * (Natural Instinct) the same icon plus the previous crit text.
+ * Old IDs stay in the registry so share links keep those points.
+ */
+const RENAMES = {
+  'druid:mangle': 'druid:primal-bite',
+  'druid:primal-fury': 'druid:blood-frenzy',
+  'druid:predatory-instincts': 'druid:natural-instinct',
+  'mage:hot-streak': 'mage:heating-up',
+  'warlock:soul-harvesting': 'warlock:soul-harvest',
+};
+
 function slugify(name) {
   return name
     .toLowerCase()
@@ -117,6 +136,21 @@ function fail(msg) {
 const raw = JSON.parse(await readFile(RAW_PATH, 'utf8'));
 if (raw.license !== 'CC-BY-4.0') {
   fail(`unexpected license: ${raw.license}`);
+}
+if (raw.generated !== RECORDED_AT) {
+  fail(`expected generated ${RECORDED_AT}, got ${raw.generated}`);
+}
+const warriorSource = raw.talents?.Warrior?.source ?? '';
+if (!String(warriorSource).includes(GAME_BUILD)) {
+  fail(`warrior source does not mention build ${GAME_BUILD}`);
+}
+
+async function readJsonIfExists(file) {
+  try {
+    return JSON.parse(await readFile(file, 'utf8'));
+  } catch {
+    return null;
+  }
 }
 
 const idRegistry = {};
@@ -386,20 +420,38 @@ for (let i = 0; i < classSnapshots.length; i++) {
   );
 }
 
+const previousManifest =
+  (await readJsonIfExists(path.join(OUT_DATA, 'manifest.json'))) ?? {};
+const legacySnapshotIds = new Set(
+  Array.isArray(previousManifest.legacySnapshotIds)
+    ? previousManifest.legacySnapshotIds
+    : [],
+);
+if (previousManifest.snapshotId && previousManifest.snapshotId !== snapshotId) {
+  legacySnapshotIds.add(previousManifest.snapshotId);
+}
+legacySnapshotIds.delete(snapshotId);
+for (const id of legacySnapshotIds) {
+  if (typeof id !== 'string' || !/^snap-[0-9a-f]{12}$/.test(id)) {
+    legacySnapshotIds.delete(id);
+  }
+}
+
 const manifest = {
   schemaVersion: SCHEMA_VERSION,
   snapshotId,
+  legacySnapshotIds: [...legacySnapshotIds].sort(),
   rulesetId: RULESET.rulesetId,
   stage: 'preview',
-  publishedAt: raw.generated ?? new Date().toISOString().slice(0, 10),
-  gameBuild: null,
+  publishedAt: PUBLISHED_AT,
+  gameBuild: GAME_BUILD,
   sourceDigest: sha256(JSON.stringify(raw.talents)),
   sources: [
     {
       sourceId: 'src-talentsforever',
       url: 'https://talentsforever.com/data.json',
       publisher: 'talentsforever.com',
-      recordedAt: raw.generated ?? '2026-09-15',
+      recordedAt: RECORDED_AT,
       license: 'CC-BY-4.0',
       reviewStatus: 'reviewed',
     },
@@ -408,6 +460,46 @@ const manifest = {
   coverage,
   ruleset: RULESET,
 };
+
+const previousRegistry =
+  (await readJsonIfExists(path.join(OUT_MAP, 'id-registry.json'))) ?? {};
+const mergedRegistry = {};
+for (const id of Object.keys(idRegistry).sort()) {
+  mergedRegistry[id] = {
+    classId: idRegistry[id].classId,
+    sourceName: idRegistry[id].sourceName,
+    sourceTree: idRegistry[id].sourceTree,
+    status: 'active',
+    aliasOf: null,
+  };
+}
+for (const id of Object.keys(previousRegistry).sort()) {
+  if (mergedRegistry[id]) continue;
+  const entry = previousRegistry[id];
+  const aliasOf = RENAMES[id] ?? null;
+  if (aliasOf && mergedRegistry[aliasOf]) {
+    mergedRegistry[id] = {
+      classId: entry.classId,
+      sourceName: entry.sourceName,
+      sourceTree: entry.sourceTree,
+      status: 'renamed',
+      aliasOf,
+    };
+  } else {
+    mergedRegistry[id] = {
+      classId: entry.classId,
+      sourceName: entry.sourceName,
+      sourceTree: entry.sourceTree,
+      status: 'removed',
+      aliasOf: null,
+    };
+  }
+}
+const orderedRegistry = Object.fromEntries(
+  Object.keys(mergedRegistry)
+    .sort()
+    .map((id) => [id, mergedRegistry[id]]),
+);
 
 await writeFile(
   path.join(OUT_DATA, 'manifest.json'),
@@ -419,7 +511,7 @@ await writeFile(
 );
 await writeFile(
   path.join(OUT_MAP, 'id-registry.json'),
-  JSON.stringify(idRegistry, null, 2),
+  JSON.stringify(orderedRegistry, null, 2),
 );
 
 console.log(`snapshotId: ${snapshotId}`);

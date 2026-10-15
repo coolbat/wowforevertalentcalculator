@@ -1,0 +1,332 @@
+[
+  {
+    "classId": "warrior",
+    "label": "row0",
+    "url": "https://wowforevertalentcalculator.com/warrior/#b=eyJhIjp7IndhcnJpb3I6aW1wcm92ZWQtaGVyb2ljLXN0cmlrZSI6Mn0sImIiOiJzdGFuZGFyZCIsImMiOiJ3YXJyaW9yIiwibCI6NjAsInIiOiJmb3JldmVyLXN0YW5kYXJkLXYxIiwicyI6InNuYXAtY2U0ZGE4Njk1ZTlkIiwidiI6MX0",
+    "payload": "eyJhIjp7IndhcnJpb3I6aW1wcm92ZWQtaGVyb2ljLXN0cmlrZSI6Mn0sImIiOiJzdGFuZGFyZCIsImMiOiJ3YXJyaW9yIiwibCI6NjAsInIiOiJmb3JldmVyLXN0YW5kYXJkLXYxIiwicyI6InNuYXAtY2U0ZGE4Njk1ZTlkIiwidiI6MX0",
+    "snapshotId": "snap-ce4da8695e9d",
+    "level": 60,
+    "allocation": {
+      "warrior:improved-heroic-strike": 2
+    },
+    "named": [
+      {
+        "name": "Improved Heroic Strike",
+        "talentId": "warrior:improved-heroic-strike",
+        "rank": 2
+      }
+    ],
+    "spent": 2
+  },
+  {
+    "classId": "paladin",
+    "label": "row0",
+    "url": "https://wowforevertalentcalculator.com/paladin/#b=eyJhIjp7InBhbGFkaW46aW1wcm92ZWQtaG9seS1zdHJpa2UiOjJ9LCJiIjoic3RhbmRhcmQiLCJjIjoicGFsYWRpbiIsImwiOjYwLCJyIjoiZm9yZXZlci1zdGFuZGFyZC12MSIsInMiOiJzbmFwLWNlNGRhODY5NWU5ZCIsInYiOjF9",
+    "payload": "eyJhIjp7InBhbGFkaW46aW1wcm92ZWQtaG9seS1zdHJpa2UiOjJ9LCJiIjoic3RhbmRhcmQiLCJjIjoicGFsYWRpbiIsImwiOjYwLCJyIjoiZm9yZXZlci1zdGFuZGFyZC12MSIsInMiOiJzbmFwLWNlNGRhODY5NWU5ZCIsInYiOjF9",
+    "snapshotId": "snap-ce4da8695e9d",
+    "level": 60,
+    "allocation": {
+      "paladin:improved-holy-strike": 2
+    },
+    "named": [
+      {
+        "name": "Improved Holy Strike",
+        "talentId": "paladin:improved-holy-strike",
+        "rank": 2
+      }
+    ],
+    "spent": 2
+  },
+  {
+    "classId": "hunter",
+    "label": "row0",
+    "url": "https://wowforevertalentcalculator.com/hunter/#b=eyJhIjp7Imh1bnRlcjpkZWFkbHktYXNwZWN0cyI6Mn0sImIiOiJzdGFuZGFyZCIsImMiOiJodW50ZXIiLCJsIjo2MCwiciI6ImZvcmV2ZXItc3RhbmRhcmQtdjEiLCJzIjoic25hcC1jZTRkYTg2OTVlOWQiLCJ2IjoxfQ",
+    "payload": "eyJhIjp7Imh1bnRlcjpkZWFkbHktYXNwZWN0cyI6Mn0sImIiOiJzdGFuZGFyZCIsImMiOiJodW50ZXIiLCJsIjo2MCwiciI6ImZvcmV2ZXItc3RhbmRhcmQtdjEiLCJzIjoic25hcC1jZTRkYTg2OTVlOWQiLCJ2IjoxfQ",
+    "snapshotId": "snap-ce4da8695e9d",
+    "level": 60,
+    "allocation": {
+      "hunter:deadly-aspects": 2
+    },
+    "named": [
+      {
+        "name": "Deadly Aspects",
+        "talentId": "hunter:deadly-aspects",
+        "rank": 2
+      }
+    ],
+    "spent": 2
+  },
+  {
+    "classId": "rogue",
+    "label": "row0",
+    "url": "https://wowforevertalentcalculator.com/rogue/#b=eyJhIjp7InJvZ3VlOmltcHJvdmVkLWdvdWdlIjoyfSwiYiI6InN0YW5kYXJkIiwiYyI6InJvZ3VlIiwibCI6NjAsInIiOiJmb3JldmVyLXN0YW5kYXJkLXYxIiwicyI6InNuYXAtY2U0ZGE4Njk1ZTlkIiwidiI6MX0",
+    "payload": "eyJhIjp7InJvZ3VlOmltcHJvdmVkLWdvdWdlIjoyfSwiYiI6InN0YW5kYXJkIiwiYyI6InJvZ3VlIiwibCI6NjAsInIiOiJmb3JldmVyLXN0YW5kYXJkLXYxIiwicyI6InNuYXAtY2U0ZGE4Njk1ZTlkIiwidiI6MX0",
+    "snapshotId": "snap-ce4da8695e9d",
+    "level": 60,
+    "allocation": {
+      "rogue:improved-gouge": 2
+    },
+    "named": [
+      {
+        "name": "Improved Gouge",
+        "talentId": "rogue:improved-gouge",
+        "rank": 2
+      }
+    ],
+    "spent": 2
+  },
+  {
+    "classId": "priest",
+    "label": "row0",
+    "url": "https://wowforevertalentcalculator.com/priest/#b=eyJhIjp7InByaWVzdDpwb3dlci1pbi1saWdodCI6Mn0sImIiOiJzdGFuZGFyZCIsImMiOiJwcmllc3QiLCJsIjo2MCwiciI6ImZvcmV2ZXItc3RhbmRhcmQtdjEiLCJzIjoic25hcC1jZTRkYTg2OTVlOWQiLCJ2IjoxfQ",
+    "payload": "eyJhIjp7InByaWVzdDpwb3dlci1pbi1saWdodCI6Mn0sImIiOiJzdGFuZGFyZCIsImMiOiJwcmllc3QiLCJsIjo2MCwiciI6ImZvcmV2ZXItc3RhbmRhcmQtdjEiLCJzIjoic25hcC1jZTRkYTg2OTVlOWQiLCJ2IjoxfQ",
+    "snapshotId": "snap-ce4da8695e9d",
+    "level": 60,
+    "allocation": {
+      "priest:power-in-light": 2
+    },
+    "named": [
+      {
+        "name": "Power in Light",
+        "talentId": "priest:power-in-light",
+        "rank": 2
+      }
+    ],
+    "spent": 2
+  },
+  {
+    "classId": "shaman",
+    "label": "row0",
+    "url": "https://wowforevertalentcalculator.com/shaman/#b=eyJhIjp7InNoYW1hbjpjb252ZWN0aW9uIjoyfSwiYiI6InN0YW5kYXJkIiwiYyI6InNoYW1hbiIsImwiOjYwLCJyIjoiZm9yZXZlci1zdGFuZGFyZC12MSIsInMiOiJzbmFwLWNlNGRhODY5NWU5ZCIsInYiOjF9",
+    "payload": "eyJhIjp7InNoYW1hbjpjb252ZWN0aW9uIjoyfSwiYiI6InN0YW5kYXJkIiwiYyI6InNoYW1hbiIsImwiOjYwLCJyIjoiZm9yZXZlci1zdGFuZGFyZC12MSIsInMiOiJzbmFwLWNlNGRhODY5NWU5ZCIsInYiOjF9",
+    "snapshotId": "snap-ce4da8695e9d",
+    "level": 60,
+    "allocation": {
+      "shaman:convection": 2
+    },
+    "named": [
+      {
+        "name": "Convection",
+        "talentId": "shaman:convection",
+        "rank": 2
+      }
+    ],
+    "spent": 2
+  },
+  {
+    "classId": "mage",
+    "label": "row0",
+    "url": "https://wowforevertalentcalculator.com/mage/#b=eyJhIjp7Im1hZ2U6d2FuZC1zcGVjaWFsaXphdGlvbiI6Mn0sImIiOiJzdGFuZGFyZCIsImMiOiJtYWdlIiwibCI6NjAsInIiOiJmb3JldmVyLXN0YW5kYXJkLXYxIiwicyI6InNuYXAtY2U0ZGE4Njk1ZTlkIiwidiI6MX0",
+    "payload": "eyJhIjp7Im1hZ2U6d2FuZC1zcGVjaWFsaXphdGlvbiI6Mn0sImIiOiJzdGFuZGFyZCIsImMiOiJtYWdlIiwibCI6NjAsInIiOiJmb3JldmVyLXN0YW5kYXJkLXYxIiwicyI6InNuYXAtY2U0ZGE4Njk1ZTlkIiwidiI6MX0",
+    "snapshotId": "snap-ce4da8695e9d",
+    "level": 60,
+    "allocation": {
+      "mage:wand-specialization": 2
+    },
+    "named": [
+      {
+        "name": "Wand Specialization",
+        "talentId": "mage:wand-specialization",
+        "rank": 2
+      }
+    ],
+    "spent": 2
+  },
+  {
+    "classId": "warlock",
+    "label": "row0",
+    "url": "https://wowforevertalentcalculator.com/warlock/#b=eyJhIjp7IndhcmxvY2s6aW1wcm92ZWQtbGlmZS10YXAiOjJ9LCJiIjoic3RhbmRhcmQiLCJjIjoid2FybG9jayIsImwiOjYwLCJyIjoiZm9yZXZlci1zdGFuZGFyZC12MSIsInMiOiJzbmFwLWNlNGRhODY5NWU5ZCIsInYiOjF9",
+    "payload": "eyJhIjp7IndhcmxvY2s6aW1wcm92ZWQtbGlmZS10YXAiOjJ9LCJiIjoic3RhbmRhcmQiLCJjIjoid2FybG9jayIsImwiOjYwLCJyIjoiZm9yZXZlci1zdGFuZGFyZC12MSIsInMiOiJzbmFwLWNlNGRhODY5NWU5ZCIsInYiOjF9",
+    "snapshotId": "snap-ce4da8695e9d",
+    "level": 60,
+    "allocation": {
+      "warlock:improved-life-tap": 2
+    },
+    "named": [
+      {
+        "name": "Improved Life Tap",
+        "talentId": "warlock:improved-life-tap",
+        "rank": 2
+      }
+    ],
+    "spent": 2
+  },
+  {
+    "classId": "druid",
+    "label": "row0",
+    "url": "https://wowforevertalentcalculator.com/druid/#b=eyJhIjp7ImRydWlkOmltcHJvdmVkLXdyYXRoIjoyfSwiYiI6InN0YW5kYXJkIiwiYyI6ImRydWlkIiwibCI6NjAsInIiOiJmb3JldmVyLXN0YW5kYXJkLXYxIiwicyI6InNuYXAtY2U0ZGE4Njk1ZTlkIiwidiI6MX0",
+    "payload": "eyJhIjp7ImRydWlkOmltcHJvdmVkLXdyYXRoIjoyfSwiYiI6InN0YW5kYXJkIiwiYyI6ImRydWlkIiwibCI6NjAsInIiOiJmb3JldmVyLXN0YW5kYXJkLXYxIiwicyI6InNuYXAtY2U0ZGE4Njk1ZTlkIiwidiI6MX0",
+    "snapshotId": "snap-ce4da8695e9d",
+    "level": 60,
+    "allocation": {
+      "druid:improved-wrath": 2
+    },
+    "named": [
+      {
+        "name": "Improved Wrath",
+        "talentId": "druid:improved-wrath",
+        "rank": 2
+      }
+    ],
+    "spent": 2
+  },
+  {
+    "classId": "warrior",
+    "label": "removed-fury-and-prot",
+    "url": "https://wowforevertalentcalculator.com/warrior/#b=eyJhIjp7IndhcnJpb3I6Ym9vbWluZy12b2ljZSI6NSwid2Fycmlvcjpib3VuZGxlc3MtcmFnZSI6Mywid2FycmlvcjpjcnVlbHR5Ijo1LCJ3YXJyaW9yOmltcHJvdmVkLWNsZWF2ZSI6Mywid2Fycmlvcjppcm9uLXdpbGwiOjQsIndhcnJpb3I6cHJlY2lzaW9uIjozLCJ3YXJyaW9yOnNoaWVsZC1zcGVjaWFsaXphdGlvbiI6NSwid2Fycmlvcjp0b3VnaG5lc3MiOjV9LCJiIjoic3RhbmRhcmQiLCJjIjoid2FycmlvciIsImwiOjYwLCJyIjoiZm9yZXZlci1zdGFuZGFyZC12MSIsInMiOiJzbmFwLWNlNGRhODY5NWU5ZCIsInYiOjF9",
+    "payload": "eyJhIjp7IndhcnJpb3I6Ym9vbWluZy12b2ljZSI6NSwid2Fycmlvcjpib3VuZGxlc3MtcmFnZSI6Mywid2FycmlvcjpjcnVlbHR5Ijo1LCJ3YXJyaW9yOmltcHJvdmVkLWNsZWF2ZSI6Mywid2Fycmlvcjppcm9uLXdpbGwiOjQsIndhcnJpb3I6cHJlY2lzaW9uIjozLCJ3YXJyaW9yOnNoaWVsZC1zcGVjaWFsaXphdGlvbiI6NSwid2Fycmlvcjp0b3VnaG5lc3MiOjV9LCJiIjoic3RhbmRhcmQiLCJjIjoid2FycmlvciIsImwiOjYwLCJyIjoiZm9yZXZlci1zdGFuZGFyZC12MSIsInMiOiJzbmFwLWNlNGRhODY5NWU5ZCIsInYiOjF9",
+    "snapshotId": "snap-ce4da8695e9d",
+    "level": 60,
+    "allocation": {
+      "warrior:booming-voice": 5,
+      "warrior:cruelty": 5,
+      "warrior:improved-cleave": 3,
+      "warrior:boundless-rage": 3,
+      "warrior:iron-will": 4,
+      "warrior:precision": 3,
+      "warrior:shield-specialization": 5,
+      "warrior:toughness": 5
+    },
+    "named": [
+      {
+        "name": "Improved Cleave",
+        "talentId": "warrior:improved-cleave",
+        "rank": 3
+      },
+      {
+        "name": "Boundless Rage",
+        "talentId": "warrior:boundless-rage",
+        "rank": 3
+      },
+      {
+        "name": "Precision",
+        "talentId": "warrior:precision",
+        "rank": 3
+      },
+      {
+        "name": "Toughness",
+        "talentId": "warrior:toughness",
+        "rank": 5
+      }
+    ],
+    "spent": 33
+  },
+  {
+    "classId": "paladin",
+    "label": "removed-holy-and-ret",
+    "url": "https://wowforevertalentcalculator.com/paladin/#b=eyJhIjp7InBhbGFkaW46YmVuZWRpY3Rpb24iOjUsInBhbGFkaW46Y29udmljdGlvbiI6MSwicGFsYWRpbjpjcnVzYWRlIjoyLCJwYWxhZGluOmRlZmxlY3Rpb24iOjUsInBhbGFkaW46aG9seS1jb25kdWl0IjoyLCJwYWxhZGluOmltcHJvdmVkLWhvbHktc3RyaWtlIjoyLCJwYWxhZGluOmltcHJvdmVkLWp1ZGdlbWVudCI6Mn0sImIiOiJzdGFuZGFyZCIsImMiOiJwYWxhZGluIiwibCI6NjAsInIiOiJmb3JldmVyLXN0YW5kYXJkLXYxIiwicyI6InNuYXAtY2U0ZGE4Njk1ZTlkIiwidiI6MX0",
+    "payload": "eyJhIjp7InBhbGFkaW46YmVuZWRpY3Rpb24iOjUsInBhbGFkaW46Y29udmljdGlvbiI6MSwicGFsYWRpbjpjcnVzYWRlIjoyLCJwYWxhZGluOmRlZmxlY3Rpb24iOjUsInBhbGFkaW46aG9seS1jb25kdWl0IjoyLCJwYWxhZGluOmltcHJvdmVkLWhvbHktc3RyaWtlIjoyLCJwYWxhZGluOmltcHJvdmVkLWp1ZGdlbWVudCI6Mn0sImIiOiJzdGFuZGFyZCIsImMiOiJwYWxhZGluIiwibCI6NjAsInIiOiJmb3JldmVyLXN0YW5kYXJkLXYxIiwicyI6InNuYXAtY2U0ZGE4Njk1ZTlkIiwidiI6MX0",
+    "snapshotId": "snap-ce4da8695e9d",
+    "level": 60,
+    "allocation": {
+      "paladin:improved-holy-strike": 2,
+      "paladin:deflection": 5,
+      "paladin:benediction": 5,
+      "paladin:improved-judgement": 2,
+      "paladin:holy-conduit": 2,
+      "paladin:conviction": 1,
+      "paladin:crusade": 2
+    },
+    "named": [
+      {
+        "name": "Improved Holy Strike",
+        "talentId": "paladin:improved-holy-strike",
+        "rank": 2
+      },
+      {
+        "name": "Crusade",
+        "talentId": "paladin:crusade",
+        "rank": 2
+      }
+    ],
+    "spent": 19
+  },
+  {
+    "classId": "mage",
+    "label": "renamed-hot-streak",
+    "url": "https://wowforevertalentcalculator.com/mage/#b=eyJhIjp7Im1hZ2U6aG90LXN0cmVhayI6MSwibWFnZTppZ25pdGUiOjQsIm1hZ2U6aW1wcm92ZWQtZmlyZWJhbGwiOjUsIm1hZ2U6aW5jaW5lcmF0aW9uIjozLCJtYWdlOnB5cm9ibGFzdCI6MSwibWFnZTp3YWtlLW9mLWZpcmUiOjJ9LCJiIjoic3RhbmRhcmQiLCJjIjoibWFnZSIsImwiOjYwLCJyIjoiZm9yZXZlci1zdGFuZGFyZC12MSIsInMiOiJzbmFwLWNlNGRhODY5NWU5ZCIsInYiOjF9",
+    "payload": "eyJhIjp7Im1hZ2U6aG90LXN0cmVhayI6MSwibWFnZTppZ25pdGUiOjQsIm1hZ2U6aW1wcm92ZWQtZmlyZWJhbGwiOjUsIm1hZ2U6aW5jaW5lcmF0aW9uIjozLCJtYWdlOnB5cm9ibGFzdCI6MSwibWFnZTp3YWtlLW9mLWZpcmUiOjJ9LCJiIjoic3RhbmRhcmQiLCJjIjoibWFnZSIsImwiOjYwLCJyIjoiZm9yZXZlci1zdGFuZGFyZC12MSIsInMiOiJzbmFwLWNlNGRhODY5NWU5ZCIsInYiOjF9",
+    "snapshotId": "snap-ce4da8695e9d",
+    "level": 60,
+    "allocation": {
+      "mage:wake-of-fire": 2,
+      "mage:incineration": 3,
+      "mage:improved-fireball": 5,
+      "mage:pyroblast": 1,
+      "mage:ignite": 4,
+      "mage:hot-streak": 1
+    },
+    "named": [
+      {
+        "name": "Hot Streak",
+        "talentId": "mage:hot-streak",
+        "rank": 1
+      }
+    ],
+    "spent": 16
+  },
+  {
+    "classId": "druid",
+    "label": "feral-removed-and-renamed",
+    "url": "https://wowforevertalentcalculator.com/druid/#b=eyJhIjp7ImRydWlkOmZlcmFsLWluc3RpbmN0IjozLCJkcnVpZDpmZXJhbC1zd2lmdG5lc3MiOjIsImRydWlkOmZlcm9jaXR5Ijo1LCJkcnVpZDpoZWFydC1vZi10aGUtd2lsZCI6NSwiZHJ1aWQ6a2luZy1vZi10aGUtanVuZ2xlIjozLCJkcnVpZDptYW5nbGUiOjEsImRydWlkOnByZWRhdG9yeS1pbnN0aW5jdHMiOjIsImRydWlkOnByaW1hbC1mdXJ5IjoyLCJkcnVpZDpzYXZhZ2UtZnVyeSI6MSwiZHJ1aWQ6c2hhcnBlbmVkLWNsYXdzIjoxfSwiYiI6InN0YW5kYXJkIiwiYyI6ImRydWlkIiwibCI6NjAsInIiOiJmb3JldmVyLXN0YW5kYXJkLXYxIiwicyI6InNuYXAtY2U0ZGE4Njk1ZTlkIiwidiI6MX0",
+    "payload": "eyJhIjp7ImRydWlkOmZlcmFsLWluc3RpbmN0IjozLCJkcnVpZDpmZXJhbC1zd2lmdG5lc3MiOjIsImRydWlkOmZlcm9jaXR5Ijo1LCJkcnVpZDpoZWFydC1vZi10aGUtd2lsZCI6NSwiZHJ1aWQ6a2luZy1vZi10aGUtanVuZ2xlIjozLCJkcnVpZDptYW5nbGUiOjEsImRydWlkOnByZWRhdG9yeS1pbnN0aW5jdHMiOjIsImRydWlkOnByaW1hbC1mdXJ5IjoyLCJkcnVpZDpzYXZhZ2UtZnVyeSI6MSwiZHJ1aWQ6c2hhcnBlbmVkLWNsYXdzIjoxfSwiYiI6InN0YW5kYXJkIiwiYyI6ImRydWlkIiwibCI6NjAsInIiOiJmb3JldmVyLXN0YW5kYXJkLXYxIiwicyI6InNuYXAtY2U0ZGE4Njk1ZTlkIiwidiI6MX0",
+    "snapshotId": "snap-ce4da8695e9d",
+    "level": 60,
+    "allocation": {
+      "druid:ferocity": 5,
+      "druid:heart-of-the-wild": 5,
+      "druid:savage-fury": 1,
+      "druid:feral-swiftness": 2,
+      "druid:feral-instinct": 3,
+      "druid:mangle": 1,
+      "druid:sharpened-claws": 1,
+      "druid:primal-fury": 2,
+      "druid:king-of-the-jungle": 3,
+      "druid:predatory-instincts": 2
+    },
+    "named": [
+      {
+        "name": "Mangle",
+        "talentId": "druid:mangle",
+        "rank": 1
+      },
+      {
+        "name": "Primal Fury",
+        "talentId": "druid:primal-fury",
+        "rank": 2
+      },
+      {
+        "name": "King of the Jungle",
+        "talentId": "druid:king-of-the-jungle",
+        "rank": 3
+      },
+      {
+        "name": "Predatory Instincts",
+        "talentId": "druid:predatory-instincts",
+        "rank": 2
+      }
+    ],
+    "spent": 25
+  },
+  {
+    "classId": "warlock",
+    "label": "renamed-soul-harvesting",
+    "url": "https://wowforevertalentcalculator.com/warlock/#b=eyJhIjp7IndhcmxvY2s6aW1wcm92ZWQtbGlmZS10YXAiOjIsIndhcmxvY2s6c291bC1oYXJ2ZXN0aW5nIjoyLCJ3YXJsb2NrOnN1cHByZXNzaW9uIjozfSwiYiI6InN0YW5kYXJkIiwiYyI6IndhcmxvY2siLCJsIjo2MCwiciI6ImZvcmV2ZXItc3RhbmRhcmQtdjEiLCJzIjoic25hcC1jZTRkYTg2OTVlOWQiLCJ2IjoxfQ",
+    "payload": "eyJhIjp7IndhcmxvY2s6aW1wcm92ZWQtbGlmZS10YXAiOjIsIndhcmxvY2s6c291bC1oYXJ2ZXN0aW5nIjoyLCJ3YXJsb2NrOnN1cHByZXNzaW9uIjozfSwiYiI6InN0YW5kYXJkIiwiYyI6IndhcmxvY2siLCJsIjo2MCwiciI6ImZvcmV2ZXItc3RhbmRhcmQtdjEiLCJzIjoic25hcC1jZTRkYTg2OTVlOWQiLCJ2IjoxfQ",
+    "snapshotId": "snap-ce4da8695e9d",
+    "level": 60,
+    "allocation": {
+      "warlock:improved-life-tap": 2,
+      "warlock:suppression": 3,
+      "warlock:soul-harvesting": 2
+    },
+    "named": [
+      {
+        "name": "Soul Harvesting",
+        "talentId": "warlock:soul-harvesting",
+        "rank": 2
+      }
+    ],
+    "spent": 7
+  }
+]

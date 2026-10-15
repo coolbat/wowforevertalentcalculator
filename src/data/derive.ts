@@ -213,6 +213,7 @@ export const TREE_ICONS: Record<string, string> = {
   'priest:discipline': 'spell_holy_wordfortitude',
   'priest:holy': 'spell_holy_holybolt',
   'priest:shadow': 'spell_shadow_shadowwordpain',
+  'shaman:elemental': 'spell_nature_lightning',
   'shaman:elemental-combat': 'spell_nature_lightning',
   'shaman:enhancement': 'spell_nature_lightningshield',
   'shaman:restoration': 'spell_nature_magicimmunity',

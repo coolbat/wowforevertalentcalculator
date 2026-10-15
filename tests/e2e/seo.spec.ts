@@ -8,7 +8,7 @@ const PAGES = [
   { path: '/warrior/', title: /WoW Forever Warrior Talent Calculator/, noindex: false },
   { path: '/shaman/', title: /WoW Forever Shaman Talent Calculator/, noindex: false },
   { path: '/talents/', title: /Talent Reference/, noindex: false },
-  { path: '/talents/mage/', title: /WoW Forever Mage Talents/, noindex: false },
+  { path: '/talents/mage/', title: /WoW Forever Mage Talent Tree & Talents/, noindex: false },
   { path: '/changes/', title: /Talent Changes/, noindex: false },
   { path: '/sources/', title: /Data & Sources|Sources/, noindex: false },
   { path: '/about/', title: /About/, noindex: false },
@@ -137,7 +137,9 @@ test('JS disabled: reference and calculator pages stay readable', async ({ brows
   await page.goto('/talents/mage/');
   await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
   await expect(page.locator('body')).toContainText('Wand Specialization');
-  await expect(page.locator('body')).toContainText('not yet confirmed'); // unknown ranks shown honestly
+  // Build 70291 has effect text on every mage rank, labeled with its evidence status.
+  await expect(page.locator('body')).toContainText('Community record');
+  await expect(page.locator('body')).toContainText('ranks have confirmed effect text');
 
   await page.goto('/mage/');
   await expect(page.getByRole('heading', { level: 1 })).toContainText(/Mage/);
