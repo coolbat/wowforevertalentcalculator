@@ -1,2352 +1,3376 @@
 {
-  "warrior:improved-heroic-strike": {
-    "classId": "warrior",
-    "sourceName": "Improved Heroic Strike",
-    "sourceTree": "Arms"
-  },
-  "warrior:deflection": {
-    "classId": "warrior",
-    "sourceName": "Deflection",
-    "sourceTree": "Arms"
-  },
-  "warrior:improved-rend": {
-    "classId": "warrior",
-    "sourceName": "Improved Rend",
-    "sourceTree": "Arms"
-  },
-  "warrior:improved-charge": {
-    "classId": "warrior",
-    "sourceName": "Improved Charge",
-    "sourceTree": "Arms"
-  },
-  "warrior:improved-tactical-mastery": {
-    "classId": "warrior",
-    "sourceName": "Improved Tactical Mastery",
-    "sourceTree": "Arms"
-  },
-  "warrior:improved-overpower": {
-    "classId": "warrior",
-    "sourceName": "Improved Overpower",
-    "sourceTree": "Arms"
-  },
-  "warrior:anger-management": {
-    "classId": "warrior",
-    "sourceName": "Anger Management",
-    "sourceTree": "Arms"
-  },
-  "warrior:deep-wounds": {
-    "classId": "warrior",
-    "sourceName": "Deep Wounds",
-    "sourceTree": "Arms"
-  },
-  "warrior:spearing-strike": {
-    "classId": "warrior",
-    "sourceName": "Spearing Strike",
-    "sourceTree": "Arms"
-  },
-  "warrior:two-handed-weapon-specialization": {
-    "classId": "warrior",
-    "sourceName": "Two-Handed Weapon Specialization",
-    "sourceTree": "Arms"
-  },
-  "warrior:impale": {
-    "classId": "warrior",
-    "sourceName": "Impale",
-    "sourceTree": "Arms"
-  },
-  "warrior:bloodthrill": {
-    "classId": "warrior",
-    "sourceName": "Bloodthrill",
-    "sourceTree": "Arms"
-  },
-  "warrior:sweeping-strikes": {
-    "classId": "warrior",
-    "sourceName": "Sweeping Strikes",
-    "sourceTree": "Arms"
-  },
-  "warrior:weaponmaster": {
-    "classId": "warrior",
-    "sourceName": "Weaponmaster",
-    "sourceTree": "Arms"
-  },
-  "warrior:improved-slam": {
-    "classId": "warrior",
-    "sourceName": "Improved Slam",
-    "sourceTree": "Arms"
-  },
-  "warrior:improved-hamstring": {
-    "classId": "warrior",
-    "sourceName": "Improved Hamstring",
-    "sourceTree": "Arms"
-  },
-  "warrior:mortal-strike": {
-    "classId": "warrior",
-    "sourceName": "Mortal Strike",
-    "sourceTree": "Arms"
-  },
-  "warrior:booming-voice": {
-    "classId": "warrior",
-    "sourceName": "Booming Voice",
-    "sourceTree": "Fury"
-  },
-  "warrior:cruelty": {
-    "classId": "warrior",
-    "sourceName": "Cruelty",
-    "sourceTree": "Fury"
-  },
-  "warrior:iron-will": {
-    "classId": "warrior",
-    "sourceName": "Iron Will",
-    "sourceTree": "Fury"
-  },
-  "warrior:unbridled-wrath": {
-    "classId": "warrior",
-    "sourceName": "Unbridled Wrath",
-    "sourceTree": "Fury"
-  },
-  "warrior:improved-cleave": {
-    "classId": "warrior",
-    "sourceName": "Improved Cleave",
-    "sourceTree": "Fury"
-  },
-  "warrior:piercing-howl": {
-    "classId": "warrior",
-    "sourceName": "Piercing Howl",
-    "sourceTree": "Fury"
-  },
-  "warrior:blood-craze": {
-    "classId": "warrior",
-    "sourceName": "Blood Craze",
-    "sourceTree": "Fury"
-  },
-  "warrior:boundless-rage": {
-    "classId": "warrior",
-    "sourceName": "Boundless Rage",
-    "sourceTree": "Fury"
-  },
-  "warrior:dual-wield-specialization": {
-    "classId": "warrior",
-    "sourceName": "Dual Wield Specialization",
-    "sourceTree": "Fury"
-  },
-  "warrior:raging-blows": {
-    "classId": "warrior",
-    "sourceName": "Raging Blows",
-    "sourceTree": "Fury"
-  },
-  "warrior:enrage": {
-    "classId": "warrior",
-    "sourceName": "Enrage",
-    "sourceTree": "Fury"
-  },
-  "warrior:improved-execute": {
-    "classId": "warrior",
-    "sourceName": "Improved Execute",
-    "sourceTree": "Fury"
-  },
-  "warrior:precision": {
-    "classId": "warrior",
-    "sourceName": "Precision",
-    "sourceTree": "Fury"
-  },
-  "warrior:death-wish": {
-    "classId": "warrior",
-    "sourceName": "Death Wish",
-    "sourceTree": "Fury"
-  },
-  "warrior:improved-intercept": {
-    "classId": "warrior",
-    "sourceName": "Improved Intercept",
-    "sourceTree": "Fury"
-  },
-  "warrior:improved-berserker-rage": {
-    "classId": "warrior",
-    "sourceName": "Improved Berserker Rage",
-    "sourceTree": "Fury"
-  },
-  "warrior:flurry": {
-    "classId": "warrior",
-    "sourceName": "Flurry",
-    "sourceTree": "Fury"
-  },
-  "warrior:bloodthirst": {
-    "classId": "warrior",
-    "sourceName": "Bloodthirst",
-    "sourceTree": "Fury"
-  },
-  "warrior:shield-specialization": {
-    "classId": "warrior",
-    "sourceName": "Shield Specialization",
-    "sourceTree": "Protection"
-  },
-  "warrior:anticipation": {
-    "classId": "warrior",
-    "sourceName": "Anticipation",
-    "sourceTree": "Protection"
-  },
-  "warrior:improved-bloodrage": {
-    "classId": "warrior",
-    "sourceName": "Improved Bloodrage",
-    "sourceTree": "Protection"
-  },
-  "warrior:toughness": {
-    "classId": "warrior",
-    "sourceName": "Toughness",
-    "sourceTree": "Protection"
-  },
-  "warrior:improved-thunder-clap": {
-    "classId": "warrior",
-    "sourceName": "Improved Thunder Clap",
-    "sourceTree": "Protection"
-  },
-  "warrior:last-stand": {
-    "classId": "warrior",
-    "sourceName": "Last Stand",
-    "sourceTree": "Protection"
-  },
-  "warrior:master-of-defense": {
-    "classId": "warrior",
-    "sourceName": "Master of Defense",
-    "sourceTree": "Protection"
-  },
-  "warrior:improved-revenge": {
-    "classId": "warrior",
-    "sourceName": "Improved Revenge",
-    "sourceTree": "Protection"
-  },
-  "warrior:defiance": {
-    "classId": "warrior",
-    "sourceName": "Defiance",
-    "sourceTree": "Protection"
-  },
-  "warrior:improved-sunder-armor": {
-    "classId": "warrior",
-    "sourceName": "Improved Sunder Armor",
-    "sourceTree": "Protection"
-  },
-  "warrior:improved-disarm": {
-    "classId": "warrior",
-    "sourceName": "Improved Disarm",
-    "sourceTree": "Protection"
-  },
-  "warrior:vanguard": {
-    "classId": "warrior",
-    "sourceName": "Vanguard",
-    "sourceTree": "Protection"
-  },
-  "warrior:improved-shield-wall": {
-    "classId": "warrior",
-    "sourceName": "Improved Shield Wall",
-    "sourceTree": "Protection"
-  },
-  "warrior:concussion-blow": {
-    "classId": "warrior",
-    "sourceName": "Concussion Blow",
-    "sourceTree": "Protection"
-  },
-  "warrior:improved-shield-bash": {
-    "classId": "warrior",
-    "sourceName": "Improved Shield Bash",
-    "sourceTree": "Protection"
-  },
-  "warrior:vitality": {
-    "classId": "warrior",
-    "sourceName": "Vitality",
-    "sourceTree": "Protection"
-  },
-  "warrior:focused-rage": {
-    "classId": "warrior",
-    "sourceName": "Focused Rage",
-    "sourceTree": "Protection"
-  },
-  "warrior:bastion": {
-    "classId": "warrior",
-    "sourceName": "Bastion",
-    "sourceTree": "Protection"
-  },
-  "warrior:shield-slam": {
-    "classId": "warrior",
-    "sourceName": "Shield Slam",
-    "sourceTree": "Protection"
-  },
-  "paladin:improved-holy-strike": {
-    "classId": "paladin",
-    "sourceName": "Improved Holy Strike",
-    "sourceTree": "Holy"
-  },
-  "paladin:divine-strength": {
-    "classId": "paladin",
-    "sourceName": "Divine Strength",
-    "sourceTree": "Holy"
-  },
-  "paladin:divine-intellect": {
-    "classId": "paladin",
-    "sourceName": "Divine Intellect",
-    "sourceTree": "Holy"
-  },
-  "paladin:healing-light": {
-    "classId": "paladin",
-    "sourceName": "Healing Light",
-    "sourceTree": "Holy"
-  },
-  "paladin:spiritual-focus": {
-    "classId": "paladin",
-    "sourceName": "Spiritual Focus",
-    "sourceTree": "Holy"
-  },
-  "paladin:improved-seals": {
-    "classId": "paladin",
-    "sourceName": "Improved Seals",
-    "sourceTree": "Holy"
-  },
-  "paladin:unyielding-faith": {
-    "classId": "paladin",
-    "sourceName": "Unyielding Faith",
-    "sourceTree": "Holy"
-  },
-  "paladin:voice-of-truth": {
-    "classId": "paladin",
-    "sourceName": "Voice of Truth",
-    "sourceTree": "Holy"
-  },
-  "paladin:reverence": {
-    "classId": "paladin",
-    "sourceName": "Reverence",
-    "sourceTree": "Holy"
-  },
-  "paladin:purifying-power": {
-    "classId": "paladin",
-    "sourceName": "Purifying Power",
-    "sourceTree": "Holy"
-  },
-  "paladin:infusion-of-light": {
-    "classId": "paladin",
-    "sourceName": "Infusion of Light",
-    "sourceTree": "Holy"
-  },
-  "paladin:illumination": {
-    "classId": "paladin",
-    "sourceName": "Illumination",
-    "sourceTree": "Holy"
-  },
-  "paladin:divine-favor": {
-    "classId": "paladin",
-    "sourceName": "Divine Favor",
-    "sourceTree": "Holy"
-  },
-  "paladin:divine-precision": {
-    "classId": "paladin",
-    "sourceName": "Divine Precision",
-    "sourceTree": "Holy"
-  },
-  "paladin:holy-shock": {
-    "classId": "paladin",
-    "sourceName": "Holy Shock",
-    "sourceTree": "Holy"
-  },
-  "paladin:consecrated-ground": {
-    "classId": "paladin",
-    "sourceName": "Consecrated Ground",
-    "sourceTree": "Holy"
-  },
-  "paladin:holy-power": {
-    "classId": "paladin",
-    "sourceName": "Holy Power",
-    "sourceTree": "Holy"
-  },
-  "paladin:light-s-vigil": {
-    "classId": "paladin",
-    "sourceName": "Light's Vigil",
-    "sourceTree": "Holy"
-  },
-  "paladin:toughness": {
-    "classId": "paladin",
-    "sourceName": "Toughness",
-    "sourceTree": "Protection"
-  },
-  "paladin:redoubt": {
-    "classId": "paladin",
-    "sourceName": "Redoubt",
-    "sourceTree": "Protection"
-  },
-  "paladin:precision": {
-    "classId": "paladin",
-    "sourceName": "Precision",
-    "sourceTree": "Protection"
-  },
-  "paladin:guardian-s-favor": {
-    "classId": "paladin",
-    "sourceName": "Guardian's Favor",
-    "sourceTree": "Protection"
-  },
-  "paladin:anticipation": {
-    "classId": "paladin",
-    "sourceName": "Anticipation",
-    "sourceTree": "Protection"
-  },
-  "paladin:improved-seal-of-fury": {
-    "classId": "paladin",
-    "sourceName": "Improved Seal of Fury",
-    "sourceTree": "Protection"
-  },
-  "paladin:improved-righteous-fury": {
-    "classId": "paladin",
-    "sourceName": "Improved Righteous Fury",
-    "sourceTree": "Protection"
-  },
-  "paladin:shield-specialization": {
-    "classId": "paladin",
-    "sourceName": "Shield Specialization",
-    "sourceTree": "Protection"
-  },
-  "paladin:sacred-duty": {
-    "classId": "paladin",
-    "sourceName": "Sacred Duty",
-    "sourceTree": "Protection"
-  },
-  "paladin:swift-judgement": {
-    "classId": "paladin",
-    "sourceName": "Swift Judgement",
-    "sourceTree": "Protection"
-  },
-  "paladin:one-handed-weapon-specialization": {
-    "classId": "paladin",
-    "sourceName": "One-Handed Weapon Specialization",
-    "sourceTree": "Protection"
-  },
-  "paladin:improved-hammer-of-justice": {
-    "classId": "paladin",
-    "sourceName": "Improved Hammer of Justice",
-    "sourceTree": "Protection"
-  },
-  "paladin:templar-s-bulwark": {
-    "classId": "paladin",
-    "sourceName": "Templar's Bulwark",
-    "sourceTree": "Protection"
-  },
-  "paladin:reckoning": {
-    "classId": "paladin",
-    "sourceName": "Reckoning",
-    "sourceTree": "Protection"
-  },
-  "paladin:iron-creed": {
-    "classId": "paladin",
-    "sourceName": "Iron Creed",
-    "sourceTree": "Protection"
-  },
-  "paladin:holy-shield": {
-    "classId": "paladin",
-    "sourceName": "Holy Shield",
-    "sourceTree": "Protection"
-  },
-  "paladin:deflection": {
-    "classId": "paladin",
-    "sourceName": "Deflection",
-    "sourceTree": "Retribution"
-  },
-  "paladin:benediction": {
-    "classId": "paladin",
-    "sourceName": "Benediction",
-    "sourceTree": "Retribution"
-  },
-  "paladin:improved-judgement": {
-    "classId": "paladin",
-    "sourceName": "Improved Judgement",
-    "sourceTree": "Retribution"
-  },
-  "paladin:holy-conduit": {
-    "classId": "paladin",
-    "sourceName": "Holy Conduit",
-    "sourceTree": "Retribution"
-  },
-  "paladin:conviction": {
-    "classId": "paladin",
-    "sourceName": "Conviction",
-    "sourceTree": "Retribution"
-  },
-  "paladin:vindication": {
-    "classId": "paladin",
-    "sourceName": "Vindication",
-    "sourceTree": "Retribution"
-  },
-  "paladin:sanctified-judgement": {
-    "classId": "paladin",
-    "sourceName": "Sanctified Judgement",
-    "sourceTree": "Retribution"
-  },
-  "paladin:seal-of-command": {
-    "classId": "paladin",
-    "sourceName": "Seal of Command",
-    "sourceTree": "Retribution"
-  },
-  "paladin:pursuit-of-justice": {
-    "classId": "paladin",
-    "sourceName": "Pursuit of Justice",
-    "sourceTree": "Retribution"
-  },
-  "paladin:eye-for-an-eye": {
-    "classId": "paladin",
-    "sourceName": "Eye for an Eye",
-    "sourceTree": "Retribution"
-  },
-  "paladin:sacred-arbiter": {
-    "classId": "paladin",
-    "sourceName": "Sacred Arbiter",
-    "sourceTree": "Retribution"
-  },
-  "paladin:crusade": {
-    "classId": "paladin",
-    "sourceName": "Crusade",
-    "sourceTree": "Retribution"
-  },
-  "paladin:two-handed-weapon-specialization": {
-    "classId": "paladin",
-    "sourceName": "Two-Handed Weapon Specialization",
-    "sourceTree": "Retribution"
-  },
-  "paladin:vengeance": {
-    "classId": "paladin",
-    "sourceName": "Vengeance",
-    "sourceTree": "Retribution"
-  },
-  "paladin:repentance": {
-    "classId": "paladin",
-    "sourceName": "Repentance",
-    "sourceTree": "Retribution"
-  },
-  "paladin:champion-of-the-light": {
-    "classId": "paladin",
-    "sourceName": "Champion of the Light",
-    "sourceTree": "Retribution"
-  },
-  "paladin:instrument-of-law": {
-    "classId": "paladin",
-    "sourceName": "Instrument of Law",
-    "sourceTree": "Retribution"
-  },
-  "paladin:twist-of-light": {
-    "classId": "paladin",
-    "sourceName": "Twist of Light",
-    "sourceTree": "Retribution"
-  },
-  "hunter:deadly-aspects": {
-    "classId": "hunter",
-    "sourceName": "Deadly Aspects",
-    "sourceTree": "Beast Mastery"
-  },
-  "hunter:endurance-training": {
-    "classId": "hunter",
-    "sourceName": "Endurance Training",
-    "sourceTree": "Beast Mastery"
-  },
-  "hunter:focused-fire": {
-    "classId": "hunter",
-    "sourceName": "Focused Fire",
-    "sourceTree": "Beast Mastery"
-  },
-  "hunter:improved-aspect-of-the-monkey": {
-    "classId": "hunter",
-    "sourceName": "Improved Aspect of the Monkey",
-    "sourceTree": "Beast Mastery"
-  },
-  "hunter:pathfinding": {
-    "classId": "hunter",
-    "sourceName": "Pathfinding",
-    "sourceTree": "Beast Mastery"
-  },
-  "hunter:improved-revive-pet": {
-    "classId": "hunter",
-    "sourceName": "Improved Revive Pet",
-    "sourceTree": "Beast Mastery"
-  },
-  "hunter:bestial-swiftness": {
-    "classId": "hunter",
-    "sourceName": "Bestial Swiftness",
-    "sourceTree": "Beast Mastery"
-  },
-  "hunter:unleashed-fury": {
-    "classId": "hunter",
-    "sourceName": "Unleashed Fury",
-    "sourceTree": "Beast Mastery"
-  },
-  "hunter:improved-mend-pet": {
-    "classId": "hunter",
-    "sourceName": "Improved Mend Pet",
-    "sourceTree": "Beast Mastery"
-  },
-  "hunter:ferocity": {
-    "classId": "hunter",
-    "sourceName": "Ferocity",
-    "sourceTree": "Beast Mastery"
-  },
-  "hunter:summon-hawk": {
-    "classId": "hunter",
-    "sourceName": "Summon Hawk",
-    "sourceTree": "Beast Mastery"
-  },
-  "hunter:spirit-bond": {
-    "classId": "hunter",
-    "sourceName": "Spirit Bond",
-    "sourceTree": "Beast Mastery"
-  },
-  "hunter:intimidation": {
-    "classId": "hunter",
-    "sourceName": "Intimidation",
-    "sourceTree": "Beast Mastery"
-  },
-  "hunter:bestial-discipline": {
-    "classId": "hunter",
-    "sourceName": "Bestial Discipline",
-    "sourceTree": "Beast Mastery"
-  },
-  "hunter:frenzy": {
-    "classId": "hunter",
-    "sourceName": "Frenzy",
-    "sourceTree": "Beast Mastery"
-  },
-  "hunter:bestial-wrath": {
-    "classId": "hunter",
-    "sourceName": "Bestial Wrath",
-    "sourceTree": "Beast Mastery"
-  },
-  "hunter:hawk-eye": {
-    "classId": "hunter",
-    "sourceName": "Hawk Eye",
-    "sourceTree": "Marksmanship"
-  },
-  "hunter:improved-concussive-shot": {
-    "classId": "hunter",
-    "sourceName": "Improved Concussive Shot",
-    "sourceTree": "Marksmanship"
-  },
-  "hunter:lethal-attacks": {
-    "classId": "hunter",
-    "sourceName": "Lethal Attacks",
-    "sourceTree": "Marksmanship"
-  },
-  "hunter:improved-stings": {
-    "classId": "hunter",
-    "sourceName": "Improved Stings",
-    "sourceTree": "Marksmanship"
-  },
-  "hunter:efficiency": {
-    "classId": "hunter",
-    "sourceName": "Efficiency",
-    "sourceTree": "Marksmanship"
-  },
-  "hunter:careful-aim": {
-    "classId": "hunter",
-    "sourceName": "Careful Aim",
-    "sourceTree": "Marksmanship"
-  },
-  "hunter:rapid-killing": {
-    "classId": "hunter",
-    "sourceName": "Rapid Killing",
-    "sourceTree": "Marksmanship"
-  },
-  "hunter:improved-arcane-shot": {
-    "classId": "hunter",
-    "sourceName": "Improved Arcane Shot",
-    "sourceTree": "Marksmanship"
-  },
-  "hunter:lone-wolf": {
-    "classId": "hunter",
-    "sourceName": "Lone Wolf",
-    "sourceTree": "Marksmanship"
-  },
-  "hunter:trueshot-aura": {
-    "classId": "hunter",
-    "sourceName": "Trueshot Aura",
-    "sourceTree": "Marksmanship"
-  },
-  "hunter:mortal-shots": {
-    "classId": "hunter",
-    "sourceName": "Mortal Shots",
-    "sourceTree": "Marksmanship"
-  },
-  "hunter:rapid-recuperation": {
-    "classId": "hunter",
-    "sourceName": "Rapid Recuperation",
-    "sourceTree": "Marksmanship"
-  },
-  "hunter:barrage": {
-    "classId": "hunter",
-    "sourceName": "Barrage",
-    "sourceTree": "Marksmanship"
-  },
-  "hunter:scatter-shot": {
-    "classId": "hunter",
-    "sourceName": "Scatter Shot",
-    "sourceTree": "Marksmanship"
-  },
-  "hunter:ranged-weapon-specialization": {
-    "classId": "hunter",
-    "sourceName": "Ranged Weapon Specialization",
-    "sourceTree": "Marksmanship"
-  },
-  "hunter:sniper-shot": {
-    "classId": "hunter",
-    "sourceName": "Sniper Shot",
-    "sourceTree": "Marksmanship"
-  },
-  "hunter:improved-tracking": {
-    "classId": "hunter",
-    "sourceName": "Improved Tracking",
-    "sourceTree": "Survival"
-  },
-  "hunter:deflection": {
-    "classId": "hunter",
-    "sourceName": "Deflection",
-    "sourceTree": "Survival"
-  },
-  "hunter:entrapment": {
-    "classId": "hunter",
-    "sourceName": "Entrapment",
-    "sourceTree": "Survival"
-  },
-  "hunter:savage-strikes": {
-    "classId": "hunter",
-    "sourceName": "Savage Strikes",
-    "sourceTree": "Survival"
-  },
-  "hunter:survivalist": {
-    "classId": "hunter",
-    "sourceName": "Survivalist",
-    "sourceTree": "Survival"
-  },
-  "hunter:improved-wing-clip": {
-    "classId": "hunter",
-    "sourceName": "Improved Wing Clip",
-    "sourceTree": "Survival"
-  },
-  "hunter:clever-traps": {
-    "classId": "hunter",
-    "sourceName": "Clever Traps",
-    "sourceTree": "Survival"
-  },
-  "hunter:surefooted": {
-    "classId": "hunter",
-    "sourceName": "Surefooted",
-    "sourceTree": "Survival"
-  },
-  "hunter:deterrence": {
-    "classId": "hunter",
-    "sourceName": "Deterrence",
-    "sourceTree": "Survival"
-  },
-  "hunter:survival-tactics": {
-    "classId": "hunter",
-    "sourceName": "Survival Tactics",
-    "sourceTree": "Survival"
-  },
-  "hunter:predator-s-edge": {
-    "classId": "hunter",
-    "sourceName": "Predator's Edge",
-    "sourceTree": "Survival"
-  },
-  "hunter:counterattack": {
-    "classId": "hunter",
-    "sourceName": "Counterattack",
-    "sourceTree": "Survival"
-  },
-  "hunter:resourcefulness": {
-    "classId": "hunter",
-    "sourceName": "Resourcefulness",
-    "sourceTree": "Survival"
-  },
-  "hunter:expose-prey": {
-    "classId": "hunter",
-    "sourceName": "Expose Prey",
-    "sourceTree": "Survival"
-  },
-  "hunter:survivalist-s-discipline": {
-    "classId": "hunter",
-    "sourceName": "Survivalist's Discipline",
-    "sourceTree": "Survival"
-  },
-  "hunter:strider-kick": {
-    "classId": "hunter",
-    "sourceName": "Strider Kick",
-    "sourceTree": "Survival"
-  },
-  "hunter:lightning-reflexes": {
-    "classId": "hunter",
-    "sourceName": "Lightning Reflexes",
-    "sourceTree": "Survival"
-  },
-  "hunter:lacerating-strikes": {
-    "classId": "hunter",
-    "sourceName": "Lacerating Strikes",
-    "sourceTree": "Survival"
-  },
-  "rogue:improved-gouge": {
-    "classId": "rogue",
-    "sourceName": "Improved Gouge",
-    "sourceTree": "Assassination"
-  },
-  "rogue:remorseless-attacks": {
-    "classId": "rogue",
-    "sourceName": "Remorseless Attacks",
-    "sourceTree": "Assassination"
-  },
-  "rogue:malice": {
-    "classId": "rogue",
-    "sourceName": "Malice",
-    "sourceTree": "Assassination"
-  },
-  "rogue:ruthlessness": {
-    "classId": "rogue",
-    "sourceName": "Ruthlessness",
-    "sourceTree": "Assassination"
-  },
-  "rogue:murder": {
-    "classId": "rogue",
-    "sourceName": "Murder",
-    "sourceTree": "Assassination"
-  },
-  "rogue:improved-slice-and-dice": {
-    "classId": "rogue",
-    "sourceName": "Improved Slice and Dice",
-    "sourceTree": "Assassination"
-  },
-  "rogue:relentless-strikes": {
-    "classId": "rogue",
-    "sourceName": "Relentless Strikes",
-    "sourceTree": "Assassination"
-  },
-  "rogue:improved-expose-armor": {
-    "classId": "rogue",
-    "sourceName": "Improved Expose Armor",
-    "sourceTree": "Assassination"
-  },
-  "rogue:lethality": {
-    "classId": "rogue",
-    "sourceName": "Lethality",
-    "sourceTree": "Assassination"
-  },
-  "rogue:vile-poisons": {
-    "classId": "rogue",
-    "sourceName": "Vile Poisons",
-    "sourceTree": "Assassination"
-  },
-  "rogue:cold-blood": {
-    "classId": "rogue",
-    "sourceName": "Cold Blood",
-    "sourceTree": "Assassination"
-  },
-  "rogue:improved-poisons": {
-    "classId": "rogue",
-    "sourceName": "Improved Poisons",
-    "sourceTree": "Assassination"
-  },
-  "rogue:vigor": {
-    "classId": "rogue",
-    "sourceName": "Vigor",
-    "sourceTree": "Assassination"
-  },
-  "rogue:mutilate": {
-    "classId": "rogue",
-    "sourceName": "Mutilate",
-    "sourceTree": "Assassination"
-  },
-  "rogue:improved-kidney-shot": {
-    "classId": "rogue",
-    "sourceName": "Improved Kidney Shot",
-    "sourceTree": "Assassination"
-  },
-  "rogue:seal-fate": {
-    "classId": "rogue",
-    "sourceName": "Seal Fate",
-    "sourceTree": "Assassination"
-  },
-  "rogue:venom": {
-    "classId": "rogue",
-    "sourceName": "Venom",
-    "sourceTree": "Assassination"
-  },
-  "rogue:improved-eviscerate": {
-    "classId": "rogue",
-    "sourceName": "Improved Eviscerate",
-    "sourceTree": "Combat"
-  },
-  "rogue:improved-sinister-strike": {
-    "classId": "rogue",
-    "sourceName": "Improved Sinister Strike",
-    "sourceTree": "Combat"
-  },
-  "rogue:lightning-reflexes": {
-    "classId": "rogue",
-    "sourceName": "Lightning Reflexes",
-    "sourceTree": "Combat"
-  },
-  "rogue:puncturing-wounds": {
-    "classId": "rogue",
-    "sourceName": "Puncturing Wounds",
-    "sourceTree": "Combat"
-  },
-  "rogue:deflection": {
-    "classId": "rogue",
-    "sourceName": "Deflection",
-    "sourceTree": "Combat"
-  },
-  "rogue:precision": {
-    "classId": "rogue",
-    "sourceName": "Precision",
-    "sourceTree": "Combat"
-  },
-  "rogue:endurance": {
-    "classId": "rogue",
-    "sourceName": "Endurance",
-    "sourceTree": "Combat"
-  },
-  "rogue:riposte": {
-    "classId": "rogue",
-    "sourceName": "Riposte",
-    "sourceTree": "Combat"
-  },
-  "rogue:improved-sprint": {
-    "classId": "rogue",
-    "sourceName": "Improved Sprint",
-    "sourceTree": "Combat"
-  },
-  "rogue:improved-kick": {
-    "classId": "rogue",
-    "sourceName": "Improved Kick",
-    "sourceTree": "Combat"
-  },
-  "rogue:restless-blades": {
-    "classId": "rogue",
-    "sourceName": "Restless Blades",
-    "sourceTree": "Combat"
-  },
-  "rogue:dual-wield-specialization": {
-    "classId": "rogue",
-    "sourceName": "Dual Wield Specialization",
-    "sourceTree": "Combat"
-  },
-  "rogue:blade-flurry": {
-    "classId": "rogue",
-    "sourceName": "Blade Flurry",
-    "sourceTree": "Combat"
-  },
-  "rogue:hack-and-slash": {
-    "classId": "rogue",
-    "sourceName": "Hack and Slash",
-    "sourceTree": "Combat"
-  },
-  "rogue:weapon-expertise": {
-    "classId": "rogue",
-    "sourceName": "Weapon Expertise",
-    "sourceTree": "Combat"
-  },
-  "rogue:aggression": {
-    "classId": "rogue",
-    "sourceName": "Aggression",
-    "sourceTree": "Combat"
-  },
-  "rogue:adrenaline-rush": {
-    "classId": "rogue",
-    "sourceName": "Adrenaline Rush",
-    "sourceTree": "Combat"
-  },
-  "rogue:camouflage": {
-    "classId": "rogue",
-    "sourceName": "Camouflage",
-    "sourceTree": "Subtlety"
-  },
-  "rogue:master-of-deception": {
-    "classId": "rogue",
-    "sourceName": "Master of Deception",
-    "sourceTree": "Subtlety"
-  },
-  "rogue:opportunity": {
-    "classId": "rogue",
-    "sourceName": "Opportunity",
-    "sourceTree": "Subtlety"
-  },
-  "rogue:setup": {
-    "classId": "rogue",
-    "sourceName": "Setup",
-    "sourceTree": "Subtlety"
-  },
-  "rogue:elusiveness": {
-    "classId": "rogue",
-    "sourceName": "Elusiveness",
-    "sourceTree": "Subtlety"
-  },
-  "rogue:dirty-tricks": {
-    "classId": "rogue",
-    "sourceName": "Dirty Tricks",
-    "sourceTree": "Subtlety"
-  },
-  "rogue:improved-ambush": {
-    "classId": "rogue",
-    "sourceName": "Improved Ambush",
-    "sourceTree": "Subtlety"
-  },
-  "rogue:initiative": {
-    "classId": "rogue",
-    "sourceName": "Initiative",
-    "sourceTree": "Subtlety"
-  },
-  "rogue:ghostly-strike": {
-    "classId": "rogue",
-    "sourceName": "Ghostly Strike",
-    "sourceTree": "Subtlety"
-  },
-  "rogue:improved-distract": {
-    "classId": "rogue",
-    "sourceName": "Improved Distract",
-    "sourceTree": "Subtlety"
-  },
-  "rogue:heightened-senses": {
-    "classId": "rogue",
-    "sourceName": "Heightened Senses",
-    "sourceTree": "Subtlety"
-  },
-  "rogue:premeditation": {
-    "classId": "rogue",
-    "sourceName": "Premeditation",
-    "sourceTree": "Subtlety"
-  },
-  "rogue:serrated-blades": {
-    "classId": "rogue",
-    "sourceName": "Serrated Blades",
-    "sourceTree": "Subtlety"
-  },
-  "rogue:dirty-deeds": {
-    "classId": "rogue",
-    "sourceName": "Dirty Deeds",
-    "sourceTree": "Subtlety"
-  },
-  "rogue:preparation": {
-    "classId": "rogue",
-    "sourceName": "Preparation",
-    "sourceTree": "Subtlety"
-  },
-  "rogue:hemorrhage": {
-    "classId": "rogue",
-    "sourceName": "Hemorrhage",
-    "sourceTree": "Subtlety"
-  },
-  "rogue:quietus": {
-    "classId": "rogue",
-    "sourceName": "Quietus",
-    "sourceTree": "Subtlety"
-  },
-  "rogue:cutthroat": {
-    "classId": "rogue",
-    "sourceName": "Cutthroat",
-    "sourceTree": "Subtlety"
-  },
-  "rogue:thousand-cuts": {
-    "classId": "rogue",
-    "sourceName": "Thousand Cuts",
-    "sourceTree": "Subtlety"
-  },
-  "priest:power-in-light": {
-    "classId": "priest",
-    "sourceName": "Power in Light",
-    "sourceTree": "Discipline"
-  },
-  "priest:wand-specialization": {
-    "classId": "priest",
-    "sourceName": "Wand Specialization",
-    "sourceTree": "Discipline"
-  },
-  "priest:twin-disciplines": {
-    "classId": "priest",
-    "sourceName": "Twin Disciplines",
-    "sourceTree": "Discipline"
-  },
-  "priest:silent-resolve": {
-    "classId": "priest",
-    "sourceName": "Silent Resolve",
-    "sourceTree": "Discipline"
-  },
-  "priest:holy-precision": {
-    "classId": "priest",
-    "sourceName": "Holy Precision",
-    "sourceTree": "Discipline"
-  },
-  "priest:improved-power-word-shield": {
-    "classId": "priest",
-    "sourceName": "Improved Power Word: Shield",
-    "sourceTree": "Discipline"
-  },
-  "priest:martyrdom": {
-    "classId": "priest",
-    "sourceName": "Martyrdom",
-    "sourceTree": "Discipline"
-  },
-  "priest:mental-agility": {
-    "classId": "priest",
-    "sourceName": "Mental Agility",
-    "sourceTree": "Discipline"
-  },
-  "priest:inner-focus": {
-    "classId": "priest",
-    "sourceName": "Inner Focus",
-    "sourceTree": "Discipline"
-  },
-  "priest:meditation": {
-    "classId": "priest",
-    "sourceName": "Meditation",
-    "sourceTree": "Discipline"
-  },
-  "priest:improved-inner-fire": {
-    "classId": "priest",
-    "sourceName": "Improved Inner Fire",
-    "sourceTree": "Discipline"
-  },
-  "priest:mental-strength": {
-    "classId": "priest",
-    "sourceName": "Mental Strength",
-    "sourceTree": "Discipline"
-  },
-  "priest:soul-warding": {
-    "classId": "priest",
-    "sourceName": "Soul Warding",
-    "sourceTree": "Discipline"
-  },
-  "priest:improved-mana-burn": {
-    "classId": "priest",
-    "sourceName": "Improved Mana Burn",
-    "sourceTree": "Discipline"
-  },
-  "priest:penance": {
-    "classId": "priest",
-    "sourceName": "Penance",
-    "sourceTree": "Discipline"
-  },
-  "priest:renewed-hope": {
-    "classId": "priest",
-    "sourceName": "Renewed Hope",
-    "sourceTree": "Discipline"
-  },
-  "priest:divine-aegis": {
-    "classId": "priest",
-    "sourceName": "Divine Aegis",
-    "sourceTree": "Discipline"
-  },
-  "priest:power-infusion": {
-    "classId": "priest",
-    "sourceName": "Power Infusion",
-    "sourceTree": "Discipline"
-  },
-  "priest:twilight-focus": {
-    "classId": "priest",
-    "sourceName": "Twilight Focus",
-    "sourceTree": "Holy"
-  },
-  "priest:improved-renew": {
-    "classId": "priest",
-    "sourceName": "Improved Renew",
-    "sourceTree": "Holy"
-  },
-  "priest:holy-specialization": {
-    "classId": "priest",
-    "sourceName": "Holy Specialization",
-    "sourceTree": "Holy"
-  },
-  "priest:spell-warding": {
-    "classId": "priest",
-    "sourceName": "Spell Warding",
-    "sourceTree": "Holy"
-  },
-  "priest:divine-fury": {
-    "classId": "priest",
-    "sourceName": "Divine Fury",
-    "sourceTree": "Holy"
-  },
-  "priest:holy-nova": {
-    "classId": "priest",
-    "sourceName": "Holy Nova",
-    "sourceTree": "Holy"
-  },
-  "priest:blessed-recovery": {
-    "classId": "priest",
-    "sourceName": "Blessed Recovery",
-    "sourceTree": "Holy"
-  },
-  "priest:inspiration": {
-    "classId": "priest",
-    "sourceName": "Inspiration",
-    "sourceTree": "Holy"
-  },
-  "priest:holy-reach": {
-    "classId": "priest",
-    "sourceName": "Holy Reach",
-    "sourceTree": "Holy"
-  },
-  "priest:improved-healing": {
-    "classId": "priest",
-    "sourceName": "Improved Healing",
-    "sourceTree": "Holy"
-  },
-  "priest:searing-light": {
-    "classId": "priest",
-    "sourceName": "Searing Light",
-    "sourceTree": "Holy"
-  },
-  "priest:binding-heal": {
-    "classId": "priest",
-    "sourceName": "Binding Heal",
-    "sourceTree": "Holy"
-  },
-  "priest:litany-of-light": {
-    "classId": "priest",
-    "sourceName": "Litany of Light",
-    "sourceTree": "Holy"
-  },
-  "priest:spirit-of-redemption": {
-    "classId": "priest",
-    "sourceName": "Spirit of Redemption",
-    "sourceTree": "Holy"
-  },
-  "priest:spiritual-guidance": {
-    "classId": "priest",
-    "sourceName": "Spiritual Guidance",
-    "sourceTree": "Holy"
-  },
-  "priest:spiritual-healing": {
-    "classId": "priest",
-    "sourceName": "Spiritual Healing",
-    "sourceTree": "Holy"
-  },
-  "priest:prayer-of-mending": {
-    "classId": "priest",
-    "sourceName": "Prayer of Mending",
-    "sourceTree": "Holy"
-  },
-  "priest:shadow-focus": {
-    "classId": "priest",
-    "sourceName": "Shadow Focus",
-    "sourceTree": "Shadow Magic"
-  },
-  "priest:blackout": {
-    "classId": "priest",
-    "sourceName": "Blackout",
-    "sourceTree": "Shadow Magic"
-  },
-  "priest:spirit-tap": {
-    "classId": "priest",
-    "sourceName": "Spirit Tap",
-    "sourceTree": "Shadow Magic"
-  },
-  "priest:shadow-affinity": {
-    "classId": "priest",
-    "sourceName": "Shadow Affinity",
-    "sourceTree": "Shadow Magic"
-  },
-  "priest:improved-shadow-word-pain": {
-    "classId": "priest",
-    "sourceName": "Improved Shadow Word: Pain",
-    "sourceTree": "Shadow Magic"
-  },
-  "priest:shadow-reach": {
-    "classId": "priest",
-    "sourceName": "Shadow Reach",
-    "sourceTree": "Shadow Magic"
-  },
-  "priest:improved-mind-blast": {
-    "classId": "priest",
-    "sourceName": "Improved Mind Blast",
-    "sourceTree": "Shadow Magic"
-  },
-  "priest:improved-psychic-scream": {
-    "classId": "priest",
-    "sourceName": "Improved Psychic Scream",
-    "sourceTree": "Shadow Magic"
-  },
-  "priest:mind-flay": {
-    "classId": "priest",
-    "sourceName": "Mind Flay",
-    "sourceTree": "Shadow Magic"
-  },
-  "priest:improved-mind-flay": {
-    "classId": "priest",
-    "sourceName": "Improved Mind Flay",
-    "sourceTree": "Shadow Magic"
-  },
-  "priest:improved-fade": {
-    "classId": "priest",
-    "sourceName": "Improved Fade",
-    "sourceTree": "Shadow Magic"
-  },
-  "priest:vampiric-embrace": {
-    "classId": "priest",
-    "sourceName": "Vampiric Embrace",
-    "sourceTree": "Shadow Magic"
-  },
-  "priest:shadow-weaving": {
-    "classId": "priest",
-    "sourceName": "Shadow Weaving",
-    "sourceTree": "Shadow Magic"
-  },
-  "priest:silence": {
-    "classId": "priest",
-    "sourceName": "Silence",
-    "sourceTree": "Shadow Magic"
-  },
-  "priest:devouring-contagion": {
-    "classId": "priest",
-    "sourceName": "Devouring Contagion",
-    "sourceTree": "Shadow Magic"
-  },
-  "priest:early-demise": {
-    "classId": "priest",
-    "sourceName": "Early Demise",
-    "sourceTree": "Shadow Magic"
-  },
-  "priest:darkness": {
-    "classId": "priest",
-    "sourceName": "Darkness",
-    "sourceTree": "Shadow Magic"
-  },
-  "priest:shadowform": {
-    "classId": "priest",
-    "sourceName": "Shadowform",
-    "sourceTree": "Shadow Magic"
-  },
-  "shaman:convection": {
-    "classId": "shaman",
-    "sourceName": "Convection",
-    "sourceTree": "Elemental Combat"
-  },
-  "shaman:concussion": {
-    "classId": "shaman",
-    "sourceName": "Concussion",
-    "sourceTree": "Elemental Combat"
-  },
-  "shaman:elemental-warding": {
-    "classId": "shaman",
-    "sourceName": "Elemental Warding",
-    "sourceTree": "Elemental Combat"
-  },
-  "shaman:reverberation": {
-    "classId": "shaman",
-    "sourceName": "Reverberation",
-    "sourceTree": "Elemental Combat"
-  },
-  "shaman:call-of-flame": {
-    "classId": "shaman",
-    "sourceName": "Call of Flame",
-    "sourceTree": "Elemental Combat"
-  },
-  "shaman:elemental-devastation": {
-    "classId": "shaman",
-    "sourceName": "Elemental Devastation",
-    "sourceTree": "Elemental Combat"
-  },
-  "shaman:elemental-focus": {
-    "classId": "shaman",
-    "sourceName": "Elemental Focus",
-    "sourceTree": "Elemental Combat"
-  },
-  "shaman:elemental-fury": {
-    "classId": "shaman",
-    "sourceName": "Elemental Fury",
-    "sourceTree": "Elemental Combat"
-  },
-  "shaman:improved-fire-nova": {
-    "classId": "shaman",
-    "sourceName": "Improved Fire Nova",
-    "sourceTree": "Elemental Combat"
-  },
-  "shaman:eye-of-the-storm": {
-    "classId": "shaman",
-    "sourceName": "Eye of the Storm",
-    "sourceTree": "Elemental Combat"
-  },
-  "shaman:call-of-thunder": {
-    "classId": "shaman",
-    "sourceName": "Call of Thunder",
-    "sourceTree": "Elemental Combat"
-  },
-  "shaman:elemental-reach": {
-    "classId": "shaman",
-    "sourceName": "Elemental Reach",
-    "sourceTree": "Elemental Combat"
-  },
-  "shaman:lightning-overload": {
-    "classId": "shaman",
-    "sourceName": "Lightning Overload",
-    "sourceTree": "Elemental Combat"
-  },
-  "shaman:earthbound": {
-    "classId": "shaman",
-    "sourceName": "Earthbound",
-    "sourceTree": "Elemental Combat"
-  },
-  "shaman:elemental-alacrity": {
-    "classId": "shaman",
-    "sourceName": "Elemental Alacrity",
-    "sourceTree": "Elemental Combat"
-  },
-  "shaman:lava-burst": {
-    "classId": "shaman",
-    "sourceName": "Lava Burst",
-    "sourceTree": "Elemental Combat"
-  },
-  "shaman:earth-s-grasp": {
-    "classId": "shaman",
-    "sourceName": "Earth's Grasp",
-    "sourceTree": "Enhancement"
-  },
-  "shaman:thundering-strikes": {
-    "classId": "shaman",
-    "sourceName": "Thundering Strikes",
-    "sourceTree": "Enhancement"
-  },
-  "shaman:ancestral-knowledge": {
-    "classId": "shaman",
-    "sourceName": "Ancestral Knowledge",
-    "sourceTree": "Enhancement"
-  },
-  "shaman:guardian-totems": {
-    "classId": "shaman",
-    "sourceName": "Guardian Totems",
-    "sourceTree": "Enhancement"
-  },
-  "shaman:mental-dexterity": {
-    "classId": "shaman",
-    "sourceName": "Mental Dexterity",
-    "sourceTree": "Enhancement"
-  },
-  "shaman:improved-ghost-wolf": {
-    "classId": "shaman",
-    "sourceName": "Improved Ghost Wolf",
-    "sourceTree": "Enhancement"
-  },
-  "shaman:improved-lightning-shield": {
-    "classId": "shaman",
-    "sourceName": "Improved Lightning Shield",
-    "sourceTree": "Enhancement"
-  },
-  "shaman:elemental-weapons": {
-    "classId": "shaman",
-    "sourceName": "Elemental Weapons",
-    "sourceTree": "Enhancement"
-  },
-  "shaman:shamanistic-focus": {
-    "classId": "shaman",
-    "sourceName": "Shamanistic Focus",
-    "sourceTree": "Enhancement"
-  },
-  "shaman:anticipation": {
-    "classId": "shaman",
-    "sourceName": "Anticipation",
-    "sourceTree": "Enhancement"
-  },
-  "shaman:toughness": {
-    "classId": "shaman",
-    "sourceName": "Toughness",
-    "sourceTree": "Enhancement"
-  },
-  "shaman:flurry": {
-    "classId": "shaman",
-    "sourceName": "Flurry",
-    "sourceTree": "Enhancement"
-  },
-  "shaman:stormstrike": {
-    "classId": "shaman",
-    "sourceName": "Stormstrike",
-    "sourceTree": "Enhancement"
-  },
-  "shaman:spirit-weapons": {
-    "classId": "shaman",
-    "sourceName": "Spirit Weapons",
-    "sourceTree": "Enhancement"
-  },
-  "shaman:mental-quickness": {
-    "classId": "shaman",
-    "sourceName": "Mental Quickness",
-    "sourceTree": "Enhancement"
-  },
-  "shaman:improved-stormstrike": {
-    "classId": "shaman",
-    "sourceName": "Improved Stormstrike",
-    "sourceTree": "Enhancement"
-  },
-  "shaman:maelstrom-weapon": {
-    "classId": "shaman",
-    "sourceName": "Maelstrom Weapon",
-    "sourceTree": "Enhancement"
-  },
-  "shaman:rage-of-the-farseer": {
-    "classId": "shaman",
-    "sourceName": "Rage of the Farseer",
-    "sourceTree": "Enhancement"
-  },
-  "shaman:improved-healing-wave": {
-    "classId": "shaman",
-    "sourceName": "Improved Healing Wave",
-    "sourceTree": "Restoration"
-  },
-  "shaman:tidal-mastery": {
-    "classId": "shaman",
-    "sourceName": "Tidal Mastery",
-    "sourceTree": "Restoration"
-  },
-  "shaman:mindfulness": {
-    "classId": "shaman",
-    "sourceName": "Mindfulness",
-    "sourceTree": "Restoration"
-  },
-  "shaman:natural-grace": {
-    "classId": "shaman",
-    "sourceName": "Natural Grace",
-    "sourceTree": "Restoration"
-  },
-  "shaman:tidal-focus": {
-    "classId": "shaman",
-    "sourceName": "Tidal Focus",
-    "sourceTree": "Restoration"
-  },
-  "shaman:improved-reincarnation": {
-    "classId": "shaman",
-    "sourceName": "Improved Reincarnation",
-    "sourceTree": "Restoration"
-  },
-  "shaman:ancestral-healing": {
-    "classId": "shaman",
-    "sourceName": "Ancestral Healing",
-    "sourceTree": "Restoration"
-  },
-  "shaman:healing-focus": {
-    "classId": "shaman",
-    "sourceName": "Healing Focus",
-    "sourceTree": "Restoration"
-  },
-  "shaman:water-shield": {
-    "classId": "shaman",
-    "sourceName": "Water Shield",
-    "sourceTree": "Restoration"
-  },
-  "shaman:totemic-focus": {
-    "classId": "shaman",
-    "sourceName": "Totemic Focus",
-    "sourceTree": "Restoration"
-  },
-  "shaman:restorative-totems": {
-    "classId": "shaman",
-    "sourceName": "Restorative Totems",
-    "sourceTree": "Restoration"
-  },
-  "shaman:mana-tide-totem": {
-    "classId": "shaman",
-    "sourceName": "Mana Tide Totem",
-    "sourceTree": "Restoration"
-  },
-  "shaman:healing-way": {
-    "classId": "shaman",
-    "sourceName": "Healing Way",
-    "sourceTree": "Restoration"
-  },
-  "shaman:nature-s-swiftness": {
-    "classId": "shaman",
-    "sourceName": "Nature's Swiftness",
-    "sourceTree": "Restoration"
-  },
-  "shaman:purification": {
-    "classId": "shaman",
-    "sourceName": "Purification",
-    "sourceTree": "Restoration"
-  },
-  "shaman:riptide": {
-    "classId": "shaman",
-    "sourceName": "Riptide",
-    "sourceTree": "Restoration"
-  },
-  "mage:wand-specialization": {
-    "classId": "mage",
-    "sourceName": "Wand Specialization",
-    "sourceTree": "Arcane"
-  },
-  "mage:arcane-focus": {
-    "classId": "mage",
-    "sourceName": "Arcane Focus",
-    "sourceTree": "Arcane"
-  },
-  "mage:improved-channeling": {
-    "classId": "mage",
-    "sourceName": "Improved Channeling",
-    "sourceTree": "Arcane"
-  },
-  "mage:arcane-subtlety": {
-    "classId": "mage",
-    "sourceName": "Arcane Subtlety",
-    "sourceTree": "Arcane"
-  },
-  "mage:magic-absorption": {
-    "classId": "mage",
-    "sourceName": "Magic Absorption",
-    "sourceTree": "Arcane"
-  },
-  "mage:arcane-concentration": {
-    "classId": "mage",
-    "sourceName": "Arcane Concentration",
-    "sourceTree": "Arcane"
-  },
-  "mage:arcane-resilience": {
-    "classId": "mage",
-    "sourceName": "Arcane Resilience",
-    "sourceTree": "Arcane"
-  },
-  "mage:arcane-geometry": {
-    "classId": "mage",
-    "sourceName": "Arcane Geometry",
-    "sourceTree": "Arcane"
-  },
-  "mage:arcane-impact": {
-    "classId": "mage",
-    "sourceName": "Arcane Impact",
-    "sourceTree": "Arcane"
-  },
-  "mage:arcane-blast": {
-    "classId": "mage",
-    "sourceName": "Arcane Blast",
-    "sourceTree": "Arcane"
-  },
-  "mage:arcane-shielding": {
-    "classId": "mage",
-    "sourceName": "Arcane Shielding",
-    "sourceTree": "Arcane"
-  },
-  "mage:improved-counterspell": {
-    "classId": "mage",
-    "sourceName": "Improved Counterspell",
-    "sourceTree": "Arcane"
-  },
-  "mage:arcane-meditation": {
-    "classId": "mage",
-    "sourceName": "Arcane Meditation",
-    "sourceTree": "Arcane"
-  },
-  "mage:missile-barrage": {
-    "classId": "mage",
-    "sourceName": "Missile Barrage",
-    "sourceTree": "Arcane"
-  },
-  "mage:presence-of-mind": {
-    "classId": "mage",
-    "sourceName": "Presence of Mind",
-    "sourceTree": "Arcane"
-  },
-  "mage:arcane-mind": {
-    "classId": "mage",
-    "sourceName": "Arcane Mind",
-    "sourceTree": "Arcane"
-  },
-  "mage:arcane-instability": {
-    "classId": "mage",
-    "sourceName": "Arcane Instability",
-    "sourceTree": "Arcane"
-  },
-  "mage:arcane-power": {
-    "classId": "mage",
-    "sourceName": "Arcane Power",
-    "sourceTree": "Arcane"
-  },
-  "mage:wake-of-fire": {
-    "classId": "mage",
-    "sourceName": "Wake of Fire",
-    "sourceTree": "Fire"
-  },
-  "mage:incineration": {
-    "classId": "mage",
-    "sourceName": "Incineration",
-    "sourceTree": "Fire"
-  },
-  "mage:improved-fireball": {
-    "classId": "mage",
-    "sourceName": "Improved Fireball",
-    "sourceTree": "Fire"
-  },
-  "mage:ignite": {
-    "classId": "mage",
-    "sourceName": "Ignite",
-    "sourceTree": "Fire"
-  },
-  "mage:flame-throwing": {
-    "classId": "mage",
-    "sourceName": "Flame Throwing",
-    "sourceTree": "Fire"
-  },
-  "mage:impact": {
-    "classId": "mage",
-    "sourceName": "Impact",
-    "sourceTree": "Fire"
-  },
-  "mage:burning-soul": {
-    "classId": "mage",
-    "sourceName": "Burning Soul",
-    "sourceTree": "Fire"
-  },
-  "mage:improved-flamestrike": {
-    "classId": "mage",
-    "sourceName": "Improved Flamestrike",
-    "sourceTree": "Fire"
-  },
-  "mage:pyroblast": {
-    "classId": "mage",
-    "sourceName": "Pyroblast",
-    "sourceTree": "Fire"
-  },
-  "mage:improved-scorch": {
-    "classId": "mage",
-    "sourceName": "Improved Scorch",
-    "sourceTree": "Fire"
-  },
-  "mage:improved-fire-ward": {
-    "classId": "mage",
-    "sourceName": "Improved Fire Ward",
-    "sourceTree": "Fire"
-  },
-  "mage:hot-streak": {
-    "classId": "mage",
-    "sourceName": "Hot Streak",
-    "sourceTree": "Fire"
-  },
-  "mage:master-of-elements": {
-    "classId": "mage",
-    "sourceName": "Master of Elements",
-    "sourceTree": "Fire"
-  },
-  "mage:critical-mass": {
-    "classId": "mage",
-    "sourceName": "Critical Mass",
-    "sourceTree": "Fire"
-  },
-  "mage:blast-wave": {
-    "classId": "mage",
-    "sourceName": "Blast Wave",
-    "sourceTree": "Fire"
-  },
-  "mage:fire-power": {
-    "classId": "mage",
-    "sourceName": "Fire Power",
-    "sourceTree": "Fire"
-  },
-  "mage:combustion": {
-    "classId": "mage",
-    "sourceName": "Combustion",
-    "sourceTree": "Fire"
-  },
-  "mage:frost-warding": {
-    "classId": "mage",
-    "sourceName": "Frost Warding",
-    "sourceTree": "Frost"
-  },
-  "mage:improved-frostbolt": {
-    "classId": "mage",
-    "sourceName": "Improved Frostbolt",
-    "sourceTree": "Frost"
-  },
-  "mage:elemental-precision": {
-    "classId": "mage",
-    "sourceName": "Elemental Precision",
-    "sourceTree": "Frost"
-  },
-  "mage:ice-shards": {
-    "classId": "mage",
-    "sourceName": "Ice Shards",
-    "sourceTree": "Frost"
-  },
-  "mage:permafrost": {
-    "classId": "mage",
-    "sourceName": "Permafrost",
-    "sourceTree": "Frost"
-  },
-  "mage:improved-frost-nova": {
-    "classId": "mage",
-    "sourceName": "Improved Frost Nova",
-    "sourceTree": "Frost"
-  },
-  "mage:frostbite": {
-    "classId": "mage",
-    "sourceName": "Frostbite",
-    "sourceTree": "Frost"
-  },
-  "mage:piercing-ice": {
-    "classId": "mage",
-    "sourceName": "Piercing Ice",
-    "sourceTree": "Frost"
-  },
-  "mage:frost-channeling": {
-    "classId": "mage",
-    "sourceName": "Frost Channeling",
-    "sourceTree": "Frost"
-  },
-  "mage:ice-lance": {
-    "classId": "mage",
-    "sourceName": "Ice Lance",
-    "sourceTree": "Frost"
-  },
-  "mage:improved-blizzard": {
-    "classId": "mage",
-    "sourceName": "Improved Blizzard",
-    "sourceTree": "Frost"
-  },
-  "mage:arctic-reach": {
-    "classId": "mage",
-    "sourceName": "Arctic Reach",
-    "sourceTree": "Frost"
-  },
-  "mage:ice-block": {
-    "classId": "mage",
-    "sourceName": "Ice Block",
-    "sourceTree": "Frost"
-  },
-  "mage:shatter": {
-    "classId": "mage",
-    "sourceName": "Shatter",
-    "sourceTree": "Frost"
-  },
-  "mage:improved-cone-of-cold": {
-    "classId": "mage",
-    "sourceName": "Improved Cone of Cold",
-    "sourceTree": "Frost"
-  },
-  "mage:cold-snap": {
-    "classId": "mage",
-    "sourceName": "Cold Snap",
-    "sourceTree": "Frost"
-  },
-  "mage:fingers-of-frost": {
-    "classId": "mage",
-    "sourceName": "Fingers of Frost",
-    "sourceTree": "Frost"
-  },
-  "mage:winter-s-chill": {
-    "classId": "mage",
-    "sourceName": "Winter's Chill",
-    "sourceTree": "Frost"
-  },
-  "mage:ice-barrier": {
-    "classId": "mage",
-    "sourceName": "Ice Barrier",
-    "sourceTree": "Frost"
-  },
-  "warlock:improved-life-tap": {
-    "classId": "warlock",
-    "sourceName": "Improved Life Tap",
-    "sourceTree": "Affliction"
-  },
-  "warlock:suppression": {
-    "classId": "warlock",
-    "sourceName": "Suppression",
-    "sourceTree": "Affliction"
-  },
-  "warlock:improved-corruption": {
-    "classId": "warlock",
-    "sourceName": "Improved Corruption",
-    "sourceTree": "Affliction"
-  },
-  "warlock:malediction": {
-    "classId": "warlock",
-    "sourceName": "Malediction",
-    "sourceTree": "Affliction"
-  },
-  "warlock:soul-harvesting": {
-    "classId": "warlock",
-    "sourceName": "Soul Harvesting",
-    "sourceTree": "Affliction"
-  },
-  "warlock:improved-drains": {
-    "classId": "warlock",
-    "sourceName": "Improved Drains",
-    "sourceTree": "Affliction"
-  },
-  "warlock:improved-bane-of-agony": {
-    "classId": "warlock",
-    "sourceName": "Improved Bane of Agony",
-    "sourceTree": "Affliction"
-  },
-  "warlock:fel-concentration": {
-    "classId": "warlock",
-    "sourceName": "Fel Concentration",
-    "sourceTree": "Affliction"
-  },
-  "warlock:amplify-curse": {
-    "classId": "warlock",
-    "sourceName": "Amplify Curse",
-    "sourceTree": "Affliction"
-  },
-  "warlock:pandemic": {
-    "classId": "warlock",
-    "sourceName": "Pandemic",
-    "sourceTree": "Affliction"
-  },
-  "warlock:malevolence": {
-    "classId": "warlock",
-    "sourceName": "Malevolence",
-    "sourceTree": "Affliction"
-  },
-  "warlock:nightfall": {
-    "classId": "warlock",
-    "sourceName": "Nightfall",
-    "sourceTree": "Affliction"
-  },
-  "warlock:curse-of-exhaustion": {
-    "classId": "warlock",
-    "sourceName": "Curse of Exhaustion",
-    "sourceTree": "Affliction"
-  },
-  "warlock:siphon-life": {
-    "classId": "warlock",
-    "sourceName": "Siphon Life",
-    "sourceTree": "Affliction"
-  },
-  "warlock:soul-siphon": {
-    "classId": "warlock",
-    "sourceName": "Soul Siphon",
-    "sourceTree": "Affliction"
-  },
-  "warlock:shadow-mastery": {
-    "classId": "warlock",
-    "sourceName": "Shadow Mastery",
-    "sourceTree": "Affliction"
-  },
-  "warlock:drain-hope": {
-    "classId": "warlock",
-    "sourceName": "Drain Hope",
-    "sourceTree": "Affliction"
-  },
-  "warlock:improved-health-funnel": {
-    "classId": "warlock",
-    "sourceName": "Improved Health Funnel",
-    "sourceTree": "Demonology"
-  },
-  "warlock:improved-imp": {
-    "classId": "warlock",
-    "sourceName": "Improved Imp",
-    "sourceTree": "Demonology"
-  },
-  "warlock:demonic-embrace": {
-    "classId": "warlock",
-    "sourceName": "Demonic Embrace",
-    "sourceTree": "Demonology"
-  },
-  "warlock:unholy-power": {
-    "classId": "warlock",
-    "sourceName": "Unholy Power",
-    "sourceTree": "Demonology"
-  },
-  "warlock:demonic-aegis": {
-    "classId": "warlock",
-    "sourceName": "Demonic Aegis",
-    "sourceTree": "Demonology"
-  },
-  "warlock:improved-voidwalker": {
-    "classId": "warlock",
-    "sourceName": "Improved Voidwalker",
-    "sourceTree": "Demonology"
-  },
-  "warlock:fel-vitality": {
-    "classId": "warlock",
-    "sourceName": "Fel Vitality",
-    "sourceTree": "Demonology"
-  },
-  "warlock:demonic-energies": {
-    "classId": "warlock",
-    "sourceName": "Demonic Energies",
-    "sourceTree": "Demonology"
-  },
-  "warlock:improved-sayaad": {
-    "classId": "warlock",
-    "sourceName": "Improved Sayaad",
-    "sourceTree": "Demonology"
-  },
-  "warlock:demonic-sacrifice": {
-    "classId": "warlock",
-    "sourceName": "Demonic Sacrifice",
-    "sourceTree": "Demonology"
-  },
-  "warlock:master-summoner": {
-    "classId": "warlock",
-    "sourceName": "Master Summoner",
-    "sourceTree": "Demonology"
-  },
-  "warlock:decimation": {
-    "classId": "warlock",
-    "sourceName": "Decimation",
-    "sourceTree": "Demonology"
-  },
-  "warlock:fel-domination": {
-    "classId": "warlock",
-    "sourceName": "Fel Domination",
-    "sourceTree": "Demonology"
-  },
-  "warlock:demonic-brand": {
-    "classId": "warlock",
-    "sourceName": "Demonic Brand",
-    "sourceTree": "Demonology"
-  },
-  "warlock:improved-felhunter": {
-    "classId": "warlock",
-    "sourceName": "Improved Felhunter",
-    "sourceTree": "Demonology"
-  },
-  "warlock:soul-link": {
-    "classId": "warlock",
-    "sourceName": "Soul Link",
-    "sourceTree": "Demonology"
-  },
-  "warlock:demonic-knowledge": {
-    "classId": "warlock",
-    "sourceName": "Demonic Knowledge",
-    "sourceTree": "Demonology"
-  },
-  "warlock:master-demonologist": {
-    "classId": "warlock",
-    "sourceName": "Master Demonologist",
-    "sourceTree": "Demonology"
-  },
-  "warlock:demonic-pact": {
-    "classId": "warlock",
-    "sourceName": "Demonic Pact",
-    "sourceTree": "Demonology"
-  },
-  "warlock:destructive-reach": {
-    "classId": "warlock",
-    "sourceName": "Destructive Reach",
-    "sourceTree": "Destruction"
-  },
-  "warlock:improved-shadow-bolt": {
-    "classId": "warlock",
-    "sourceName": "Improved Shadow Bolt",
-    "sourceTree": "Destruction"
-  },
-  "warlock:bane": {
-    "classId": "warlock",
-    "sourceName": "Bane",
-    "sourceTree": "Destruction"
-  },
-  "warlock:molten-skin": {
-    "classId": "warlock",
-    "sourceName": "Molten Skin",
-    "sourceTree": "Destruction"
-  },
-  "warlock:cataclysm": {
-    "classId": "warlock",
-    "sourceName": "Cataclysm",
-    "sourceTree": "Destruction"
-  },
-  "warlock:aftermath": {
-    "classId": "warlock",
-    "sourceName": "Aftermath",
-    "sourceTree": "Destruction"
-  },
-  "warlock:ruin": {
-    "classId": "warlock",
-    "sourceName": "Ruin",
-    "sourceTree": "Destruction"
-  },
-  "warlock:shadowburn": {
-    "classId": "warlock",
-    "sourceName": "Shadowburn",
-    "sourceTree": "Destruction"
-  },
-  "warlock:intensity": {
-    "classId": "warlock",
-    "sourceName": "Intensity",
-    "sourceTree": "Destruction"
-  },
-  "warlock:agonizing-flames": {
-    "classId": "warlock",
-    "sourceName": "Agonizing Flames",
-    "sourceTree": "Destruction"
-  },
-  "warlock:conflagrate": {
-    "classId": "warlock",
-    "sourceName": "Conflagrate",
-    "sourceTree": "Destruction"
-  },
-  "warlock:pyroclasm": {
-    "classId": "warlock",
-    "sourceName": "Pyroclasm",
-    "sourceTree": "Destruction"
-  },
-  "warlock:bane-of-havoc": {
-    "classId": "warlock",
-    "sourceName": "Bane of Havoc",
-    "sourceTree": "Destruction"
-  },
-  "warlock:fire-and-brimstone": {
-    "classId": "warlock",
-    "sourceName": "Fire and Brimstone",
-    "sourceTree": "Destruction"
-  },
-  "warlock:shadow-and-flame": {
-    "classId": "warlock",
-    "sourceName": "Shadow and Flame",
-    "sourceTree": "Destruction"
-  },
-  "warlock:incinerate": {
-    "classId": "warlock",
-    "sourceName": "Incinerate",
-    "sourceTree": "Destruction"
-  },
-  "druid:improved-wrath": {
-    "classId": "druid",
-    "sourceName": "Improved Wrath",
-    "sourceTree": "Balance"
-  },
-  "druid:genesis": {
-    "classId": "druid",
-    "sourceName": "Genesis",
-    "sourceTree": "Balance"
-  },
-  "druid:moonglow": {
-    "classId": "druid",
-    "sourceName": "Moonglow",
-    "sourceTree": "Balance"
-  },
-  "druid:improved-moonfire": {
-    "classId": "druid",
-    "sourceName": "Improved Moonfire",
-    "sourceTree": "Balance"
-  },
-  "druid:nature-s-majesty": {
-    "classId": "druid",
-    "sourceName": "Nature's Majesty",
-    "sourceTree": "Balance"
-  },
-  "druid:nature-s-reach": {
-    "classId": "druid",
-    "sourceName": "Nature's Reach",
-    "sourceTree": "Balance"
-  },
-  "druid:improved-entangling-roots": {
-    "classId": "druid",
-    "sourceName": "Improved Entangling Roots",
-    "sourceTree": "Balance"
-  },
-  "druid:nature-s-splendor": {
-    "classId": "druid",
-    "sourceName": "Nature's Splendor",
-    "sourceTree": "Balance"
-  },
   "druid:balance-of-nature": {
     "classId": "druid",
     "sourceName": "Balance of Nature",
-    "sourceTree": "Balance"
-  },
-  "druid:vengeance": {
-    "classId": "druid",
-    "sourceName": "Vengeance",
-    "sourceTree": "Balance"
-  },
-  "druid:insect-swarm": {
-    "classId": "druid",
-    "sourceName": "Insect Swarm",
-    "sourceTree": "Balance"
-  },
-  "druid:improved-starfire": {
-    "classId": "druid",
-    "sourceName": "Improved Starfire",
-    "sourceTree": "Balance"
-  },
-  "druid:overgrowth": {
-    "classId": "druid",
-    "sourceName": "Overgrowth",
-    "sourceTree": "Balance"
-  },
-  "druid:nature-s-grace": {
-    "classId": "druid",
-    "sourceName": "Nature's Grace",
-    "sourceTree": "Balance"
-  },
-  "druid:eclipse": {
-    "classId": "druid",
-    "sourceName": "Eclipse",
-    "sourceTree": "Balance"
-  },
-  "druid:moonfury": {
-    "classId": "druid",
-    "sourceName": "Moonfury",
-    "sourceTree": "Balance"
-  },
-  "druid:moonkin-form": {
-    "classId": "druid",
-    "sourceName": "Moonkin Form",
-    "sourceTree": "Balance"
-  },
-  "druid:ferocity": {
-    "classId": "druid",
-    "sourceName": "Ferocity",
-    "sourceTree": "Feral Combat"
-  },
-  "druid:heart-of-the-wild": {
-    "classId": "druid",
-    "sourceName": "Heart of the Wild",
-    "sourceTree": "Feral Combat"
-  },
-  "druid:feral-swiftness": {
-    "classId": "druid",
-    "sourceName": "Feral Swiftness",
-    "sourceTree": "Feral Combat"
-  },
-  "druid:feral-instinct": {
-    "classId": "druid",
-    "sourceName": "Feral Instinct",
-    "sourceTree": "Feral Combat"
-  },
-  "druid:brutal-impact": {
-    "classId": "druid",
-    "sourceName": "Brutal Impact",
-    "sourceTree": "Feral Combat"
-  },
-  "druid:thick-hide": {
-    "classId": "druid",
-    "sourceName": "Thick Hide",
-    "sourceTree": "Feral Combat"
-  },
-  "druid:savage-fury": {
-    "classId": "druid",
-    "sourceName": "Savage Fury",
-    "sourceTree": "Feral Combat"
-  },
-  "druid:feral-charge": {
-    "classId": "druid",
-    "sourceName": "Feral Charge",
-    "sourceTree": "Feral Combat"
-  },
-  "druid:sharpened-claws": {
-    "classId": "druid",
-    "sourceName": "Sharpened Claws",
-    "sourceTree": "Feral Combat"
-  },
-  "druid:shredding-attacks": {
-    "classId": "druid",
-    "sourceName": "Shredding Attacks",
-    "sourceTree": "Feral Combat"
-  },
-  "druid:mangle": {
-    "classId": "druid",
-    "sourceName": "Mangle",
-    "sourceTree": "Feral Combat"
-  },
-  "druid:predatory-strikes": {
-    "classId": "druid",
-    "sourceName": "Predatory Strikes",
-    "sourceTree": "Feral Combat"
-  },
-  "druid:primal-fury": {
-    "classId": "druid",
-    "sourceName": "Primal Fury",
-    "sourceTree": "Feral Combat"
-  },
-  "druid:predatory-instincts": {
-    "classId": "druid",
-    "sourceName": "Predatory Instincts",
-    "sourceTree": "Feral Combat"
-  },
-  "druid:leader-of-the-pack": {
-    "classId": "druid",
-    "sourceName": "Leader of the Pack",
-    "sourceTree": "Feral Combat"
-  },
-  "druid:king-of-the-jungle": {
-    "classId": "druid",
-    "sourceName": "King of the Jungle",
-    "sourceTree": "Feral Combat"
-  },
-  "druid:natural-reaction": {
-    "classId": "druid",
-    "sourceName": "Natural Reaction",
-    "sourceTree": "Feral Combat"
-  },
-  "druid:rend-and-tear": {
-    "classId": "druid",
-    "sourceName": "Rend and Tear",
-    "sourceTree": "Feral Combat"
+    "sourceTree": "Balance",
+    "status": "removed",
+    "aliasOf": null
   },
   "druid:berserk": {
     "classId": "druid",
     "sourceName": "Berserk",
-    "sourceTree": "Feral Combat"
+    "sourceTree": "Feral Combat",
+    "status": "active",
+    "aliasOf": null
   },
-  "druid:nature-s-focus": {
+  "druid:blood-frenzy": {
     "classId": "druid",
-    "sourceName": "Nature's Focus",
-    "sourceTree": "Restoration"
+    "sourceName": "Blood Frenzy",
+    "sourceTree": "Feral Combat",
+    "status": "active",
+    "aliasOf": null
+  },
+  "druid:brutal-impact": {
+    "classId": "druid",
+    "sourceName": "Brutal Impact",
+    "sourceTree": "Feral Combat",
+    "status": "active",
+    "aliasOf": null
+  },
+  "druid:eclipse": {
+    "classId": "druid",
+    "sourceName": "Eclipse",
+    "sourceTree": "Balance",
+    "status": "active",
+    "aliasOf": null
+  },
+  "druid:feral-charge": {
+    "classId": "druid",
+    "sourceName": "Feral Charge",
+    "sourceTree": "Feral Combat",
+    "status": "active",
+    "aliasOf": null
+  },
+  "druid:feral-instinct": {
+    "classId": "druid",
+    "sourceName": "Feral Instinct",
+    "sourceTree": "Feral Combat",
+    "status": "active",
+    "aliasOf": null
+  },
+  "druid:feral-swiftness": {
+    "classId": "druid",
+    "sourceName": "Feral Swiftness",
+    "sourceTree": "Feral Combat",
+    "status": "active",
+    "aliasOf": null
+  },
+  "druid:ferocity": {
+    "classId": "druid",
+    "sourceName": "Ferocity",
+    "sourceTree": "Feral Combat",
+    "status": "active",
+    "aliasOf": null
   },
   "druid:furor": {
     "classId": "druid",
     "sourceName": "Furor",
-    "sourceTree": "Restoration"
+    "sourceTree": "Restoration",
+    "status": "active",
+    "aliasOf": null
   },
-  "druid:naturalist": {
+  "druid:genesis": {
     "classId": "druid",
-    "sourceName": "Naturalist",
-    "sourceTree": "Restoration"
-  },
-  "druid:subtlety": {
-    "classId": "druid",
-    "sourceName": "Subtlety",
-    "sourceTree": "Restoration"
-  },
-  "druid:natural-shapeshifter": {
-    "classId": "druid",
-    "sourceName": "Natural Shapeshifter",
-    "sourceTree": "Restoration"
-  },
-  "druid:reflection": {
-    "classId": "druid",
-    "sourceName": "Reflection",
-    "sourceTree": "Restoration"
+    "sourceName": "Genesis",
+    "sourceTree": "Balance",
+    "status": "active",
+    "aliasOf": null
   },
   "druid:gift-of-nature": {
     "classId": "druid",
     "sourceName": "Gift of Nature",
-    "sourceTree": "Restoration"
+    "sourceTree": "Restoration",
+    "status": "active",
+    "aliasOf": null
   },
   "druid:gift-of-the-earthmother": {
     "classId": "druid",
     "sourceName": "Gift of the Earthmother",
-    "sourceTree": "Restoration"
+    "sourceTree": "Restoration",
+    "status": "active",
+    "aliasOf": null
   },
-  "druid:tranquil-spirit": {
+  "druid:heart-of-the-wild": {
     "classId": "druid",
-    "sourceName": "Tranquil Spirit",
-    "sourceTree": "Restoration"
+    "sourceName": "Heart of the Wild",
+    "sourceTree": "Feral Combat",
+    "status": "active",
+    "aliasOf": null
   },
-  "druid:improved-rejuvenation": {
+  "druid:improved-entangling-roots": {
     "classId": "druid",
-    "sourceName": "Improved Rejuvenation",
-    "sourceTree": "Restoration"
+    "sourceName": "Improved Entangling Roots",
+    "sourceTree": "Balance",
+    "status": "active",
+    "aliasOf": null
   },
-  "druid:swiftmend": {
+  "druid:improved-moonfire": {
     "classId": "druid",
-    "sourceName": "Swiftmend",
-    "sourceTree": "Restoration"
-  },
-  "druid:nature-s-swiftness": {
-    "classId": "druid",
-    "sourceName": "Nature's Swiftness",
-    "sourceTree": "Restoration"
-  },
-  "druid:living-spirit": {
-    "classId": "druid",
-    "sourceName": "Living Spirit",
-    "sourceTree": "Restoration"
-  },
-  "druid:improved-tranquility": {
-    "classId": "druid",
-    "sourceName": "Improved Tranquility",
-    "sourceTree": "Restoration"
+    "sourceName": "Improved Moonfire",
+    "sourceTree": "Balance",
+    "status": "active",
+    "aliasOf": null
   },
   "druid:improved-regrowth": {
     "classId": "druid",
     "sourceName": "Improved Regrowth",
-    "sourceTree": "Restoration"
+    "sourceTree": "Restoration",
+    "status": "active",
+    "aliasOf": null
+  },
+  "druid:improved-rejuvenation": {
+    "classId": "druid",
+    "sourceName": "Improved Rejuvenation",
+    "sourceTree": "Restoration",
+    "status": "active",
+    "aliasOf": null
+  },
+  "druid:improved-shifting-power": {
+    "classId": "druid",
+    "sourceName": "Improved Shifting Power",
+    "sourceTree": "Feral Combat",
+    "status": "active",
+    "aliasOf": null
+  },
+  "druid:improved-starfire": {
+    "classId": "druid",
+    "sourceName": "Improved Starfire",
+    "sourceTree": "Balance",
+    "status": "active",
+    "aliasOf": null
+  },
+  "druid:improved-tranquility": {
+    "classId": "druid",
+    "sourceName": "Improved Tranquility",
+    "sourceTree": "Restoration",
+    "status": "active",
+    "aliasOf": null
+  },
+  "druid:improved-wrath": {
+    "classId": "druid",
+    "sourceName": "Improved Wrath",
+    "sourceTree": "Balance",
+    "status": "active",
+    "aliasOf": null
+  },
+  "druid:insect-swarm": {
+    "classId": "druid",
+    "sourceName": "Insect Swarm",
+    "sourceTree": "Balance",
+    "status": "active",
+    "aliasOf": null
+  },
+  "druid:king-of-the-jungle": {
+    "classId": "druid",
+    "sourceName": "King of the Jungle",
+    "sourceTree": "Feral Combat",
+    "status": "removed",
+    "aliasOf": null
+  },
+  "druid:leader-of-the-pack": {
+    "classId": "druid",
+    "sourceName": "Leader of the Pack",
+    "sourceTree": "Feral Combat",
+    "status": "active",
+    "aliasOf": null
+  },
+  "druid:living-spirit": {
+    "classId": "druid",
+    "sourceName": "Living Spirit",
+    "sourceTree": "Restoration",
+    "status": "active",
+    "aliasOf": null
+  },
+  "druid:mangle": {
+    "classId": "druid",
+    "sourceName": "Mangle",
+    "sourceTree": "Feral Combat",
+    "status": "renamed",
+    "aliasOf": "druid:primal-bite"
+  },
+  "druid:moonfury": {
+    "classId": "druid",
+    "sourceName": "Moonfury",
+    "sourceTree": "Balance",
+    "status": "active",
+    "aliasOf": null
+  },
+  "druid:moonglow": {
+    "classId": "druid",
+    "sourceName": "Moonglow",
+    "sourceTree": "Balance",
+    "status": "active",
+    "aliasOf": null
+  },
+  "druid:moonkin-form": {
+    "classId": "druid",
+    "sourceName": "Moonkin Form",
+    "sourceTree": "Balance",
+    "status": "active",
+    "aliasOf": null
+  },
+  "druid:natural-instinct": {
+    "classId": "druid",
+    "sourceName": "Natural Instinct",
+    "sourceTree": "Feral Combat",
+    "status": "active",
+    "aliasOf": null
+  },
+  "druid:natural-reaction": {
+    "classId": "druid",
+    "sourceName": "Natural Reaction",
+    "sourceTree": "Feral Combat",
+    "status": "active",
+    "aliasOf": null
+  },
+  "druid:natural-shapeshifter": {
+    "classId": "druid",
+    "sourceName": "Natural Shapeshifter",
+    "sourceTree": "Restoration",
+    "status": "active",
+    "aliasOf": null
+  },
+  "druid:naturalist": {
+    "classId": "druid",
+    "sourceName": "Naturalist",
+    "sourceTree": "Restoration",
+    "status": "active",
+    "aliasOf": null
+  },
+  "druid:nature-s-focus": {
+    "classId": "druid",
+    "sourceName": "Nature's Focus",
+    "sourceTree": "Restoration",
+    "status": "active",
+    "aliasOf": null
+  },
+  "druid:nature-s-grace": {
+    "classId": "druid",
+    "sourceName": "Nature's Grace",
+    "sourceTree": "Balance",
+    "status": "active",
+    "aliasOf": null
+  },
+  "druid:nature-s-majesty": {
+    "classId": "druid",
+    "sourceName": "Nature's Majesty",
+    "sourceTree": "Balance",
+    "status": "active",
+    "aliasOf": null
+  },
+  "druid:nature-s-reach": {
+    "classId": "druid",
+    "sourceName": "Nature's Reach",
+    "sourceTree": "Balance",
+    "status": "active",
+    "aliasOf": null
+  },
+  "druid:nature-s-splendor": {
+    "classId": "druid",
+    "sourceName": "Nature's Splendor",
+    "sourceTree": "Balance",
+    "status": "active",
+    "aliasOf": null
+  },
+  "druid:nature-s-swiftness": {
+    "classId": "druid",
+    "sourceName": "Nature's Swiftness",
+    "sourceTree": "Restoration",
+    "status": "active",
+    "aliasOf": null
+  },
+  "druid:overgrowth": {
+    "classId": "druid",
+    "sourceName": "Overgrowth",
+    "sourceTree": "Balance",
+    "status": "active",
+    "aliasOf": null
+  },
+  "druid:predatory-instincts": {
+    "classId": "druid",
+    "sourceName": "Predatory Instincts",
+    "sourceTree": "Feral Combat",
+    "status": "renamed",
+    "aliasOf": "druid:natural-instinct"
+  },
+  "druid:predatory-strikes": {
+    "classId": "druid",
+    "sourceName": "Predatory Strikes",
+    "sourceTree": "Feral Combat",
+    "status": "active",
+    "aliasOf": null
+  },
+  "druid:primal-bite": {
+    "classId": "druid",
+    "sourceName": "Primal Bite",
+    "sourceTree": "Feral Combat",
+    "status": "active",
+    "aliasOf": null
+  },
+  "druid:primal-fury": {
+    "classId": "druid",
+    "sourceName": "Primal Fury",
+    "sourceTree": "Feral Combat",
+    "status": "renamed",
+    "aliasOf": "druid:blood-frenzy"
+  },
+  "druid:reflection": {
+    "classId": "druid",
+    "sourceName": "Reflection",
+    "sourceTree": "Restoration",
+    "status": "active",
+    "aliasOf": null
+  },
+  "druid:rend-and-tear": {
+    "classId": "druid",
+    "sourceName": "Rend and Tear",
+    "sourceTree": "Feral Combat",
+    "status": "active",
+    "aliasOf": null
+  },
+  "druid:savage-fury": {
+    "classId": "druid",
+    "sourceName": "Savage Fury",
+    "sourceTree": "Feral Combat",
+    "status": "active",
+    "aliasOf": null
+  },
+  "druid:sharpened-claws": {
+    "classId": "druid",
+    "sourceName": "Sharpened Claws",
+    "sourceTree": "Feral Combat",
+    "status": "active",
+    "aliasOf": null
+  },
+  "druid:shifting-power": {
+    "classId": "druid",
+    "sourceName": "Shifting Power",
+    "sourceTree": "Feral Combat",
+    "status": "active",
+    "aliasOf": null
+  },
+  "druid:shredding-attacks": {
+    "classId": "druid",
+    "sourceName": "Shredding Attacks",
+    "sourceTree": "Feral Combat",
+    "status": "active",
+    "aliasOf": null
+  },
+  "druid:subtlety": {
+    "classId": "druid",
+    "sourceName": "Subtlety",
+    "sourceTree": "Restoration",
+    "status": "active",
+    "aliasOf": null
+  },
+  "druid:swiftmend": {
+    "classId": "druid",
+    "sourceName": "Swiftmend",
+    "sourceTree": "Restoration",
+    "status": "active",
+    "aliasOf": null
+  },
+  "druid:thick-hide": {
+    "classId": "druid",
+    "sourceName": "Thick Hide",
+    "sourceTree": "Feral Combat",
+    "status": "active",
+    "aliasOf": null
+  },
+  "druid:tranquil-spirit": {
+    "classId": "druid",
+    "sourceName": "Tranquil Spirit",
+    "sourceTree": "Restoration",
+    "status": "active",
+    "aliasOf": null
+  },
+  "druid:vengeance": {
+    "classId": "druid",
+    "sourceName": "Vengeance",
+    "sourceTree": "Balance",
+    "status": "active",
+    "aliasOf": null
   },
   "druid:wild-growth": {
     "classId": "druid",
     "sourceName": "Wild Growth",
-    "sourceTree": "Restoration"
+    "sourceTree": "Restoration",
+    "status": "active",
+    "aliasOf": null
+  },
+  "hunter:barrage": {
+    "classId": "hunter",
+    "sourceName": "Barrage",
+    "sourceTree": "Marksmanship",
+    "status": "active",
+    "aliasOf": null
+  },
+  "hunter:bestial-discipline": {
+    "classId": "hunter",
+    "sourceName": "Bestial Discipline",
+    "sourceTree": "Beast Mastery",
+    "status": "active",
+    "aliasOf": null
+  },
+  "hunter:bestial-swiftness": {
+    "classId": "hunter",
+    "sourceName": "Bestial Swiftness",
+    "sourceTree": "Beast Mastery",
+    "status": "active",
+    "aliasOf": null
+  },
+  "hunter:bestial-wrath": {
+    "classId": "hunter",
+    "sourceName": "Bestial Wrath",
+    "sourceTree": "Beast Mastery",
+    "status": "active",
+    "aliasOf": null
+  },
+  "hunter:careful-aim": {
+    "classId": "hunter",
+    "sourceName": "Careful Aim",
+    "sourceTree": "Marksmanship",
+    "status": "active",
+    "aliasOf": null
+  },
+  "hunter:clever-traps": {
+    "classId": "hunter",
+    "sourceName": "Clever Traps",
+    "sourceTree": "Survival",
+    "status": "active",
+    "aliasOf": null
+  },
+  "hunter:counterattack": {
+    "classId": "hunter",
+    "sourceName": "Counterattack",
+    "sourceTree": "Survival",
+    "status": "active",
+    "aliasOf": null
+  },
+  "hunter:deadly-aspects": {
+    "classId": "hunter",
+    "sourceName": "Deadly Aspects",
+    "sourceTree": "Beast Mastery",
+    "status": "active",
+    "aliasOf": null
+  },
+  "hunter:deflection": {
+    "classId": "hunter",
+    "sourceName": "Deflection",
+    "sourceTree": "Survival",
+    "status": "active",
+    "aliasOf": null
+  },
+  "hunter:deterrence": {
+    "classId": "hunter",
+    "sourceName": "Deterrence",
+    "sourceTree": "Survival",
+    "status": "active",
+    "aliasOf": null
+  },
+  "hunter:efficiency": {
+    "classId": "hunter",
+    "sourceName": "Efficiency",
+    "sourceTree": "Marksmanship",
+    "status": "active",
+    "aliasOf": null
+  },
+  "hunter:endurance-training": {
+    "classId": "hunter",
+    "sourceName": "Endurance Training",
+    "sourceTree": "Beast Mastery",
+    "status": "active",
+    "aliasOf": null
+  },
+  "hunter:entrapment": {
+    "classId": "hunter",
+    "sourceName": "Entrapment",
+    "sourceTree": "Survival",
+    "status": "active",
+    "aliasOf": null
+  },
+  "hunter:expose-prey": {
+    "classId": "hunter",
+    "sourceName": "Expose Prey",
+    "sourceTree": "Survival",
+    "status": "active",
+    "aliasOf": null
+  },
+  "hunter:ferocity": {
+    "classId": "hunter",
+    "sourceName": "Ferocity",
+    "sourceTree": "Beast Mastery",
+    "status": "active",
+    "aliasOf": null
+  },
+  "hunter:focused-fire": {
+    "classId": "hunter",
+    "sourceName": "Focused Fire",
+    "sourceTree": "Beast Mastery",
+    "status": "active",
+    "aliasOf": null
+  },
+  "hunter:frenzy": {
+    "classId": "hunter",
+    "sourceName": "Frenzy",
+    "sourceTree": "Beast Mastery",
+    "status": "active",
+    "aliasOf": null
+  },
+  "hunter:hawk-eye": {
+    "classId": "hunter",
+    "sourceName": "Hawk Eye",
+    "sourceTree": "Marksmanship",
+    "status": "active",
+    "aliasOf": null
+  },
+  "hunter:improved-arcane-shot": {
+    "classId": "hunter",
+    "sourceName": "Improved Arcane Shot",
+    "sourceTree": "Marksmanship",
+    "status": "active",
+    "aliasOf": null
+  },
+  "hunter:improved-aspect-of-the-monkey": {
+    "classId": "hunter",
+    "sourceName": "Improved Aspect of the Monkey",
+    "sourceTree": "Beast Mastery",
+    "status": "active",
+    "aliasOf": null
+  },
+  "hunter:improved-concussive-shot": {
+    "classId": "hunter",
+    "sourceName": "Improved Concussive Shot",
+    "sourceTree": "Marksmanship",
+    "status": "active",
+    "aliasOf": null
+  },
+  "hunter:improved-mend-pet": {
+    "classId": "hunter",
+    "sourceName": "Improved Mend Pet",
+    "sourceTree": "Beast Mastery",
+    "status": "active",
+    "aliasOf": null
+  },
+  "hunter:improved-revive-pet": {
+    "classId": "hunter",
+    "sourceName": "Improved Revive Pet",
+    "sourceTree": "Beast Mastery",
+    "status": "active",
+    "aliasOf": null
+  },
+  "hunter:improved-stings": {
+    "classId": "hunter",
+    "sourceName": "Improved Stings",
+    "sourceTree": "Marksmanship",
+    "status": "active",
+    "aliasOf": null
+  },
+  "hunter:improved-tracking": {
+    "classId": "hunter",
+    "sourceName": "Improved Tracking",
+    "sourceTree": "Survival",
+    "status": "active",
+    "aliasOf": null
+  },
+  "hunter:improved-wing-clip": {
+    "classId": "hunter",
+    "sourceName": "Improved Wing Clip",
+    "sourceTree": "Survival",
+    "status": "active",
+    "aliasOf": null
+  },
+  "hunter:intimidation": {
+    "classId": "hunter",
+    "sourceName": "Intimidation",
+    "sourceTree": "Beast Mastery",
+    "status": "active",
+    "aliasOf": null
+  },
+  "hunter:lacerating-strikes": {
+    "classId": "hunter",
+    "sourceName": "Lacerating Strikes",
+    "sourceTree": "Survival",
+    "status": "active",
+    "aliasOf": null
+  },
+  "hunter:lethal-attacks": {
+    "classId": "hunter",
+    "sourceName": "Lethal Attacks",
+    "sourceTree": "Marksmanship",
+    "status": "active",
+    "aliasOf": null
+  },
+  "hunter:lightning-reflexes": {
+    "classId": "hunter",
+    "sourceName": "Lightning Reflexes",
+    "sourceTree": "Survival",
+    "status": "active",
+    "aliasOf": null
+  },
+  "hunter:lone-wolf": {
+    "classId": "hunter",
+    "sourceName": "Lone Wolf",
+    "sourceTree": "Marksmanship",
+    "status": "active",
+    "aliasOf": null
+  },
+  "hunter:mortal-shots": {
+    "classId": "hunter",
+    "sourceName": "Mortal Shots",
+    "sourceTree": "Marksmanship",
+    "status": "active",
+    "aliasOf": null
+  },
+  "hunter:pathfinding": {
+    "classId": "hunter",
+    "sourceName": "Pathfinding",
+    "sourceTree": "Beast Mastery",
+    "status": "active",
+    "aliasOf": null
+  },
+  "hunter:predator-s-edge": {
+    "classId": "hunter",
+    "sourceName": "Predator's Edge",
+    "sourceTree": "Survival",
+    "status": "active",
+    "aliasOf": null
+  },
+  "hunter:ranged-weapon-specialization": {
+    "classId": "hunter",
+    "sourceName": "Ranged Weapon Specialization",
+    "sourceTree": "Marksmanship",
+    "status": "active",
+    "aliasOf": null
+  },
+  "hunter:rapid-killing": {
+    "classId": "hunter",
+    "sourceName": "Rapid Killing",
+    "sourceTree": "Marksmanship",
+    "status": "active",
+    "aliasOf": null
+  },
+  "hunter:rapid-recuperation": {
+    "classId": "hunter",
+    "sourceName": "Rapid Recuperation",
+    "sourceTree": "Marksmanship",
+    "status": "active",
+    "aliasOf": null
+  },
+  "hunter:resourcefulness": {
+    "classId": "hunter",
+    "sourceName": "Resourcefulness",
+    "sourceTree": "Survival",
+    "status": "active",
+    "aliasOf": null
+  },
+  "hunter:savage-strikes": {
+    "classId": "hunter",
+    "sourceName": "Savage Strikes",
+    "sourceTree": "Survival",
+    "status": "active",
+    "aliasOf": null
+  },
+  "hunter:scatter-shot": {
+    "classId": "hunter",
+    "sourceName": "Scatter Shot",
+    "sourceTree": "Marksmanship",
+    "status": "active",
+    "aliasOf": null
+  },
+  "hunter:sniper-shot": {
+    "classId": "hunter",
+    "sourceName": "Sniper Shot",
+    "sourceTree": "Marksmanship",
+    "status": "active",
+    "aliasOf": null
+  },
+  "hunter:spirit-bond": {
+    "classId": "hunter",
+    "sourceName": "Spirit Bond",
+    "sourceTree": "Beast Mastery",
+    "status": "active",
+    "aliasOf": null
+  },
+  "hunter:strider-kick": {
+    "classId": "hunter",
+    "sourceName": "Strider Kick",
+    "sourceTree": "Survival",
+    "status": "active",
+    "aliasOf": null
+  },
+  "hunter:summon-hawk": {
+    "classId": "hunter",
+    "sourceName": "Summon Hawk",
+    "sourceTree": "Beast Mastery",
+    "status": "active",
+    "aliasOf": null
+  },
+  "hunter:surefooted": {
+    "classId": "hunter",
+    "sourceName": "Surefooted",
+    "sourceTree": "Survival",
+    "status": "active",
+    "aliasOf": null
+  },
+  "hunter:survival-tactics": {
+    "classId": "hunter",
+    "sourceName": "Survival Tactics",
+    "sourceTree": "Survival",
+    "status": "active",
+    "aliasOf": null
+  },
+  "hunter:survivalist": {
+    "classId": "hunter",
+    "sourceName": "Survivalist",
+    "sourceTree": "Survival",
+    "status": "active",
+    "aliasOf": null
+  },
+  "hunter:survivalist-s-discipline": {
+    "classId": "hunter",
+    "sourceName": "Survivalist's Discipline",
+    "sourceTree": "Survival",
+    "status": "active",
+    "aliasOf": null
+  },
+  "hunter:trueshot-aura": {
+    "classId": "hunter",
+    "sourceName": "Trueshot Aura",
+    "sourceTree": "Marksmanship",
+    "status": "active",
+    "aliasOf": null
+  },
+  "hunter:unleashed-fury": {
+    "classId": "hunter",
+    "sourceName": "Unleashed Fury",
+    "sourceTree": "Beast Mastery",
+    "status": "active",
+    "aliasOf": null
+  },
+  "mage:arcane-blast": {
+    "classId": "mage",
+    "sourceName": "Arcane Blast",
+    "sourceTree": "Arcane",
+    "status": "active",
+    "aliasOf": null
+  },
+  "mage:arcane-concentration": {
+    "classId": "mage",
+    "sourceName": "Arcane Concentration",
+    "sourceTree": "Arcane",
+    "status": "active",
+    "aliasOf": null
+  },
+  "mage:arcane-focus": {
+    "classId": "mage",
+    "sourceName": "Arcane Focus",
+    "sourceTree": "Arcane",
+    "status": "active",
+    "aliasOf": null
+  },
+  "mage:arcane-geometry": {
+    "classId": "mage",
+    "sourceName": "Arcane Geometry",
+    "sourceTree": "Arcane",
+    "status": "active",
+    "aliasOf": null
+  },
+  "mage:arcane-impact": {
+    "classId": "mage",
+    "sourceName": "Arcane Impact",
+    "sourceTree": "Arcane",
+    "status": "active",
+    "aliasOf": null
+  },
+  "mage:arcane-instability": {
+    "classId": "mage",
+    "sourceName": "Arcane Instability",
+    "sourceTree": "Arcane",
+    "status": "active",
+    "aliasOf": null
+  },
+  "mage:arcane-meditation": {
+    "classId": "mage",
+    "sourceName": "Arcane Meditation",
+    "sourceTree": "Arcane",
+    "status": "active",
+    "aliasOf": null
+  },
+  "mage:arcane-mind": {
+    "classId": "mage",
+    "sourceName": "Arcane Mind",
+    "sourceTree": "Arcane",
+    "status": "active",
+    "aliasOf": null
+  },
+  "mage:arcane-power": {
+    "classId": "mage",
+    "sourceName": "Arcane Power",
+    "sourceTree": "Arcane",
+    "status": "active",
+    "aliasOf": null
+  },
+  "mage:arcane-resilience": {
+    "classId": "mage",
+    "sourceName": "Arcane Resilience",
+    "sourceTree": "Arcane",
+    "status": "active",
+    "aliasOf": null
+  },
+  "mage:arcane-shielding": {
+    "classId": "mage",
+    "sourceName": "Arcane Shielding",
+    "sourceTree": "Arcane",
+    "status": "active",
+    "aliasOf": null
+  },
+  "mage:arcane-subtlety": {
+    "classId": "mage",
+    "sourceName": "Arcane Subtlety",
+    "sourceTree": "Arcane",
+    "status": "active",
+    "aliasOf": null
+  },
+  "mage:arctic-reach": {
+    "classId": "mage",
+    "sourceName": "Arctic Reach",
+    "sourceTree": "Frost",
+    "status": "active",
+    "aliasOf": null
+  },
+  "mage:blast-wave": {
+    "classId": "mage",
+    "sourceName": "Blast Wave",
+    "sourceTree": "Fire",
+    "status": "active",
+    "aliasOf": null
+  },
+  "mage:burning-soul": {
+    "classId": "mage",
+    "sourceName": "Burning Soul",
+    "sourceTree": "Fire",
+    "status": "active",
+    "aliasOf": null
+  },
+  "mage:cold-snap": {
+    "classId": "mage",
+    "sourceName": "Cold Snap",
+    "sourceTree": "Frost",
+    "status": "active",
+    "aliasOf": null
+  },
+  "mage:combustion": {
+    "classId": "mage",
+    "sourceName": "Combustion",
+    "sourceTree": "Fire",
+    "status": "active",
+    "aliasOf": null
+  },
+  "mage:critical-mass": {
+    "classId": "mage",
+    "sourceName": "Critical Mass",
+    "sourceTree": "Fire",
+    "status": "active",
+    "aliasOf": null
+  },
+  "mage:elemental-precision": {
+    "classId": "mage",
+    "sourceName": "Elemental Precision",
+    "sourceTree": "Frost",
+    "status": "active",
+    "aliasOf": null
+  },
+  "mage:fingers-of-frost": {
+    "classId": "mage",
+    "sourceName": "Fingers of Frost",
+    "sourceTree": "Frost",
+    "status": "active",
+    "aliasOf": null
+  },
+  "mage:fire-power": {
+    "classId": "mage",
+    "sourceName": "Fire Power",
+    "sourceTree": "Fire",
+    "status": "active",
+    "aliasOf": null
+  },
+  "mage:flame-throwing": {
+    "classId": "mage",
+    "sourceName": "Flame Throwing",
+    "sourceTree": "Fire",
+    "status": "active",
+    "aliasOf": null
+  },
+  "mage:frost-channeling": {
+    "classId": "mage",
+    "sourceName": "Frost Channeling",
+    "sourceTree": "Frost",
+    "status": "active",
+    "aliasOf": null
+  },
+  "mage:frost-warding": {
+    "classId": "mage",
+    "sourceName": "Frost Warding",
+    "sourceTree": "Frost",
+    "status": "active",
+    "aliasOf": null
+  },
+  "mage:frostbite": {
+    "classId": "mage",
+    "sourceName": "Frostbite",
+    "sourceTree": "Frost",
+    "status": "active",
+    "aliasOf": null
+  },
+  "mage:heating-up": {
+    "classId": "mage",
+    "sourceName": "Heating Up",
+    "sourceTree": "Fire",
+    "status": "active",
+    "aliasOf": null
+  },
+  "mage:hot-streak": {
+    "classId": "mage",
+    "sourceName": "Hot Streak",
+    "sourceTree": "Fire",
+    "status": "renamed",
+    "aliasOf": "mage:heating-up"
+  },
+  "mage:ice-barrier": {
+    "classId": "mage",
+    "sourceName": "Ice Barrier",
+    "sourceTree": "Frost",
+    "status": "active",
+    "aliasOf": null
+  },
+  "mage:ice-block": {
+    "classId": "mage",
+    "sourceName": "Ice Block",
+    "sourceTree": "Frost",
+    "status": "active",
+    "aliasOf": null
+  },
+  "mage:ice-lance": {
+    "classId": "mage",
+    "sourceName": "Ice Lance",
+    "sourceTree": "Frost",
+    "status": "active",
+    "aliasOf": null
+  },
+  "mage:ice-shards": {
+    "classId": "mage",
+    "sourceName": "Ice Shards",
+    "sourceTree": "Frost",
+    "status": "active",
+    "aliasOf": null
+  },
+  "mage:ignite": {
+    "classId": "mage",
+    "sourceName": "Ignite",
+    "sourceTree": "Fire",
+    "status": "active",
+    "aliasOf": null
+  },
+  "mage:impact": {
+    "classId": "mage",
+    "sourceName": "Impact",
+    "sourceTree": "Fire",
+    "status": "active",
+    "aliasOf": null
+  },
+  "mage:improved-blizzard": {
+    "classId": "mage",
+    "sourceName": "Improved Blizzard",
+    "sourceTree": "Frost",
+    "status": "active",
+    "aliasOf": null
+  },
+  "mage:improved-channeling": {
+    "classId": "mage",
+    "sourceName": "Improved Channeling",
+    "sourceTree": "Arcane",
+    "status": "active",
+    "aliasOf": null
+  },
+  "mage:improved-cone-of-cold": {
+    "classId": "mage",
+    "sourceName": "Improved Cone of Cold",
+    "sourceTree": "Frost",
+    "status": "active",
+    "aliasOf": null
+  },
+  "mage:improved-counterspell": {
+    "classId": "mage",
+    "sourceName": "Improved Counterspell",
+    "sourceTree": "Arcane",
+    "status": "active",
+    "aliasOf": null
+  },
+  "mage:improved-fire-ward": {
+    "classId": "mage",
+    "sourceName": "Improved Fire Ward",
+    "sourceTree": "Fire",
+    "status": "active",
+    "aliasOf": null
+  },
+  "mage:improved-fireball": {
+    "classId": "mage",
+    "sourceName": "Improved Fireball",
+    "sourceTree": "Fire",
+    "status": "active",
+    "aliasOf": null
+  },
+  "mage:improved-flamestrike": {
+    "classId": "mage",
+    "sourceName": "Improved Flamestrike",
+    "sourceTree": "Fire",
+    "status": "active",
+    "aliasOf": null
+  },
+  "mage:improved-frost-nova": {
+    "classId": "mage",
+    "sourceName": "Improved Frost Nova",
+    "sourceTree": "Frost",
+    "status": "active",
+    "aliasOf": null
+  },
+  "mage:improved-frostbolt": {
+    "classId": "mage",
+    "sourceName": "Improved Frostbolt",
+    "sourceTree": "Frost",
+    "status": "active",
+    "aliasOf": null
+  },
+  "mage:improved-scorch": {
+    "classId": "mage",
+    "sourceName": "Improved Scorch",
+    "sourceTree": "Fire",
+    "status": "active",
+    "aliasOf": null
+  },
+  "mage:incineration": {
+    "classId": "mage",
+    "sourceName": "Incineration",
+    "sourceTree": "Fire",
+    "status": "active",
+    "aliasOf": null
+  },
+  "mage:magic-absorption": {
+    "classId": "mage",
+    "sourceName": "Magic Absorption",
+    "sourceTree": "Arcane",
+    "status": "active",
+    "aliasOf": null
+  },
+  "mage:master-of-elements": {
+    "classId": "mage",
+    "sourceName": "Master of Elements",
+    "sourceTree": "Fire",
+    "status": "active",
+    "aliasOf": null
+  },
+  "mage:missile-barrage": {
+    "classId": "mage",
+    "sourceName": "Missile Barrage",
+    "sourceTree": "Arcane",
+    "status": "active",
+    "aliasOf": null
+  },
+  "mage:permafrost": {
+    "classId": "mage",
+    "sourceName": "Permafrost",
+    "sourceTree": "Frost",
+    "status": "active",
+    "aliasOf": null
+  },
+  "mage:piercing-ice": {
+    "classId": "mage",
+    "sourceName": "Piercing Ice",
+    "sourceTree": "Frost",
+    "status": "active",
+    "aliasOf": null
+  },
+  "mage:presence-of-mind": {
+    "classId": "mage",
+    "sourceName": "Presence of Mind",
+    "sourceTree": "Arcane",
+    "status": "active",
+    "aliasOf": null
+  },
+  "mage:pyroblast": {
+    "classId": "mage",
+    "sourceName": "Pyroblast",
+    "sourceTree": "Fire",
+    "status": "active",
+    "aliasOf": null
+  },
+  "mage:shatter": {
+    "classId": "mage",
+    "sourceName": "Shatter",
+    "sourceTree": "Frost",
+    "status": "active",
+    "aliasOf": null
+  },
+  "mage:wake-of-fire": {
+    "classId": "mage",
+    "sourceName": "Wake of Fire",
+    "sourceTree": "Fire",
+    "status": "active",
+    "aliasOf": null
+  },
+  "mage:wand-specialization": {
+    "classId": "mage",
+    "sourceName": "Wand Specialization",
+    "sourceTree": "Arcane",
+    "status": "active",
+    "aliasOf": null
+  },
+  "mage:winter-s-chill": {
+    "classId": "mage",
+    "sourceName": "Winter's Chill",
+    "sourceTree": "Frost",
+    "status": "active",
+    "aliasOf": null
+  },
+  "paladin:anticipation": {
+    "classId": "paladin",
+    "sourceName": "Anticipation",
+    "sourceTree": "Protection",
+    "status": "active",
+    "aliasOf": null
+  },
+  "paladin:benediction": {
+    "classId": "paladin",
+    "sourceName": "Benediction",
+    "sourceTree": "Retribution",
+    "status": "active",
+    "aliasOf": null
+  },
+  "paladin:champion-of-the-light": {
+    "classId": "paladin",
+    "sourceName": "Champion of the Light",
+    "sourceTree": "Retribution",
+    "status": "active",
+    "aliasOf": null
+  },
+  "paladin:consecrated-ground": {
+    "classId": "paladin",
+    "sourceName": "Consecrated Ground",
+    "sourceTree": "Holy",
+    "status": "active",
+    "aliasOf": null
+  },
+  "paladin:conviction": {
+    "classId": "paladin",
+    "sourceName": "Conviction",
+    "sourceTree": "Retribution",
+    "status": "active",
+    "aliasOf": null
+  },
+  "paladin:crusade": {
+    "classId": "paladin",
+    "sourceName": "Crusade",
+    "sourceTree": "Retribution",
+    "status": "removed",
+    "aliasOf": null
+  },
+  "paladin:deflection": {
+    "classId": "paladin",
+    "sourceName": "Deflection",
+    "sourceTree": "Retribution",
+    "status": "active",
+    "aliasOf": null
+  },
+  "paladin:divine-favor": {
+    "classId": "paladin",
+    "sourceName": "Divine Favor",
+    "sourceTree": "Holy",
+    "status": "active",
+    "aliasOf": null
+  },
+  "paladin:divine-intellect": {
+    "classId": "paladin",
+    "sourceName": "Divine Intellect",
+    "sourceTree": "Holy",
+    "status": "active",
+    "aliasOf": null
+  },
+  "paladin:divine-precision": {
+    "classId": "paladin",
+    "sourceName": "Divine Precision",
+    "sourceTree": "Holy",
+    "status": "active",
+    "aliasOf": null
+  },
+  "paladin:divine-strength": {
+    "classId": "paladin",
+    "sourceName": "Divine Strength",
+    "sourceTree": "Holy",
+    "status": "active",
+    "aliasOf": null
+  },
+  "paladin:eye-for-an-eye": {
+    "classId": "paladin",
+    "sourceName": "Eye for an Eye",
+    "sourceTree": "Retribution",
+    "status": "active",
+    "aliasOf": null
+  },
+  "paladin:guardian-s-favor": {
+    "classId": "paladin",
+    "sourceName": "Guardian's Favor",
+    "sourceTree": "Protection",
+    "status": "active",
+    "aliasOf": null
+  },
+  "paladin:healing-light": {
+    "classId": "paladin",
+    "sourceName": "Healing Light",
+    "sourceTree": "Holy",
+    "status": "active",
+    "aliasOf": null
+  },
+  "paladin:holy-conduit": {
+    "classId": "paladin",
+    "sourceName": "Holy Conduit",
+    "sourceTree": "Retribution",
+    "status": "active",
+    "aliasOf": null
+  },
+  "paladin:holy-power": {
+    "classId": "paladin",
+    "sourceName": "Holy Power",
+    "sourceTree": "Holy",
+    "status": "active",
+    "aliasOf": null
+  },
+  "paladin:holy-shield": {
+    "classId": "paladin",
+    "sourceName": "Holy Shield",
+    "sourceTree": "Protection",
+    "status": "active",
+    "aliasOf": null
+  },
+  "paladin:holy-shock": {
+    "classId": "paladin",
+    "sourceName": "Holy Shock",
+    "sourceTree": "Holy",
+    "status": "active",
+    "aliasOf": null
+  },
+  "paladin:illumination": {
+    "classId": "paladin",
+    "sourceName": "Illumination",
+    "sourceTree": "Holy",
+    "status": "active",
+    "aliasOf": null
+  },
+  "paladin:improved-hammer-of-justice": {
+    "classId": "paladin",
+    "sourceName": "Improved Hammer of Justice",
+    "sourceTree": "Protection",
+    "status": "active",
+    "aliasOf": null
+  },
+  "paladin:improved-holy-strike": {
+    "classId": "paladin",
+    "sourceName": "Improved Holy Strike",
+    "sourceTree": "Holy",
+    "status": "removed",
+    "aliasOf": null
+  },
+  "paladin:improved-judgement": {
+    "classId": "paladin",
+    "sourceName": "Improved Judgement",
+    "sourceTree": "Retribution",
+    "status": "active",
+    "aliasOf": null
+  },
+  "paladin:improved-righteous-fury": {
+    "classId": "paladin",
+    "sourceName": "Improved Righteous Fury",
+    "sourceTree": "Protection",
+    "status": "active",
+    "aliasOf": null
+  },
+  "paladin:improved-seal-of-fury": {
+    "classId": "paladin",
+    "sourceName": "Improved Seal of Fury",
+    "sourceTree": "Protection",
+    "status": "active",
+    "aliasOf": null
+  },
+  "paladin:improved-seals": {
+    "classId": "paladin",
+    "sourceName": "Improved Seals",
+    "sourceTree": "Holy",
+    "status": "active",
+    "aliasOf": null
+  },
+  "paladin:infusion-of-light": {
+    "classId": "paladin",
+    "sourceName": "Infusion of Light",
+    "sourceTree": "Holy",
+    "status": "active",
+    "aliasOf": null
+  },
+  "paladin:instrument-of-law": {
+    "classId": "paladin",
+    "sourceName": "Instrument of Law",
+    "sourceTree": "Retribution",
+    "status": "active",
+    "aliasOf": null
+  },
+  "paladin:iron-creed": {
+    "classId": "paladin",
+    "sourceName": "Iron Creed",
+    "sourceTree": "Protection",
+    "status": "active",
+    "aliasOf": null
+  },
+  "paladin:light-s-vigil": {
+    "classId": "paladin",
+    "sourceName": "Light's Vigil",
+    "sourceTree": "Holy",
+    "status": "active",
+    "aliasOf": null
+  },
+  "paladin:one-handed-weapon-specialization": {
+    "classId": "paladin",
+    "sourceName": "One-Handed Weapon Specialization",
+    "sourceTree": "Protection",
+    "status": "active",
+    "aliasOf": null
+  },
+  "paladin:precision": {
+    "classId": "paladin",
+    "sourceName": "Precision",
+    "sourceTree": "Protection",
+    "status": "active",
+    "aliasOf": null
+  },
+  "paladin:purifying-power": {
+    "classId": "paladin",
+    "sourceName": "Purifying Power",
+    "sourceTree": "Holy",
+    "status": "active",
+    "aliasOf": null
+  },
+  "paladin:pursuit-of-justice": {
+    "classId": "paladin",
+    "sourceName": "Pursuit of Justice",
+    "sourceTree": "Retribution",
+    "status": "active",
+    "aliasOf": null
+  },
+  "paladin:reckoning": {
+    "classId": "paladin",
+    "sourceName": "Reckoning",
+    "sourceTree": "Protection",
+    "status": "active",
+    "aliasOf": null
+  },
+  "paladin:redoubt": {
+    "classId": "paladin",
+    "sourceName": "Redoubt",
+    "sourceTree": "Protection",
+    "status": "active",
+    "aliasOf": null
+  },
+  "paladin:repentance": {
+    "classId": "paladin",
+    "sourceName": "Repentance",
+    "sourceTree": "Retribution",
+    "status": "active",
+    "aliasOf": null
+  },
+  "paladin:reverence": {
+    "classId": "paladin",
+    "sourceName": "Reverence",
+    "sourceTree": "Holy",
+    "status": "active",
+    "aliasOf": null
+  },
+  "paladin:sacred-arbiter": {
+    "classId": "paladin",
+    "sourceName": "Sacred Arbiter",
+    "sourceTree": "Retribution",
+    "status": "active",
+    "aliasOf": null
+  },
+  "paladin:sacred-duty": {
+    "classId": "paladin",
+    "sourceName": "Sacred Duty",
+    "sourceTree": "Protection",
+    "status": "active",
+    "aliasOf": null
+  },
+  "paladin:sanctified-judgement": {
+    "classId": "paladin",
+    "sourceName": "Sanctified Judgement",
+    "sourceTree": "Retribution",
+    "status": "active",
+    "aliasOf": null
+  },
+  "paladin:seal-of-command": {
+    "classId": "paladin",
+    "sourceName": "Seal of Command",
+    "sourceTree": "Retribution",
+    "status": "active",
+    "aliasOf": null
+  },
+  "paladin:shield-specialization": {
+    "classId": "paladin",
+    "sourceName": "Shield Specialization",
+    "sourceTree": "Protection",
+    "status": "active",
+    "aliasOf": null
+  },
+  "paladin:spiritual-focus": {
+    "classId": "paladin",
+    "sourceName": "Spiritual Focus",
+    "sourceTree": "Holy",
+    "status": "active",
+    "aliasOf": null
+  },
+  "paladin:swift-judgement": {
+    "classId": "paladin",
+    "sourceName": "Swift Judgement",
+    "sourceTree": "Protection",
+    "status": "active",
+    "aliasOf": null
+  },
+  "paladin:templar-s-bulwark": {
+    "classId": "paladin",
+    "sourceName": "Templar's Bulwark",
+    "sourceTree": "Protection",
+    "status": "active",
+    "aliasOf": null
+  },
+  "paladin:toughness": {
+    "classId": "paladin",
+    "sourceName": "Toughness",
+    "sourceTree": "Protection",
+    "status": "active",
+    "aliasOf": null
+  },
+  "paladin:twist-of-light": {
+    "classId": "paladin",
+    "sourceName": "Twist of Light",
+    "sourceTree": "Retribution",
+    "status": "active",
+    "aliasOf": null
+  },
+  "paladin:two-handed-weapon-specialization": {
+    "classId": "paladin",
+    "sourceName": "Two-Handed Weapon Specialization",
+    "sourceTree": "Retribution",
+    "status": "active",
+    "aliasOf": null
+  },
+  "paladin:unyielding-faith": {
+    "classId": "paladin",
+    "sourceName": "Unyielding Faith",
+    "sourceTree": "Holy",
+    "status": "active",
+    "aliasOf": null
+  },
+  "paladin:vengeance": {
+    "classId": "paladin",
+    "sourceName": "Vengeance",
+    "sourceTree": "Retribution",
+    "status": "active",
+    "aliasOf": null
+  },
+  "paladin:vindication": {
+    "classId": "paladin",
+    "sourceName": "Vindication",
+    "sourceTree": "Retribution",
+    "status": "active",
+    "aliasOf": null
+  },
+  "paladin:voice-of-truth": {
+    "classId": "paladin",
+    "sourceName": "Voice of Truth",
+    "sourceTree": "Holy",
+    "status": "active",
+    "aliasOf": null
+  },
+  "priest:binding-heal": {
+    "classId": "priest",
+    "sourceName": "Binding Heal",
+    "sourceTree": "Holy",
+    "status": "active",
+    "aliasOf": null
+  },
+  "priest:blackout": {
+    "classId": "priest",
+    "sourceName": "Blackout",
+    "sourceTree": "Shadow",
+    "status": "active",
+    "aliasOf": null
+  },
+  "priest:blessed-recovery": {
+    "classId": "priest",
+    "sourceName": "Blessed Recovery",
+    "sourceTree": "Holy",
+    "status": "active",
+    "aliasOf": null
+  },
+  "priest:darkness": {
+    "classId": "priest",
+    "sourceName": "Darkness",
+    "sourceTree": "Shadow",
+    "status": "active",
+    "aliasOf": null
+  },
+  "priest:devouring-contagion": {
+    "classId": "priest",
+    "sourceName": "Devouring Contagion",
+    "sourceTree": "Shadow",
+    "status": "active",
+    "aliasOf": null
+  },
+  "priest:divine-aegis": {
+    "classId": "priest",
+    "sourceName": "Divine Aegis",
+    "sourceTree": "Discipline",
+    "status": "active",
+    "aliasOf": null
+  },
+  "priest:divine-fury": {
+    "classId": "priest",
+    "sourceName": "Divine Fury",
+    "sourceTree": "Holy",
+    "status": "active",
+    "aliasOf": null
+  },
+  "priest:early-demise": {
+    "classId": "priest",
+    "sourceName": "Early Demise",
+    "sourceTree": "Shadow",
+    "status": "active",
+    "aliasOf": null
+  },
+  "priest:holy-nova": {
+    "classId": "priest",
+    "sourceName": "Holy Nova",
+    "sourceTree": "Holy",
+    "status": "active",
+    "aliasOf": null
+  },
+  "priest:holy-precision": {
+    "classId": "priest",
+    "sourceName": "Holy Precision",
+    "sourceTree": "Discipline",
+    "status": "active",
+    "aliasOf": null
+  },
+  "priest:holy-reach": {
+    "classId": "priest",
+    "sourceName": "Holy Reach",
+    "sourceTree": "Holy",
+    "status": "active",
+    "aliasOf": null
+  },
+  "priest:holy-specialization": {
+    "classId": "priest",
+    "sourceName": "Holy Specialization",
+    "sourceTree": "Holy",
+    "status": "active",
+    "aliasOf": null
+  },
+  "priest:improved-fade": {
+    "classId": "priest",
+    "sourceName": "Improved Fade",
+    "sourceTree": "Shadow",
+    "status": "active",
+    "aliasOf": null
+  },
+  "priest:improved-healing": {
+    "classId": "priest",
+    "sourceName": "Improved Healing",
+    "sourceTree": "Holy",
+    "status": "active",
+    "aliasOf": null
+  },
+  "priest:improved-inner-fire": {
+    "classId": "priest",
+    "sourceName": "Improved Inner Fire",
+    "sourceTree": "Discipline",
+    "status": "active",
+    "aliasOf": null
+  },
+  "priest:improved-mana-burn": {
+    "classId": "priest",
+    "sourceName": "Improved Mana Burn",
+    "sourceTree": "Discipline",
+    "status": "active",
+    "aliasOf": null
+  },
+  "priest:improved-mind-blast": {
+    "classId": "priest",
+    "sourceName": "Improved Mind Blast",
+    "sourceTree": "Shadow",
+    "status": "active",
+    "aliasOf": null
+  },
+  "priest:improved-mind-flay": {
+    "classId": "priest",
+    "sourceName": "Improved Mind Flay",
+    "sourceTree": "Shadow",
+    "status": "active",
+    "aliasOf": null
+  },
+  "priest:improved-power-word-shield": {
+    "classId": "priest",
+    "sourceName": "Improved Power Word: Shield",
+    "sourceTree": "Discipline",
+    "status": "active",
+    "aliasOf": null
+  },
+  "priest:improved-psychic-scream": {
+    "classId": "priest",
+    "sourceName": "Improved Psychic Scream",
+    "sourceTree": "Shadow",
+    "status": "active",
+    "aliasOf": null
+  },
+  "priest:improved-renew": {
+    "classId": "priest",
+    "sourceName": "Improved Renew",
+    "sourceTree": "Holy",
+    "status": "active",
+    "aliasOf": null
+  },
+  "priest:improved-shadow-word-pain": {
+    "classId": "priest",
+    "sourceName": "Improved Shadow Word: Pain",
+    "sourceTree": "Shadow",
+    "status": "active",
+    "aliasOf": null
+  },
+  "priest:inner-focus": {
+    "classId": "priest",
+    "sourceName": "Inner Focus",
+    "sourceTree": "Discipline",
+    "status": "active",
+    "aliasOf": null
+  },
+  "priest:inspiration": {
+    "classId": "priest",
+    "sourceName": "Inspiration",
+    "sourceTree": "Holy",
+    "status": "active",
+    "aliasOf": null
+  },
+  "priest:litany-of-light": {
+    "classId": "priest",
+    "sourceName": "Litany of Light",
+    "sourceTree": "Holy",
+    "status": "active",
+    "aliasOf": null
+  },
+  "priest:martyrdom": {
+    "classId": "priest",
+    "sourceName": "Martyrdom",
+    "sourceTree": "Discipline",
+    "status": "active",
+    "aliasOf": null
+  },
+  "priest:meditation": {
+    "classId": "priest",
+    "sourceName": "Meditation",
+    "sourceTree": "Discipline",
+    "status": "active",
+    "aliasOf": null
+  },
+  "priest:mental-agility": {
+    "classId": "priest",
+    "sourceName": "Mental Agility",
+    "sourceTree": "Discipline",
+    "status": "active",
+    "aliasOf": null
+  },
+  "priest:mental-strength": {
+    "classId": "priest",
+    "sourceName": "Mental Strength",
+    "sourceTree": "Discipline",
+    "status": "active",
+    "aliasOf": null
+  },
+  "priest:mind-flay": {
+    "classId": "priest",
+    "sourceName": "Mind Flay",
+    "sourceTree": "Shadow",
+    "status": "active",
+    "aliasOf": null
+  },
+  "priest:penance": {
+    "classId": "priest",
+    "sourceName": "Penance",
+    "sourceTree": "Discipline",
+    "status": "active",
+    "aliasOf": null
+  },
+  "priest:power-in-light": {
+    "classId": "priest",
+    "sourceName": "Power in Light",
+    "sourceTree": "Discipline",
+    "status": "active",
+    "aliasOf": null
+  },
+  "priest:power-infusion": {
+    "classId": "priest",
+    "sourceName": "Power Infusion",
+    "sourceTree": "Discipline",
+    "status": "active",
+    "aliasOf": null
+  },
+  "priest:prayer-of-mending": {
+    "classId": "priest",
+    "sourceName": "Prayer of Mending",
+    "sourceTree": "Holy",
+    "status": "active",
+    "aliasOf": null
+  },
+  "priest:renewed-hope": {
+    "classId": "priest",
+    "sourceName": "Renewed Hope",
+    "sourceTree": "Discipline",
+    "status": "active",
+    "aliasOf": null
+  },
+  "priest:searing-light": {
+    "classId": "priest",
+    "sourceName": "Searing Light",
+    "sourceTree": "Holy",
+    "status": "active",
+    "aliasOf": null
+  },
+  "priest:shadow-affinity": {
+    "classId": "priest",
+    "sourceName": "Shadow Affinity",
+    "sourceTree": "Shadow",
+    "status": "active",
+    "aliasOf": null
+  },
+  "priest:shadow-focus": {
+    "classId": "priest",
+    "sourceName": "Shadow Focus",
+    "sourceTree": "Shadow",
+    "status": "active",
+    "aliasOf": null
+  },
+  "priest:shadow-reach": {
+    "classId": "priest",
+    "sourceName": "Shadow Reach",
+    "sourceTree": "Shadow",
+    "status": "active",
+    "aliasOf": null
+  },
+  "priest:shadow-weaving": {
+    "classId": "priest",
+    "sourceName": "Shadow Weaving",
+    "sourceTree": "Shadow",
+    "status": "active",
+    "aliasOf": null
+  },
+  "priest:shadowform": {
+    "classId": "priest",
+    "sourceName": "Shadowform",
+    "sourceTree": "Shadow",
+    "status": "active",
+    "aliasOf": null
+  },
+  "priest:silence": {
+    "classId": "priest",
+    "sourceName": "Silence",
+    "sourceTree": "Shadow",
+    "status": "active",
+    "aliasOf": null
+  },
+  "priest:silent-resolve": {
+    "classId": "priest",
+    "sourceName": "Silent Resolve",
+    "sourceTree": "Discipline",
+    "status": "active",
+    "aliasOf": null
+  },
+  "priest:soul-warding": {
+    "classId": "priest",
+    "sourceName": "Soul Warding",
+    "sourceTree": "Discipline",
+    "status": "active",
+    "aliasOf": null
+  },
+  "priest:spell-warding": {
+    "classId": "priest",
+    "sourceName": "Spell Warding",
+    "sourceTree": "Holy",
+    "status": "active",
+    "aliasOf": null
+  },
+  "priest:spirit-of-redemption": {
+    "classId": "priest",
+    "sourceName": "Spirit of Redemption",
+    "sourceTree": "Holy",
+    "status": "active",
+    "aliasOf": null
+  },
+  "priest:spirit-tap": {
+    "classId": "priest",
+    "sourceName": "Spirit Tap",
+    "sourceTree": "Shadow",
+    "status": "active",
+    "aliasOf": null
+  },
+  "priest:spiritual-guidance": {
+    "classId": "priest",
+    "sourceName": "Spiritual Guidance",
+    "sourceTree": "Holy",
+    "status": "active",
+    "aliasOf": null
+  },
+  "priest:spiritual-healing": {
+    "classId": "priest",
+    "sourceName": "Spiritual Healing",
+    "sourceTree": "Holy",
+    "status": "active",
+    "aliasOf": null
+  },
+  "priest:twilight-focus": {
+    "classId": "priest",
+    "sourceName": "Twilight Focus",
+    "sourceTree": "Holy",
+    "status": "active",
+    "aliasOf": null
+  },
+  "priest:twin-disciplines": {
+    "classId": "priest",
+    "sourceName": "Twin Disciplines",
+    "sourceTree": "Discipline",
+    "status": "active",
+    "aliasOf": null
+  },
+  "priest:vampiric-embrace": {
+    "classId": "priest",
+    "sourceName": "Vampiric Embrace",
+    "sourceTree": "Shadow",
+    "status": "active",
+    "aliasOf": null
+  },
+  "priest:wand-specialization": {
+    "classId": "priest",
+    "sourceName": "Wand Specialization",
+    "sourceTree": "Discipline",
+    "status": "active",
+    "aliasOf": null
+  },
+  "rogue:adrenaline-rush": {
+    "classId": "rogue",
+    "sourceName": "Adrenaline Rush",
+    "sourceTree": "Combat",
+    "status": "active",
+    "aliasOf": null
+  },
+  "rogue:aggression": {
+    "classId": "rogue",
+    "sourceName": "Aggression",
+    "sourceTree": "Combat",
+    "status": "active",
+    "aliasOf": null
+  },
+  "rogue:blade-flurry": {
+    "classId": "rogue",
+    "sourceName": "Blade Flurry",
+    "sourceTree": "Combat",
+    "status": "active",
+    "aliasOf": null
+  },
+  "rogue:camouflage": {
+    "classId": "rogue",
+    "sourceName": "Camouflage",
+    "sourceTree": "Subtlety",
+    "status": "active",
+    "aliasOf": null
+  },
+  "rogue:cold-blood": {
+    "classId": "rogue",
+    "sourceName": "Cold Blood",
+    "sourceTree": "Assassination",
+    "status": "active",
+    "aliasOf": null
+  },
+  "rogue:cutthroat": {
+    "classId": "rogue",
+    "sourceName": "Cutthroat",
+    "sourceTree": "Subtlety",
+    "status": "active",
+    "aliasOf": null
+  },
+  "rogue:deflection": {
+    "classId": "rogue",
+    "sourceName": "Deflection",
+    "sourceTree": "Combat",
+    "status": "active",
+    "aliasOf": null
+  },
+  "rogue:dirty-deeds": {
+    "classId": "rogue",
+    "sourceName": "Dirty Deeds",
+    "sourceTree": "Subtlety",
+    "status": "active",
+    "aliasOf": null
+  },
+  "rogue:dirty-tricks": {
+    "classId": "rogue",
+    "sourceName": "Dirty Tricks",
+    "sourceTree": "Subtlety",
+    "status": "active",
+    "aliasOf": null
+  },
+  "rogue:dual-wield-specialization": {
+    "classId": "rogue",
+    "sourceName": "Dual Wield Specialization",
+    "sourceTree": "Combat",
+    "status": "active",
+    "aliasOf": null
+  },
+  "rogue:elusiveness": {
+    "classId": "rogue",
+    "sourceName": "Elusiveness",
+    "sourceTree": "Subtlety",
+    "status": "active",
+    "aliasOf": null
+  },
+  "rogue:endurance": {
+    "classId": "rogue",
+    "sourceName": "Endurance",
+    "sourceTree": "Combat",
+    "status": "active",
+    "aliasOf": null
+  },
+  "rogue:flawless-execution": {
+    "classId": "rogue",
+    "sourceName": "Flawless Execution",
+    "sourceTree": "Combat",
+    "status": "active",
+    "aliasOf": null
+  },
+  "rogue:ghostly-strike": {
+    "classId": "rogue",
+    "sourceName": "Ghostly Strike",
+    "sourceTree": "Subtlety",
+    "status": "active",
+    "aliasOf": null
+  },
+  "rogue:hack-and-slash": {
+    "classId": "rogue",
+    "sourceName": "Hack and Slash",
+    "sourceTree": "Combat",
+    "status": "active",
+    "aliasOf": null
+  },
+  "rogue:heightened-senses": {
+    "classId": "rogue",
+    "sourceName": "Heightened Senses",
+    "sourceTree": "Subtlety",
+    "status": "active",
+    "aliasOf": null
+  },
+  "rogue:hemorrhage": {
+    "classId": "rogue",
+    "sourceName": "Hemorrhage",
+    "sourceTree": "Subtlety",
+    "status": "active",
+    "aliasOf": null
+  },
+  "rogue:improved-ambush": {
+    "classId": "rogue",
+    "sourceName": "Improved Ambush",
+    "sourceTree": "Subtlety",
+    "status": "active",
+    "aliasOf": null
+  },
+  "rogue:improved-distract": {
+    "classId": "rogue",
+    "sourceName": "Improved Distract",
+    "sourceTree": "Subtlety",
+    "status": "active",
+    "aliasOf": null
+  },
+  "rogue:improved-eviscerate": {
+    "classId": "rogue",
+    "sourceName": "Improved Eviscerate",
+    "sourceTree": "Combat",
+    "status": "active",
+    "aliasOf": null
+  },
+  "rogue:improved-expose-armor": {
+    "classId": "rogue",
+    "sourceName": "Improved Expose Armor",
+    "sourceTree": "Assassination",
+    "status": "active",
+    "aliasOf": null
+  },
+  "rogue:improved-gouge": {
+    "classId": "rogue",
+    "sourceName": "Improved Gouge",
+    "sourceTree": "Assassination",
+    "status": "active",
+    "aliasOf": null
+  },
+  "rogue:improved-kick": {
+    "classId": "rogue",
+    "sourceName": "Improved Kick",
+    "sourceTree": "Combat",
+    "status": "active",
+    "aliasOf": null
+  },
+  "rogue:improved-kidney-shot": {
+    "classId": "rogue",
+    "sourceName": "Improved Kidney Shot",
+    "sourceTree": "Assassination",
+    "status": "active",
+    "aliasOf": null
+  },
+  "rogue:improved-poisons": {
+    "classId": "rogue",
+    "sourceName": "Improved Poisons",
+    "sourceTree": "Assassination",
+    "status": "active",
+    "aliasOf": null
+  },
+  "rogue:improved-sinister-strike": {
+    "classId": "rogue",
+    "sourceName": "Improved Sinister Strike",
+    "sourceTree": "Combat",
+    "status": "active",
+    "aliasOf": null
+  },
+  "rogue:improved-slice-and-dice": {
+    "classId": "rogue",
+    "sourceName": "Improved Slice and Dice",
+    "sourceTree": "Assassination",
+    "status": "active",
+    "aliasOf": null
+  },
+  "rogue:improved-sprint": {
+    "classId": "rogue",
+    "sourceName": "Improved Sprint",
+    "sourceTree": "Combat",
+    "status": "active",
+    "aliasOf": null
+  },
+  "rogue:initiative": {
+    "classId": "rogue",
+    "sourceName": "Initiative",
+    "sourceTree": "Subtlety",
+    "status": "active",
+    "aliasOf": null
+  },
+  "rogue:lethality": {
+    "classId": "rogue",
+    "sourceName": "Lethality",
+    "sourceTree": "Assassination",
+    "status": "active",
+    "aliasOf": null
+  },
+  "rogue:lightning-reflexes": {
+    "classId": "rogue",
+    "sourceName": "Lightning Reflexes",
+    "sourceTree": "Combat",
+    "status": "active",
+    "aliasOf": null
+  },
+  "rogue:malice": {
+    "classId": "rogue",
+    "sourceName": "Malice",
+    "sourceTree": "Assassination",
+    "status": "active",
+    "aliasOf": null
+  },
+  "rogue:master-of-deception": {
+    "classId": "rogue",
+    "sourceName": "Master of Deception",
+    "sourceTree": "Subtlety",
+    "status": "active",
+    "aliasOf": null
+  },
+  "rogue:murder": {
+    "classId": "rogue",
+    "sourceName": "Murder",
+    "sourceTree": "Assassination",
+    "status": "active",
+    "aliasOf": null
+  },
+  "rogue:mutilate": {
+    "classId": "rogue",
+    "sourceName": "Mutilate",
+    "sourceTree": "Assassination",
+    "status": "active",
+    "aliasOf": null
+  },
+  "rogue:opportunity": {
+    "classId": "rogue",
+    "sourceName": "Opportunity",
+    "sourceTree": "Subtlety",
+    "status": "active",
+    "aliasOf": null
+  },
+  "rogue:precision": {
+    "classId": "rogue",
+    "sourceName": "Precision",
+    "sourceTree": "Combat",
+    "status": "active",
+    "aliasOf": null
+  },
+  "rogue:premeditation": {
+    "classId": "rogue",
+    "sourceName": "Premeditation",
+    "sourceTree": "Subtlety",
+    "status": "active",
+    "aliasOf": null
+  },
+  "rogue:preparation": {
+    "classId": "rogue",
+    "sourceName": "Preparation",
+    "sourceTree": "Subtlety",
+    "status": "active",
+    "aliasOf": null
+  },
+  "rogue:puncturing-wounds": {
+    "classId": "rogue",
+    "sourceName": "Puncturing Wounds",
+    "sourceTree": "Combat",
+    "status": "active",
+    "aliasOf": null
+  },
+  "rogue:quietus": {
+    "classId": "rogue",
+    "sourceName": "Quietus",
+    "sourceTree": "Subtlety",
+    "status": "active",
+    "aliasOf": null
+  },
+  "rogue:relentless-strikes": {
+    "classId": "rogue",
+    "sourceName": "Relentless Strikes",
+    "sourceTree": "Assassination",
+    "status": "active",
+    "aliasOf": null
+  },
+  "rogue:remorseless-attacks": {
+    "classId": "rogue",
+    "sourceName": "Remorseless Attacks",
+    "sourceTree": "Assassination",
+    "status": "active",
+    "aliasOf": null
+  },
+  "rogue:restless-blades": {
+    "classId": "rogue",
+    "sourceName": "Restless Blades",
+    "sourceTree": "Combat",
+    "status": "removed",
+    "aliasOf": null
+  },
+  "rogue:riposte": {
+    "classId": "rogue",
+    "sourceName": "Riposte",
+    "sourceTree": "Combat",
+    "status": "active",
+    "aliasOf": null
+  },
+  "rogue:ruthlessness": {
+    "classId": "rogue",
+    "sourceName": "Ruthlessness",
+    "sourceTree": "Assassination",
+    "status": "active",
+    "aliasOf": null
+  },
+  "rogue:seal-fate": {
+    "classId": "rogue",
+    "sourceName": "Seal Fate",
+    "sourceTree": "Assassination",
+    "status": "active",
+    "aliasOf": null
+  },
+  "rogue:serrated-blades": {
+    "classId": "rogue",
+    "sourceName": "Serrated Blades",
+    "sourceTree": "Subtlety",
+    "status": "active",
+    "aliasOf": null
+  },
+  "rogue:setup": {
+    "classId": "rogue",
+    "sourceName": "Setup",
+    "sourceTree": "Subtlety",
+    "status": "active",
+    "aliasOf": null
+  },
+  "rogue:thousand-cuts": {
+    "classId": "rogue",
+    "sourceName": "Thousand Cuts",
+    "sourceTree": "Subtlety",
+    "status": "active",
+    "aliasOf": null
+  },
+  "rogue:venom": {
+    "classId": "rogue",
+    "sourceName": "Venom",
+    "sourceTree": "Assassination",
+    "status": "active",
+    "aliasOf": null
+  },
+  "rogue:vigor": {
+    "classId": "rogue",
+    "sourceName": "Vigor",
+    "sourceTree": "Assassination",
+    "status": "active",
+    "aliasOf": null
+  },
+  "rogue:vile-poisons": {
+    "classId": "rogue",
+    "sourceName": "Vile Poisons",
+    "sourceTree": "Assassination",
+    "status": "active",
+    "aliasOf": null
+  },
+  "rogue:weapon-expertise": {
+    "classId": "rogue",
+    "sourceName": "Weapon Expertise",
+    "sourceTree": "Combat",
+    "status": "active",
+    "aliasOf": null
+  },
+  "shaman:ancestral-healing": {
+    "classId": "shaman",
+    "sourceName": "Ancestral Healing",
+    "sourceTree": "Restoration",
+    "status": "active",
+    "aliasOf": null
+  },
+  "shaman:ancestral-knowledge": {
+    "classId": "shaman",
+    "sourceName": "Ancestral Knowledge",
+    "sourceTree": "Enhancement",
+    "status": "active",
+    "aliasOf": null
+  },
+  "shaman:anticipation": {
+    "classId": "shaman",
+    "sourceName": "Anticipation",
+    "sourceTree": "Enhancement",
+    "status": "active",
+    "aliasOf": null
+  },
+  "shaman:call-of-flame": {
+    "classId": "shaman",
+    "sourceName": "Call of Flame",
+    "sourceTree": "Elemental",
+    "status": "active",
+    "aliasOf": null
+  },
+  "shaman:call-of-thunder": {
+    "classId": "shaman",
+    "sourceName": "Call of Thunder",
+    "sourceTree": "Elemental",
+    "status": "active",
+    "aliasOf": null
+  },
+  "shaman:concussion": {
+    "classId": "shaman",
+    "sourceName": "Concussion",
+    "sourceTree": "Elemental",
+    "status": "active",
+    "aliasOf": null
+  },
+  "shaman:convection": {
+    "classId": "shaman",
+    "sourceName": "Convection",
+    "sourceTree": "Elemental",
+    "status": "active",
+    "aliasOf": null
+  },
+  "shaman:earth-s-grasp": {
+    "classId": "shaman",
+    "sourceName": "Earth's Grasp",
+    "sourceTree": "Enhancement",
+    "status": "active",
+    "aliasOf": null
+  },
+  "shaman:earthbound": {
+    "classId": "shaman",
+    "sourceName": "Earthbound",
+    "sourceTree": "Elemental",
+    "status": "active",
+    "aliasOf": null
+  },
+  "shaman:elemental-alacrity": {
+    "classId": "shaman",
+    "sourceName": "Elemental Alacrity",
+    "sourceTree": "Elemental",
+    "status": "active",
+    "aliasOf": null
+  },
+  "shaman:elemental-devastation": {
+    "classId": "shaman",
+    "sourceName": "Elemental Devastation",
+    "sourceTree": "Elemental",
+    "status": "active",
+    "aliasOf": null
+  },
+  "shaman:elemental-focus": {
+    "classId": "shaman",
+    "sourceName": "Elemental Focus",
+    "sourceTree": "Elemental",
+    "status": "active",
+    "aliasOf": null
+  },
+  "shaman:elemental-fury": {
+    "classId": "shaman",
+    "sourceName": "Elemental Fury",
+    "sourceTree": "Elemental",
+    "status": "active",
+    "aliasOf": null
+  },
+  "shaman:elemental-reach": {
+    "classId": "shaman",
+    "sourceName": "Elemental Reach",
+    "sourceTree": "Elemental",
+    "status": "active",
+    "aliasOf": null
+  },
+  "shaman:elemental-warding": {
+    "classId": "shaman",
+    "sourceName": "Elemental Warding",
+    "sourceTree": "Elemental",
+    "status": "active",
+    "aliasOf": null
+  },
+  "shaman:elemental-weapons": {
+    "classId": "shaman",
+    "sourceName": "Elemental Weapons",
+    "sourceTree": "Enhancement",
+    "status": "active",
+    "aliasOf": null
+  },
+  "shaman:eye-of-the-storm": {
+    "classId": "shaman",
+    "sourceName": "Eye of the Storm",
+    "sourceTree": "Elemental",
+    "status": "active",
+    "aliasOf": null
+  },
+  "shaman:flurry": {
+    "classId": "shaman",
+    "sourceName": "Flurry",
+    "sourceTree": "Enhancement",
+    "status": "active",
+    "aliasOf": null
+  },
+  "shaman:guardian-totems": {
+    "classId": "shaman",
+    "sourceName": "Guardian Totems",
+    "sourceTree": "Enhancement",
+    "status": "active",
+    "aliasOf": null
+  },
+  "shaman:healing-focus": {
+    "classId": "shaman",
+    "sourceName": "Healing Focus",
+    "sourceTree": "Restoration",
+    "status": "active",
+    "aliasOf": null
+  },
+  "shaman:healing-way": {
+    "classId": "shaman",
+    "sourceName": "Healing Way",
+    "sourceTree": "Restoration",
+    "status": "active",
+    "aliasOf": null
+  },
+  "shaman:improved-fire-nova": {
+    "classId": "shaman",
+    "sourceName": "Improved Fire Nova",
+    "sourceTree": "Elemental",
+    "status": "active",
+    "aliasOf": null
+  },
+  "shaman:improved-ghost-wolf": {
+    "classId": "shaman",
+    "sourceName": "Improved Ghost Wolf",
+    "sourceTree": "Enhancement",
+    "status": "active",
+    "aliasOf": null
+  },
+  "shaman:improved-healing-wave": {
+    "classId": "shaman",
+    "sourceName": "Improved Healing Wave",
+    "sourceTree": "Restoration",
+    "status": "active",
+    "aliasOf": null
+  },
+  "shaman:improved-lightning-shield": {
+    "classId": "shaman",
+    "sourceName": "Improved Lightning Shield",
+    "sourceTree": "Enhancement",
+    "status": "active",
+    "aliasOf": null
+  },
+  "shaman:improved-reincarnation": {
+    "classId": "shaman",
+    "sourceName": "Improved Reincarnation",
+    "sourceTree": "Restoration",
+    "status": "active",
+    "aliasOf": null
+  },
+  "shaman:improved-stormstrike": {
+    "classId": "shaman",
+    "sourceName": "Improved Stormstrike",
+    "sourceTree": "Enhancement",
+    "status": "active",
+    "aliasOf": null
+  },
+  "shaman:lava-burst": {
+    "classId": "shaman",
+    "sourceName": "Lava Burst",
+    "sourceTree": "Elemental",
+    "status": "active",
+    "aliasOf": null
+  },
+  "shaman:lightning-overload": {
+    "classId": "shaman",
+    "sourceName": "Lightning Overload",
+    "sourceTree": "Elemental",
+    "status": "active",
+    "aliasOf": null
+  },
+  "shaman:maelstrom-weapon": {
+    "classId": "shaman",
+    "sourceName": "Maelstrom Weapon",
+    "sourceTree": "Enhancement",
+    "status": "active",
+    "aliasOf": null
+  },
+  "shaman:mana-tide-totem": {
+    "classId": "shaman",
+    "sourceName": "Mana Tide Totem",
+    "sourceTree": "Restoration",
+    "status": "active",
+    "aliasOf": null
+  },
+  "shaman:mental-dexterity": {
+    "classId": "shaman",
+    "sourceName": "Mental Dexterity",
+    "sourceTree": "Enhancement",
+    "status": "active",
+    "aliasOf": null
+  },
+  "shaman:mental-quickness": {
+    "classId": "shaman",
+    "sourceName": "Mental Quickness",
+    "sourceTree": "Enhancement",
+    "status": "active",
+    "aliasOf": null
+  },
+  "shaman:mindfulness": {
+    "classId": "shaman",
+    "sourceName": "Mindfulness",
+    "sourceTree": "Restoration",
+    "status": "active",
+    "aliasOf": null
+  },
+  "shaman:natural-grace": {
+    "classId": "shaman",
+    "sourceName": "Natural Grace",
+    "sourceTree": "Restoration",
+    "status": "active",
+    "aliasOf": null
+  },
+  "shaman:nature-s-swiftness": {
+    "classId": "shaman",
+    "sourceName": "Nature's Swiftness",
+    "sourceTree": "Restoration",
+    "status": "active",
+    "aliasOf": null
+  },
+  "shaman:purification": {
+    "classId": "shaman",
+    "sourceName": "Purification",
+    "sourceTree": "Restoration",
+    "status": "active",
+    "aliasOf": null
+  },
+  "shaman:rage-of-the-farseer": {
+    "classId": "shaman",
+    "sourceName": "Rage of the Farseer",
+    "sourceTree": "Enhancement",
+    "status": "active",
+    "aliasOf": null
+  },
+  "shaman:restorative-totems": {
+    "classId": "shaman",
+    "sourceName": "Restorative Totems",
+    "sourceTree": "Restoration",
+    "status": "active",
+    "aliasOf": null
+  },
+  "shaman:reverberation": {
+    "classId": "shaman",
+    "sourceName": "Reverberation",
+    "sourceTree": "Elemental",
+    "status": "active",
+    "aliasOf": null
+  },
+  "shaman:riptide": {
+    "classId": "shaman",
+    "sourceName": "Riptide",
+    "sourceTree": "Restoration",
+    "status": "active",
+    "aliasOf": null
+  },
+  "shaman:shamanistic-focus": {
+    "classId": "shaman",
+    "sourceName": "Shamanistic Focus",
+    "sourceTree": "Enhancement",
+    "status": "active",
+    "aliasOf": null
+  },
+  "shaman:spirit-weapons": {
+    "classId": "shaman",
+    "sourceName": "Spirit Weapons",
+    "sourceTree": "Enhancement",
+    "status": "active",
+    "aliasOf": null
+  },
+  "shaman:stormstrike": {
+    "classId": "shaman",
+    "sourceName": "Stormstrike",
+    "sourceTree": "Enhancement",
+    "status": "active",
+    "aliasOf": null
+  },
+  "shaman:thundering-strikes": {
+    "classId": "shaman",
+    "sourceName": "Thundering Strikes",
+    "sourceTree": "Enhancement",
+    "status": "active",
+    "aliasOf": null
+  },
+  "shaman:tidal-focus": {
+    "classId": "shaman",
+    "sourceName": "Tidal Focus",
+    "sourceTree": "Restoration",
+    "status": "active",
+    "aliasOf": null
+  },
+  "shaman:tidal-mastery": {
+    "classId": "shaman",
+    "sourceName": "Tidal Mastery",
+    "sourceTree": "Restoration",
+    "status": "active",
+    "aliasOf": null
+  },
+  "shaman:totemic-focus": {
+    "classId": "shaman",
+    "sourceName": "Totemic Focus",
+    "sourceTree": "Restoration",
+    "status": "active",
+    "aliasOf": null
+  },
+  "shaman:toughness": {
+    "classId": "shaman",
+    "sourceName": "Toughness",
+    "sourceTree": "Enhancement",
+    "status": "active",
+    "aliasOf": null
+  },
+  "shaman:water-shield": {
+    "classId": "shaman",
+    "sourceName": "Water Shield",
+    "sourceTree": "Restoration",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warlock:aftermath": {
+    "classId": "warlock",
+    "sourceName": "Aftermath",
+    "sourceTree": "Destruction",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warlock:agonizing-flames": {
+    "classId": "warlock",
+    "sourceName": "Agonizing Flames",
+    "sourceTree": "Destruction",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warlock:amplify-curse": {
+    "classId": "warlock",
+    "sourceName": "Amplify Curse",
+    "sourceTree": "Affliction",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warlock:bane": {
+    "classId": "warlock",
+    "sourceName": "Bane",
+    "sourceTree": "Destruction",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warlock:bane-of-havoc": {
+    "classId": "warlock",
+    "sourceName": "Bane of Havoc",
+    "sourceTree": "Destruction",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warlock:cataclysm": {
+    "classId": "warlock",
+    "sourceName": "Cataclysm",
+    "sourceTree": "Destruction",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warlock:conflagrate": {
+    "classId": "warlock",
+    "sourceName": "Conflagrate",
+    "sourceTree": "Destruction",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warlock:curse-of-exhaustion": {
+    "classId": "warlock",
+    "sourceName": "Curse of Exhaustion",
+    "sourceTree": "Affliction",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warlock:decimation": {
+    "classId": "warlock",
+    "sourceName": "Decimation",
+    "sourceTree": "Demonology",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warlock:demonic-aegis": {
+    "classId": "warlock",
+    "sourceName": "Demonic Aegis",
+    "sourceTree": "Demonology",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warlock:demonic-brand": {
+    "classId": "warlock",
+    "sourceName": "Demonic Brand",
+    "sourceTree": "Demonology",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warlock:demonic-embrace": {
+    "classId": "warlock",
+    "sourceName": "Demonic Embrace",
+    "sourceTree": "Demonology",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warlock:demonic-energies": {
+    "classId": "warlock",
+    "sourceName": "Demonic Energies",
+    "sourceTree": "Demonology",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warlock:demonic-knowledge": {
+    "classId": "warlock",
+    "sourceName": "Demonic Knowledge",
+    "sourceTree": "Demonology",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warlock:demonic-pact": {
+    "classId": "warlock",
+    "sourceName": "Demonic Pact",
+    "sourceTree": "Demonology",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warlock:demonic-sacrifice": {
+    "classId": "warlock",
+    "sourceName": "Demonic Sacrifice",
+    "sourceTree": "Demonology",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warlock:destructive-reach": {
+    "classId": "warlock",
+    "sourceName": "Destructive Reach",
+    "sourceTree": "Destruction",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warlock:drain-hope": {
+    "classId": "warlock",
+    "sourceName": "Drain Hope",
+    "sourceTree": "Affliction",
+    "status": "removed",
+    "aliasOf": null
+  },
+  "warlock:fel-concentration": {
+    "classId": "warlock",
+    "sourceName": "Fel Concentration",
+    "sourceTree": "Affliction",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warlock:fel-domination": {
+    "classId": "warlock",
+    "sourceName": "Fel Domination",
+    "sourceTree": "Demonology",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warlock:fel-vitality": {
+    "classId": "warlock",
+    "sourceName": "Fel Vitality",
+    "sourceTree": "Demonology",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warlock:fire-and-brimstone": {
+    "classId": "warlock",
+    "sourceName": "Fire and Brimstone",
+    "sourceTree": "Destruction",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warlock:improved-bane-of-agony": {
+    "classId": "warlock",
+    "sourceName": "Improved Bane of Agony",
+    "sourceTree": "Affliction",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warlock:improved-corruption": {
+    "classId": "warlock",
+    "sourceName": "Improved Corruption",
+    "sourceTree": "Affliction",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warlock:improved-drains": {
+    "classId": "warlock",
+    "sourceName": "Improved Drains",
+    "sourceTree": "Affliction",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warlock:improved-felhunter": {
+    "classId": "warlock",
+    "sourceName": "Improved Felhunter",
+    "sourceTree": "Demonology",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warlock:improved-health-funnel": {
+    "classId": "warlock",
+    "sourceName": "Improved Health Funnel",
+    "sourceTree": "Demonology",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warlock:improved-imp": {
+    "classId": "warlock",
+    "sourceName": "Improved Imp",
+    "sourceTree": "Demonology",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warlock:improved-life-tap": {
+    "classId": "warlock",
+    "sourceName": "Improved Life Tap",
+    "sourceTree": "Affliction",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warlock:improved-sayaad": {
+    "classId": "warlock",
+    "sourceName": "Improved Sayaad",
+    "sourceTree": "Demonology",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warlock:improved-shadow-bolt": {
+    "classId": "warlock",
+    "sourceName": "Improved Shadow Bolt",
+    "sourceTree": "Destruction",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warlock:improved-voidwalker": {
+    "classId": "warlock",
+    "sourceName": "Improved Voidwalker",
+    "sourceTree": "Demonology",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warlock:incinerate": {
+    "classId": "warlock",
+    "sourceName": "Incinerate",
+    "sourceTree": "Destruction",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warlock:intensity": {
+    "classId": "warlock",
+    "sourceName": "Intensity",
+    "sourceTree": "Destruction",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warlock:malediction": {
+    "classId": "warlock",
+    "sourceName": "Malediction",
+    "sourceTree": "Affliction",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warlock:malevolence": {
+    "classId": "warlock",
+    "sourceName": "Malevolence",
+    "sourceTree": "Affliction",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warlock:master-demonologist": {
+    "classId": "warlock",
+    "sourceName": "Master Demonologist",
+    "sourceTree": "Demonology",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warlock:master-summoner": {
+    "classId": "warlock",
+    "sourceName": "Master Summoner",
+    "sourceTree": "Demonology",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warlock:molten-skin": {
+    "classId": "warlock",
+    "sourceName": "Molten Skin",
+    "sourceTree": "Destruction",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warlock:nightfall": {
+    "classId": "warlock",
+    "sourceName": "Nightfall",
+    "sourceTree": "Affliction",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warlock:pandemic": {
+    "classId": "warlock",
+    "sourceName": "Pandemic",
+    "sourceTree": "Affliction",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warlock:pyroclasm": {
+    "classId": "warlock",
+    "sourceName": "Pyroclasm",
+    "sourceTree": "Destruction",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warlock:ruin": {
+    "classId": "warlock",
+    "sourceName": "Ruin",
+    "sourceTree": "Destruction",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warlock:shadow-and-flame": {
+    "classId": "warlock",
+    "sourceName": "Shadow and Flame",
+    "sourceTree": "Destruction",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warlock:shadow-mastery": {
+    "classId": "warlock",
+    "sourceName": "Shadow Mastery",
+    "sourceTree": "Affliction",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warlock:shadowburn": {
+    "classId": "warlock",
+    "sourceName": "Shadowburn",
+    "sourceTree": "Destruction",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warlock:siphon-life": {
+    "classId": "warlock",
+    "sourceName": "Siphon Life",
+    "sourceTree": "Affliction",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warlock:soul-harvest": {
+    "classId": "warlock",
+    "sourceName": "Soul Harvest",
+    "sourceTree": "Affliction",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warlock:soul-harvesting": {
+    "classId": "warlock",
+    "sourceName": "Soul Harvesting",
+    "sourceTree": "Affliction",
+    "status": "renamed",
+    "aliasOf": "warlock:soul-harvest"
+  },
+  "warlock:soul-link": {
+    "classId": "warlock",
+    "sourceName": "Soul Link",
+    "sourceTree": "Demonology",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warlock:soul-siphon": {
+    "classId": "warlock",
+    "sourceName": "Soul Siphon",
+    "sourceTree": "Affliction",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warlock:suppression": {
+    "classId": "warlock",
+    "sourceName": "Suppression",
+    "sourceTree": "Affliction",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warlock:unholy-power": {
+    "classId": "warlock",
+    "sourceName": "Unholy Power",
+    "sourceTree": "Demonology",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warlock:wrack": {
+    "classId": "warlock",
+    "sourceName": "Wrack",
+    "sourceTree": "Affliction",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warrior:anger-management": {
+    "classId": "warrior",
+    "sourceName": "Anger Management",
+    "sourceTree": "Arms",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warrior:anticipation": {
+    "classId": "warrior",
+    "sourceName": "Anticipation",
+    "sourceTree": "Protection",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warrior:bastion": {
+    "classId": "warrior",
+    "sourceName": "Bastion",
+    "sourceTree": "Protection",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warrior:blood-craze": {
+    "classId": "warrior",
+    "sourceName": "Blood Craze",
+    "sourceTree": "Fury",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warrior:bloodthirst": {
+    "classId": "warrior",
+    "sourceName": "Bloodthirst",
+    "sourceTree": "Fury",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warrior:bloodthrill": {
+    "classId": "warrior",
+    "sourceName": "Bloodthrill",
+    "sourceTree": "Arms",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warrior:booming-voice": {
+    "classId": "warrior",
+    "sourceName": "Booming Voice",
+    "sourceTree": "Fury",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warrior:boundless-rage": {
+    "classId": "warrior",
+    "sourceName": "Boundless Rage",
+    "sourceTree": "Fury",
+    "status": "removed",
+    "aliasOf": null
+  },
+  "warrior:concussion-blow": {
+    "classId": "warrior",
+    "sourceName": "Concussion Blow",
+    "sourceTree": "Protection",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warrior:cruelty": {
+    "classId": "warrior",
+    "sourceName": "Cruelty",
+    "sourceTree": "Fury",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warrior:death-wish": {
+    "classId": "warrior",
+    "sourceName": "Death Wish",
+    "sourceTree": "Fury",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warrior:deep-wounds": {
+    "classId": "warrior",
+    "sourceName": "Deep Wounds",
+    "sourceTree": "Arms",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warrior:defiance": {
+    "classId": "warrior",
+    "sourceName": "Defiance",
+    "sourceTree": "Protection",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warrior:deflection": {
+    "classId": "warrior",
+    "sourceName": "Deflection",
+    "sourceTree": "Arms",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warrior:dual-wield-specialization": {
+    "classId": "warrior",
+    "sourceName": "Dual Wield Specialization",
+    "sourceTree": "Fury",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warrior:enrage": {
+    "classId": "warrior",
+    "sourceName": "Enrage",
+    "sourceTree": "Fury",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warrior:flurry": {
+    "classId": "warrior",
+    "sourceName": "Flurry",
+    "sourceTree": "Fury",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warrior:focused-rage": {
+    "classId": "warrior",
+    "sourceName": "Focused Rage",
+    "sourceTree": "Protection",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warrior:furious-precision": {
+    "classId": "warrior",
+    "sourceName": "Furious Precision",
+    "sourceTree": "Fury",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warrior:gore-drinker": {
+    "classId": "warrior",
+    "sourceName": "Gore Drinker",
+    "sourceTree": "Fury",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warrior:impale": {
+    "classId": "warrior",
+    "sourceName": "Impale",
+    "sourceTree": "Arms",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warrior:improved-berserker-rage": {
+    "classId": "warrior",
+    "sourceName": "Improved Berserker Rage",
+    "sourceTree": "Fury",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warrior:improved-bloodrage": {
+    "classId": "warrior",
+    "sourceName": "Improved Bloodrage",
+    "sourceTree": "Protection",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warrior:improved-charge": {
+    "classId": "warrior",
+    "sourceName": "Improved Charge",
+    "sourceTree": "Arms",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warrior:improved-cleave": {
+    "classId": "warrior",
+    "sourceName": "Improved Cleave",
+    "sourceTree": "Fury",
+    "status": "removed",
+    "aliasOf": null
+  },
+  "warrior:improved-disarm": {
+    "classId": "warrior",
+    "sourceName": "Improved Disarm",
+    "sourceTree": "Protection",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warrior:improved-execute": {
+    "classId": "warrior",
+    "sourceName": "Improved Execute",
+    "sourceTree": "Fury",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warrior:improved-hamstring": {
+    "classId": "warrior",
+    "sourceName": "Improved Hamstring",
+    "sourceTree": "Arms",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warrior:improved-heroic-strike": {
+    "classId": "warrior",
+    "sourceName": "Improved Heroic Strike",
+    "sourceTree": "Arms",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warrior:improved-intercept": {
+    "classId": "warrior",
+    "sourceName": "Improved Intercept",
+    "sourceTree": "Fury",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warrior:improved-overpower": {
+    "classId": "warrior",
+    "sourceName": "Improved Overpower",
+    "sourceTree": "Arms",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warrior:improved-rend": {
+    "classId": "warrior",
+    "sourceName": "Improved Rend",
+    "sourceTree": "Arms",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warrior:improved-revenge": {
+    "classId": "warrior",
+    "sourceName": "Improved Revenge",
+    "sourceTree": "Protection",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warrior:improved-shield-bash": {
+    "classId": "warrior",
+    "sourceName": "Improved Shield Bash",
+    "sourceTree": "Protection",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warrior:improved-shield-wall": {
+    "classId": "warrior",
+    "sourceName": "Improved Shield Wall",
+    "sourceTree": "Protection",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warrior:improved-slam": {
+    "classId": "warrior",
+    "sourceName": "Improved Slam",
+    "sourceTree": "Arms",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warrior:improved-sunder-armor": {
+    "classId": "warrior",
+    "sourceName": "Improved Sunder Armor",
+    "sourceTree": "Protection",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warrior:improved-tactical-mastery": {
+    "classId": "warrior",
+    "sourceName": "Improved Tactical Mastery",
+    "sourceTree": "Arms",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warrior:improved-thunder-clap": {
+    "classId": "warrior",
+    "sourceName": "Improved Thunder Clap",
+    "sourceTree": "Protection",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warrior:iron-will": {
+    "classId": "warrior",
+    "sourceName": "Iron Will",
+    "sourceTree": "Protection",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warrior:last-stand": {
+    "classId": "warrior",
+    "sourceName": "Last Stand",
+    "sourceTree": "Protection",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warrior:lingering-rage": {
+    "classId": "warrior",
+    "sourceName": "Lingering Rage",
+    "sourceTree": "Fury",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warrior:master-of-defense": {
+    "classId": "warrior",
+    "sourceName": "Master of Defense",
+    "sourceTree": "Protection",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warrior:mortal-strike": {
+    "classId": "warrior",
+    "sourceName": "Mortal Strike",
+    "sourceTree": "Arms",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warrior:piercing-howl": {
+    "classId": "warrior",
+    "sourceName": "Piercing Howl",
+    "sourceTree": "Fury",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warrior:precision": {
+    "classId": "warrior",
+    "sourceName": "Precision",
+    "sourceTree": "Fury",
+    "status": "removed",
+    "aliasOf": null
+  },
+  "warrior:raging-blows": {
+    "classId": "warrior",
+    "sourceName": "Raging Blows",
+    "sourceTree": "Fury",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warrior:shield-slam": {
+    "classId": "warrior",
+    "sourceName": "Shield Slam",
+    "sourceTree": "Protection",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warrior:shield-specialization": {
+    "classId": "warrior",
+    "sourceName": "Shield Specialization",
+    "sourceTree": "Protection",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warrior:spearing-strike": {
+    "classId": "warrior",
+    "sourceName": "Spearing Strike",
+    "sourceTree": "Arms",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warrior:sweeping-strikes": {
+    "classId": "warrior",
+    "sourceName": "Sweeping Strikes",
+    "sourceTree": "Arms",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warrior:toughness": {
+    "classId": "warrior",
+    "sourceName": "Toughness",
+    "sourceTree": "Protection",
+    "status": "removed",
+    "aliasOf": null
+  },
+  "warrior:two-handed-weapon-specialization": {
+    "classId": "warrior",
+    "sourceName": "Two-Handed Weapon Specialization",
+    "sourceTree": "Arms",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warrior:unbridled-wrath": {
+    "classId": "warrior",
+    "sourceName": "Unbridled Wrath",
+    "sourceTree": "Fury",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warrior:vanguard": {
+    "classId": "warrior",
+    "sourceName": "Vanguard",
+    "sourceTree": "Protection",
+    "status": "active",
+    "aliasOf": null
+  },
+  "warrior:vitality": {
+    "classId": "warrior",
+    "sourceName": "Vitality",
+    "sourceTree": "Protection",
+    "status": "removed",
+    "aliasOf": null
+  },
+  "warrior:weaponmaster": {
+    "classId": "warrior",
+    "sourceName": "Weaponmaster",
+    "sourceTree": "Arms",
+    "status": "active",
+    "aliasOf": null
   }
 }
