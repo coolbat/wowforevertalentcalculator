@@ -10,6 +10,8 @@ const PAGES = [
   { path: '/talents/', title: /Talent Reference/, noindex: false },
   { path: '/talents/mage/', title: /WoW Forever Mage Talent Tree & Talents/, noindex: false },
   { path: '/changes/', title: /Talent Changes/, noindex: false },
+  { path: '/changelog/', title: 'WoW Forever Talent Calculator Changelog & Data Updates', noindex: false },
+  { path: '/wow-forever-beta-end/', title: 'WoW Forever Beta End Date: Oct 21 & Nov 4 Launch Times', noindex: false },
   { path: '/sources/', title: /Data & Sources|Sources/, noindex: false },
   { path: '/about/', title: /About/, noindex: false },
   { path: '/privacy/', title: /Privacy/, noindex: false },
@@ -123,6 +125,39 @@ test('sitemap excludes noindex pages; robots.txt references sitemap', async ({ r
   const robots = await (await request.get('/robots.txt')).text();
   expect(robots).toContain('Sitemap: https://wowforevertalentcalculator.com/sitemap.xml');
   expect(robots).toContain('Sitemap: https://wowforevertalentcalculator.com/sitemap-index.xml');
+});
+
+test('beta end and changelog pages are live, canonical, and in the sitemaps', async ({
+  request,
+}) => {
+  for (const path of ['/wow-forever-beta-end/', '/changelog/']) {
+    const res = await request.get(path);
+    expect(res.status()).toBe(200);
+    const html = await res.text();
+    const canonical = /<link rel="canonical" href="([^"]+)"/.exec(html)?.[1];
+    expect(canonical).toBe(`https://wowforevertalentcalculator.com${path}`);
+  }
+
+  const plain = await (await request.get('/sitemap.xml')).text();
+  const integration = await (await request.get('/sitemap-0.xml')).text();
+  for (const path of ['/wow-forever-beta-end/', '/changelog/']) {
+    expect(plain).toContain(`${path}</loc>`);
+    expect(integration).toContain(`${path}</loc>`);
+  }
+});
+
+test('beta end page carries FAQPage JSON-LD and a no-JS countdown fallback', async ({
+  request,
+}) => {
+  const html = await (await request.get('/wow-forever-beta-end/')).text();
+  const scripts = [...html.matchAll(/<script type="application\/ld\+json">(.*?)<\/script>/gs)];
+  const blocks = scripts.map((m) => JSON.parse(m[1]) as { '@type': string });
+  const faq = blocks.find((b) => b['@type'] === 'FAQPage') as Record<string, unknown>;
+  expect(faq).toBeTruthy();
+  expect((faq.mainEntity as unknown[]).length).toBe(5);
+  // Static countdown fallback is present in the HTML (no JS required).
+  expect(html).toContain('data-countdown-target="2026-11-04T23:00:00Z"');
+  expect(html).toContain('October 21, 2026 (PST)');
 });
 
 test('unknown route returns real 404', async ({ request }) => {

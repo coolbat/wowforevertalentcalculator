@@ -14,6 +14,8 @@ const STATIC_ROUTES = [
   '/terms/',
   '/sources/',
   '/talents/',
+  '/changelog/',
+  '/wow-forever-beta-end/',
 ];
 
 export const GET: APIRoute = ({ site }) => {
