@@ -12,13 +12,13 @@ test('home page: tool usable in first screen without navigation', async ({ page 
   const node = page.getByRole('button', { name: /^Improved Heroic Strike, rank/ });
   await node.click();
   await expect(page.getByTestId('points-remaining')).toHaveText(/^\s*50\s*\/\s*51\s*$/);
-  expect(page.url()).toMatch(/localhost:4321\/$/);
+  expect(page.url()).toMatch(/localhost:\d+\/$/);
 
   // Switch class in-page: shaman loads without leaving the home page.
   await page.getByTestId('home-class-tab-shaman').click();
   await expect(page.getByTestId('home-class-tab-shaman')).toHaveAttribute('aria-current', 'true');
   await expect(page.getByTestId('points-remaining')).toHaveText(/^\s*51\s*\/\s*51\s*$/);
-  expect(page.url()).toMatch(/localhost:4321\/$/);
+  expect(page.url()).toMatch(/localhost:\d+\/$/);
   // Shaman tree is rendered (no Warrior talents).
   await expect(page.getByRole('button', { name: /^Improved Heroic Strike,/ })).toHaveCount(0);
 

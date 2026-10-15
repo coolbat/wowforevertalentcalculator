@@ -1,0 +1,127 @@
+---
+/**
+ * Launch countdown for the WoW Forever beta-end page.
+ * Renders a build-time computed fallback in plain HTML (works without JS);
+ * a small inline script then updates the numbers in place once per second.
+ * Fixed-size cells with tabular numerals keep the layout stable (no CLS).
+ */
+const targetIso = '2026-11-04T23:00:00Z';
+
+const diffSeconds = Math.max(
+  0,
+  Math.floor((Date.parse(targetIso) - Date.now()) / 1000),
+);
+const fallback = {
+  days: Math.floor(diffSeconds / 86400),
+  hours: Math.floor((diffSeconds % 86400) / 3600),
+  minutes: Math.floor((diffSeconds % 3600) / 60),
+  seconds: diffSeconds % 60,
+};
+---
+
+<div class="countdown" data-countdown-target={targetIso}>
+  <p class="countdown-heading">Global launch — November 4, 2026, 3:00 p.m. PST</p>
+  <div
+    class="countdown-grid"
+    role="timer"
+    aria-label="Time until the WoW Forever global launch"
+  >
+    <div class="countdown-cell">
+      <span class="countdown-num" data-countdown-unit="days">{fallback.days}</span>
+      <span class="countdown-unit">days</span>
+    </div>
+    <div class="countdown-cell">
+      <span class="countdown-num" data-countdown-unit="hours">{fallback.hours}</span>
+      <span class="countdown-unit">hours</span>
+    </div>
+    <div class="countdown-cell">
+      <span class="countdown-num" data-countdown-unit="minutes">{fallback.minutes}</span>
+      <span class="countdown-unit">minutes</span>
+    </div>
+    <div class="countdown-cell">
+      <span class="countdown-num" data-countdown-unit="seconds">{fallback.seconds}</span>
+      <span class="countdown-unit">seconds</span>
+    </div>
+  </div>
+  <p class="countdown-sub">Beta last day: October 21, 2026 (PST).</p>
+</div>
+
+<script is:inline>
+  (() => {
+    const roots = document.querySelectorAll('[data-countdown-target]');
+    if (roots.length === 0) return;
+    const pad = (n) => String(n).padStart(2, '0');
+    const tickAll = () => {
+      roots.forEach((root) => {
+        const target = Date.parse(root.getAttribute('data-countdown-target'));
+        const remaining = Math.max(0, Math.floor((target - Date.now()) / 1000));
+        const values = {
+          days: String(Math.floor(remaining / 86400)),
+          hours: pad(Math.floor((remaining % 86400) / 3600)),
+          minutes: pad(Math.floor((remaining % 3600) / 60)),
+          seconds: pad(remaining % 60),
+        };
+        Object.entries(values).forEach(([unit, value]) => {
+          const el = root.querySelector(`[data-countdown-unit="${unit}"]`);
+          if (el && el.textContent !== value) el.textContent = value;
+        });
+      });
+    };
+    tickAll();
+    setInterval(tickAll, 1000);
+  })();
+</script>
+
+<style>
+  .countdown {
+    background: var(--color-panel);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: var(--space-4) var(--space-6);
+    text-align: center;
+  }
+
+  .countdown-heading {
+    margin: 0 0 var(--space-3);
+    font-family: var(--font-display);
+    color: var(--color-gold);
+    font-size: 1.1rem;
+  }
+
+  .countdown-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(64px, 1fr));
+    gap: var(--space-2);
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  .countdown-cell {
+    background: var(--color-panel-raised);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: var(--space-2) var(--space-1);
+  }
+
+  .countdown-num {
+    display: block;
+    font-size: 1.6rem;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    min-width: 2ch;
+    color: var(--color-gold-light);
+  }
+
+  .countdown-unit {
+    display: block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-text-dim);
+  }
+
+  .countdown-sub {
+    margin: var(--space-3) 0 0;
+    color: var(--color-text-dim);
+  }
+</style>

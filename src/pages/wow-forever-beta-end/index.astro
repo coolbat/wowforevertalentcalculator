@@ -1,0 +1,217 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LaunchCountdown from '@components/LaunchCountdown.astro';
+
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'When does the WoW Forever beta end?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'October 21, 2026 (PST) is the last full day of testing, per Blizzard.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'When does WoW Forever launch?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'November 4, 2026, at 3:00 p.m. PST, worldwide.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How do I get WoW Forever beta access?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: "Buy the Skyborne Epic Pack or the Warcraft Forever Collection, or opt in on Blizzard's site and wait for an invitation.",
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'When is WoW Forever name reservation?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'October 27 to November 3, 2026 (PST), for up to three characters, with any upgrade purchase.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is WoW Forever included with a subscription?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. Access is included with a World of Warcraft Subscription or Game Time.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title="WoW Forever Beta End Date: Oct 21 & Nov 4 Launch Times"
+  description="The WoW Forever beta runs through October 21, 2026 PST. Launch is November 4 at 3:00 p.m. PST. Name reservation dates, beta access and what to do next."
+  breadcrumbs={[
+    { name: 'Home', url: '/' },
+    { name: 'Beta end & launch dates', url: '/wow-forever-beta-end/' },
+  ]}
+>
+  <section class="page-head">
+    <h1>WoW Forever Beta End Date and Launch Countdown</h1>
+    <p class="lede">
+      World of Warcraft: Forever beta runs through
+      <strong>Wednesday, October 21, 2026 (PST)</strong>. Blizzard calls it
+      "the last full day of testing." The full game launches worldwide on
+      <strong>Wednesday, November 4, 2026, at 3:00 p.m. PST</strong>.
+    </p>
+  </section>
+
+  <section class="page-section" aria-labelledby="key-dates">
+    <h2 id="key-dates">Key dates (Blizzard)</h2>
+    <div class="table-scroll">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th scope="col">Event</th>
+            <th scope="col">Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Beta opens</td>
+            <td>September 17, 2026 (PST)</td>
+          </tr>
+          <tr>
+            <td>Last full day of beta</td>
+            <td>October 21, 2026 (PST)</td>
+          </tr>
+          <tr>
+            <td>Early Name Reservation</td>
+            <td>October 27 – November 3, 2026 (PST)</td>
+          </tr>
+          <tr>
+            <td>Global launch</td>
+            <td>November 4, 2026, 3:00 p.m. PST</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="page-section" aria-label="Countdown to global launch">
+    <LaunchCountdown />
+  </section>
+
+  <section class="page-section prose" aria-labelledby="beta-access">
+    <h2 id="beta-access">Who can play the beta</h2>
+    <p>
+      Beta access comes with the Skyborne Epic Pack and the Warcraft Forever
+      Collection. Players who opted in on Blizzard's site can also be
+      selected, and invitations go out during the test. To play, pick "World
+      of Warcraft: Forever Beta" under In Development in the Battle.net app.
+    </p>
+  </section>
+
+  <section class="page-section prose" aria-labelledby="after-beta">
+    <h2 id="after-beta">What happens after October 21</h2>
+    <p>
+      Blizzard is moving into final preparations for launch. Owners of any
+      upgrade edition can create and customize up to three characters during
+      Early Name Reservation, October 27 to November 3. Names are first come,
+      first served.
+    </p>
+  </section>
+
+  <section class="page-section prose" aria-labelledby="need-to-buy">
+    <h2 id="need-to-buy">Do I need to buy WoW Forever?</h2>
+    <p>
+      No separate purchase is needed. At launch, access is included with a
+      World of Warcraft Subscription or Game Time. Upgrade editions are
+      optional.
+    </p>
+  </section>
+
+  <section class="page-section prose" aria-labelledby="plan-build">
+    <h2 id="plan-build">Plan your build before launch</h2>
+    <p>
+      The beta level cap went from 20 to 30. Our talent calculator uses the
+      latest beta build data, so you can plan every class now.
+    </p>
+    <p>
+      <a href="/">Open the calculator →</a> ·
+      <a href="/warrior/">Warrior talents →</a> ·
+      <a href="/druid/">Druid talents →</a> ·
+      <a href="/talents/">All classes →</a> ·
+      <a href="/changelog/">What changed in the data →</a>
+    </p>
+  </section>
+
+  <section class="page-section prose" aria-labelledby="sources">
+    <h2 id="sources">Sources</h2>
+    <ul>
+      <li>
+        <a
+          href="https://news.blizzard.com/en-us/article/24304160/the-world-of-warcraft-forever-beta-now-live"
+          rel="external"
+        >
+          Blizzard News: The World of Warcraft: Forever Beta Is Now Live
+        </a>
+      </li>
+      <li>
+        <a
+          href="https://news.blizzard.com/en-us/article/24301508/pre-purchase-world-of-warcraft-forever-upgrades-and-begin-your-next-journey-in-azeroth"
+          rel="external"
+        >
+          Blizzard News: Pre-Purchase World of Warcraft: Forever Upgrades
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <section class="page-section" aria-labelledby="faq">
+    <h2 id="faq">FAQ</h2>
+
+    <details class="faq-item">
+      <summary>When does the WoW Forever beta end?</summary>
+      <p>
+        October 21, 2026 (PST) is the last full day of testing, per Blizzard.
+      </p>
+    </details>
+
+    <details class="faq-item">
+      <summary>When does WoW Forever launch?</summary>
+      <p>November 4, 2026, at 3:00 p.m. PST, worldwide.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>How do I get beta access?</summary>
+      <p>
+        Buy the Skyborne Epic Pack or the Warcraft Forever Collection, or opt
+        in on Blizzard's site and wait for an invitation.
+      </p>
+    </details>
+
+    <details class="faq-item">
+      <summary>When is name reservation?</summary>
+      <p>
+        October 27 to November 3, 2026 (PST), up to three characters, for any
+        upgrade purchase.
+      </p>
+    </details>
+
+    <details class="faq-item">
+      <summary>Is WoW Forever free with a subscription?</summary>
+      <p>
+        Yes. Access is included with a WoW Subscription or Game Time.
+      </p>
+    </details>
+  </section>
+
+  <script
+    type="application/ld+json"
+    is:inline
+    set:html={JSON.stringify(faqJsonLd)}
+  />
+</BaseLayout>

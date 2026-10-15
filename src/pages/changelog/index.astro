@@ -1,0 +1,87 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="WoW Forever Talent Calculator Changelog & Data Updates"
+  description="Every data update to the WoW Forever talent calculator. Now on beta build 70291 from October 8, 2026, with all talent changes listed by class."
+  dateModified="2026-10-15"
+  breadcrumbs={[
+    { name: 'Home', url: '/' },
+    { name: 'Changelog', url: '/changelog/' },
+  ]}
+>
+  <section class="page-head">
+    <h1>Changelog</h1>
+    <p class="lede">
+      We update the calculator when a new WoW Forever beta build changes
+      talents. Talent data comes from
+      <a href="https://talentsforever.com/" rel="external">talentsforever.com</a>
+      (CC BY 4.0), which reads the beta game files.
+    </p>
+  </section>
+
+  <section class="page-section prose" aria-labelledby="build-70291">
+    <h2 id="build-70291">October 15, 2026 — Beta build 70291</h2>
+    <p>
+      The calculator now uses beta build 70291 (October 8, 2026), including
+      the Warrior hotfixes of October 1–2. Saved builds and share links still
+      open. Points on removed talents are refunded.
+    </p>
+    <ul>
+      <li>
+        <strong>Warrior:</strong> Fury gains Lingering Rage, Furious Precision
+        and Gore Drinker. Improved Cleave, Boundless Rage and Precision are
+        removed. Protection loses Toughness; Iron Will moves to row 1; Bastion
+        and Focused Rage swap rows. Impale now requires 3 points in Deep
+        Wounds.
+      </li>
+      <li>
+        <strong>Druid:</strong> Mangle is now Primal Bite and Primal Fury is
+        Blood Frenzy. Feral loses King of the Jungle and gains Shifting Power
+        and Improved Shifting Power. Predatory Instincts is now Natural
+        Instinct.
+      </li>
+      <li>
+        <strong>Paladin:</strong> Improved Holy Strike and Crusade are
+        removed. Holy Strike has a 10-second cooldown. Holy Shield blocks 30%
+        more.
+      </li>
+      <li>
+        <strong>Priest:</strong> Penance rank 4 deals 92 damage (was 131) and
+        heals 425 (was 673).
+      </li>
+      <li>
+        <strong>Mage:</strong> Hot Streak is now Heating Up.
+      </li>
+      <li>
+        <strong>Warlock:</strong> Soul Harvesting is now Soul Harvest.
+      </li>
+      <li>
+        <strong>Shaman:</strong> Elemental gains Elemental Alacrity in row 3;
+        Elemental Fury moves to row 6. Water Shield has no cooldown.
+      </li>
+      <li>
+        <strong>Hunter:</strong> Lightning Reflexes is 2% per rank.
+        Resourcefulness is 30%/60%. Deflection is 1% per rank. Expose Prey
+        lasts 10 seconds. Sniper Shot reaches 45 yards.
+      </li>
+      <li>Level cap in beta is now 30.</li>
+    </ul>
+  </section>
+
+  <section class="page-section prose" aria-labelledby="launch">
+    <h2 id="launch">September 17, 2026 — Launch</h2>
+    <p>
+      First release with all classes, based on BlizzCon 2026 data (September
+      15, 2026).
+    </p>
+  </section>
+
+  <section class="page-section prose" aria-label="Related pages">
+    <p>
+      <a href="/">Calculator →</a> ·
+      <a href="/wow-forever-beta-end/">Beta end &amp; launch dates →</a>
+    </p>
+  </section>
+</BaseLayout>

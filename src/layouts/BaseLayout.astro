@@ -15,6 +15,7 @@ export interface Props {
   ogType?: string;
   noindex?: boolean;
   lang?: string;
+  dateModified?: string;
   breadcrumbs?: Breadcrumb[];
   classColor?: string;
 }
@@ -26,6 +27,7 @@ const {
   ogType = 'website',
   noindex = false,
   lang = 'en',
+  dateModified: dateModifiedProp,
   breadcrumbs,
   classColor,
 } = Astro.props;
@@ -37,8 +39,9 @@ const isHome = Astro.url.pathname === '/';
 
 const SITE_NAME = 'WoW Forever Talent Calculator';
 const manifest = loadManifest();
-// Build timestamp: for a static site, dateModified advances on each deploy.
-const dateModified = new Date().toISOString();
+// Build timestamp: for a static site, dateModified advances on each deploy,
+// unless a page pins an explicit content-modified date.
+const dateModified = dateModifiedProp ?? new Date().toISOString();
 const datePublished = manifest.publishedAt;
 
 const orgId = new URL('/#organization', site).href;
@@ -281,6 +284,8 @@ if (breadcrumbs && breadcrumbs.length > 0) {
             <a href="/changes/">Changes</a>
             <a href="/compare/">Compare</a>
             <a href="/my-builds/">My Builds</a>
+            <a href="/wow-forever-beta-end/">Beta end &amp; launch dates</a>
+            <a href="/changelog/">Changelog</a>
           </nav>
         </div>
       </footer>
