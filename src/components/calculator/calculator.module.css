@@ -52,10 +52,15 @@
   color: var(--color-accent);
 }
 
-.dataLine {
+.dataLine,
+.dataCredit {
   color: var(--color-text-dim);
   font-size: 0.85rem;
   margin: 0 0 var(--space-3);
+}
+
+.dataCredit a {
+  color: var(--color-accent);
 }
 
 /* ---------- toolbar ---------- */

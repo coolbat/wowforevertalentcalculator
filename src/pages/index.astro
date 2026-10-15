@@ -8,6 +8,7 @@ import {
   removedClassicCount,
   stageLabel,
 } from '@data/derive';
+import { CC_BY_4_0_URL, dataBuildLine, TALENTSFOREVER_URL } from '@data/credit';
 
 const manifest = loadManifest();
 const snapshots = loadAllSnapshots();
@@ -50,6 +51,7 @@ const perClass = snapshots.map((s) => {
 
 const stage = stageLabel(manifest.stage);
 const published = formatDate(manifest.publishedAt);
+const buildLine = dataBuildLine(manifest.gameBuild);
 const ruleset = manifest.ruleset;
 ---
 
@@ -182,13 +184,15 @@ const ruleset = manifest.ruleset;
     <p class="prose">
       This site is currently running <strong>{stage.toLowerCase()}-stage</strong>
       data published on {published} (snapshot <code>{manifest.snapshotId}</code>).
+      {buildLine ? <> {buildLine}.</> : null}
       Talent data comes from
-      <a href="https://talentsforever.com/" rel="external">talentsforever.com</a>
-      under CC BY 4.0, and each rank effect keeps its own evidence status —
-      text that exists but is not yet verified is labeled as such, never
-      presented as fact. Snapshots are immutable: when the data updates, new
-      pages point to the new snapshot while old share links keep opening the
-      version they were created with.
+      <a href={TALENTSFOREVER_URL} rel="external">talentsforever.com</a>
+      {' '}under <a href={CC_BY_4_0_URL} rel="external">CC BY 4.0</a>, and each
+      rank effect keeps its own evidence status — text that exists but is not
+      yet verified is labeled as such, never presented as fact. Share links
+      from the previous snapshot open on this data. Renamed talents keep their
+      points under the current name. Points on talents that no longer exist
+      are refunded, and the rest of the build stays when it is still legal.
     </p>
     <p><a href="/sources/">Read the data &amp; sources policy →</a></p>
   </section>
@@ -250,10 +254,9 @@ const ruleset = manifest.ruleset;
     <details class="faq-item">
       <summary>What happens to my old share links when the data updates?</summary>
       <p>
-        They keep working. Each snapshot is stored once under a content-hashed
-        path and never overwritten, and every share link records the snapshot
-        it was built against. Opening an old link restores your build on the
-        original data, even after the calculator defaults to a newer snapshot.
+        They open on the current talent data. Points in renamed talents stay
+        under the current name. Points in talents that were removed are
+        refunded, and the rest of the build stays when it is still legal.
       </p>
     </details>
 

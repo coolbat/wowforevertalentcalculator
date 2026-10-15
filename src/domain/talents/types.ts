@@ -122,6 +122,8 @@ export interface ClassFile {
 export interface DatasetManifest {
   schemaVersion: SchemaVersion;
   snapshotId: SnapshotId;
+  /** Earlier published snapshot IDs whose share links still decode. */
+  legacySnapshotIds?: SnapshotId[];
   rulesetId: RulesetId;
   stage: 'preview' | 'beta' | 'live';
   publishedAt: string; // ISO date

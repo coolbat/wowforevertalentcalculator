@@ -33,6 +33,13 @@ import {
   payloadFromHash,
 } from '@domain/sharing/codec';
 import {
+  allowedSnapshotIds,
+  migrateBuild,
+  migrationBanner,
+} from '@domain/sharing/migrate';
+import { talentRegistry } from '@data/talentRegistry';
+import { CC_BY_4_0_URL, dataBuildLine, TALENTSFOREVER_URL } from '@data/credit';
+import {
   MAX_NAME_LENGTH,
   loadDraft,
   saveDraft,
@@ -85,6 +92,7 @@ export default function TalentCalculator(props: TalentCalculatorProps): JSX.Elem
   const [levelText, setLevelText] = useState(String(ruleset.defaultLevel));
   const [saveName, setSaveName] = useState('');
   const [shareUrl, setShareUrl] = useState<string | null>(null);
+  const [migrationNote, setMigrationNote] = useState<string | null>(null);
 
   const isMobile = useMediaQuery('(max-width: 767px)');
   const nodeRefs = useRef<Map<string, HTMLButtonElement>>(new Map());
@@ -139,7 +147,7 @@ export default function TalentCalculator(props: TalentCalculatorProps): JSX.Elem
     const url = window.location.href;
     const payload = payloadFromHash(window.location.hash);
     if (payload) {
-      const decoded = decodeBuild(payload, [manifest.snapshotId], ruleset);
+      const decoded = decodeBuild(payload, allowedSnapshotIds(manifest), ruleset);
       if (!decoded.ok) {
         setPage({ status: 'error', message: ruleErrorMessage(decoded.error, ruleset), url });
       } else if (decoded.build.classId !== classId) {
@@ -157,7 +165,14 @@ export default function TalentCalculator(props: TalentCalculatorProps): JSX.Elem
           });
         }
       } else {
-        const validation = validateBuild(decoded.build, snapshot, ruleset);
+        const migrated = migrateBuild(
+          decoded.build,
+          manifest.snapshotId,
+          talentRegistry,
+          snapshot,
+          ruleset,
+        );
+        const validation = validateBuild(migrated.build, snapshot, ruleset);
         if (!validation.valid) {
           const first = validation.errors[0];
           setPage({
@@ -168,7 +183,8 @@ export default function TalentCalculator(props: TalentCalculatorProps): JSX.Elem
             url,
           });
         } else {
-          setBuild(decoded.build);
+          setBuild(migrated.build);
+          setMigrationNote(migrationBanner(migrated.notes));
           setPage({ status: 'ready', readOnly: true });
         }
       }
@@ -391,6 +407,7 @@ export default function TalentCalculator(props: TalentCalculatorProps): JSX.Elem
     const blank = emptyBuild(classId, manifest.snapshotId, ruleset);
     buildRef.current = blank;
     setBuild(blank);
+    setMigrationNote(null);
     resetHistory();
     setSelectedId(null);
     setPage({ status: 'ready', readOnly: false });
@@ -436,6 +453,7 @@ export default function TalentCalculator(props: TalentCalculatorProps): JSX.Elem
             You are viewing a shared build (snapshot {manifest.snapshotId}, level {build.level}).
             It is read-only until you edit a copy — your local draft is untouched.
           </p>
+          {migrationNote ? <p data-testid="migration-note">{migrationNote}</p> : null}
           <button type="button" className={styles.button} data-testid="btn-edit-copy" onClick={onEditCopy}>
             Edit a copy
           </button>
@@ -489,6 +507,19 @@ export default function TalentCalculator(props: TalentCalculatorProps): JSX.Elem
             {manifest.publishedAt} · Legacy early-point effects are not included in the standard
             budget.
           </p>
+          {dataBuildLine(manifest.gameBuild) ? (
+            <p className={styles.dataCredit} data-testid="data-credit">
+              {dataBuildLine(manifest.gameBuild)}. Talent data from{' '}
+              <a href={TALENTSFOREVER_URL} rel="external">
+                talentsforever.com
+              </a>
+              , licensed{' '}
+              <a href={CC_BY_4_0_URL} rel="external">
+                CC BY 4.0
+              </a>
+              .
+            </p>
+          ) : null}
 
           <div className={styles.toolbar}>
             <label className={styles.levelLabel}>

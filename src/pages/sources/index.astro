@@ -12,7 +12,7 @@ const textPct = ((cov.ranksWithText / cov.ranksTotal) * 100).toFixed(1);
 
 <BaseLayout
   title="Talent Data & Sources — WoW Forever Talent Calculator"
-  description="Where this site's WoW Forever talent data comes from: source records, CC BY 4.0 attribution, coverage summary, evidence-status definitions, and the immutable snapshot policy."
+  description="Where this site's WoW Forever talent data comes from: source records, CC BY 4.0 attribution, coverage summary, evidence-status definitions, and the snapshot update policy."
   breadcrumbs={[
     { name: 'Home', url: '/' },
     { name: 'Sources', url: '/sources/' },
@@ -178,17 +178,17 @@ const textPct = ((cov.ranksWithText / cov.ranksTotal) * 100).toFixed(1);
   <section class="page-section prose" aria-labelledby="policy">
     <h2 id="policy">Snapshot &amp; Update Policy</h2>
     <p>
-      Published snapshots are <strong>immutable</strong>. Class data files
-      live under content-hashed paths, and the manifest maps each file hash to
-      a snapshot ID. When the data is updated, a new snapshot is published
-      alongside the old one — old files are never overwritten.
+      Each import publishes one current snapshot. Class files use
+      content-hashed names, and the manifest records the snapshot ID. The
+      previous snapshot ID stays on the manifest so older share links can
+      still be read.
     </p>
     <p>
-      Share links record the snapshot they were created with, so a link built
-      on <code>{manifest.snapshotId}</code> will keep restoring that exact
-      version even after the calculator defaults to newer data. Each update is
-      announced with what changed, which classes are affected, and what
-      remains unknown.
+      A share link records the snapshot it was created with. Links from the
+      previous snapshot open on the current data: renamed talents keep their
+      points under the current name, and points in talents that no longer
+      exist are refunded. The rest of the build stays when it is still legal
+      under the current rules.
     </p>
   </section>
 </BaseLayout>

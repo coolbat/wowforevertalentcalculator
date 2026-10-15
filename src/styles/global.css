@@ -76,6 +76,12 @@ a:hover {
   text-decoration: underline;
 }
 
+.data-credit {
+  color: var(--color-text-dim);
+  font-size: 0.9rem;
+  margin: 0.35rem 0 0;
+}
+
 h1,
 h2,
 h3 {

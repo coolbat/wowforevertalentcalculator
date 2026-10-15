@@ -13,6 +13,8 @@ import {
   treeIconUrl,
   treeTalents,
 } from '@data/derive';
+import { CLASS_SNAPSHOT_NOTES } from '@data/classNotes';
+import { CC_BY_4_0_URL, dataBuildLine, TALENTSFOREVER_URL } from '@data/credit';
 
 export function getStaticPaths() {
   return CLASS_ORDER.map((classId) => ({ params: { class: classId } }));
@@ -38,6 +40,8 @@ const coverage = rankCoverage(snapshot);
 const ruleset = manifest.ruleset;
 const stage = stageLabel(manifest.stage);
 const published = formatDate(manifest.publishedAt);
+const buildLine = dataBuildLine(manifest.gameBuild);
+const snapshotNotes = CLASS_SNAPSHOT_NOTES[classId] ?? [];
 
 const title = `WoW Forever ${cls.name} Talent Calculator — Free Online`;
 const description = `Plan WoW Forever ${cls.name} talents across the ${treeList} trees — free online, no sign-up. ${snapshot.talents.length} talents with per-rank source notes, Classic comparison, and shareable builds.`;
@@ -103,6 +107,13 @@ const newTalentNames = snapshot.talents
         Planning around the test schedule? See the{' '}
         <a href="/wow-forever-beta-end/">beta end and launch dates</a>.
       </p>
+      {buildLine && (
+        <p class="data-credit">
+          {buildLine}. Talent data from{' '}
+          <a href={TALENTSFOREVER_URL} rel="external">talentsforever.com</a>, licensed{' '}
+          <a href={CC_BY_4_0_URL} rel="external">CC BY 4.0</a>.
+        </p>
+      )}
     </div>
   </section>
 
@@ -216,6 +227,9 @@ const newTalentNames = snapshot.talents
         </p>
       )
     }
+    {snapshotNotes.map((note) => (
+      <p class="prose">{note}</p>
+    ))}
     <p>
       <a href="/changes/">Compare all nine classes on the change summary →</a>
     </p>
@@ -303,9 +317,9 @@ const newTalentNames = snapshot.talents
     <details class="faq-item">
       <summary>What happens to my {cls.name} share links after a data update?</summary>
       <p>
-        They keep opening on the original snapshot. Share links record the
-        snapshot ID, and published snapshots are never overwritten, so an old
-        link always restores the build against the data it was created with.
+        They open on the current talent data. Points in renamed talents stay
+        under the current name. Points in talents that were removed are
+        refunded, and the rest of the build stays when it is still legal.
       </p>
     </details>
 

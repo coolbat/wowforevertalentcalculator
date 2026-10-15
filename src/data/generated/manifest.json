@@ -1,17 +1,20 @@
 {
   "schemaVersion": 1,
-  "snapshotId": "snap-ce4da8695e9d",
+  "snapshotId": "snap-29c345bcd595",
+  "legacySnapshotIds": [
+    "snap-ce4da8695e9d"
+  ],
   "rulesetId": "forever-standard-v1",
   "stage": "preview",
-  "publishedAt": "2026-09-15",
-  "gameBuild": null,
-  "sourceDigest": "228651c4ff188127c411245a905eeaaffac000cc026f2eef64099d6099c336b4",
+  "publishedAt": "2026-10-15",
+  "gameBuild": "70291",
+  "sourceDigest": "651795e5d9bb6c45888b354b07458d09eb6d1e92a2fe680f5954bffaf363899b",
   "sources": [
     {
       "sourceId": "src-talentsforever",
       "url": "https://talentsforever.com/data.json",
       "publisher": "talentsforever.com",
-      "recordedAt": "2026-09-15",
+      "recordedAt": "2026-10-14",
       "license": "CC-BY-4.0",
       "reviewStatus": "reviewed"
     }
@@ -19,58 +22,58 @@
   "classes": [
     {
       "classId": "warrior",
-      "path": "/data/classes/warrior.9315dccff903.json",
-      "digest": "9315dccff903336b477a1f538d217ffbb90fb7111ec41b6eb7d4608e9991254b"
+      "path": "/data/classes/warrior.92524666e3ac.json",
+      "digest": "92524666e3acd43f6b9a06d01f1dd751060b63e6b107dc5558fa6de8072c7967"
     },
     {
       "classId": "paladin",
-      "path": "/data/classes/paladin.59bfd6f8ce5d.json",
-      "digest": "59bfd6f8ce5d764daadd6525ecfb0707e110c8807d4468d7aca7f61e55364433"
+      "path": "/data/classes/paladin.f0b0864b9086.json",
+      "digest": "f0b0864b908630ead9055af6e45205435bf9aea0ee2b3faa8253e63853dd3a50"
     },
     {
       "classId": "hunter",
-      "path": "/data/classes/hunter.4619aca57d05.json",
-      "digest": "4619aca57d054f53fd4e053acb668a0a7f0294db27c41d2f5f985b15d2b633df"
+      "path": "/data/classes/hunter.a0e9a2567a8d.json",
+      "digest": "a0e9a2567a8daccdd55072fd9979ac33bc6419bfb0132b4eb6de0cb218b748ef"
     },
     {
       "classId": "rogue",
-      "path": "/data/classes/rogue.e4822831d90b.json",
-      "digest": "e4822831d90bc5e1ad12bf9a75d04a7b4c58c5e6ea34fc652ecb478194b18764"
+      "path": "/data/classes/rogue.4e641d4e095d.json",
+      "digest": "4e641d4e095d21ce75850608e9dbefadb45c1d43a1cfc7f650399eff2db4c142"
     },
     {
       "classId": "priest",
-      "path": "/data/classes/priest.563a977e7f79.json",
-      "digest": "563a977e7f79d489f73568543ea0d76e4da4f19a88066d092c82e2239e0c47c2"
+      "path": "/data/classes/priest.83580f3e26ed.json",
+      "digest": "83580f3e26edc8aa9a6613ff861159e1b83d1c4b4cb07ad81e2d930b9b57f6f2"
     },
     {
       "classId": "shaman",
-      "path": "/data/classes/shaman.aa31ffd8e6dd.json",
-      "digest": "aa31ffd8e6ddc85bfdd73e8bbdca8aec7e49dd8945db1794306de50fd3563ae8"
+      "path": "/data/classes/shaman.9ffbbb686cd2.json",
+      "digest": "9ffbbb686cd2e3f537dd9fd7a400d9df18043670dfcbe4be263e0ac38b547be1"
     },
     {
       "classId": "mage",
-      "path": "/data/classes/mage.a8b952ada3b3.json",
-      "digest": "a8b952ada3b36611caca1d2ee436e94bab5b7312ade0ac504ff0d32d3efc19dc"
+      "path": "/data/classes/mage.c243473fd22d.json",
+      "digest": "c243473fd22d2ddd02164e6d01e680eee6441ce59d30a90ba3ee8a139ce24292"
     },
     {
       "classId": "warlock",
-      "path": "/data/classes/warlock.3d9db4a19639.json",
-      "digest": "3d9db4a196392de09659354634a67bbcb0f331523c924e0cd87c634702a855a4"
+      "path": "/data/classes/warlock.20f1a547234f.json",
+      "digest": "20f1a547234f57a076e93c807333114d140988ae7832a23760040514f3adb259"
     },
     {
       "classId": "druid",
-      "path": "/data/classes/druid.7b36b461ce4b.json",
-      "digest": "7b36b461ce4b407981e1f4319de26fa7fb8d3baf61215f21cc8d940d4249b86a"
+      "path": "/data/classes/druid.c4d93bf687ff.json",
+      "digest": "c4d93bf687fff37d1bb046c60bb4e14b10d5ee9b183d7941380d9154b417a415"
     }
   ],
   "coverage": {
     "structureReviewed": true,
-    "talentCount": 470,
-    "ranksTotal": 1332,
-    "ranksWithText": 673,
-    "ranksCommunityRecorded": 38,
-    "ranksSourceEstimate": 635,
-    "ranksUnknown": 659,
+    "talentCount": 466,
+    "ranksTotal": 1314,
+    "ranksWithText": 1314,
+    "ranksCommunityRecorded": 1314,
+    "ranksSourceEstimate": 0,
+    "ranksUnknown": 0,
     "prerequisitesResolved": 71,
     "prerequisitesTotal": 71
   },
