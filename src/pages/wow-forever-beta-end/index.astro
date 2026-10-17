@@ -46,13 +46,37 @@ const faqJsonLd = {
         text: 'Yes. Access is included with a World of Warcraft Subscription or Game Time.',
       },
     },
+    {
+      '@type': 'Question',
+      name: 'How long is the WoW Forever stress test?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Blizzard gives no end time. The test runs for a limited time and may end earlier or run later as needed.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is the WoW Forever stress test free?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. Anyone can take part. No subscription, Game Time, invitation or beta access is required.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How do I join the WoW Forever stress test?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Open the Battle.net app, select World of Warcraft, then in the Game Version menu choose World of Warcraft: Forever Stress Test under In Development, select Install, and select Play when the test begins.',
+      },
+    },
   ],
 };
 ---
 
 <BaseLayout
-  title="WoW Forever Beta End Date: Oct 21 & Nov 4 Launch Times"
-  description="The WoW Forever beta runs through October 21, 2026 PST. Launch is November 4 at 3:00 p.m. PST. Name reservation dates, beta access and what to do next."
+  title="WoW Forever Beta End Date & Stress Test: Oct 19, Oct 21 & Nov 4 Times"
+  description="WoW Forever stress test starts Oct 19 at 2 PM PDT / 19:00 CEST. Free for everyone. See start times by region, how to join, beta end on Oct 21 and Nov 4 launch."
   breadcrumbs={[
     { name: 'Home', url: '/' },
     { name: 'Beta end & launch dates', url: '/wow-forever-beta-end/' },
@@ -102,6 +126,74 @@ const faqJsonLd = {
 
   <section class="page-section" aria-label="Countdown to global launch">
     <LaunchCountdown />
+  </section>
+
+  <section class="page-section prose" aria-labelledby="stress-test">
+    <h2 id="stress-test">WoW Forever Stress Test (Oct 19): Start Times, Duration &amp; How to Join</h2>
+    <p>
+      Blizzard is holding a World of Warcraft: Forever Stress Test on October 19.
+      Anyone can take part. No subscription, Game Time, invitation or beta access is required.
+      Start times and join steps are from
+      <a
+        href="https://worldofwarcraft.blizzard.com/en-us/news/24302072/join-the-world-of-warcraft-forever-stress-test"
+        rel="external"
+      >Blizzard's announcement, Join the World of Warcraft: Forever Stress Test</a>.
+    </p>
+
+    <h3>Start times by region</h3>
+    <div class="table-scroll">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th scope="col">Region</th>
+            <th scope="col">Start time</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>North America</td>
+            <td>October 19, 2:00 p.m. PDT</td>
+          </tr>
+          <tr>
+            <td>Europe</td>
+            <td>October 19, 19:00 CEST</td>
+          </tr>
+          <tr>
+            <td>Korea</td>
+            <td>October 20, 06:00 KST</td>
+          </tr>
+          <tr>
+            <td>Taiwan</td>
+            <td>October 20, 05:00 CST</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Duration</h3>
+    <p>
+      Blizzard gives no end time. The test runs for a limited time and may end earlier or run later as needed.
+    </p>
+    <p>
+      The beta is taken offline shortly before the Stress Test begins and is expected to return shortly after it ends.
+    </p>
+
+    <h3>How to join</h3>
+    <ol>
+      <li>Update your graphics drivers.</li>
+      <li>Open the Battle.net desktop app and let it update.</li>
+      <li>Select World of Warcraft.</li>
+      <li>
+        In the Game Version menu above the Play button, select World of Warcraft: Forever Stress Test under In Development, then select Install.
+      </li>
+      <li>When the Stress Test begins, select Play and choose an available test realm.</li>
+      <li>Create a new test character and join the test.</li>
+    </ol>
+
+    <h3>Characters, names and guilds</h3>
+    <p>
+      At the end of the Stress Test, all created characters, names and guilds are wiped from the Stress Test servers, before Name Reservation opens on October 27.
+    </p>
   </section>
 
   <section class="page-section prose" aria-labelledby="beta-access">
@@ -167,6 +259,14 @@ const faqJsonLd = {
           Blizzard News: Pre-Purchase World of Warcraft: Forever Upgrades
         </a>
       </li>
+      <li>
+        <a
+          href="https://worldofwarcraft.blizzard.com/en-us/news/24302072/join-the-world-of-warcraft-forever-stress-test"
+          rel="external"
+        >
+          Blizzard News: Join the World of Warcraft: Forever Stress Test
+        </a>
+      </li>
     </ul>
   </section>
 
@@ -205,6 +305,27 @@ const faqJsonLd = {
       <summary>Is WoW Forever free with a subscription?</summary>
       <p>
         Yes. Access is included with a WoW Subscription or Game Time.
+      </p>
+    </details>
+
+    <details class="faq-item">
+      <summary>How long is the WoW Forever stress test?</summary>
+      <p>
+        Blizzard gives no end time. The test runs for a limited time and may end earlier or run later as needed.
+      </p>
+    </details>
+
+    <details class="faq-item">
+      <summary>Is the WoW Forever stress test free?</summary>
+      <p>
+        Yes. Anyone can take part. No subscription, Game Time, invitation or beta access is required.
+      </p>
+    </details>
+
+    <details class="faq-item">
+      <summary>How do I join the WoW Forever stress test?</summary>
+      <p>
+        Open the Battle.net app, select World of Warcraft, then in the Game Version menu choose World of Warcraft: Forever Stress Test under In Development, select Install, and select Play when the test begins.
       </p>
     </details>
   </section>

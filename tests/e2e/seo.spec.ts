@@ -11,7 +11,7 @@ const PAGES = [
   { path: '/talents/mage/', title: /WoW Forever Mage Talent Tree & Talents/, noindex: false },
   { path: '/changes/', title: /Talent Changes/, noindex: false },
   { path: '/changelog/', title: 'WoW Forever Talent Calculator Changelog & Data Updates', noindex: false },
-  { path: '/wow-forever-beta-end/', title: 'WoW Forever Beta End Date: Oct 21 & Nov 4 Launch Times', noindex: false },
+  { path: '/wow-forever-beta-end/', title: 'WoW Forever Beta End Date & Stress Test: Oct 19, Oct 21 & Nov 4 Times', noindex: false },
   { path: '/sources/', title: /Data & Sources|Sources/, noindex: false },
   { path: '/about/', title: /About/, noindex: false },
   { path: '/privacy/', title: /Privacy/, noindex: false },
@@ -150,11 +150,41 @@ test('beta end page carries FAQPage JSON-LD and a no-JS countdown fallback', asy
   request,
 }) => {
   const html = await (await request.get('/wow-forever-beta-end/')).text();
+  const description =
+    'WoW Forever stress test starts Oct 19 at 2 PM PDT / 19:00 CEST. Free for everyone. See start times by region, how to join, beta end on Oct 21 and Nov 4 launch.';
+  expect(html).toContain(`<meta name="description" content="${description}"`);
+  expect(html).toContain(`<meta property="og:description" content="${description}"`);
+  expect(html).toContain(`<meta name="twitter:description" content="${description}"`);
+  const stressHeading = unescapeEntities(
+    /<h2 id="stress-test">([^<]+)<\/h2>/.exec(html)?.[1] ?? '',
+  );
+  expect(stressHeading).toBe(
+    'WoW Forever Stress Test (Oct 19): Start Times, Duration & How to Join',
+  );
+  expect(html).not.toContain('a few hours');
+
   const scripts = [...html.matchAll(/<script type="application\/ld\+json">(.*?)<\/script>/gs)];
   const blocks = scripts.map((m) => JSON.parse(m[1]) as { '@type': string });
-  const faq = blocks.find((b) => b['@type'] === 'FAQPage') as Record<string, unknown>;
-  expect(faq).toBeTruthy();
-  expect((faq.mainEntity as unknown[]).length).toBe(5);
+  const faqs = blocks.filter((b) => b['@type'] === 'FAQPage') as Array<{
+    mainEntity: Array<{ name: string; acceptedAnswer: { text: string } }>;
+  }>;
+  expect(faqs).toHaveLength(1);
+  const questions = faqs[0].mainEntity;
+  expect(questions).toHaveLength(8);
+  const byName = new Map(questions.map((q) => [q.name, q.acceptedAnswer.text]));
+  expect(byName.get('How long is the WoW Forever stress test?')).toBe(
+    'Blizzard gives no end time. The test runs for a limited time and may end earlier or run later as needed.',
+  );
+  expect(byName.get('Is the WoW Forever stress test free?')).toBe(
+    'Yes. Anyone can take part. No subscription, Game Time, invitation or beta access is required.',
+  );
+  expect(byName.get('How do I join the WoW Forever stress test?')).toBe(
+    'Open the Battle.net app, select World of Warcraft, then in the Game Version menu choose World of Warcraft: Forever Stress Test under In Development, select Install, and select Play when the test begins.',
+  );
+  for (const question of questions) {
+    expect(html).toContain(question.name);
+    expect(html).toContain(question.acceptedAnswer.text);
+  }
   // Static countdown fallback is present in the HTML (no JS required).
   expect(html).toContain('data-countdown-target="2026-11-04T23:00:00Z"');
   expect(html).toContain('October 21, 2026 (PST)');
