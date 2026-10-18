@@ -24,14 +24,18 @@ export const GET: APIRoute = ({ site }) => {
     ...STATIC_ROUTES,
     ...CLASS_ORDER.flatMap((c) => [`/${c}/`, `/talents/${c}/`]),
   ];
-  const lastmod = new Date().toISOString().slice(0, 10);
+  // Build date for unchanged routes. Pin a route only when its content changes.
+  const buildLastmod = new Date().toISOString().slice(0, 10);
+  const contentLastmod: Record<string, string> = {
+    '/wow-forever-beta-end/': '2026-10-18',
+  };
   const body = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${routes
-  .map(
-    (route) =>
-      `  <url><loc>${new URL(route, base).href}</loc><lastmod>${lastmod}</lastmod></url>`,
-  )
+  .map((route) => {
+    const lastmod = contentLastmod[route] ?? buildLastmod;
+    return `  <url><loc>${new URL(route, base).href}</loc><lastmod>${lastmod}</lastmod></url>`;
+  })
   .join('\n')}
 </urlset>
 `;
