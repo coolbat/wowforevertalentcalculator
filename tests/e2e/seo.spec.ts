@@ -11,7 +11,7 @@ const PAGES = [
   { path: '/talents/mage/', title: /WoW Forever Mage Talent Tree & Talents/, noindex: false },
   { path: '/changes/', title: /Talent Changes/, noindex: false },
   { path: '/changelog/', title: 'WoW Forever Talent Calculator Changelog & Data Updates', noindex: false },
-  { path: '/wow-forever-beta-end/', title: 'WoW Forever Beta End Date & Stress Test: Oct 19, Oct 21 & Nov 4 Times', noindex: false },
+  { path: '/wow-forever-beta-end/', title: 'WoW Forever Beta End Date & Stress Test: Oct 21 & Nov 4 Times', noindex: false },
   { path: '/sources/', title: /Data & Sources|Sources/, noindex: false },
   { path: '/about/', title: /About/, noindex: false },
   { path: '/privacy/', title: /Privacy/, noindex: false },
@@ -144,14 +144,22 @@ test('beta end and changelog pages are live, canonical, and in the sitemaps', as
     expect(plain).toContain(`${path}</loc>`);
     expect(integration).toContain(`${path}</loc>`);
   }
+  const betaLastmod = /<loc>[^<]*\/wow-forever-beta-end\/<\/loc><lastmod>([^<]+)<\/lastmod>/.exec(
+    plain,
+  )?.[1];
+  expect(betaLastmod).toBe('2026-10-18');
 });
 
 test('beta end page carries FAQPage JSON-LD and a no-JS countdown fallback', async ({
   request,
 }) => {
   const html = await (await request.get('/wow-forever-beta-end/')).text();
+  const title = 'WoW Forever Beta End Date & Stress Test: Oct 21 & Nov 4 Times';
   const description =
-    'WoW Forever stress test starts Oct 19 at 2 PM PDT / 19:00 CEST. Free for everyone. See start times by region, how to join, beta end on Oct 21 and Nov 4 launch.';
+    'WoW Forever stress test starts Oct 21 at 2 PM PDT / 19:00 CEST. Free for everyone. See start times by region, how to join, beta end on Oct 21 and Nov 4 launch.';
+  expect(unescapeEntities(/<title>([^<]+)<\/title>/.exec(html)?.[1] ?? '')).toBe(title);
+  expect(unescapeEntities(/<meta property="og:title" content="([^"]+)"/.exec(html)?.[1] ?? '')).toBe(title);
+  expect(unescapeEntities(/<meta name="twitter:title" content="([^"]+)"/.exec(html)?.[1] ?? '')).toBe(title);
   expect(html).toContain(`<meta name="description" content="${description}"`);
   expect(html).toContain(`<meta property="og:description" content="${description}"`);
   expect(html).toContain(`<meta name="twitter:description" content="${description}"`);
@@ -159,8 +167,19 @@ test('beta end page carries FAQPage JSON-LD and a no-JS countdown fallback', asy
     /<h2 id="stress-test">([^<]+)<\/h2>/.exec(html)?.[1] ?? '',
   );
   expect(stressHeading).toBe(
-    'WoW Forever Stress Test (Oct 19): Start Times, Duration & How to Join',
+    'WoW Forever Stress Test (Oct 21): Start Times, Duration & How to Join',
   );
+  expect(html).toContain(
+    'Blizzard moved the test from October 19 to October 21 on October 16.',
+  );
+  expect(html).toContain('October 21, 2:00 p.m. PDT');
+  expect(html).toContain('October 21, 19:00 CEST');
+  expect(html).toContain('October 22, 06:00 KST');
+  expect(html).toContain('October 22, 05:00 CST');
+  expect(html).toContain(
+    'The beta will be taken offline shortly before the Stress Test begins and is expected to return shortly after it ends.',
+  );
+  expect(html.match(/October 19/g)).toHaveLength(1);
   expect(html).not.toContain('a few hours');
 
   const scripts = [...html.matchAll(/<script type="application\/ld\+json">(.*?)<\/script>/gs)];
