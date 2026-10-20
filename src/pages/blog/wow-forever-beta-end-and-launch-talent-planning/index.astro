@@ -1,0 +1,172 @@
+---
+import BlogPostLayout from '../../../layouts/BlogPostLayout.astro';
+import { loadManifest } from '@data/loadSnapshot';
+import { formatDate } from '@data/derive';
+
+const manifest = loadManifest();
+const { ruleset } = manifest;
+---
+
+<BlogPostLayout slug="wow-forever-beta-end-and-launch-talent-planning">
+  <p>
+    If you are planning a character for WoW Forever, the next few weeks are
+    crowded with dates: a stress test, the last day of the beta, a name
+    reservation window and the launch itself. We keep a single reference page
+    for those dates, <a href="/wow-forever-beta-end/">WoW Forever beta end and
+    launch dates</a>, and this post walks through the same timeline from a
+    narrower angle. The question here is practical: given those dates, what
+    can you usefully do with a talent calculator now, and what should you
+    leave until later?
+  </p>
+  <p>
+    Every date below is as published by Blizzard and summarized on that page,
+    which links to the original announcements. We are an independent fan site
+    and do not set or confirm any of them. They have already moved once, and
+    this post reflects what the dates page said on
+    {' '}{formatDate('2026-10-20')}. If they change again, the dates page is the
+    one we update first.
+  </p>
+
+  <h2>The timeline</h2>
+  <div class="table-scroll">
+    <table class="data-table">
+      <caption class="visually-hidden">Announced WoW Forever dates</caption>
+      <thead>
+        <tr>
+          <th scope="col">Event</th>
+          <th scope="col">Date (as announced)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Beta opens</td>
+          <td>September 17, 2026 (PST)</td>
+        </tr>
+        <tr>
+          <td>Stress test</td>
+          <td>
+            October 21: 2:00 p.m. PDT in North America, 19:00 CEST in Europe;
+            October 22 in Korea (06:00 KST) and Taiwan (05:00 CST)
+          </td>
+        </tr>
+        <tr>
+          <td>Last full day of beta</td>
+          <td>October 21, 2026 (PST)</td>
+        </tr>
+        <tr>
+          <td>Early Name Reservation</td>
+          <td>October 27 to November 3, 2026 (PST)</td>
+        </tr>
+        <tr>
+          <td>Global launch</td>
+          <td>November 4, 2026, 3:00 p.m. PST</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>What each date means in practice</h2>
+  <h3>The stress test</h3>
+  <p>
+    Blizzard moved the stress test from October 19 to October 21 on October
+    16. It is open to anyone, with no subscription, Game Time, invitation or
+    beta access required, and Blizzard gives no end time. Two details matter
+    to anyone who cares about builds. The beta is taken offline shortly before
+    the test starts and is expected back shortly after it ends, so the
+    beta client is unavailable for a while. And at the end of the test, every character, name and guild created
+    on the stress-test servers is wiped before name reservation opens. A
+    stress-test character is therefore a place to try the game, not
+    somewhere to leave a build you want to keep.
+  </p>
+
+  <h3>The last day of the beta</h3>
+  <p>
+    Blizzard describes October 21 as the last full day of testing. If you
+    are in the beta and have been meaning to check a rank text that looks
+    wrong against what the game says, this is among the last chances, and a screenshot
+    with the build number is the most useful thing you can send us. The
+    <a href="/contact/">contact page</a> says what to include.
+  </p>
+
+  <h3>Early Name Reservation</h3>
+  <p>
+    From October 27 to November 3, owners of any upgrade edition can create
+    and customize up to three characters. Names are first come, first
+    served. This is the first moment a launch character exists, but it is not
+    the moment talents matter: in the ruleset this calculator uses, the first
+    point is earned at level {ruleset.pointsStartLevel}. Choosing a class and
+    a name is separate from deciding a build, and you do not have to settle
+    the build during the reservation window.
+  </p>
+
+  <h3>Launch</h3>
+  <p>
+    The game launches worldwide on November 4 at 3:00 p.m. PST, which is
+    23:00 UTC. At launch, access is included with a World of Warcraft
+    subscription or Game Time, and upgrade editions are optional. The
+    countdown on the dates page is set to that moment.
+  </p>
+
+  <h2>What this means for talent planning</h2>
+  <p>
+    Nothing in the announcements we have summarized says whether talents will
+    change between now and launch, and we are not going to guess. What we can
+    describe is how the site behaves if they do. The calculator runs on a
+    dated data snapshot, currently from beta build
+    {' '}{manifest.gameBuild ?? 'unknown'} and published
+    {' '}{formatDate(manifest.publishedAt)}. When a newer build's data becomes
+    available upstream, we publish a new snapshot and add an entry to the
+    <a href="/changelog/">changelog</a>. Share links made on the old snapshot
+    still open on the new one, with renamed talents keeping their points and
+    points in removed talents refunded. A build made today is therefore a
+    working draft, not a permanent record.
+  </p>
+  <p>
+    With that in mind, here are three things that are worth doing before
+    November 4:
+  </p>
+  <ol>
+    <li>
+      <strong>Pick a primary tree and know its cost.</strong> Row gates mean
+      the deepest tree decides when its talents become available. The
+      <a href="/blog/wow-forever-talent-points-levels-and-row-gates/">explainer on points, levels and row gates</a>
+      has the numbers, including the earliest level for each row.
+    </li>
+    <li>
+      <strong>Plan in stages instead of one level-60 build.</strong> Set the
+      level box to 20, 40 and 60 and see what each version of the plan
+      contains. Saving each stage under its own name on
+      <a href="/my-builds/">My Builds</a> makes the order easy to follow
+      once you are actually leveling.
+    </li>
+    <li>
+      <strong>Back up what you care about.</strong> Saved builds live in your
+      browser only. Export the JSON for the ones you want to keep, and keep a
+      share link as a second copy. Clearing site data or switching browsers
+      removes saved builds.
+    </li>
+  </ol>
+
+  <div class="post-callout">
+    <h3>What to re-check on launch day</h3>
+    <p>
+      If a new build is released near launch, open your saved builds or share
+      links on the calculator. They are migrated to the current snapshot, and
+      a note on the page says what was renamed or refunded. The changelog entry
+      for that build lists which classes were affected, so if you play a class
+      that is not mentioned, your plan has most likely not changed.
+    </p>
+  </div>
+
+  <h2>Where to follow the official word</h2>
+  <p>
+    For dates, purchase options and how to join the test, go to
+    Blizzard's own announcements. The dates page links to the ones we used:
+    the beta announcement, the pre-purchase announcement and the stress-test
+    announcement. For the data behind this site's talents and how to judge
+    it, see the post on
+    <a href="/blog/where-wow-forever-talent-data-comes-from/">where the talent data comes from</a>.
+    And if you simply want to start planning, the
+    <a href="/">calculator</a> is free and needs no account.
+  </p>
+</BlogPostLayout>

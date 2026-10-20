@@ -16,6 +16,13 @@ const PAGES = [
   { path: '/about/', title: /About/, noindex: false },
   { path: '/privacy/', title: /Privacy/, noindex: false },
   { path: '/terms/', title: /Terms/, noindex: false },
+  { path: '/contact/', title: /Contact/, noindex: false },
+  { path: '/blog/', title: /Blog/, noindex: false },
+  { path: '/blog/how-to-use-the-wow-forever-talent-calculator/', title: /How to Use the WoW Forever Talent Calculator/, noindex: false },
+  { path: '/blog/wow-forever-talent-points-levels-and-row-gates/', title: /Talent Points, Levels and Row Gates/, noindex: false },
+  { path: '/blog/where-wow-forever-talent-data-comes-from/', title: /Where WoW Forever Talent Data Comes From/, noindex: false },
+  { path: '/blog/wow-forever-beta-end-and-launch-talent-planning/', title: /Beta End and Nov 4 Launch/, noindex: false },
+  { path: '/blog/wow-forever-druid-talent-trees-beta-data/', title: /Druid Talents/, noindex: false },
   { path: '/compare/', title: /Compare/, noindex: true },
   { path: '/my-builds/', title: /My Builds/, noindex: true },
 ];

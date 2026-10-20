@@ -1,0 +1,167 @@
+---
+import BlogPostLayout from '../../../layouts/BlogPostLayout.astro';
+import { loadManifest } from '@data/loadSnapshot';
+
+const { ruleset } = loadManifest();
+---
+
+<BlogPostLayout slug="how-to-use-the-wow-forever-talent-calculator">
+  <p>
+    The calculator on this site does a small number of things: it lets you
+    spend talent points under the same rules the game uses, it keeps a few
+    builds on your device, and it turns a build into a link. Most of the
+    confusion we hear about comes from the parts that look obvious, such as
+    what the level box really controls or why a talent will not accept a
+    point. This walkthrough covers each part in the order you are likely to
+    meet it.
+  </p>
+
+  <h2>Start from a class page</h2>
+  <p>
+    The <a href="/">home page</a> opens with a class switcher and a working
+    calculator. Every class also has its own address, for example
+    <a href="/druid/">/druid/</a> or <a href="/warrior/">/warrior/</a>, which
+    is the page to bookmark if you only play one class. Each class has three
+    talent trees laid out as a grid of seven rows and up to four columns.
+    The level box defaults to {ruleset.defaultLevel}, and the counter beside
+    it shows points left against the total for that level. At level
+    {ruleset.maxLevel} the total is {ruleset.maxBudget}.
+  </p>
+  <p>
+    Changing the level changes the budget, not the talents. If you spend 20
+    points and then drop the level below the one those points require, the
+    calculator will not let you lower it. The line next to the counter, which
+    reads "Needs at least level N", tells you the minimum level for what you
+    have already spent. Our <a href="/blog/wow-forever-talent-points-levels-and-row-gates/">explainer on points, levels and row gates</a>
+    goes through the arithmetic.
+  </p>
+
+  <h2>Adding and removing points</h2>
+  <p>On a desktop browser the controls are mouse and keyboard:</p>
+  <ul>
+    <li>Click a talent to add a point.</li>
+    <li>Right-click it, or hold Shift and click, to remove a point.</li>
+    <li>
+      Use the arrow keys to move between talents and the + and - keys to add
+      or remove a point without the mouse.
+    </li>
+    <li>
+      Escape closes the detail view. Undo, Redo and Reset all sit above the
+      trees, and each tree has its own reset.
+    </li>
+  </ul>
+  <p>
+    On a phone the trees become tabs. Tapping a talent selects it and opens
+    a detail panel with Add and Remove buttons, which avoids accidental
+    points from scrolling. The same panel is available on desktop and is the
+    quickest way to see why a talent is unavailable.
+  </p>
+  <p>
+    A talent can refuse a point for four reasons: the tree has not received
+    enough points in earlier rows, a prerequisite talent is missing, the talent
+    is already at max rank, or you have no points left at that level. The
+    detail panel lists each requirement and marks it as met or not met with
+    your current numbers. Removal works the other way around. You cannot take
+    a point out of a talent if another talent you have taken depends on it,
+    or if doing so would break the row requirement of something further down.
+    The panel names the talents that block removal, so you know what to
+    remove first.
+  </p>
+
+  <h2>Reading ranks and evidence badges</h2>
+  <p>
+    The detail panel shows the effect text for your current rank and for the
+    next one. Under each block is a line starting with "Source", which
+    states how much we know about that specific rank: for example "Community
+    preview record" or "Effect unknown". A small question mark on a talent
+    in the tree means the effect for the rank you are looking at is not
+    known. The full list of statuses and what each one claims is on the
+    <a href="/sources/">Sources page</a>, and
+    <a href="/blog/where-wow-forever-talent-data-comes-from/">this post on where the data comes from</a>
+    explains how far to trust each label.
+  </p>
+  <p>
+    Some talents also carry a "Classic reference" block. It shows what the
+    Classic version looked like, whether the talent is unchanged, changed,
+    moved or new, and the tree and row it came from. That block is a
+    comparison aid for people who remember the old trees; it is not part of
+    the rules for your build.
+  </p>
+
+  <h2>Saving a build</h2>
+  <p>
+    Type a name in the build name field and press Save build. The build is
+    stored in your browser's local storage on this device, up to 50 named
+    builds, and appears on the <a href="/my-builds/">My Builds</a> page.
+    From there you can open, rename, delete or export a build as JSON, and
+    import a JSON file or pasted text back in. Because nothing is uploaded,
+    a saved build does not follow you to another browser or device, and
+    clearing site data removes it. If you want a copy that survives a browser
+    change, export the JSON or keep a share link.
+  </p>
+  <p>
+    Separately from named builds, the calculator keeps a draft for each class
+    so that refreshing the page does not lose your work. If your browser
+    blocks local storage, for example in some private modes, the page shows
+    a notice and everything else keeps working in memory.
+  </p>
+
+  <h2>Sharing a build</h2>
+  <p>
+    The Share button creates a link of the form
+    <code>/druid/#b=...</code> and copies it to the clipboard, or shows it in
+    a field you can copy by hand. The text after <code>#b=</code> is the
+    build itself: class, level, data snapshot and the rank in each talent.
+    It does not include a build name or anything about you. Anyone who
+    opens the link sees your build in read-only mode, with a banner that says
+    so, and can press Edit a copy to start changing their own version. Until
+    they do, the banner promises that their local draft is left alone.
+  </p>
+  <p>
+    Links record the data snapshot they were made on. If we have since
+    updated the data, an older link still opens: renamed talents keep their
+    points, points in talents that no longer exist are refunded, and a note
+    on the page says what changed. The <a href="/changelog/">changelog</a>
+    lists those data updates. If a link does not open at all, the page shows
+    the reason and the original link as plain text, so nothing is lost.
+  </p>
+
+  <h2>Comparing two builds</h2>
+  <p>
+    The <a href="/compare/">Compare</a> page takes two builds, each chosen
+    from your saved builds or pasted as a share link, and reports tree totals
+    for each plus every talent whose rank differs. Both builds must be the
+    same class and on the same data snapshot, otherwise the page tells you
+    why it cannot compare them. It is most useful for answering a narrow
+    question, such as "what exactly did I move when I switched from build A
+    to build B", and less useful as a ranking tool, because it only reports
+    differences, not which side is better.
+  </p>
+
+  <div class="post-callout">
+    <h3>A short checklist before you share a build</h3>
+    <ol>
+      <li>Check the level: the link carries it, and the viewer sees it.</li>
+      <li>
+        Open the link yourself in a private window to confirm it loads
+        read-only as you expect.
+      </li>
+      <li>
+        If you are posting it publicly, mention the date or the data build,
+        because talents can change between beta builds.
+      </li>
+    </ol>
+  </div>
+
+  <h2>What the calculator does not do</h2>
+  <p>
+    It does not simulate damage, model gear, or tell you which build to pick.
+    It does not know about Legacy perks in the standard budget either, so
+    the point total is the one earned by leveling. If you want a tool for
+    those questions you will need another source; if you want to know what
+    a talent does according to the data we have, how many points it takes to
+    reach it, and what you give up by taking it, this is what the calculator
+    is for. Problems or mismatches with the game are welcome on the
+    <a href="/contact/">contact page</a>.
+  </p>
+</BlogPostLayout>

@@ -1,0 +1,96 @@
+---
+import '../styles/blog.css';
+import BaseLayout from './BaseLayout.astro';
+import { BLOG_POSTS, getPost, postPath } from '@data/blog';
+import { formatDate } from '@data/derive';
+import { OPERATOR_NAME, SITE_NAME, SITE_URL } from '@data/site';
+
+export interface Props {
+  slug: string;
+}
+
+const { slug } = Astro.props;
+const post = getPost(slug);
+const url = new URL(postPath(slug), SITE_URL).href;
+const orgId = new URL('/#organization', SITE_URL).href;
+const others = BLOG_POSTS.filter((p) => p.slug !== slug).slice(0, 3);
+
+const articleJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  '@id': `${url}#article`,
+  headline: post.title,
+  description: post.description,
+  datePublished: post.datePublished,
+  dateModified: post.dateModified,
+  inLanguage: 'en',
+  mainEntityOfPage: { '@type': 'WebPage', '@id': `${url}#webpage` },
+  author: { '@type': 'Organization', '@id': orgId, name: SITE_NAME },
+  publisher: { '@id': orgId },
+};
+---
+
+<BaseLayout
+  title={post.title}
+  description={post.description}
+  ogType="article"
+  dateModified={post.dateModified}
+  breadcrumbs={[
+    { name: 'Home', url: '/' },
+    { name: 'Blog', url: '/blog/' },
+    { name: post.title, url: postPath(slug) },
+  ]}
+>
+  <article>
+    <header class="page-head">
+      <p><span class="post-kind">{post.kind}</span></p>
+      <h1>{post.title}</h1>
+      <p class="post-meta">
+        By {OPERATOR_NAME} · Published
+        {' '}<time datetime={post.datePublished}>{formatDate(post.datePublished)}</time>
+        {
+          post.dateModified !== post.datePublished && (
+            <>
+              {' '}· Updated{' '}
+              <time datetime={post.dateModified}>
+                {formatDate(post.dateModified)}
+              </time>
+            </>
+          )
+        }
+        {' '}· {post.readingMinutes} min read
+      </p>
+    </header>
+
+    <div class="post-body">
+      <slot />
+    </div>
+  </article>
+
+  <aside class="page-section post-more" aria-labelledby="more-posts">
+    <h2 id="more-posts">More from the blog</h2>
+    <ul class="post-grid">
+      {
+        others.map((p) => (
+          <li class="post-card">
+            <span class="post-kind">{p.kind}</span>
+            <h3>
+              <a href={postPath(p.slug)}>{p.title}</a>
+            </h3>
+            <p>{p.description}</p>
+          </li>
+        ))
+      }
+    </ul>
+    <p>
+      <a href="/blog/">All posts</a> · <a href="/about/">About this site</a> ·
+      <a href="/contact/">Report a correction</a>
+    </p>
+  </aside>
+
+  <script
+    type="application/ld+json"
+    is:inline
+    set:html={JSON.stringify(articleJsonLd)}
+  />
+</BaseLayout>

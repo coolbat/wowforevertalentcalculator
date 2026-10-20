@@ -1,0 +1,255 @@
+---
+import BlogPostLayout from '../../../layouts/BlogPostLayout.astro';
+import { loadAllSnapshots, loadClassSnapshot, loadManifest } from '@data/loadSnapshot';
+import { classChangeStats, formatDate, treeTalents } from '@data/derive';
+
+const manifest = loadManifest();
+const { ruleset } = manifest;
+const druid = loadClassSnapshot('druid');
+const byId = new Map(druid.talents.map((t) => [t.talentId, t]));
+const stats = classChangeStats(druid);
+
+const prereqCount = (s: { talents: { prerequisites: unknown[] }[] }) =>
+  s.talents.reduce((n, t) => n + t.prerequisites.length, 0);
+const druidPrereqs = prereqCount(druid);
+const otherPrereqs = loadAllSnapshots()
+  .filter((s) => s.classDef.classId !== 'druid')
+  .map(prereqCount);
+const otherMin = Math.min(...otherPrereqs);
+const otherMax = Math.max(...otherPrereqs);
+
+const trees = druid.trees.map((tree) => {
+  const talents = treeTalents(druid, tree);
+  const rows = Array.from({ length: tree.grid.rows }, (_, i) => ({
+    row: i + 1,
+    gate: ruleset.pointsPerRowTier * i,
+    talents: talents.filter((t) => t.row === i),
+  }));
+  return {
+    tree,
+    talents,
+    rows,
+    totalRanks: talents.reduce((n, t) => n + t.maxRank, 0),
+    singles: rows.filter((r) => r.talents.length === 1).map((r) => r.row),
+    active: talents.filter((t) => !t.passive),
+    capstones: rows[rows.length - 1].talents,
+  };
+});
+
+const prerequisites = trees.flatMap(({ tree, talents }) =>
+  talents.flatMap((t) =>
+    t.prerequisites.map((p) => ({
+      treeName: tree.name,
+      talent: t.name,
+      row: t.row + 1,
+      needs: byId.get(p.talentId)?.name ?? p.talentId,
+      rank: p.requiredRank,
+    })),
+  ),
+);
+
+const removed = druid.trees.map((tree) => ({
+  tree: tree.name,
+  names: tree.removedClassic.map((r) => r.name),
+}));
+const removedTotal = removed.reduce((n, r) => n + r.names.length, 0);
+const joinList = (names: string[]) =>
+  names.length <= 2
+    ? names.join(' and ')
+    : `${names.slice(0, -1).join(', ')}, and ${names[names.length - 1]}`;
+---
+
+<BlogPostLayout slug="wow-forever-druid-talent-trees-beta-data">
+  <p>
+    Most talent articles open with a verdict on which build is best. This one
+    deliberately does not. The beta data does not contain damage numbers
+    that would justify a ranking, and a list of talents with an opinion
+    attached is easy to write and hard to trust. What the data does contain
+    is structure: which talents sit in which row, how many ranks each has,
+    what each one requires, and how it compares with the Classic version. For
+    Druid that structure is worth reading on its own, because it determines
+    what a {ruleset.maxBudget}-point build can physically look like.
+  </p>
+  <p>
+    Everything below is generated from the current snapshot (published
+    {formatDate(manifest.publishedAt)}{manifest.gameBuild ? `, beta build ${manifest.gameBuild}` : ''}),
+    so it will stay in step with the site's data. For rank-by-rank effect
+    text, the
+    <a href="/talents/druid/">Druid reference page</a> is the place to read,
+    and the <a href="/druid/">Druid calculator</a> is the place to try
+    things out.
+  </p>
+
+  <h2>The shape of the three trees</h2>
+  <p>
+    Druid has {druid.talents.length} talents across {trees.length} trees. Each
+    tree is a grid of {trees[0].tree.grid.rows} rows. Row gates apply as they
+    do for every class: the first row is open, and each later row needs
+    {' '}{ruleset.pointsPerRowTier} more points in the rows above it, so the
+    last row needs {ruleset.pointsPerRowTier * (trees[0].tree.grid.rows - 1)}.
+    Our <a href="/blog/wow-forever-talent-points-levels-and-row-gates/">points and row gates explainer</a>
+    covers that rule in detail.
+  </p>
+  <div class="table-scroll">
+    <table class="data-table">
+      <caption class="visually-hidden">Druid trees at a glance</caption>
+      <thead>
+        <tr>
+          <th scope="col">Tree</th>
+          <th scope="col">Talents</th>
+          <th scope="col">Total ranks</th>
+          <th scope="col">Rows with a single talent</th>
+          <th scope="col">Active abilities</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          trees.map((t) => (
+            <tr>
+              <td>{t.tree.name}</td>
+              <td>{t.talents.length}</td>
+              <td>{t.totalRanks}</td>
+              <td>{t.singles.length ? t.singles.join(', ') : 'none'}</td>
+              <td>{t.active.length}</td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </div>
+  <p>
+    A row with a single talent is a fixed point: there is no choice inside
+    the row, and everything below it is gated by the points above. Active
+    abilities are talents that are not passive, meaning they have a cost,
+    cooldown or cast of their own in the data.
+  </p>
+
+  {
+    trees.map((t) => (
+      <>
+        <h2>{t.tree.name}</h2>
+        <p>
+          {t.talents.length} talents and {t.totalRanks} total ranks.
+          {t.active.length > 0 ? (
+            <>
+              {' '}The active abilities in this tree are{' '}
+              {joinList(t.active.map((a) => a.name))}.
+            </>
+          ) : null}
+        </p>
+        <div class="table-scroll">
+          <table class="data-table">
+            <caption class="visually-hidden">{t.tree.name} talents by row</caption>
+            <thead>
+              <tr>
+                <th scope="col">Row</th>
+                <th scope="col">Needs earlier</th>
+                <th scope="col">Talents (max rank)</th>
+              </tr>
+            </thead>
+            <tbody>
+              {t.rows.map((r) => (
+                <tr>
+                  <td>{r.row}</td>
+                  <td>{r.gate}</td>
+                  <td>
+                    {r.talents.length
+                      ? r.talents.map((x) => `${x.name} (${x.maxRank})`).join(', ')
+                      : 'none'}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </>
+    ))
+  }
+
+  <h2>Prerequisites</h2>
+  <p>
+    Beyond row gates, {druidPrereqs} Druid talents need a specific rank of
+    another talent first. Other classes have between {otherMin} and
+    {' '}{otherMax} such links in the current snapshot, so Druid is
+    {druidPrereqs > otherMax ? ' the most connected class' : ' within the usual range'}
+    on this measure. Each one below is a hard requirement: the calculator will
+    not let you add the point until the prerequisite is met.
+  </p>
+  <ul>
+    {
+      prerequisites.map((p) => (
+        <li>
+          <strong>{p.talent}</strong> ({p.treeName}, row {p.row}) requires
+          {' '}{p.needs} at rank {p.rank}
+        </li>
+      ))
+    }
+  </ul>
+  <p>
+    The practical effect is that some talents come as a pair. If you want the
+    dependent talent, you are also buying the prerequisite, and its point cost
+    counts against the same budget. When you compare two builds, those pairs
+    are easy to overlook, which is a good reason to test your plan in the
+    calculator rather than count points in your head.
+  </p>
+
+  <h2>The bottom row</h2>
+  <p>
+    The seventh row of each tree holds {joinList(
+      trees.flatMap((t) => t.capstones.map((c) => `${c.name} (${t.tree.name})`)),
+    )}. Reaching any of them means spending
+    {' '}{ruleset.pointsPerRowTier * (trees[0].tree.grid.rows - 1)} points
+    in that tree first, plus the point on the talent itself, which leaves
+    {' '}{ruleset.maxBudget - ruleset.pointsPerRowTier * (trees[0].tree.grid.rows - 1) - 1}
+    points of a full level-{ruleset.maxLevel} budget for everything else.
+    Two bottom-row talents from different trees would need
+    {' '}{2 * (ruleset.pointsPerRowTier * (trees[0].tree.grid.rows - 1) + 1)}
+    points, which is {2 * (ruleset.pointsPerRowTier * (trees[0].tree.grid.rows - 1) + 1) > ruleset.maxBudget ? 'more than' : 'within'}
+    the {ruleset.maxBudget}-point budget, since each one needs its own
+    tree's gate points before it opens.
+  </p>
+
+  <h2>Compared with Classic</h2>
+  <p>
+    The data records a Classic reference for each talent. For Druid the
+    split is {stats.new} new, {stats.changed} changed, {stats.moved} moved
+    and {stats.unchanged} unchanged talents, and {removedTotal} Classic
+    talents with no counterpart in the current trees:
+  </p>
+  <ul>
+    {
+      removed.map((r) => (
+        <li>
+          <strong>{r.tree}:</strong>
+          {' '}{r.names.length ? joinList(r.names) : 'none removed'}
+        </li>
+      ))
+    }
+  </ul>
+  <p>
+    "Changed" means the talent exists in both but something differs, such as
+    its effect text or rank count. Each talent's reference entry spells out
+    the specific difference, so a name you recognize from Classic is not a
+    guarantee that it works the way you remember. The
+    <a href="/changes/">Changes page</a> shows the same breakdown for every
+    class.
+  </p>
+
+  <h2>Using this without a tier list</h2>
+  <p>
+    A few questions the structure can answer honestly: how early in the
+    leveling process a given talent can exist, how many points a pair of
+    linked talents costs together, and what is left over after committing to
+    a bottom-row talent. Questions it cannot answer include which talent
+    does the most damage or healing, or which tree is strongest. For that
+    you need testing in game, and that testing may be out of date within a
+    build or two.
+  </p>
+  <p>
+    Rank texts here are labeled by how well we can vouch for them, which the
+    <a href="/blog/where-wow-forever-talent-data-comes-from/">post on the data's origin</a>
+    explains. If you spot a talent in the game that does not match what the
+    reference page says for Druid, send a screenshot and the build number via
+    the <a href="/contact/">contact page</a>.
+  </p>
+</BlogPostLayout>

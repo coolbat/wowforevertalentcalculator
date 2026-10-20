@@ -1,10 +1,22 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { loadManifest } from '@data/loadSnapshot';
+import { formatDate } from '@data/derive';
+import {
+  ABOUT_UPDATED,
+  CONTACT_EMAIL,
+  GITHUB_REPO_URL,
+  OPERATOR_NAME,
+} from '@data/site';
+
+const manifest = loadManifest();
+const { ruleset } = manifest;
 ---
 
 <BaseLayout
   title="About — WoW Forever Talent Calculator"
-  description="About this site: an independent, free, no-login WoW Forever talent planning tool — what it does, what it deliberately does not do, and how to report corrections."
+  description="About this independent WoW Forever talent planner: who it is for, where the data comes from, how evidence is labeled, corrections, and how the site is funded."
+  dateModified={ABOUT_UPDATED}
   breadcrumbs={[
     { name: 'Home', url: '/' },
     { name: 'About', url: '/about/' },
@@ -14,63 +26,250 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     <h1>About This Site</h1>
     <p class="lede">
       WoW Forever Talent Calculator is an independent, fan-made planning tool.
-      It is free to use, requires no account, and runs entirely on openly
-      licensed, clearly labeled data.
+      It is free to use, requires no account, and runs on openly licensed
+      data with every uncertain value labeled as such.
     </p>
     <p class="prose">
-      Maintained by the WoW Forever Talent Calculator team — a small fan
-      project, built by players for players.
+      The site is maintained by the {OPERATOR_NAME}, a small fan project. Its
+      source code is public on
+      {' '}<a href={GITHUB_REPO_URL} rel="external">GitHub</a>, and you can
+      reach us through the <a href="/contact/">contact page</a>.
+    </p>
+  </section>
+
+  <section class="page-section prose" aria-labelledby="why">
+    <h2 id="why">Why this site exists</h2>
+    <p>
+      WoW Forever brings back a talent system that players plan carefully:
+      three trees per class, a limited pool of points, and choices that are
+      costly to undo. Before launch, the information players need is scattered
+      across demo footage, beta screenshots and spreadsheets, and it is hard
+      to tell which of it is current. We built this site to put that
+      information in one place, let people try builds against the real
+      rules, and be explicit about how much is actually known.
+    </p>
+    <p>
+      The site is for players who want to plan a character before they level
+      it, for guild officers and friends who want to send each other a build
+      that opens exactly as intended, and for anyone who simply wants to read
+      what a talent does without hunting through forum posts. It is not aimed
+      at theorycrafters who need simulation, and it does not pretend to be.
     </p>
   </section>
 
   <section class="page-section prose" aria-labelledby="what-it-does">
     <h2 id="what-it-does">What it does</h2>
     <p>
-      The site covers all nine WoW Forever classes with three talent trees
-      each. You can spend points under the standard rules (budget, row gates,
-      prerequisites), save setups in your browser, share them as links, and
-      compare two builds point by point. Reference pages list every talent
-      with its rank text, evidence status, and Classic comparison as static,
-      citable HTML.
+      The site covers all nine classes with three talent trees each. On the
+      <a href="/">calculator</a> you spend points under the standard rules:
+      a budget that depends on level, row gates that open every
+      {ruleset.pointsPerRowTier} points spent in the rows above, and
+      prerequisites between talents. The level range is
+      {' '}{ruleset.minLevel} to {ruleset.maxLevel}, and a level
+      {' '}{ruleset.maxLevel} character has {ruleset.maxBudget} points.
+    </p>
+    <ul>
+      <li>
+        <strong>Share links.</strong> A build becomes a link that contains
+        only the class, level, data snapshot and ranks. Opening one shows the
+        build read-only, with an option to edit a copy.
+      </li>
+      <li>
+        <strong>Saved builds.</strong> Builds are saved in your browser on
+        your own device, with rename, delete, export and import on the
+        <a href="/my-builds/">My Builds</a> page.
+      </li>
+      <li>
+        <strong>Comparison.</strong> The <a href="/compare/">Compare</a> page
+        shows exactly which talents differ between two builds of the same
+        class and data snapshot.
+      </li>
+      <li>
+        <strong>Reference pages.</strong> The
+        <a href="/talents/">talent reference</a> lists every talent, rank text,
+        evidence status and Classic comparison as plain HTML, and the
+        <a href="/changes/">Changes page</a> counts what is new, changed,
+        moved or removed against Classic.
+      </li>
+    </ul>
+    <p>
+      For a step-by-step tour, read the
+      <a href="/blog/how-to-use-the-wow-forever-talent-calculator/">calculator guide</a>
+      on our blog.
     </p>
   </section>
 
   <section class="page-section prose" aria-labelledby="what-it-does-not">
     <h2 id="what-it-does-not">What it deliberately does not do</h2>
     <p>
-      This is a planner, not a simulator: there is no DPS simulation, no gear
-      modeling, and no automatic "best build" recommendation. Where the data
-      is uncertain, the site says so per rank instead of filling gaps with
-      guesses or silently borrowing Classic values.
+      This is a planner, not a simulator. There is no damage simulation, no
+      gear modeling and no automatic "best build" recommendation, and we do
+      not publish tier lists. Where the data is uncertain, the site says so
+      for that specific rank instead of filling gaps with guesses or quietly
+      borrowing Classic values. The standard budget also leaves out Legacy
+      early-spend effects; if a separate budget mode is confirmed, it would be
+      added as its own profile instead of changing the standard one.
     </p>
   </section>
 
   <section class="page-section prose" aria-labelledby="data">
-    <h2 id="data">Data &amp; attribution</h2>
+    <h2 id="data">Data, license and attribution</h2>
     <p>
       Talent data comes from
-      {' '}<a href="https://talentsforever.com/" rel="external">talentsforever.com</a>
-      {' '}(<a href="https://creativecommons.org/licenses/by/4.0/" rel="external">
-        CC BY 4.0
-      </a>), published as dated snapshots with per-rank evidence
-      statuses. The full source list, coverage numbers, and update policy are
-      on the <a href="/sources/">Sources</a> page.
+      {' '}<a href="https://talentsforever.com/" rel="external">talentsforever.com</a>,
+      which publishes its export under
+      {' '}<a href="https://creativecommons.org/licenses/by/4.0/" rel="external">CC BY 4.0</a>.
+      We credit it on the calculator and on the <a href="/sources/">Sources
+      page</a>, which also lists the source records, the coverage summary and
+      the update policy. We reformat and annotate the data, for example by
+      attaching an evidence status to each rank, and say so where it
+      matters.
+    </p>
+    <p>
+      The CC BY 4.0 license applies to the data export. It does not change who
+      owns the game. World of Warcraft, its names, talent text and icons
+      belong to Blizzard Entertainment. The talent icons on this site are
+      Blizzard game assets, bundled with the site to help players identify
+      talents; we claim no ownership of them. If a rights holder asks us to
+      remove material, we review the request and act on it, and
+      <a href="/contact/">the contact page</a> says how to send one.
+    </p>
+  </section>
+
+  <section class="page-section prose" aria-labelledby="handling">
+    <h2 id="handling">How the data is handled</h2>
+    <p>
+      We keep the raw export in the repository and run an import that turns
+      it into dated, content-hashed snapshots, one file per class. The
+      current snapshot was published on {formatDate(manifest.publishedAt)}
+      {manifest.gameBuild ? <> and reflects beta build {manifest.gameBuild}</> : null}.
+      When a new build's data is available upstream, we publish a new snapshot
+      and record the differences in the <a href="/changelog/">changelog</a>.
+      Older share links keep working: renamed talents keep their points,
+      points in removed talents are refunded, and a note on the page says
+      what changed.
+    </p>
+    <p>
+      Every rank has its own evidence status, from "official" down to
+      "unknown". Right now {manifest.coverage.ranksCommunityRecorded} of
+      {' '}{manifest.coverage.ranksTotal} ranks carry the community-record
+      label, which means we pass along what the source reports and have not
+      checked each value against the game client ourselves. That is why the
+      snapshot is marked "{manifest.stage}" and why you will not see a rank
+      described as confirmed unless it is. The
+      <a href="/blog/where-wow-forever-talent-data-comes-from/">data origin post</a>
+      explains the labels and the limits in more depth.
+    </p>
+  </section>
+
+  <section class="page-section prose" aria-labelledby="editorial">
+    <h2 id="editorial">Editorial principles</h2>
+    <ul>
+      <li>
+        <strong>Say what we know and how.</strong> Uncertain values are
+        labeled, not hidden or rounded into certainty.
+      </li>
+      <li>
+        <strong>Do not invent mechanics.</strong> Articles on the
+        <a href="/blog/">blog</a> are written from the dataset or from public
+        announcements, and talent sections are generated from the snapshot so
+        they stay in step with the reference pages.
+      </li>
+      <li>
+        <strong>Keep the record.</strong> Data changes go in the changelog,
+        and posts show an updated date when we correct them.
+      </li>
+      <li>
+        <strong>Keep money out of the data.</strong> Advertising does not
+        decide what a talent says, which talents are shown, or what we write.
+      </li>
+    </ul>
+  </section>
+
+  <section class="page-section prose" aria-labelledby="funding">
+    <h2 id="funding">How the site is funded</h2>
+    <p>
+      The site shows advertising through Google AdSense, and that revenue
+      supports the work of running and maintaining the site. Ads are served
+      by Google, not by us, and the <a href="/privacy/">privacy page</a>
+      describes the cookies and choices that come with them. The site has no
+      paywall and no account system.
     </p>
   </section>
 
   <section class="page-section prose" aria-labelledby="contact">
     <h2 id="contact">Corrections &amp; contact</h2>
     <p>
-      Found a wrong rank text, a broken prerequisite, or a stale link?
-      Corrections are welcome — open an issue on the project's GitHub
-      repository (link to be published here) or email
+      Found a wrong rank text, a broken prerequisite, a stale date or a bug?
+      Email
       {' '}
-      <a href="mailto:contact@wowforevertalentcalculator.com">
-        contact@wowforevertalentcalculator.com
-      </a>. Please
-      include the snapshot ID shown on the page so the report can be checked
-      against the exact data you saw.
+      <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
+      {' '}or open an issue on the project's
+      {' '}<a href={`${GITHUB_REPO_URL}/issues`} rel="external">GitHub tracker</a>.
+      Include the class, talent name and rank, and the snapshot ID shown on
+      the <a href="/sources/">Sources page</a>, so we can check the report
+      against the exact data you saw. We read every report, but we run the
+      site in spare time and do not promise a reply time. The
+      <a href="/contact/">contact page</a> lists what to include for each
+      kind of message.
     </p>
+  </section>
+
+  <section class="page-section prose" aria-labelledby="whats-next">
+    <h2 id="whats-next">What is confirmed to come</h2>
+    <p>
+      We only list what is already public. Blizzard has announced the global
+      launch of WoW Forever for November 4, 2026, at 3:00 p.m. PST; the
+      <a href="/wow-forever-beta-end/">beta end and launch dates</a> page
+      keeps the full schedule. The site will continue to follow published
+      beta data until then and record each update in the changelog. Beyond
+      that, we do not make commitments about features or dates.
+    </p>
+  </section>
+
+  <section class="page-section" aria-labelledby="faq">
+    <h2 id="faq">Frequently asked questions</h2>
+
+    <details class="faq-item">
+      <summary>Is this an official Blizzard site?</summary>
+      <p>
+        No. It is an independent fan project with no affiliation to
+        Blizzard Entertainment and no endorsement from it.
+      </p>
+    </details>
+
+    <details class="faq-item">
+      <summary>Do I need an account?</summary>
+      <p>
+        No. There is no sign-up or login. Saved builds stay in your browser
+        and share links carry only the build.
+      </p>
+    </details>
+
+    <details class="faq-item">
+      <summary>Can I trust the talent descriptions?</summary>
+      <p>
+        Treat them as a planning aid. Each rank shows its evidence status, and
+        for choices that matter you should compare the text with the game.
+        Corrections are welcome.
+      </p>
+    </details>
+
+    <details class="faq-item">
+      <summary>Who writes the blog?</summary>
+      <p>
+        Posts are published under the site's name by the {OPERATOR_NAME}, and
+        we do not use invented author profiles.
+      </p>
+    </details>
+
+    <details class="faq-item">
+      <summary>Can I reuse the data?</summary>
+      <p>
+        The upstream export is CC BY 4.0, so follow its terms and credit
+        talentsforever.com. Game names, text and icons remain Blizzard's.
+      </p>
+    </details>
   </section>
 
   <section class="page-section prose" aria-labelledby="independence">
@@ -78,8 +277,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     <p>
       Independent fan-made tool. Not affiliated with or endorsed by Blizzard
       Entertainment. Game names and related terms belong to their respective
-      owners; this site uses original styling and neutral placeholder icons
-      only.
+      owners.
     </p>
   </section>
 </BaseLayout>

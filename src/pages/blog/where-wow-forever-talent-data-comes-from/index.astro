@@ -1,0 +1,233 @@
+---
+import BlogPostLayout from '../../../layouts/BlogPostLayout.astro';
+import { loadAllSnapshots, loadManifest, loadClassSnapshot } from '@data/loadSnapshot';
+import {
+  EVIDENCE_DEFINITIONS,
+  formatDate,
+  stageLabel,
+} from '@data/derive';
+import { CC_BY_4_0_URL, TALENTSFOREVER_URL } from '@data/credit';
+
+const manifest = loadManifest();
+const snapshots = loadAllSnapshots();
+const source = manifest.sources[0];
+
+const statusCounts = new Map<string, number>();
+for (const s of snapshots) {
+  for (const t of s.talents) {
+    for (const r of t.rankEffects) {
+      statusCounts.set(
+        r.evidenceStatus,
+        (statusCounts.get(r.evidenceStatus) ?? 0) + 1,
+      );
+    }
+  }
+}
+const statusRows = EVIDENCE_DEFINITIONS.map((d) => ({
+  ...d,
+  count: statusCounts.get(d.status) ?? 0,
+}));
+const totalRanks = manifest.coverage.ranksTotal;
+
+// A concrete example of a rank text next to its Classic counterpart.
+const druid = loadClassSnapshot('druid');
+const example = druid.talents.find((t) => t.talentId === 'druid:nature-s-reach');
+const exampleRank1 = example?.rankEffects.find((r) => r.rank === 1);
+---
+
+<BlogPostLayout slug="where-wow-forever-talent-data-comes-from">
+  <p>
+    Every effect description on this site, from a one-line passive to a
+    cooldown, came from somewhere, and the honest answer to "how accurate is
+    it?" depends on where. This post lays out the chain: who produces the
+    data, how it reaches the calculator, what the labels attached to each
+    rank mean, and the specific ways the numbers can be out of date or
+    wrong. It is the longer version of the <a href="/sources/">Sources page</a>,
+    written for someone deciding how much weight to put on a talent
+    description.
+  </p>
+
+  <h2>The source</h2>
+  <p>
+    The talent data comes from
+    <a href={TALENTSFOREVER_URL} rel="external">talentsforever.com</a>, a
+    separate fan-made WoW Forever talent calculator that publishes its data
+    export under the
+    <a href={CC_BY_4_0_URL} rel="external">Creative Commons Attribution 4.0</a>
+    license. That license lets anyone reuse and adapt the data as long as
+    they credit the source and say if they changed it. We credit it in the
+    calculator, on the Sources page and here, and the changes we make are
+    described below.
+  </p>
+  <p>
+    According to the notes shipped with that export, the talents are read
+    from the WoW Forever beta client's own data files, and they describe the
+    upstream site as having begun with frame-by-frame reads of the BlizzCon
+    2026 demo. The same notes add two caveats worth repeating. The
+    numbers "can lag live tuning", meaning the client files may not reflect
+    server-side changes. And a class can carry server hotfixes on top of the
+    build it was read from, in which case the upstream data labels that class
+    and names the days.
+  </p>
+  <p>
+    The current snapshot was recorded on {formatDate(source.recordedAt)}
+    {
+      manifest.gameBuild ? (
+        <> from beta build {manifest.gameBuild}</>
+      ) : null
+    }
+    and published on {formatDate(manifest.publishedAt)}. Its stage is
+    marked "{stageLabel(manifest.stage)}", which is a deliberate reminder
+    that this is pre-release data.
+  </p>
+
+  <h2>What happens between the export and the page</h2>
+  <p>
+    We keep the raw export file in our repository and run an import script
+    that turns it into one JSON file per class plus a manifest. Three things
+    happen in that step:
+  </p>
+  <ul>
+    <li>
+      Each talent gets a stable ID that does not depend on its grid position,
+      so a talent that moves rows is still the same talent for share links.
+    </li>
+    <li>
+      The file names include a content hash and old snapshot IDs stay on the
+      manifest, which is what lets older share links keep opening.
+    </li>
+    <li>
+      Each rank gets an evidence status, and every prerequisite is resolved
+      to a talent ID. The manifest counts how many resolved, which is how we
+      notice a prerequisite that points at nothing.
+    </li>
+  </ul>
+  <p>
+    We reformat and annotate, but we do not rewrite effect text by hand. If a
+    description reads oddly, it reads that way in the source.
+  </p>
+
+  <h2>Reading the evidence labels</h2>
+  <p>
+    Every rank carries one of seven statuses. They are ordered roughly from
+    strongest claim to weakest, and the Sources page defines them in full:
+  </p>
+  <div class="table-scroll">
+    <table class="data-table">
+      <caption class="visually-hidden">
+        Evidence statuses and how many ranks currently carry each
+      </caption>
+      <thead>
+        <tr>
+          <th scope="col">Status</th>
+          <th scope="col">What it claims</th>
+          <th scope="col">Ranks now</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          statusRows.map((r) => (
+            <tr>
+              <td>
+                <span class={`badge badge-${r.status}`}>{r.label}</span>
+              </td>
+              <td>{r.definition}</td>
+              <td>{r.count}</td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </div>
+  <p>
+    Out of {totalRanks} ranks in the current snapshot, the counts above show
+    where they sit. The number to focus on is how many ranks carry one of the
+    "verified" or "official" statuses, because those are the only labels that
+    mean we, or Blizzard, confirmed something directly. A "community record"
+    is the label for text relayed from the source export that we have not
+    checked against the client ourselves. It is not a statement that the
+    text is wrong. It is a statement about who vouches for it, and the
+    answer is the upstream project, not us.
+  </p>
+  <p>
+    That is also why the calculator never presents a rank text as simply
+    "confirmed". The detail panel prints the label right under the text, and
+    a rank with no known effect shows a question mark in the tree instead of
+    an invented description.
+  </p>
+
+  {
+    example && exampleRank1 && example.classic?.text ? (
+      <>
+        <h2>An example: one talent, two eras</h2>
+        <p>
+          Here is {example.name} in the Druid Balance tree, as the current
+          data records it next to the Classic version it is compared with.
+        </p>
+        <blockquote>
+          <p>
+            <strong>WoW Forever, rank 1:</strong> {exampleRank1.text}
+          </p>
+          <p>
+            <strong>Classic reference:</strong> {example.classic.text}
+          </p>
+        </blockquote>
+        <p>
+          The talent's status against Classic is "{example.classic.status}".
+          The difference matters for planning, and it is exactly the kind of
+          thing worth confirming in game if a decision depends on it. See the{' '}
+          <a href="/talents/druid/">Druid reference page</a> for every rank
+          and its label.
+        </p>
+      </>
+    ) : null
+  }
+
+  <h2>Ways the data can be wrong or stale</h2>
+  <ol>
+    <li>
+      <strong>A newer beta build changed a talent.</strong> We update the
+      snapshot when a new build is available in the upstream data, so there
+      can be a gap. Class pages show the build and date of the data in use,
+      and the <a href="/changelog/">changelog</a> lists every update by class.
+    </li>
+    <li>
+      <strong>Hotfixes.</strong> Server-side changes may not be in the client
+      files at all. If a talent behaves differently in game than the text
+      says, that is the first thing to suspect.
+    </li>
+    <li>
+      <strong>Level and gear effects.</strong> The source gives tooltip text as
+      the client files have it at level 60. Values that scale can read
+      differently on your character.
+    </li>
+    <li>
+      <strong>Transcription or import errors.</strong> A typo, a wrong
+      prerequisite or a misplaced row is possible in any pipeline.
+      The manifest shows that {manifest.coverage.prerequisitesResolved} of
+      {' '}{manifest.coverage.prerequisitesTotal} recorded prerequisites
+      resolved to a talent, but "resolved" means the link exists, not that it
+      is right.
+    </li>
+  </ol>
+
+  <h2>What we ask readers to do</h2>
+  <p>
+    Treat the site as a planning aid and not as an authority. For any pick
+    that matters, open the talent in the game's own talent window and compare
+    the text. When the two disagree, send us the class, the talent name, the
+    rank, the build number and a screenshot through the
+    <a href="/contact/">contact page</a>, or open an issue on the project's
+    GitHub repository. Reports that include the snapshot ID shown on the
+    Sources page are the easiest to check, because they tell us exactly
+    which data you were looking at.
+  </p>
+  <p>
+    The game, its names, talent text and icons belong to Blizzard
+    Entertainment, which has no connection to this site. The CC BY 4.0
+    license applies to the upstream data export and does not change that. The
+    <a href="/about/">About page</a> has the full independence notice, and the
+    post on <a href="/blog/how-to-use-the-wow-forever-talent-calculator/">using the calculator</a>
+    shows where each label appears in the interface.
+  </p>
+</BlogPostLayout>

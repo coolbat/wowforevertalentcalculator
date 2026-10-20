@@ -1,0 +1,275 @@
+---
+import BlogPostLayout from '../../../layouts/BlogPostLayout.astro';
+import { loadAllSnapshots, loadManifest } from '@data/loadSnapshot';
+import { getPointBudget, minLevelForSpent } from '@domain/talents/rules';
+
+const manifest = loadManifest();
+const { ruleset } = manifest;
+const snapshots = loadAllSnapshots();
+
+const budgetAt = (level: number) => {
+  const b = getPointBudget(level, 'standard', ruleset);
+  return typeof b === 'number' ? b : 0;
+};
+const levelRows = [10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60].map((level) => ({
+  level,
+  points: budgetAt(level),
+}));
+
+const rowCount = 7;
+const gateRows = Array.from({ length: rowCount }, (_, i) => {
+  const earlier = ruleset.pointsPerRowTier * i;
+  return {
+    row: i + 1,
+    earlier,
+    minSpent: earlier + 1,
+    minLevel: minLevelForSpent(earlier + 1, ruleset),
+  };
+});
+const capstone = gateRows[rowCount - 1];
+
+const treeRows = snapshots.flatMap((s) =>
+  s.trees.map((tree) => {
+    const total = s.talents
+      .filter((t) => t.treeId === tree.treeId)
+      .reduce((n, t) => n + t.maxRank, 0);
+    return {
+      className: s.classDef.name,
+      classId: s.classDef.classId,
+      tree: tree.name,
+      total,
+      diff: ruleset.maxBudget - total,
+    };
+  }),
+);
+const fillable = treeRows.filter((r) => r.diff >= 0).length;
+
+// First prerequisite on the Druid page, used as a concrete example.
+const druid = snapshots.find((s) => s.classDef.classId === 'druid');
+const byId = new Map((druid?.talents ?? []).map((t) => [t.talentId, t]));
+const exampleTalent = (druid?.talents ?? [])
+  .filter((t) => t.prerequisites.length > 0)
+  .sort((a, b) => a.treeId.localeCompare(b.treeId) || a.row - b.row)[0];
+const examplePre = exampleTalent
+  ? byId.get(exampleTalent.prerequisites[0].talentId)
+  : undefined;
+---
+
+<BlogPostLayout slug="wow-forever-talent-points-levels-and-row-gates">
+  <p>
+    Two numbers decide almost everything you can do in the calculator: how
+    many points you have, and how many of them already sit in the right
+    place. The first depends on level. The second depends on row gates, the
+    rule that a talent further down a tree stays locked until enough points
+    are spent above it. Both are simple, but the way they interact catches
+    people out, especially when they plan a build at level 60 and then wonder
+    why it cannot exist at level 45.
+  </p>
+  <p>
+    Everything here describes the ruleset this site ships,
+    <code>{ruleset.rulesetId}</code>. It is our implementation of the rules,
+    built from the data and the game information available to us. If the
+    game ever disagrees with it, the game is right and we would like to hear
+    about it through the <a href="/contact/">contact page</a>.
+  </p>
+
+  <h2>How many points you have at each level</h2>
+  <p>
+    The first talent point arrives at level {ruleset.pointsStartLevel}, and
+    you earn one more with every level after that. In the calculator that
+    works out as <em>level minus {ruleset.pointsStartLevel - 1}</em>, with a
+    ceiling of {ruleset.maxBudget} points. The level range the calculator
+    accepts is {ruleset.minLevel} to {ruleset.maxLevel}, so a level
+    {ruleset.maxLevel} character has the full {ruleset.maxBudget}. Below
+    level {ruleset.pointsStartLevel} there are no points to spend.
+  </p>
+  <div class="table-scroll">
+    <table class="data-table">
+      <caption class="visually-hidden">Talent points by character level</caption>
+      <thead>
+        <tr>
+          <th scope="col">Level</th>
+          <th scope="col">Points available</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          levelRows.map((r) => (
+            <tr>
+              <td>{r.level}</td>
+              <td>{r.points}</td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </div>
+  <p>
+    The standard budget counts only points earned by leveling. The site does
+    not model Legacy early-spend effects, which the
+    <a href="/#faq">home page FAQ</a> explains. If the game confirms a
+    separate budget mode later, it would be added as its own profile rather
+    than changing this one.
+  </p>
+
+  <h2>Row gates</h2>
+  <p>
+    Each tree has seven rows. A talent in row 1 is always available. A talent
+    in any later row needs a minimum number of points already spent in the
+    rows above it, in the same tree. In this ruleset the requirement grows by
+    {ruleset.pointsPerRowTier} points per row. Points in other trees do not
+    count toward the gate, which is why a build that splits points across two
+    trees reaches the lower rows of each more slowly than a build that goes
+    deep in one.
+  </p>
+  <div class="table-scroll">
+    <table class="data-table">
+      <caption class="visually-hidden">
+        Row requirements and the earliest level for each row
+      </caption>
+      <thead>
+        <tr>
+          <th scope="col">Row</th>
+          <th scope="col">Points needed in earlier rows</th>
+          <th scope="col">Points spent after taking one rank here</th>
+          <th scope="col">Earliest level</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          gateRows.map((r) => (
+            <tr>
+              <td>{r.row}</td>
+              <td>{r.earlier}</td>
+              <td>{r.minSpent}</td>
+              <td>{r.minLevel}</td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </div>
+  <p>
+    The last two columns are plain arithmetic on the ruleset: you need the
+    gate points plus the point you spend on the talent itself, and you need a
+    level that gives you that many points. They assume the
+    earlier points all went into the same tree. The "Needs at least level"
+    line in the calculator uses the same formula for whatever you have spent
+    so far.
+  </p>
+
+  <h3>What the bottom row costs</h3>
+  <p>
+    Reaching row {capstone.row} means putting {capstone.earlier} points into
+    that tree first, so the first rank of a bottom-row talent is point number
+    {capstone.minSpent} overall. At level {ruleset.maxLevel} that leaves
+    {ruleset.maxBudget - capstone.minSpent} points for everything else,
+    whether that is more ranks in the same tree or a second tree. This is the
+    real constraint behind most talent decisions in a 51-point system: the
+    bottom row is available, but it takes most of the budget to open.
+  </p>
+
+  <h2>Prerequisites are a separate rule</h2>
+  <p>
+    Some talents also need a specific rank of another talent.
+    {
+      exampleTalent && examplePre ? (
+        <>
+          {' '}On the <a href="/druid/">Druid page</a>, for instance,{' '}
+          {exampleTalent.name} requires {examplePre.name} at rank{' '}
+          {exampleTalent.prerequisites[0].requiredRank}.
+        </>
+      ) : null
+    }
+    {' '}The snapshot currently records {manifest.coverage.prerequisitesTotal}
+    such prerequisites across all classes. A prerequisite works in both
+    directions: you cannot add a point until it is met, and you cannot remove
+    the prerequisite's last required rank while the dependent talent still
+    holds points. Row gates have the same two-way behavior. Removing a point
+    from an early row is blocked if it would drop a later talent below its
+    gate.
+  </p>
+  <p>
+    The calculator checks the whole build every time, not just the talent you
+    clicked, and rejects any change that would leave the build invalid. That
+    is why you sometimes have to take points out in a particular order before
+    you can move them. The detail panel names the talents that stand in the
+    way.
+  </p>
+
+  <h2>Can one tree absorb the whole budget?</h2>
+  <p>
+    Adding up the maximum ranks of every talent in a tree gives a ceiling for
+    how many points that tree can hold. Compared with the
+    {' '}{ruleset.maxBudget}-point budget, {fillable} of the {treeRows.length}
+    trees in the current data hold {ruleset.maxBudget} or fewer, so in
+    principle a level {ruleset.maxLevel} character could take every talent in
+    those trees and have points to spare. The rest hold more than the budget,
+    so something has to be skipped.
+  </p>
+  <div class="table-scroll">
+    <table class="data-table">
+      <caption class="visually-hidden">
+        Total ranks per talent tree compared with the point budget
+      </caption>
+      <thead>
+        <tr>
+          <th scope="col">Class</th>
+          <th scope="col">Tree</th>
+          <th scope="col">Total ranks</th>
+          <th scope="col">Against {ruleset.maxBudget} points</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          treeRows.map((r) => (
+            <tr>
+              <td>
+                <a href={`/talents/${r.classId}/`}>{r.className}</a>
+              </td>
+              <td>{r.tree}</td>
+              <td>{r.total}</td>
+              <td>
+                {r.diff >= 0 ? `${r.diff} spare` : `${-r.diff} over`}
+              </td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </div>
+  <p>
+    Read this table as a statement about the data, not about good builds.
+    Whether filling a tree is sensible is a separate question we do not try
+    to answer, and nothing here says one tree is stronger than another. The
+    numbers also move if a later game build adds or removes talents, which is
+    why the table is generated from the snapshot each time the site is built.
+  </p>
+
+  <h2>Planning with these rules</h2>
+  <ul>
+    <li>
+      Decide the deepest tree first. Its row gates set the earliest level at
+      which each of its talents can exist.
+    </li>
+    <li>
+      Treat bottom-row talents as a cost of {capstone.minSpent} points, not
+      one.
+    </li>
+    <li>
+      Use the level box to test an intermediate build, for example what a
+      level 40 version of your plan looks like, and use
+      <a href="/compare/">Compare</a> to see which points you would defer.
+    </li>
+    <li>
+      Remember that Undo and Redo work on the whole build, so exploring a
+      risky layout is cheap.
+    </li>
+  </ul>
+  <p>
+    For a hands-on tour of the controls, see the
+    <a href="/blog/how-to-use-the-wow-forever-talent-calculator/">calculator guide</a>.
+    For what the effect texts mean and how reliable they are, see the post on
+    <a href="/blog/where-wow-forever-talent-data-comes-from/">where the data comes from</a>.
+  </p>
+</BlogPostLayout>
