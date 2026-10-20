@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { loadManifest, loadAllSnapshots } from '@data/loadSnapshot';
 import { joinNames, rankCoverage, stageLabel } from '@data/derive';
+import { dataBuildLine, rankCoverageLine } from '@data/credit';
 
 const manifest = loadManifest();
 const snapshots = loadAllSnapshots();
@@ -16,6 +17,11 @@ const classes = snapshots.map((s) => ({
 }));
 
 const stage = stageLabel(manifest.stage);
+const buildLine = dataBuildLine(manifest);
+const coverageLine = rankCoverageLine(
+  manifest.coverage.ranksWithText,
+  manifest.coverage.ranksTotal,
+);
 ---
 
 <BaseLayout
@@ -32,7 +38,12 @@ const stage = stageLabel(manifest.stage);
       The complete {stage.toLowerCase()}-snapshot talent listing for all nine
       classes — every rank's text, evidence status, and Classic comparison as
       plain HTML, for reading, linking, and checking facts without opening the
-      calculator.
+      calculator. {coverageLine}.
+    </p>
+    <p>
+      <span class="stage-badge" data-testid="data-stamp">
+        {buildLine ?? `${stage} data`}
+      </span>
     </p>
   </section>
 

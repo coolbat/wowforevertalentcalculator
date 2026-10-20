@@ -1,11 +1,29 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { loadManifest } from '@data/loadSnapshot';
+import { formatDate } from '@data/derive';
+import { rankCoverageLine } from '@data/credit';
+import {
+  classHasChanges,
+  describeCell,
+  describeMove,
+  describeRequires,
+  entryTotals,
+  loadChangelogEntries,
+} from '@data/changelog';
+
+const manifest = loadManifest();
+const entries = loadChangelogEntries();
+const latest = entries[0];
+const description = latest
+  ? `Every data update to the WoW Forever talent calculator. Now on beta build ${manifest.gameBuild} (upstream export ${formatDate(latest.upstreamExport ?? latest.date)}), with all talent changes listed by class.`
+  : 'Every data update to the WoW Forever talent calculator, with all talent changes listed by class.';
 ---
 
 <BaseLayout
   title="WoW Forever Talent Calculator Changelog & Data Updates"
-  description="Every data update to the WoW Forever talent calculator. Now on beta build 70291 from October 8, 2026, with all talent changes listed by class."
-  dateModified="2026-10-15"
+  description={description}
+  dateModified={latest?.date ?? manifest.publishedAt}
   breadcrumbs={[
     { name: 'Home', url: '/' },
     { name: 'Changelog', url: '/changelog/' },
@@ -17,9 +35,129 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       We update the calculator when a new WoW Forever beta build changes
       talents. Talent data comes from
       <a href="https://talentsforever.com/" rel="external">talentsforever.com</a>
-      (CC BY 4.0), which reads the beta game files.
+      (CC BY 4.0), a community export of the beta game files. Each entry
+      lists what that export now records compared with our previous
+      snapshot; it is the source's current record, not a value confirmed in
+      the game.
     </p>
   </section>
+
+  {
+    entries.map((entry) => {
+      const totals = entryTotals(entry);
+      const changedClasses = Object.values(entry.classes).filter(classHasChanges);
+      const unchangedClasses = Object.values(entry.classes)
+        .filter((c) => !classHasChanges(c))
+        .map((c) => c.className);
+      return (
+        <section class="page-section prose" aria-labelledby={`entry-${entry.id}`}>
+          <h2 id={`entry-${entry.id}`}>
+            {formatDate(entry.date)} — Beta build {entry.build}
+          </h2>
+          <p>
+            The calculator now uses beta build {entry.build} as recorded in the
+            Talents Forever export of {formatDate(entry.upstreamExport ?? entry.date)},
+            checked on {formatDate(entry.date)}. The previous snapshot was build{' '}
+            {entry.previousBuild} (export {formatDate(entry.previousUpstreamExport ?? entry.date)}).{' '}
+            {entry.ranksWithText !== null && entry.ranksTotal !== null
+              ? `${rankCoverageLine(entry.ranksWithText, entry.ranksTotal)}.`
+              : ''}{' '}
+            Saved builds and share links still open: points on renamed
+            talents are kept under the new name, and points on talents that are
+            no longer in the data are refunded.
+          </p>
+          <p>
+            In total: {totals.added} talents added, {totals.removed} removed,{' '}
+            {totals.renamed} renamed, {totals.moved} moved, {totals.rankCount}{' '}
+            with a different rank count, {totals.prerequisites} with different
+            prerequisites, and {totals.text} with updated effect text.
+          </p>
+          <ul>
+            {changedClasses.map((c) => (
+              <li>
+                <strong>{c.className}:</strong>
+                {c.added.length > 0 && (
+                  <>
+                    {' '}Added {c.added.map((a) => `${a.name} (${describeCell(a)})`).join(', ')}.
+                  </>
+                )}
+                {c.removed.length > 0 && (
+                  <>
+                    {' '}No longer in the export:{' '}
+                    {c.removed.map((r) => `${r.name} (was ${describeCell(r)})`).join(', ')}.
+                  </>
+                )}
+                {c.renamed.length > 0 && (
+                  <>
+                    {' '}Renamed:{' '}
+                    {c.renamed.map((r) => `${r.from} is now ${r.to}`).join('; ')}.
+                  </>
+                )}
+                {c.moved.length > 0 && (
+                  <>
+                    {' '}Moved:{' '}
+                    {c.moved.map((m) => `${m.name} (${describeMove(m.from, m.to)})`).join(', ')}.
+                  </>
+                )}
+                {c.maxRankChanged.length > 0 && (
+                  <>
+                    {' '}Rank count changed:{' '}
+                    {c.maxRankChanged.map((m) => `${m.name} ${m.from} → ${m.to}`).join(', ')}.
+                  </>
+                )}
+                {c.prerequisitesChanged.length > 0 && (
+                  <>
+                    {' '}Prerequisites changed:{' '}
+                    {c.prerequisitesChanged
+                      .map(
+                        (p) =>
+                          `${p.name} now requires ${describeRequires(p.to)} (was ${describeRequires(p.from)})`,
+                      )
+                      .join('; ')}.
+                  </>
+                )}
+                {c.textChanged.length > 0 && (
+                  <>
+                    {' '}Effect text updated:{' '}
+                    {c.textChanged.map((t) => t.name).join(', ')}.
+                  </>
+                )}
+                {c.textChanged.length > 0 && (
+                  <details class="changelog-details">
+                    <summary>
+                      {c.className}: what the effect text said before and now
+                    </summary>
+                    <ul>
+                      {c.textChanged.map((t) => {
+                        const first = t.ranks[0];
+                        return (
+                          <li>
+                            <strong>{t.name}</strong> (rank{' '}
+                            {t.ranks.map((r) => r.rank).join(', ')} changed; rank{' '}
+                            {first.rank} shown)
+                            <br />
+                            Was: {first.before ?? 'no text'}
+                            <br />
+                            Now: {first.after ?? 'no text'}
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  </details>
+                )}
+              </li>
+            ))}
+            {unchangedClasses.length > 0 && (
+              <li>
+                <strong>{unchangedClasses.join(', ')}:</strong> no differences
+                from the previous snapshot.
+              </li>
+            )}
+          </ul>
+        </section>
+      );
+    })
+  }
 
   <section class="page-section prose" aria-labelledby="build-70291">
     <h2 id="build-70291">October 15, 2026 — Beta build 70291</h2>

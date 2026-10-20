@@ -1,3 +1,5 @@
+import { readFileSync } from 'node:fs';
+import path from 'node:path';
 import { expect, test } from '@playwright/test';
 
 /** PRD §15.3 SEO acceptance + JS-disabled readability (§15.2 flow 9). */
@@ -221,9 +223,9 @@ test('JS disabled: reference and calculator pages stay readable', async ({ brows
   await page.goto('/talents/mage/');
   await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
   await expect(page.locator('body')).toContainText('Wand Specialization');
-  // Build 70291 has effect text on every mage rank, labeled with its evidence status.
+  // The current build has effect text on every mage rank, labeled with its evidence status.
   await expect(page.locator('body')).toContainText('Community record');
-  await expect(page.locator('body')).toContainText('ranks have confirmed effect text');
+  await expect(page.locator('body')).toContainText('ranks have recorded effect text');
 
   await page.goto('/mage/');
   await expect(page.getByRole('heading', { level: 1 })).toContainText(/Mage/);
@@ -241,4 +243,28 @@ test('footer carries the fan-made disclaimer; sources page carries CC BY attribu
   const sources = (await (await request.get('/sources/')).text()).replace(/\s+/g, ' ');
   expect(sources).toContain('talentsforever.com');
   expect(sources).toContain('CC BY 4.0');
+});
+
+test('data stamp and rank coverage come from the manifest; no stale "unknown" copy', async ({
+  request,
+}) => {
+  const manifest = JSON.parse(
+    readFileSync(path.join(process.cwd(), 'public/data/manifest.json'), 'utf8'),
+  );
+  const { ranksTotal, ranksWithText } = manifest.coverage;
+  const total = ranksTotal.toLocaleString('en-US');
+  const withText = ranksWithText.toLocaleString('en-US');
+  const stamp = `Data: beta build ${manifest.gameBuild}`;
+
+  for (const route of ['/', '/sources/', '/talents/', '/changes/', '/talents/warrior/', '/warrior/']) {
+    const html = (await (await request.get(route)).text()).replace(/\s+/g, ' ');
+    expect(html, route).toContain(stamp);
+    expect(html, route).toContain('community export, not verified in-game');
+    expect(html, route).not.toMatch(/source estimates or unknown|not yet confirmed|many rank texts/i);
+  }
+  const home = (await (await request.get('/')).text()).replace(/\s+/g, ' ');
+  expect(home).toContain(`${withText} of ${total} ranks have recorded effect text`);
+  const changelog = (await (await request.get('/changelog/')).text()).replace(/\s+/g, ' ');
+  expect(changelog).toContain(`Beta build ${manifest.gameBuild}`);
+  expect(changelog).toContain('Wake of Fire is now Improved Fire Blast');
 });

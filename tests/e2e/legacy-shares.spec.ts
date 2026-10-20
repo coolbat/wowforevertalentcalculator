@@ -8,6 +8,10 @@ interface LegacyShare {
   payload: string;
 }
 
+const manifest = JSON.parse(
+  readFileSync(path.join(process.cwd(), 'public/data/manifest.json'), 'utf8'),
+) as { gameBuild: string };
+
 const shares = JSON.parse(
   readFileSync(path.join(process.cwd(), 'tests/fixtures/legacy-share-urls.json'), 'utf8'),
 ) as LegacyShare[];
@@ -27,7 +31,7 @@ async function openLegacy(page: Page, item: LegacyShare) {
   await expect(page.getByTestId('error-panel')).toHaveCount(0);
   await expect(page.getByTestId('external-banner')).toBeVisible();
   await expect(page.getByTestId('data-credit')).toContainText(
-    'Data: beta build 70291 (Oct 8, 2026)',
+    `Data: beta build ${manifest.gameBuild} · upstream export`,
   );
   const credit = page.getByTestId('data-credit');
   await expect(credit.getByRole('link', { name: 'talentsforever.com' })).toHaveAttribute(

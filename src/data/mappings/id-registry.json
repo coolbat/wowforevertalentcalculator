@@ -832,6 +832,13 @@
     "status": "active",
     "aliasOf": null
   },
+  "mage:arcane-wrath": {
+    "classId": "mage",
+    "sourceName": "Arcane Wrath",
+    "sourceTree": "Arcane",
+    "status": "active",
+    "aliasOf": null
+  },
   "mage:arctic-reach": {
     "classId": "mage",
     "sourceName": "Arctic Reach",
@@ -1007,6 +1014,13 @@
     "status": "active",
     "aliasOf": null
   },
+  "mage:improved-fire-blast": {
+    "classId": "mage",
+    "sourceName": "Improved Fire Blast",
+    "sourceTree": "Fire",
+    "status": "active",
+    "aliasOf": null
+  },
   "mage:improved-fire-ward": {
     "classId": "mage",
     "sourceName": "Improved Fire Ward",
@@ -1116,8 +1130,8 @@
     "classId": "mage",
     "sourceName": "Wake of Fire",
     "sourceTree": "Fire",
-    "status": "active",
-    "aliasOf": null
+    "status": "renamed",
+    "aliasOf": "mage:improved-fire-blast"
   },
   "mage:wand-specialization": {
     "classId": "mage",
@@ -1518,6 +1532,13 @@
     "status": "active",
     "aliasOf": null
   },
+  "priest:dark-inspiration": {
+    "classId": "priest",
+    "sourceName": "Dark Inspiration",
+    "sourceTree": "Shadow",
+    "status": "active",
+    "aliasOf": null
+  },
   "priest:darkness": {
     "classId": "priest",
     "sourceName": "Darkness",
@@ -1585,7 +1606,7 @@
     "classId": "priest",
     "sourceName": "Improved Fade",
     "sourceTree": "Shadow",
-    "status": "active",
+    "status": "removed",
     "aliasOf": null
   },
   "priest:improved-healing": {
@@ -1753,7 +1774,7 @@
     "classId": "priest",
     "sourceName": "Shadow Affinity",
     "sourceTree": "Shadow",
-    "status": "active",
+    "status": "removed",
     "aliasOf": null
   },
   "priest:shadow-focus": {
@@ -2278,7 +2299,7 @@
     "classId": "shaman",
     "sourceName": "Call of Thunder",
     "sourceTree": "Elemental",
-    "status": "active",
+    "status": "removed",
     "aliasOf": null
   },
   "shaman:concussion": {
@@ -2333,6 +2354,13 @@
   "shaman:elemental-fury": {
     "classId": "shaman",
     "sourceName": "Elemental Fury",
+    "sourceTree": "Elemental",
+    "status": "active",
+    "aliasOf": null
+  },
+  "shaman:elemental-mastery": {
+    "classId": "shaman",
+    "sourceName": "Elemental Mastery",
     "sourceTree": "Elemental",
     "status": "active",
     "aliasOf": null
@@ -2397,8 +2425,8 @@
     "classId": "shaman",
     "sourceName": "Improved Fire Nova",
     "sourceTree": "Elemental",
-    "status": "active",
-    "aliasOf": null
+    "status": "renamed",
+    "aliasOf": "shaman:trial-by-fire"
   },
   "shaman:improved-ghost-wolf": {
     "classId": "shaman",
@@ -2589,6 +2617,13 @@
     "status": "active",
     "aliasOf": null
   },
+  "shaman:trial-by-fire": {
+    "classId": "shaman",
+    "sourceName": "Trial by Fire",
+    "sourceTree": "Elemental",
+    "status": "active",
+    "aliasOf": null
+  },
   "shaman:water-shield": {
     "classId": "shaman",
     "sourceName": "Water Shield",
@@ -2750,6 +2785,13 @@
     "status": "active",
     "aliasOf": null
   },
+  "warlock:grim-reach": {
+    "classId": "warlock",
+    "sourceName": "Grim Reach",
+    "sourceTree": "Affliction",
+    "status": "active",
+    "aliasOf": null
+  },
   "warlock:improved-bane-of-agony": {
     "classId": "warlock",
     "sourceName": "Improved Bane of Agony",
@@ -2838,7 +2880,7 @@
     "classId": "warlock",
     "sourceName": "Malediction",
     "sourceTree": "Affliction",
-    "status": "active",
+    "status": "removed",
     "aliasOf": null
   },
   "warlock:malevolence": {

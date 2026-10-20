@@ -5,7 +5,6 @@ import { CLASS_ORDER, loadClassSnapshot, loadManifest } from '@data/loadSnapshot
 import {
   classChangeStats,
   classIconUrl,
-  formatDate,
   joinNames,
   rankCoverage,
   removedClassicCount,
@@ -14,7 +13,14 @@ import {
   treeTalents,
 } from '@data/derive';
 import { CLASS_SNAPSHOT_NOTES } from '@data/classNotes';
-import { CC_BY_4_0_URL, dataBuildLine, TALENTSFOREVER_URL } from '@data/credit';
+import {
+  CC_BY_4_0_URL,
+  dataBuildLine,
+  rankCoverageLine,
+  shortDate,
+  TALENTSFOREVER_URL,
+  upstreamExportDate,
+} from '@data/credit';
 
 export function getStaticPaths() {
   return CLASS_ORDER.map((classId) => ({ params: { class: classId } }));
@@ -39,8 +45,9 @@ const removedCount = removedClassicCount(snapshot);
 const coverage = rankCoverage(snapshot);
 const ruleset = manifest.ruleset;
 const stage = stageLabel(manifest.stage);
-const published = formatDate(manifest.publishedAt);
-const buildLine = dataBuildLine(manifest.gameBuild);
+const buildLine = dataBuildLine(manifest);
+const coverageLine = rankCoverageLine(coverage.withText, coverage.total);
+const exportDate = shortDate(upstreamExportDate(manifest));
 const snapshotNotes = CLASS_SNAPSHOT_NOTES[classId] ?? [];
 
 const title = `WoW Forever ${cls.name} Talent Calculator — Free Online`;
@@ -99,8 +106,8 @@ const newTalentNames = snapshot.talents
         link — free, no account.
       </p>
       <p>
-        <span class="stage-badge">
-          {stage} data · generated <time datetime={manifest.publishedAt}>{published}</time> · {manifest.snapshotId}
+        <span class="stage-badge" data-testid="data-coverage">
+          {stage} data · {coverageLine}
         </span>
       </p>
       <p>
@@ -109,7 +116,7 @@ const newTalentNames = snapshot.talents
       </p>
       {buildLine && (
         <p class="data-credit">
-          {buildLine}. Talent data from{' '}
+          Talent data from{' '}
           <a href={TALENTSFOREVER_URL} rel="external">talentsforever.com</a>, licensed{' '}
           <a href={CC_BY_4_0_URL} rel="external">CC BY 4.0</a>.
         </p>
@@ -269,9 +276,9 @@ const newTalentNames = snapshot.talents
     <p class="prose">
       The full static reference lists every {cls.name} talent with its rank
       text, grid position, Classic counterpart, and per-rank source status —
-      {' '}{coverage.withText} of {coverage.total} ranks currently have effect
-      text, and unconfirmed ranks are labeled instead of guessed. It is plain
-      HTML, readable without JavaScript and safe to cite.
+      {' '}{coverage.withText} of {coverage.total} {cls.name} ranks currently
+      have recorded effect text, and any rank without text is labeled instead
+      of guessed. It is plain HTML, readable without JavaScript.
     </p>
     <p>
       <a href={`/talents/${cls.classId}/`}>
@@ -326,9 +333,13 @@ const newTalentNames = snapshot.talents
     <details class="faq-item">
       <summary>Is the {cls.name} data final?</summary>
       <p>
-        No — this is {stage.toLowerCase()}-stage data published {published}.
-        Tree structure has been reviewed, but many rank texts are still source
-        estimates or unknown; each rank shows its own evidence status.
+        No — this is {stage.toLowerCase()}-stage data from the beta, and
+        Blizzard can still change talents before launch. {coverageLine} for
+        {cls.name}. That text is a community export (Talents Forever, CC BY
+        4.0; export of {exportDate}) of the beta client files and has not been
+        verified in-game by this site. Each rank shows its own evidence status,
+        and the <a href="/changelog/">Changelog</a> lists what changed with
+        each update.
       </p>
     </details>
   </section>

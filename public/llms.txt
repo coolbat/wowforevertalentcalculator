@@ -33,9 +33,13 @@
 
 - Talent data originates from talentsforever.com under CC BY 4.0 and is
   published as immutable, content-hashed snapshots.
-- Every rank effect carries an evidence status (official, community record,
-  source estimate, unknown). Ranks without confirmed text are labeled
-  "unknown" rather than guessed.
+- Every rank effect carries an evidence status (for example community record
+  or source estimate). Rank text is a community export of the beta client
+  files and is not verified in-game by this site; a rank without text is
+  labeled rather than guessed.
+- The current game build, upstream export date, last-checked date, and rank
+  coverage are stated on the Sources page and on each calculator page, and
+  every data update is listed on the Changelog.
 - This is a fan-made site and is not affiliated with or endorsed by Blizzard
   Entertainment. Official sites: worldofwarcraft.blizzard.com (EN) and
   wow.blizzard.cn/forever (中文“无限”官网).

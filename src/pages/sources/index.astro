@@ -2,12 +2,21 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { loadManifest } from '@data/loadSnapshot';
 import { EVIDENCE_DEFINITIONS, formatDate, stageLabel } from '@data/derive';
+import {
+  dataBuildLine,
+  provenanceSentence,
+  rankCoverageLine,
+  shortDate,
+} from '@data/credit';
 
 const manifest = loadManifest();
 const cov = manifest.coverage;
 const stage = stageLabel(manifest.stage);
 const published = formatDate(manifest.publishedAt);
 const textPct = ((cov.ranksWithText / cov.ranksTotal) * 100).toFixed(1);
+const buildLine = dataBuildLine(manifest);
+const coverageLine = rankCoverageLine(cov.ranksWithText, cov.ranksTotal);
+const missingRanks = cov.ranksTotal - cov.ranksWithText;
 ---
 
 <BaseLayout
@@ -37,6 +46,10 @@ const textPct = ((cov.ranksWithText / cov.ranksTotal) * 100).toFixed(1);
       <dd>{stage}</dd>
       <dt>Published</dt>
       <dd>{published}</dd>
+      <dt>Upstream export</dt>
+      <dd>{shortDate(manifest.sources[0]?.recordedAt ?? manifest.publishedAt)}</dd>
+      <dt>Last checked</dt>
+      <dd>{shortDate(manifest.checkedAt ?? manifest.publishedAt)}</dd>
       <dt>Ruleset</dt>
       <dd>
         <code>{manifest.rulesetId}</code> — levels {manifest.ruleset.minLevel}–
@@ -48,7 +61,18 @@ const textPct = ((cov.ranksWithText / cov.ranksTotal) * 100).toFixed(1);
       <dd>{manifest.gameBuild ?? 'Not recorded for this snapshot'}</dd>
       <dt>Schema version</dt>
       <dd>{manifest.schemaVersion}</dd>
+      {
+        manifest.sourceFileSha256 && (
+          <>
+            <dt>Source file SHA-256</dt>
+            <dd>
+              <code class="wrap-anywhere">{manifest.sourceFileSha256}</code>
+            </dd>
+          </>
+        )
+      }
     </dl>
+    {buildLine && <p class="prose" data-testid="data-stamp">{buildLine}.</p>}
   </section>
 
   <section class="page-section" aria-labelledby="sources">
@@ -138,9 +162,14 @@ const textPct = ((cov.ranksWithText / cov.ranksTotal) * 100).toFixed(1);
       <strong>
         Having text is not the same as being verified.
       </strong>{' '}
-      Most rank texts in this snapshot are source estimates, and a large share
-      of ranks have no confirmed text at all. Accuracy claims belong to the
-      per-rank evidence status below, not to the coverage totals.
+      {coverageLine}. {provenanceSentence()}
+      {
+        cov.ranksSourceEstimate > 0 || missingRanks > 0
+          ? ` ${cov.ranksSourceEstimate} ranks are marked as source estimates and ${missingRanks} have no text.`
+          : ''
+      }
+      {' '}Accuracy claims belong to the per-rank evidence status below, not to
+      the coverage totals.
     </p>
   </section>
 

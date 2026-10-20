@@ -507,9 +507,9 @@ export default function TalentCalculator(props: TalentCalculatorProps): JSX.Elem
             {manifest.publishedAt} · Legacy early-point effects are not included in the standard
             budget.
           </p>
-          {dataBuildLine(manifest.gameBuild) ? (
+          {dataBuildLine(manifest) ? (
             <p className={styles.dataCredit} data-testid="data-credit">
-              {dataBuildLine(manifest.gameBuild)}. Talent data from{' '}
+              {dataBuildLine(manifest)}. Talent data from{' '}
               <a href={TALENTSFOREVER_URL} rel="external">
                 talentsforever.com
               </a>
