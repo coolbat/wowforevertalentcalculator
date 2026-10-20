@@ -4,7 +4,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
 <BaseLayout
   title="Privacy — WoW Forever Talent Calculator"
-  description="Privacy notes for this site: builds are stored in your browser's local storage, share links contain no personal fields, there are no accounts, and usage is measured with Google Analytics 4."
+  description="Privacy notes for this site: builds stay in your browser, share links contain no personal fields, there are no accounts, usage is measured with Google Analytics 4, and pages may show Google AdSense ads."
   breadcrumbs={[
     { name: 'Home', url: '/' },
     { name: 'Privacy', url: '/privacy/' },
@@ -54,8 +54,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       collect aggregated, session-level usage statistics — page views,
       scrolls, and outbound clicks — so we can see which pages need work.
       Google Analytics sets a small number of first-party cookies (such as
-      <code>_ga</code>) to distinguish sessions; no advertising trackers are
-      used, and no personal fields from your builds are sent. See
+      <code>_ga</code>) to distinguish sessions. No personal fields from your
+      builds are sent. See
       {' '}<a href="https://policies.google.com/privacy" rel="external">
         Google's privacy policy
       </a>
@@ -63,13 +63,27 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     </p>
   </section>
 
+  <section class="page-section prose" aria-labelledby="advertising">
+    <h2 id="advertising">Advertising</h2>
+    <p>
+      Pages may show ads served by Google AdSense (publisher ID
+      ca-pub-5207222122139436). Google and its partners may use cookies to
+      serve ads based on your visits to this and other sites. You can manage
+      personalized ads in
+      {' '}<a href="https://adssettings.google.com/" rel="external">
+        Google Ads Settings
+      </a>.
+    </p>
+  </section>
+
   <section class="page-section prose" aria-labelledby="cookies">
     <h2 id="cookies">Cookies</h2>
     <p>
-      Besides the Google Analytics cookies described above, the site itself
-      does not set tracking cookies. It is served as static files; the hosting
-      provider may process standard connection logs (IP address, user agent)
-      for security and delivery purposes under its own policies.
+      Besides the Google Analytics and Google AdSense cookies described above,
+      the site itself does not set tracking cookies. It is served as static
+      files; the hosting provider may process standard connection logs (IP
+      address, user agent) for security and delivery purposes under its own
+      policies.
     </p>
   </section>
 
