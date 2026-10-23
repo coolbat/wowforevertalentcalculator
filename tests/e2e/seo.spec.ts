@@ -11,7 +11,7 @@ const PAGES = [
   { path: '/talents/mage/', title: /WoW Forever Mage Talent Tree & Talents/, noindex: false },
   { path: '/changes/', title: /Talent Changes/, noindex: false },
   { path: '/changelog/', title: 'WoW Forever Talent Calculator Changelog & Data Updates', noindex: false },
-  { path: '/wow-forever-beta-end/', title: 'WoW Forever Beta End Date & Stress Test: Oct 21 & Nov 4 Times', noindex: false },
+  { path: '/wow-forever-beta-end/', title: 'WoW Forever Beta End Date & Stress Test (Closed): Oct 21 & Nov 4', noindex: false },
   { path: '/sources/', title: /Data & Sources|Sources/, noindex: false },
   { path: '/about/', title: /About/, noindex: false },
   { path: '/privacy/', title: /Privacy/, noindex: false },
@@ -154,9 +154,9 @@ test('beta end page carries FAQPage JSON-LD and a no-JS countdown fallback', asy
   request,
 }) => {
   const html = await (await request.get('/wow-forever-beta-end/')).text();
-  const title = 'WoW Forever Beta End Date & Stress Test: Oct 21 & Nov 4 Times';
+  const title = 'WoW Forever Beta End Date & Stress Test (Closed): Oct 21 & Nov 4';
   const description =
-    'WoW Forever stress test starts Oct 21 at 2 PM PDT / 19:00 CEST. Free for everyone. See start times by region, how to join, beta end on Oct 21 and Nov 4 launch.';
+    'The WoW Forever stress test window is closed. Blizzard held it on Oct 21 for North America and Europe and on Oct 22 for Korea and Taiwan. It was free for everyone. Published start times, how players joined, beta end on Oct 21, and the Nov 4 launch.';
   expect(unescapeEntities(/<title>([^<]+)<\/title>/.exec(html)?.[1] ?? '')).toBe(title);
   expect(unescapeEntities(/<meta property="og:title" content="([^"]+)"/.exec(html)?.[1] ?? '')).toBe(title);
   expect(unescapeEntities(/<meta name="twitter:title" content="([^"]+)"/.exec(html)?.[1] ?? '')).toBe(title);
@@ -167,7 +167,7 @@ test('beta end page carries FAQPage JSON-LD and a no-JS countdown fallback', asy
     /<h2 id="stress-test">([^<]+)<\/h2>/.exec(html)?.[1] ?? '',
   );
   expect(stressHeading).toBe(
-    'WoW Forever Stress Test (Oct 21): Start Times, Duration & How to Join',
+    'WoW Forever Stress Test: Start Times, Duration, and How Players Joined',
   );
   expect(html).toContain(
     'Blizzard moved the test from October 19 to October 21 on October 16.',
@@ -177,8 +177,10 @@ test('beta end page carries FAQPage JSON-LD and a no-JS countdown fallback', asy
   expect(html).toContain('October 22, 06:00 KST');
   expect(html).toContain('October 22, 05:00 CST');
   expect(html).toContain(
-    'The beta will be taken offline shortly before the Stress Test begins and is expected to return shortly after it ends.',
+    'Blizzard said the beta would be taken offline shortly before the Stress Test and was expected to return shortly after.',
   );
+  expect(html).toContain('The stress test window is closed.');
+  expect(html).toContain('How players joined');
   expect(html.match(/October 19/g)).toHaveLength(1);
   expect(html).not.toContain('a few hours');
 
@@ -191,14 +193,14 @@ test('beta end page carries FAQPage JSON-LD and a no-JS countdown fallback', asy
   const questions = faqs[0].mainEntity;
   expect(questions).toHaveLength(8);
   const byName = new Map(questions.map((q) => [q.name, q.acceptedAnswer.text]));
-  expect(byName.get('How long is the WoW Forever stress test?')).toBe(
-    'Blizzard gives no end time. The test runs for a limited time and may end earlier or run later as needed.',
+  expect(byName.get('How long was the WoW Forever stress test?')).toBe(
+    'Blizzard gave no end time. The test ran for a limited time and could end earlier or run later as needed. The window is closed.',
   );
-  expect(byName.get('Is the WoW Forever stress test free?')).toBe(
-    'Yes. Anyone can take part. No subscription, Game Time, invitation or beta access is required.',
+  expect(byName.get('Was the WoW Forever stress test free?')).toBe(
+    'Yes. Anyone could take part. No subscription, Game Time, invitation or beta access was required.',
   );
-  expect(byName.get('How do I join the WoW Forever stress test?')).toBe(
-    'Open the Battle.net app, select World of Warcraft, then in the Game Version menu choose World of Warcraft: Forever Stress Test under In Development, select Install, and select Play when the test begins.',
+  expect(byName.get('How did players join the WoW Forever stress test?')).toBe(
+    'The window is closed. Players opened the Battle.net app, selected World of Warcraft, then in the Game Version menu chose World of Warcraft: Forever Stress Test under In Development, selected Install, and selected Play when the test began.',
   );
   for (const question of questions) {
     expect(html).toContain(question.name);
