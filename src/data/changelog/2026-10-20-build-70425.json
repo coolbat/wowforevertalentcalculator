@@ -1,0 +1,1153 @@
+{
+  "id": "2026-10-20-build-70425",
+  "date": "2026-10-20",
+  "build": "70425",
+  "upstreamExport": "2026-10-19",
+  "previousBuild": "70291",
+  "previousUpstreamExport": "2026-10-14",
+  "snapshotId": "snap-5d496dde8928",
+  "previousSnapshotId": "snap-29c345bcd595",
+  "ranksTotal": 1313,
+  "ranksWithText": 1313,
+  "classes": {
+    "warrior": {
+      "className": "Warrior",
+      "talentsBefore": 52,
+      "talentsAfter": 52,
+      "added": [],
+      "removed": [],
+      "renamed": [],
+      "moved": [],
+      "maxRankChanged": [],
+      "prerequisitesChanged": [],
+      "textChanged": [
+        {
+          "name": "Bloodthrill",
+          "ranks": [
+            {
+              "rank": 1,
+              "before": "Your Main Hand melee attacks against enemies afflicted by your Rend have a 4% chance to allow the use of your Overpower ability on the target. Lasts 6 sec.",
+              "after": "Grants your Main Hand melee attacks against enemies afflicted by your Rend a 4% chance to allow an activation of Overpower."
+            },
+            {
+              "rank": 2,
+              "before": "Your Main Hand melee attacks against enemies afflicted by your Rend have a 8% chance to allow the use of your Overpower ability on the target. Lasts 6 sec.",
+              "after": "Grants your Main Hand melee attacks against enemies afflicted by your Rend a 8% chance to allow an activation of Overpower."
+            },
+            {
+              "rank": 3,
+              "before": "Your Main Hand melee attacks against enemies afflicted by your Rend have a 12% chance to allow the use of your Overpower ability on the target. Lasts 6 sec.",
+              "after": "Grants your Main Hand melee attacks against enemies afflicted by your Rend a 12% chance to allow an activation of Overpower."
+            },
+            {
+              "rank": 4,
+              "before": "Your Main Hand melee attacks against enemies afflicted by your Rend have a 16% chance to allow the use of your Overpower ability on the target. Lasts 6 sec.",
+              "after": "Grants your Main Hand melee attacks against enemies afflicted by your Rend a 16% chance to allow an activation of Overpower."
+            },
+            {
+              "rank": 5,
+              "before": "Your Main Hand melee attacks against enemies afflicted by your Rend have a 20% chance to allow the use of your Overpower ability on the target. Lasts 6 sec.",
+              "after": "Grants your Main Hand melee attacks against enemies afflicted by your Rend a 20% chance to allow an activation of Overpower."
+            }
+          ]
+        }
+      ]
+    },
+    "paladin": {
+      "className": "Paladin",
+      "talentsBefore": 50,
+      "talentsAfter": 50,
+      "added": [],
+      "removed": [],
+      "renamed": [],
+      "moved": [],
+      "maxRankChanged": [],
+      "prerequisitesChanged": [],
+      "textChanged": [
+        {
+          "name": "Champion of the Light",
+          "ranks": [
+            {
+              "rank": 1,
+              "before": "Increases your spell damage by up to 20% of your Intellect.",
+              "after": "Increases your spell damage by up to 10% of your Intellect."
+            },
+            {
+              "rank": 2,
+              "before": "Increases your spell damage by up to 40% of your Intellect.",
+              "after": "Increases your spell damage by up to 20% of your Intellect."
+            },
+            {
+              "rank": 3,
+              "before": "Increases your spell damage by up to 60% of your Intellect.",
+              "after": "Increases your spell damage by up to 30% of your Intellect."
+            }
+          ]
+        },
+        {
+          "name": "Reckoning",
+          "ranks": [
+            {
+              "rank": 1,
+              "before": "Gives you a 8% chance to gain an extra attack after Blocking a melee attack and a 20% chance to gain an extra attack after being the victim of a non-periodic critical strike. Cannot occur more often than once every 1.5 sec.",
+              "after": "Gives you a 8% chance after Blocking and a 20% chance after receiving a non-periodic critical strike to gain an extra attack. Stores up to 4 extra attacks. Cannot occur from Blocks more than once every 1.5 sec."
+            },
+            {
+              "rank": 2,
+              "before": "Gives you a 16% chance to gain an extra attack after Blocking a melee attack and a 40% chance to gain an extra attack after being the victim of a non-periodic critical strike. Cannot occur more often than once every 1.5 sec.",
+              "after": "Gives you a 16% chance after Blocking and a 40% chance after receiving a non-periodic critical strike to gain an extra attack. Stores up to 4 extra attacks. Cannot occur from Blocks more than once every 1.5 sec."
+            },
+            {
+              "rank": 3,
+              "before": "Gives you a 24% chance to gain an extra attack after Blocking a melee attack and a 60% chance to gain an extra attack after being the victim of a non-periodic critical strike. Cannot occur more often than once every 1.5 sec.",
+              "after": "Gives you a 24% chance after Blocking and a 60% chance after receiving a non-periodic critical strike to gain an extra attack. Stores up to 4 extra attacks. Cannot occur from Blocks more than once every 1.5 sec."
+            },
+            {
+              "rank": 4,
+              "before": "Gives you a 32% chance to gain an extra attack after Blocking a melee attack and a 80% chance to gain an extra attack after being the victim of a non-periodic critical strike. Cannot occur more often than once every 1.5 sec.",
+              "after": "Gives you a 32% chance after Blocking and a 80% chance after receiving a non-periodic critical strike to gain an extra attack. Stores up to 4 extra attacks. Cannot occur from Blocks more than once every 1.5 sec."
+            },
+            {
+              "rank": 5,
+              "before": "Gives you a 40% chance to gain an extra attack after Blocking a melee attack and a 100% chance to gain an extra attack after being the victim of a non-periodic critical strike. Cannot occur more often than once every 1.5 sec.",
+              "after": "Gives you a 40% chance after Blocking and a 100% chance after receiving a non-periodic critical strike to gain an extra attack. Stores up to 4 extra attacks. Cannot occur from Blocks more than once every 1.5 sec."
+            }
+          ]
+        },
+        {
+          "name": "Shield Specialization",
+          "ranks": [
+            {
+              "rank": 1,
+              "before": "Increases the amount of damage absorbed by your shield by 10%, and gives your blocks a 33% chance to restore 6% of your maximum Mana. May only occur once every 3 sec.",
+              "after": "Increases the amount of damage absorbed by your shield by 10%, and gives your blocks a 33% chance to restore 4% of your maximum Mana. May only occur once every 3 sec."
+            },
+            {
+              "rank": 2,
+              "before": "Increases the amount of damage absorbed by your shield by 20%, and gives your blocks a 66% chance to restore 6% of your maximum Mana. May only occur once every 3 sec.",
+              "after": "Increases the amount of damage absorbed by your shield by 20%, and gives your blocks a 66% chance to restore 4% of your maximum Mana. May only occur once every 3 sec."
+            },
+            {
+              "rank": 3,
+              "before": "Increases the amount of damage absorbed by your shield by 30%, and gives your blocks a 100% chance to restore 6% of your maximum Mana. May only occur once every 3 sec.",
+              "after": "Increases the amount of damage absorbed by your shield by 30%, and gives your blocks a 100% chance to restore 4% of your maximum Mana. May only occur once every 3 sec."
+            }
+          ]
+        }
+      ]
+    },
+    "hunter": {
+      "className": "Hunter",
+      "talentsBefore": 50,
+      "talentsAfter": 50,
+      "added": [],
+      "removed": [],
+      "renamed": [],
+      "moved": [],
+      "maxRankChanged": [],
+      "prerequisitesChanged": [],
+      "textChanged": [
+        {
+          "name": "Expose Prey",
+          "ranks": [
+            {
+              "rank": 1,
+              "before": "Your attacks against targets with Hunter's Mark have a 5% chance to activate your Mongoose Bite for 10 sec.",
+              "after": "Grants your melee and ranged attacks against enemies afflicted by Hunter's Mark a 5% chance to allow an activation of Mongoose Bite. Lasts 10 sec."
+            },
+            {
+              "rank": 2,
+              "before": "Your attacks against targets with Hunter's Mark have a 10% chance to activate your Mongoose Bite for 10 sec.",
+              "after": "Grants your melee and ranged attacks against enemies afflicted by Hunter's Mark a 10% chance to allow an activation of Mongoose Bite. Lasts 10 sec."
+            }
+          ]
+        },
+        {
+          "name": "Predator's Edge",
+          "ranks": [
+            {
+              "rank": 1,
+              "before": "Increases your melee critical strike damage by 6% and your Off Hand weapon damage by 10%.",
+              "after": "Increases your melee ability critical strike damage by 6% and your Off Hand weapon damage by 10%."
+            },
+            {
+              "rank": 2,
+              "before": "Increases your melee critical strike damage by 12% and your Off Hand weapon damage by 20%.",
+              "after": "Increases your melee ability critical strike damage by 12% and your Off Hand weapon damage by 20%."
+            },
+            {
+              "rank": 3,
+              "before": "Increases your melee critical strike damage by 18% and your Off Hand weapon damage by 30%.",
+              "after": "Increases your melee ability critical strike damage by 18% and your Off Hand weapon damage by 30%."
+            },
+            {
+              "rank": 4,
+              "before": "Increases your melee critical strike damage by 24% and your Off Hand weapon damage by 40%.",
+              "after": "Increases your melee ability critical strike damage by 24% and your Off Hand weapon damage by 40%."
+            },
+            {
+              "rank": 5,
+              "before": "Increases your melee critical strike damage by 30% and your Off Hand weapon damage by 50%.",
+              "after": "Increases your melee ability critical strike damage by 30% and your Off Hand weapon damage by 50%."
+            }
+          ]
+        },
+        {
+          "name": "Rapid Recuperation",
+          "ranks": [
+            {
+              "rank": 1,
+              "before": "Hitting a target with your Serpent Sting ability grants you 25% and consuming Rapid Killing grants you 50% of your Mana regeneration while casting for the next 15 sec.",
+              "after": "Afflicting a target with Serpent Sting allows 25% of your Mana Regeneration to continue while casting for 15 sec, increased to 50% when Rapid Killing is consumed."
+            },
+            {
+              "rank": 2,
+              "before": "Hitting a target with your Serpent Sting ability grants you 50% and consuming Rapid Killing grants you 100% of your Mana regeneration while casting for the next 15 sec.",
+              "after": "Afflicting a target with Serpent Sting allows 50% of your Mana Regeneration to continue while casting for 15 sec, increased to 100% when Rapid Killing is consumed."
+            }
+          ]
+        },
+        {
+          "name": "Resourcefulness",
+          "ranks": [
+            {
+              "rank": 1,
+              "before": "Reduces the mana cost of your Trap abilities and melee abilities by 30%. In addition, your critical strikes have a 30% chance to allow 50% of your Mana regeneration to continue while casting for 30 sec.",
+              "after": "Reduces the Mana cost of your Trap and melee abilities by 30%, and grants your melee and ranged ability Critical Strikes a 50% chance to allow 50% of your Mana Regeneration to continue while casting for 30 sec."
+            },
+            {
+              "rank": 2,
+              "before": "Reduces the mana cost of your Trap abilities and melee abilities by 60%. In addition, your critical strikes have a 60% chance to allow 50% of your Mana regeneration to continue while casting for 30 sec.",
+              "after": "Reduces the Mana cost of your Trap and melee abilities by 60%, and grants your melee and ranged ability Critical Strikes a 100% chance to allow 50% of your Mana Regeneration to continue while casting for 30 sec."
+            }
+          ]
+        },
+        {
+          "name": "Trueshot Aura",
+          "ranks": [
+            {
+              "rank": 1,
+              "before": "Increases the Ranged Attack Power of party members within 45 yds by 30.",
+              "after": "Increases the Ranged Attack Power of party or raid members within 45 yds by 30."
+            }
+          ]
+        }
+      ]
+    },
+    "rogue": {
+      "className": "Rogue",
+      "talentsBefore": 53,
+      "talentsAfter": 53,
+      "added": [],
+      "removed": [],
+      "renamed": [],
+      "moved": [],
+      "maxRankChanged": [],
+      "prerequisitesChanged": [],
+      "textChanged": []
+    },
+    "priest": {
+      "className": "Priest",
+      "talentsBefore": 53,
+      "talentsAfter": 52,
+      "added": [
+        {
+          "name": "Dark Inspiration",
+          "tree": "Shadow",
+          "row": 4,
+          "column": 1
+        }
+      ],
+      "removed": [
+        {
+          "name": "Improved Fade",
+          "tree": "Shadow",
+          "row": 4,
+          "column": 1
+        },
+        {
+          "name": "Shadow Affinity",
+          "tree": "Shadow",
+          "row": 2,
+          "column": 1
+        }
+      ],
+      "renamed": [],
+      "moved": [
+        {
+          "name": "Improved Mana Burn",
+          "from": {
+            "tree": "Discipline",
+            "row": 4,
+            "column": 4
+          },
+          "to": {
+            "tree": "Discipline",
+            "row": 4,
+            "column": 2
+          }
+        },
+        {
+          "name": "Improved Mind Blast",
+          "from": {
+            "tree": "Shadow",
+            "row": 3,
+            "column": 1
+          },
+          "to": {
+            "tree": "Shadow",
+            "row": 2,
+            "column": 1
+          }
+        },
+        {
+          "name": "Improved Power Word: Shield",
+          "from": {
+            "tree": "Discipline",
+            "row": 2,
+            "column": 3
+          },
+          "to": {
+            "tree": "Discipline",
+            "row": 3,
+            "column": 3
+          }
+        },
+        {
+          "name": "Mental Strength",
+          "from": {
+            "tree": "Discipline",
+            "row": 4,
+            "column": 2
+          },
+          "to": {
+            "tree": "Discipline",
+            "row": 2,
+            "column": 3
+          }
+        }
+      ],
+      "maxRankChanged": [],
+      "prerequisitesChanged": [],
+      "textChanged": [
+        {
+          "name": "Devouring Contagion",
+          "ranks": [
+            {
+              "rank": 1,
+              "before": "Reduces the mana cost of your Devouring Plague by 25%. Targets that die while Devouring Plague is active spreads it, jumping to a nearby enemy within 5 yds for the remaining duration.",
+              "after": "Reduces the mana cost of your Devouring Plague by 25%. Targets that die while Devouring Plague is active spreads it, jumping to 2 nearby enemies within 5 yds for the remaining duration."
+            },
+            {
+              "rank": 2,
+              "before": "Reduces the mana cost of your Devouring Plague by 50%. Targets that die while Devouring Plague is active spreads it, jumping to a nearby enemy within 10 yds for the remaining duration.",
+              "after": "Reduces the mana cost of your Devouring Plague by 50%. Targets that die while Devouring Plague is active spreads it, jumping to 2 nearby enemies within 10 yds for the remaining duration."
+            }
+          ]
+        },
+        {
+          "name": "Divine Aegis",
+          "ranks": [
+            {
+              "rank": 1,
+              "before": "Your critical heals create a protective shield on the target, absorbing 5% of the amount healed. Lasts 12 sec.",
+              "after": "Your non-periodic critical heals create a protective shield on the target, absorbing 5% of the amount healed. Shields up to 1,200 damage and lasts 12 sec."
+            },
+            {
+              "rank": 2,
+              "before": "Your critical heals create a protective shield on the target, absorbing 10% of the amount healed. Lasts 12 sec.",
+              "after": "Your non-periodic critical heals create a protective shield on the target, absorbing 10% of the amount healed. Shields up to 1,200 damage and lasts 12 sec."
+            },
+            {
+              "rank": 3,
+              "before": "Your critical heals create a protective shield on the target, absorbing 15% of the amount healed. Lasts 12 sec.",
+              "after": "Your non-periodic critical heals create a protective shield on the target, absorbing 15% of the amount healed. Shields up to 1,200 damage and lasts 12 sec."
+            }
+          ]
+        },
+        {
+          "name": "Improved Mind Flay",
+          "ranks": [
+            {
+              "rank": 1,
+              "before": "Your Mind Flay now deals 10% more damage, gains 5 yards increased range, but slows the target's movement speed by 35%.",
+              "after": "Each instance of damage of Mind Flay deals 10% more damage than its previous instance of damage."
+            },
+            {
+              "rank": 2,
+              "before": "Your Mind Flay now deals 20% more damage, gains 10 yards increased range, but slows the target's movement speed by 20%.",
+              "after": "Each instance of damage of Mind Flay deals 20% more damage than its previous instance of damage."
+            }
+          ]
+        },
+        {
+          "name": "Mental Strength",
+          "ranks": [
+            {
+              "rank": 1,
+              "before": "Increases your total Intellect by 3%.",
+              "after": "Increases your total Intellect by 2%."
+            },
+            {
+              "rank": 2,
+              "before": "Increases your total Intellect by 6%.",
+              "after": "Increases your total Intellect by 4%."
+            },
+            {
+              "rank": 3,
+              "before": "Increases your total Intellect by 9%.",
+              "after": "Increases your total Intellect by 6%."
+            },
+            {
+              "rank": 4,
+              "before": "Increases your total Intellect by 12%.",
+              "after": "Increases your total Intellect by 8%."
+            },
+            {
+              "rank": 5,
+              "before": "Increases your total Intellect by 15%.",
+              "after": "Increases your total Intellect by 10%."
+            }
+          ]
+        },
+        {
+          "name": "Power in Light",
+          "ranks": [
+            {
+              "rank": 1,
+              "before": "Your Smite and Penance spells deal 2% increased damage to targets afflicted with your Holy Fire.",
+              "after": "Your Smite and Penance spells deal 2% increased damage to targets afflicted with your Holy Fire or Shadow Word: Pain."
+            },
+            {
+              "rank": 2,
+              "before": "Your Smite and Penance spells deal 4% increased damage to targets afflicted with your Holy Fire.",
+              "after": "Your Smite and Penance spells deal 4% increased damage to targets afflicted with your Holy Fire or Shadow Word: Pain."
+            },
+            {
+              "rank": 3,
+              "before": "Your Smite and Penance spells deal 6% increased damage to targets afflicted with your Holy Fire.",
+              "after": "Your Smite and Penance spells deal 6% increased damage to targets afflicted with your Holy Fire or Shadow Word: Pain."
+            },
+            {
+              "rank": 4,
+              "before": "Your Smite and Penance spells deal 8% increased damage to targets afflicted with your Holy Fire.",
+              "after": "Your Smite and Penance spells deal 8% increased damage to targets afflicted with your Holy Fire or Shadow Word: Pain."
+            },
+            {
+              "rank": 5,
+              "before": "Your Smite and Penance spells deal 10% increased damage to targets afflicted with your Holy Fire.",
+              "after": "Your Smite and Penance spells deal 10% increased damage to targets afflicted with your Holy Fire or Shadow Word: Pain."
+            }
+          ]
+        },
+        {
+          "name": "Shadow Weaving",
+          "ranks": [
+            {
+              "rank": 1,
+              "before": "Your Shadow damage spells have a 33% chance to increase the Shadow damage you deal by 2% for 15 sec, stacking up to 5 times.",
+              "after": "Your Shadow damage spells have a 33% chance to increase the Shadow damage the target takes from you by 2% for 15 sec, stacking up to 5 times."
+            },
+            {
+              "rank": 2,
+              "before": "Your Shadow damage spells have a 67% chance to increase the Shadow damage you deal by 2% for 15 sec, stacking up to 5 times.",
+              "after": "Your Shadow damage spells have a 67% chance to increase the Shadow damage the target takes from you by 2% for 15 sec, stacking up to 5 times."
+            },
+            {
+              "rank": 3,
+              "before": "Your Shadow damage spells have a 100% chance to increase the Shadow damage you deal by 2% for 15 sec, stacking up to 5 times.",
+              "after": "Your Shadow damage spells have a 100% chance to increase the Shadow damage the target takes from you by 2% for 15 sec, stacking up to 5 times."
+            }
+          ]
+        },
+        {
+          "name": "Silent Resolve",
+          "ranks": [
+            {
+              "rank": 1,
+              "before": "Reduces the threat generated by your Holy spells by 10% and reduces the duration of Stun, Fear, and Silence effects inflicted on you by 5%.",
+              "after": "Reduces the threat generated by your spells by 10% and reduces the duration of Stun, Fear, and Silence effects inflicted on you by 5%."
+            },
+            {
+              "rank": 2,
+              "before": "Reduces the threat generated by your Holy spells by 20% and reduces the duration of Stun, Fear, and Silence effects inflicted on you by 10%.",
+              "after": "Reduces the threat generated by your spells by 20% and reduces the duration of Stun, Fear, and Silence effects inflicted on you by 10%."
+            },
+            {
+              "rank": 3,
+              "before": "Reduces the threat generated by your Holy spells by 30% and reduces the duration of Stun, Fear, and Silence effects inflicted on you by 15%.",
+              "after": "Reduces the threat generated by your spells by 30% and reduces the duration of Stun, Fear, and Silence effects inflicted on you by 15%."
+            }
+          ]
+        }
+      ]
+    },
+    "shaman": {
+      "className": "Shaman",
+      "talentsBefore": 50,
+      "talentsAfter": 50,
+      "added": [
+        {
+          "name": "Elemental Mastery",
+          "tree": "Elemental",
+          "row": 7,
+          "column": 2
+        }
+      ],
+      "removed": [
+        {
+          "name": "Call of Thunder",
+          "tree": "Elemental",
+          "row": 4,
+          "column": 3
+        }
+      ],
+      "renamed": [
+        {
+          "from": "Improved Fire Nova",
+          "to": "Trial by Fire",
+          "at": {
+            "tree": "Elemental",
+            "row": 4,
+            "column": 1
+          }
+        }
+      ],
+      "moved": [
+        {
+          "name": "Call of Flame",
+          "from": {
+            "tree": "Elemental",
+            "row": 2,
+            "column": 3
+          },
+          "to": {
+            "tree": "Elemental",
+            "row": 2,
+            "column": 4
+          }
+        },
+        {
+          "name": "Earthbound",
+          "from": {
+            "tree": "Elemental",
+            "row": 5,
+            "column": 4
+          },
+          "to": {
+            "tree": "Elemental",
+            "row": 4,
+            "column": 4
+          }
+        },
+        {
+          "name": "Elemental Alacrity",
+          "from": {
+            "tree": "Elemental",
+            "row": 3,
+            "column": 3
+          },
+          "to": {
+            "tree": "Elemental",
+            "row": 2,
+            "column": 3
+          }
+        },
+        {
+          "name": "Elemental Devastation",
+          "from": {
+            "tree": "Elemental",
+            "row": 2,
+            "column": 4
+          },
+          "to": {
+            "tree": "Elemental",
+            "row": 2,
+            "column": 1
+          }
+        },
+        {
+          "name": "Elemental Focus",
+          "from": {
+            "tree": "Elemental",
+            "row": 3,
+            "column": 2
+          },
+          "to": {
+            "tree": "Elemental",
+            "row": 3,
+            "column": 1
+          }
+        },
+        {
+          "name": "Elemental Warding",
+          "from": {
+            "tree": "Elemental",
+            "row": 2,
+            "column": 1
+          },
+          "to": {
+            "tree": "Elemental",
+            "row": 3,
+            "column": 2
+          }
+        },
+        {
+          "name": "Lava Burst",
+          "from": {
+            "tree": "Elemental",
+            "row": 7,
+            "column": 2
+          },
+          "to": {
+            "tree": "Elemental",
+            "row": 5,
+            "column": 2
+          }
+        },
+        {
+          "name": "Lightning Overload",
+          "from": {
+            "tree": "Elemental",
+            "row": 5,
+            "column": 2
+          },
+          "to": {
+            "tree": "Elemental",
+            "row": 5,
+            "column": 3
+          }
+        },
+        {
+          "name": "Tidal Focus",
+          "from": {
+            "tree": "Restoration",
+            "row": 2,
+            "column": 3
+          },
+          "to": {
+            "tree": "Restoration",
+            "row": 1,
+            "column": 3
+          }
+        },
+        {
+          "name": "Totemic Focus",
+          "from": {
+            "tree": "Restoration",
+            "row": 1,
+            "column": 3
+          },
+          "to": {
+            "tree": "Restoration",
+            "row": 2,
+            "column": 3
+          }
+        }
+      ],
+      "maxRankChanged": [],
+      "prerequisitesChanged": [
+        {
+          "name": "Elemental Fury",
+          "from": [
+            "Call of Thunder (rank 1)"
+          ],
+          "to": [
+            "Lightning Overload (rank 1)"
+          ]
+        },
+        {
+          "name": "Lava Burst",
+          "from": [
+            "Lightning Overload (rank 1)"
+          ],
+          "to": []
+        },
+        {
+          "name": "Lightning Overload",
+          "from": [],
+          "to": [
+            "Elemental Alacrity (rank 1)"
+          ]
+        }
+      ],
+      "textChanged": [
+        {
+          "name": "Call of Flame",
+          "ranks": [
+            {
+              "rank": 1,
+              "before": "Increases the damage done by your Fire Totems and by your Flame Shock, Fire Nova, and Lava Burst spells by 5%.",
+              "after": "Increases the damage done by your Fire Totems and by your Flame Shock, Fire Nova, and Lava Burst spells by 5%, as well as increases the duration of your Flame Shock spell by 3 sec."
+            },
+            {
+              "rank": 2,
+              "before": "Increases the damage done by your Fire Totems and by your Flame Shock, Fire Nova, and Lava Burst spells by 10%.",
+              "after": "Increases the damage done by your Fire Totems and by your Flame Shock, Fire Nova, and Lava Burst spells by 10%, as well as increases the duration of your Flame Shock spell by 6 sec."
+            },
+            {
+              "rank": 3,
+              "before": "Increases the damage done by your Fire Totems and by your Flame Shock, Fire Nova, and Lava Burst spells by 15%.",
+              "after": "Increases the damage done by your Fire Totems and by your Flame Shock, Fire Nova, and Lava Burst spells by 15%, as well as increases the duration of your Flame Shock spell by 9 sec."
+            }
+          ]
+        },
+        {
+          "name": "Elemental Devastation",
+          "ranks": [
+            {
+              "rank": 1,
+              "before": "Your offensive spell critical strikes will increase your chance to get a critical strike with melee attacks by 3% for 10 sec.",
+              "after": "Your Critical Strikes with direct damage spells increase your chance to get a Critical Strike with melee attacks by 3% for 10 sec."
+            },
+            {
+              "rank": 2,
+              "before": "Your offensive spell critical strikes will increase your chance to get a critical strike with melee attacks by 6% for 10 sec.",
+              "after": "Your Critical Strikes with direct damage spells increase your chance to get a Critical Strike with melee attacks by 6% for 10 sec."
+            },
+            {
+              "rank": 3,
+              "before": "Your offensive spell critical strikes will increase your chance to get a critical strike with melee attacks by 9% for 10 sec.",
+              "after": "Your Critical Strikes with direct damage spells increase your chance to get a Critical Strike with melee attacks by 9% for 10 sec."
+            }
+          ]
+        },
+        {
+          "name": "Elemental Reach",
+          "ranks": [
+            {
+              "rank": 1,
+              "before": "Increases the range of your Lightning Bolt, Chain Lightning, Fire Nova, and Lava Burst spells by 3 yards, and increases the range of your Flame Shock spell by 8 yards.",
+              "after": "Increases the range of your Lightning Bolt, Chain Lightning, Fire Nova, and Lava Burst spells by 3 yards and reduces the cooldown of Totemic Projection by 10 sec."
+            },
+            {
+              "rank": 2,
+              "before": "Increases the range of your Lightning Bolt, Chain Lightning, Fire Nova, and Lava Burst spells by 6 yards, and increases the range of your Flame Shock spell by 15 yards.",
+              "after": "Increases the range of your Lightning Bolt, Chain Lightning, Fire Nova, and Lava Burst spells by 6 yards and reduces the cooldown of Totemic Projection by 20 sec."
+            }
+          ]
+        },
+        {
+          "name": "Lava Burst",
+          "ranks": [
+            {
+              "rank": 1,
+              "before": "You hurl molten lava at the target, dealing 150 to 192 Fire damage. If your Flame Shock is on the target, Lava Burst deals 20% increased damage.",
+              "after": "You hurl molten lava at the target, dealing 113 to 145 Fire damage. If your Flame Shock is on the target, Lava Burst deals 20% increased damage."
+            }
+          ]
+        },
+        {
+          "name": "Water Shield",
+          "ranks": [
+            {
+              "rank": 1,
+              "before": "The caster is surrounded by 3 globes of water. When a spell, melee, or ranged attack hits the caster or when one of the caster's healing spells gets a critical result, 2% of maximum mana is restored to the caster, expending one water globe. Only one globe will activate every few seconds. Lasts 10 min. Only one Elemental Shield can be active on the Shaman at any one time.",
+              "after": "The caster is surrounded by 3 globes of water. When a spell, melee, or ranged attack hits the caster or when one of the caster's spells gets a critical result, 2% of maximum mana is restored to the caster, expending one water globe. Only one globe will activate every few seconds. Lasts 10 min. Only one Elemental Shield can be active on the Shaman at any one time."
+            }
+          ]
+        }
+      ]
+    },
+    "mage": {
+      "className": "Mage",
+      "talentsBefore": 54,
+      "talentsAfter": 55,
+      "added": [
+        {
+          "name": "Arcane Wrath",
+          "tree": "Arcane",
+          "row": 4,
+          "column": 4
+        }
+      ],
+      "removed": [],
+      "renamed": [
+        {
+          "from": "Wake of Fire",
+          "to": "Improved Fire Blast",
+          "at": {
+            "tree": "Fire",
+            "row": 1,
+            "column": 1
+          }
+        }
+      ],
+      "moved": [
+        {
+          "name": "Missile Barrage",
+          "from": {
+            "tree": "Arcane",
+            "row": 4,
+            "column": 4
+          },
+          "to": {
+            "tree": "Arcane",
+            "row": 1,
+            "column": 4
+          }
+        }
+      ],
+      "maxRankChanged": [
+        {
+          "name": "Critical Mass",
+          "from": 3,
+          "to": 5
+        },
+        {
+          "name": "Fire Power",
+          "from": 5,
+          "to": 3
+        },
+        {
+          "name": "Missile Barrage",
+          "from": 1,
+          "to": 2
+        }
+      ],
+      "prerequisitesChanged": [],
+      "textChanged": [
+        {
+          "name": "Arcane Blast",
+          "ranks": [
+            {
+              "rank": 1,
+              "before": "Blasts the target with energy, dealing 57 to 65 Arcane damage. Each time you cast Arcane Blast, the damage of all your other spells is increased by 10% and the mana cost of Arcane Blast is increased by 175%. Effect stacks up to 4 times and lasts 8 sec or until any other damage spell is cast.",
+              "after": "Blasts the target with energy, dealing 34 to 38 Arcane damage. Each time you cast Arcane Blast, you gain 15% of your Intellect as Spell Damage and the mana cost of Arcane Blast is increased by 175%. Effect stacks up to 4 times and lasts 15 sec from time of initial application."
+            }
+          ]
+        },
+        {
+          "name": "Arctic Reach",
+          "ranks": [
+            {
+              "rank": 1,
+              "before": "Increases the range of your Frostbolt and Blizzard spells and the radius of your Frost Nova and Cone of Cold spells by 10%.",
+              "after": "Increases the range of your Frostbolt, Frost Blast, and Blizzard spells and the radius of your Frost Nova and Cone of Cold spells by 10%."
+            },
+            {
+              "rank": 2,
+              "before": "Increases the range of your Frostbolt and Blizzard spells and the radius of your Frost Nova and Cone of Cold spells by 20%.",
+              "after": "Increases the range of your Frostbolt, Frost Blast, and Blizzard spells and the radius of your Frost Nova and Cone of Cold spells by 20%."
+            }
+          ]
+        },
+        {
+          "name": "Critical Mass",
+          "ranks": [
+            {
+              "rank": 4,
+              "before": null,
+              "after": "Increases the critical strike chance of your Fire spells by 8%."
+            },
+            {
+              "rank": 5,
+              "before": null,
+              "after": "Increases the critical strike chance of your Fire spells by 10%."
+            }
+          ]
+        },
+        {
+          "name": "Fire Power",
+          "ranks": [
+            {
+              "rank": 1,
+              "before": "Increases the damage done by your Fire spells by 2%.",
+              "after": "Increases the damage done by your Fire spells by 1% per your Fire effects on the target, up to a maximum increase of 4%. Effects which mix multiple schools of magic do not qualify."
+            },
+            {
+              "rank": 2,
+              "before": "Increases the damage done by your Fire spells by 4%.",
+              "after": "Increases the damage done by your Fire spells by 2% per your Fire effects on the target, up to a maximum increase of 8%. Effects which mix multiple schools of magic do not qualify."
+            },
+            {
+              "rank": 3,
+              "before": "Increases the damage done by your Fire spells by 6%.",
+              "after": "Increases the damage done by your Fire spells by 3% per your Fire effects on the target, up to a maximum increase of 12%. Effects which mix multiple schools of magic do not qualify."
+            },
+            {
+              "rank": 4,
+              "before": "Increases the damage done by your Fire spells by 8%.",
+              "after": null
+            },
+            {
+              "rank": 5,
+              "before": "Increases the damage done by your Fire spells by 10%.",
+              "after": null
+            }
+          ]
+        },
+        {
+          "name": "Heating Up",
+          "ranks": [
+            {
+              "rank": 1,
+              "before": "Non-periodic critical strikes with Fireball, Frostfire Bolt, Fire Blast, and Scorch reduce the cast time of your next Pyroblast cast within 20 sec by 25%, stacking up to 3 times.",
+              "after": "Non-periodic critical strikes with Fireball, Frostfire Bolt, Fire Blast, and Scorch reduce the cast time of your next Pyroblast cast within 20 sec by 25%, stacking up to 3 times. Fire Blast grants an additional stack every time it deals damage."
+            }
+          ]
+        },
+        {
+          "name": "Ice Lance",
+          "ranks": [
+            {
+              "rank": 1,
+              "before": "Deals 28 to 32 Frost damage to an enemy target. Deals 300% increased damage to Frozen targets.",
+              "after": "Deals 28 to 32 Frost damage to an enemy target. Deals 200% increased damage to Frozen targets."
+            }
+          ]
+        },
+        {
+          "name": "Improved Channeling",
+          "ranks": [
+            {
+              "rank": 1,
+              "before": "Gives you a 20% chance to avoid interruption caused by damage while channeling Arcane Missiles and a 14% chance while casting Arcane Blast.",
+              "after": "Gives you a 20% chance to avoid interruption caused by damage while channeling Arcane Missiles and a 14% chance while casting Arcane Blast or Arcane Wrath."
+            },
+            {
+              "rank": 2,
+              "before": "Gives you a 40% chance to avoid interruption caused by damage while channeling Arcane Missiles and a 28% chance while casting Arcane Blast.",
+              "after": "Gives you a 40% chance to avoid interruption caused by damage while channeling Arcane Missiles and a 28% chance while casting Arcane Blast or Arcane Wrath."
+            },
+            {
+              "rank": 3,
+              "before": "Gives you a 60% chance to avoid interruption caused by damage while channeling Arcane Missiles and a 42% chance while casting Arcane Blast.",
+              "after": "Gives you a 60% chance to avoid interruption caused by damage while channeling Arcane Missiles and a 42% chance while casting Arcane Blast or Arcane Wrath."
+            },
+            {
+              "rank": 4,
+              "before": "Gives you a 80% chance to avoid interruption caused by damage while channeling Arcane Missiles and a 56% chance while casting Arcane Blast.",
+              "after": "Gives you a 80% chance to avoid interruption caused by damage while channeling Arcane Missiles and a 56% chance while casting Arcane Blast or Arcane Wrath."
+            },
+            {
+              "rank": 5,
+              "before": "Gives you a 100% chance to avoid interruption caused by damage while channeling Arcane Missiles and a 70% chance while casting Arcane Blast.",
+              "after": "Gives you a 100% chance to avoid interruption caused by damage while channeling Arcane Missiles and a 70% chance while casting Arcane Blast or Arcane Wrath."
+            }
+          ]
+        },
+        {
+          "name": "Improved Frostbolt",
+          "ranks": [
+            {
+              "rank": 1,
+              "before": "Reduces the casting time of your Frostbolt spell by 0.1 sec.",
+              "after": "Reduces the casting time of your Frostbolt and Frost Blast spells by 0.1 sec."
+            },
+            {
+              "rank": 2,
+              "before": "Reduces the casting time of your Frostbolt spell by 0.2 sec.",
+              "after": "Reduces the casting time of your Frostbolt and Frost Blast spells by 0.2 sec."
+            },
+            {
+              "rank": 3,
+              "before": "Reduces the casting time of your Frostbolt spell by 0.3 sec.",
+              "after": "Reduces the casting time of your Frostbolt and Frost Blast spells by 0.3 sec."
+            },
+            {
+              "rank": 4,
+              "before": "Reduces the casting time of your Frostbolt spell by 0.4 sec.",
+              "after": "Reduces the casting time of your Frostbolt and Frost Blast spells by 0.4 sec."
+            },
+            {
+              "rank": 5,
+              "before": "Reduces the casting time of your Frostbolt spell by 0.5 sec.",
+              "after": "Reduces the casting time of your Frostbolt and Frost Blast spells by 0.5 sec."
+            }
+          ]
+        },
+        {
+          "name": "Missile Barrage",
+          "ranks": [
+            {
+              "rank": 1,
+              "before": "Gives your Arcane Blast spell a 40% chance, and your Fireball, Frostbolt, and Frostfire Bolt spells a 20% chance to reduce the channeled duration of your next Arcane Missiles spell by 50%, reduce the Mana cost by 100%, and missiles fire every 0.5 sec.",
+              "after": "Gives your Arcane Blast spell a 20% chance, your Arcane Missile hits a 5% chance, and your Arcane Wrath, Fireball, Frostbolt, and Frostfire Bolt spells a 10% chance to reduce the channeled duration of your next Arcane Missiles spell by 50%, reduce the Mana cost by 100%, and missiles fire every 0.5 sec."
+            },
+            {
+              "rank": 2,
+              "before": null,
+              "after": "Gives your Arcane Blast spell a 40% chance, your Arcane Missile hits a 10% chance, and your Arcane Wrath, Fireball, Frostbolt, and Frostfire Bolt spells a 20% chance to reduce the channeled duration of your next Arcane Missiles spell by 50%, reduce the Mana cost by 100%, and missiles fire every 0.5 sec."
+            }
+          ]
+        },
+        {
+          "name": "Winter's Chill",
+          "ranks": [
+            {
+              "rank": 1,
+              "before": "Gives your Frost damage spells a 20% chance to apply the Winter's Chill effect, which increases the chance your Ice Lance and Frostbolt spells will critically hit the target by 2% for 15 sec. Stacks up to 1 times.",
+              "after": "Gives your Frost damage spells a 20% chance to apply the Winter's Chill effect, which increases the damage done by your Cone of Cold spell to the target by 40%, stacking up to 5 times."
+            },
+            {
+              "rank": 2,
+              "before": "Gives your Frost damage spells a 40% chance to apply the Winter's Chill effect, which increases the chance your Ice Lance and Frostbolt spells will critically hit the target by 2% for 15 sec. Stacks up to 2 times.",
+              "after": "Gives your Frost damage spells a 40% chance to apply the Winter's Chill effect, which increases the damage done by your Cone of Cold spell to the target by 40%, stacking up to 5 times."
+            },
+            {
+              "rank": 3,
+              "before": "Gives your Frost damage spells a 60% chance to apply the Winter's Chill effect, which increases the chance your Ice Lance and Frostbolt spells will critically hit the target by 2% for 15 sec. Stacks up to 3 times.",
+              "after": "Gives your Frost damage spells a 60% chance to apply the Winter's Chill effect, which increases the damage done by your Cone of Cold spell to the target by 40%, stacking up to 5 times."
+            },
+            {
+              "rank": 4,
+              "before": "Gives your Frost damage spells a 80% chance to apply the Winter's Chill effect, which increases the chance your Ice Lance and Frostbolt spells will critically hit the target by 2% for 15 sec. Stacks up to 4 times.",
+              "after": "Gives your Frost damage spells a 80% chance to apply the Winter's Chill effect, which increases the damage done by your Cone of Cold spell to the target by 40%, stacking up to 5 times."
+            },
+            {
+              "rank": 5,
+              "before": "Gives your Frost damage spells a 100% chance to apply the Winter's Chill effect, which increases the chance your Ice Lance and Frostbolt spells will critically hit the target by 2% for 15 sec. Stacks up to 5 times.",
+              "after": "Gives your Frost damage spells a 100% chance to apply the Winter's Chill effect, which increases the damage done by your Cone of Cold spell to the target by 40%, stacking up to 5 times."
+            }
+          ]
+        }
+      ]
+    },
+    "warlock": {
+      "className": "Warlock",
+      "talentsBefore": 52,
+      "talentsAfter": 52,
+      "added": [
+        {
+          "name": "Grim Reach",
+          "tree": "Affliction",
+          "row": 2,
+          "column": 1
+        }
+      ],
+      "removed": [
+        {
+          "name": "Malediction",
+          "tree": "Affliction",
+          "row": 2,
+          "column": 1
+        }
+      ],
+      "renamed": [],
+      "moved": [],
+      "maxRankChanged": [],
+      "prerequisitesChanged": [],
+      "textChanged": [
+        {
+          "name": "Amplify Curse",
+          "ranks": [
+            {
+              "rank": 1,
+              "before": "Increases the effect of your next Curse of Weakness or Bane of Agony by 50%, or your next Curse of Exhaustion by 20%. Lasts 30 sec.",
+              "after": "Increases the effect of your next Curse of Weakness or Bane of Agony by 50%, or your next Curse of Exhaustion by 50%. Lasts 30 sec."
+            }
+          ]
+        },
+        {
+          "name": "Destructive Reach",
+          "ranks": [
+            {
+              "rank": 1,
+              "before": "Increases the range of your damaging spells by 10%.",
+              "after": "Increases the range of your Destruction spells by 10%."
+            },
+            {
+              "rank": 2,
+              "before": "Increases the range of your damaging spells by 20%.",
+              "after": "Increases the range of your Destruction spells by 20%."
+            }
+          ]
+        },
+        {
+          "name": "Shadow Mastery",
+          "ranks": [
+            {
+              "rank": 1,
+              "before": "Increases the damage dealt or life drained by your Shadow spells by 1%.",
+              "after": "Increases the damage dealt or life drained by your Shadow spells by 2%."
+            },
+            {
+              "rank": 2,
+              "before": "Increases the damage dealt or life drained by your Shadow spells by 2%.",
+              "after": "Increases the damage dealt or life drained by your Shadow spells by 4%."
+            },
+            {
+              "rank": 3,
+              "before": "Increases the damage dealt or life drained by your Shadow spells by 3%.",
+              "after": "Increases the damage dealt or life drained by your Shadow spells by 6%."
+            },
+            {
+              "rank": 4,
+              "before": "Increases the damage dealt or life drained by your Shadow spells by 4%.",
+              "after": "Increases the damage dealt or life drained by your Shadow spells by 8%."
+            },
+            {
+              "rank": 5,
+              "before": "Increases the damage dealt or life drained by your Shadow spells by 5%.",
+              "after": "Increases the damage dealt or life drained by your Shadow spells by 10%."
+            }
+          ]
+        }
+      ]
+    },
+    "druid": {
+      "className": "Druid",
+      "talentsBefore": 52,
+      "talentsAfter": 52,
+      "added": [],
+      "removed": [],
+      "renamed": [],
+      "moved": [],
+      "maxRankChanged": [],
+      "prerequisitesChanged": [],
+      "textChanged": [
+        {
+          "name": "Furor",
+          "ranks": [
+            {
+              "rank": 1,
+              "before": "Gives you a 20% chance to gain 10 Rage when shapeshifting into Bear Form or Dire Bear Form. Shapeshifting into Cat Form restores 20% of the Energy you had when last in Cat Form, plus 2 Energy per sec spent outside Cat Form, up to 20 Energy. Bear Form and Dire Bear Form forfeit this Energy and halt its restoration while active.",
+              "after": "Gives you a 20% chance to gain 10 Rage when shapeshifting into Bear Form or Dire Bear Form. Shapeshifting into Cat Form restores 20% of the Energy you had when last in Cat Form, plus 2 Energy per second spent outside Bear Form or Dire Bear Form, up to 20 Energy."
+            },
+            {
+              "rank": 2,
+              "before": "Gives you a 40% chance to gain 10 Rage when shapeshifting into Bear Form or Dire Bear Form. Shapeshifting into Cat Form restores 40% of the Energy you had when last in Cat Form, plus 4 Energy per sec spent outside Cat Form, up to 40 Energy. Bear Form and Dire Bear Form forfeit this Energy and halt its restoration while active.",
+              "after": "Gives you a 40% chance to gain 10 Rage when shapeshifting into Bear Form or Dire Bear Form. Shapeshifting into Cat Form restores 40% of the Energy you had when last in Cat Form, plus 4 Energy per second spent outside Bear Form or Dire Bear Form, up to 40 Energy."
+            },
+            {
+              "rank": 3,
+              "before": "Gives you a 60% chance to gain 10 Rage when shapeshifting into Bear Form or Dire Bear Form. Shapeshifting into Cat Form restores 60% of the Energy you had when last in Cat Form, plus 6 Energy per sec spent outside Cat Form, up to 60 Energy. Bear Form and Dire Bear Form forfeit this Energy and halt its restoration while active.",
+              "after": "Gives you a 60% chance to gain 10 Rage when shapeshifting into Bear Form or Dire Bear Form. Shapeshifting into Cat Form restores 60% of the Energy you had when last in Cat Form, plus 6 Energy per second spent outside Bear Form or Dire Bear Form, up to 60 Energy."
+            },
+            {
+              "rank": 4,
+              "before": "Gives you a 80% chance to gain 10 Rage when shapeshifting into Bear Form or Dire Bear Form. Shapeshifting into Cat Form restores 80% of the Energy you had when last in Cat Form, plus 8 Energy per sec spent outside Cat Form, up to 80 Energy. Bear Form and Dire Bear Form forfeit this Energy and halt its restoration while active.",
+              "after": "Gives you a 80% chance to gain 10 Rage when shapeshifting into Bear Form or Dire Bear Form. Shapeshifting into Cat Form restores 80% of the Energy you had when last in Cat Form, plus 8 Energy per second spent outside Bear Form or Dire Bear Form, up to 80 Energy."
+            },
+            {
+              "rank": 5,
+              "before": "Gives you a 100% chance to gain 10 Rage when shapeshifting into Bear Form or Dire Bear Form. Shapeshifting into Cat Form restores 100% of the Energy you had when last in Cat Form, plus 10 Energy per sec spent outside Cat Form, up to 100 Energy. Bear Form and Dire Bear Form forfeit this Energy and halt its restoration while active.",
+              "after": "Gives you a 100% chance to gain 10 Rage when shapeshifting into Bear Form or Dire Bear Form. Shapeshifting into Cat Form restores 100% of the Energy you had when last in Cat Form, plus 10 Energy per second spent outside Bear Form or Dire Bear Form, up to 100 Energy."
+            }
+          ]
+        },
+        {
+          "name": "Leader of the Pack",
+          "ranks": [
+            {
+              "rank": 1,
+              "before": "While in Cat Form, Bear Form, or Dire Bear Form, the Leader of the Pack increases the critical strike chance of all party members within 45 yards by 3%, exclusive with Moonkin Aura.",
+              "after": "While in Cat Form, Bear Form, or Dire Bear Form, the Leader of the Pack increases the melee and ranged Critical Strike chance of all party or raid members within 45 yards by 3%."
+            }
+          ]
+        },
+        {
+          "name": "Moonkin Form",
+          "ranks": [
+            {
+              "rank": 1,
+              "before": "Shapeshift into Moonkin Form, increasing Omen of Clarity's chance to trigger by 100%, Armor contribution from items by 360%, and all party members within 45 yards have their Critical Strike chance increased by 3%, exclusive with Leader of the Pack. Also protects the caster from Polymorph effects and prevents the use of healing spells. The act of shapeshifting frees the caster of Polymorph and Movement Impairing effects.",
+              "after": "Shapeshift into Moonkin Form, increasing Omen of Clarity's chance to trigger by 100%, Armor contribution from items by 360%, and all party or raid members within 45 yards have their spell Critical Strike chance increased by 3%. Also protects the caster from Polymorph effects and prevents the use of healing spells. The act of shapeshifting frees the caster of Polymorph and Movement Impairing effects."
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -126,9 +126,13 @@ export interface DatasetManifest {
   legacySnapshotIds?: SnapshotId[];
   rulesetId: RulesetId;
   stage: 'preview' | 'beta' | 'live';
-  publishedAt: string; // ISO date
+  publishedAt: string; // ISO date this snapshot was published
+  /** ISO date the upstream export was last fetched and compared. */
+  checkedAt?: string;
   gameBuild: string | null;
   sourceDigest: string;
+  /** sha256 of the raw upstream file as fetched. */
+  sourceFileSha256?: string;
   sources: SourceRecord[];
   classes: ClassFile[];
   coverage: CoverageSummary;

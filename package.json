@@ -7,7 +7,9 @@
     "dev": "astro dev",
     "build": "npm run data:import && astro build",
     "preview": "astro preview",
+    "data:fetch": "node scripts/data/fetch-upstream.mjs",
     "data:import": "node scripts/data/import.mjs",
+    "data:diff": "node scripts/data/diff-snapshots.mjs",
     "test": "vitest run",
     "test:e2e": "playwright test"
   },

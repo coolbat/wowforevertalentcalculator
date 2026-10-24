@@ -4,7 +4,6 @@ import { CLASS_ORDER, loadClassSnapshot, loadManifest } from '@data/loadSnapshot
 import {
   CLASSIC_STATUS_LABELS,
   EVIDENCE_BADGE,
-  formatDate,
   formatRankRanges,
   joinNames,
   rankCoverage,
@@ -13,6 +12,7 @@ import {
   talentIconUrl,
   treeTalents,
 } from '@data/derive';
+import { dataBuildLine, rankCoverageLine } from '@data/credit';
 import type { TalentNode } from '@domain/talents/types';
 
 export function getStaticPaths() {
@@ -30,7 +30,8 @@ const byId = new Map(snapshot.talents.map((t) => [t.talentId, t]));
 const treeNames = snapshot.trees.map((t) => t.name);
 const coverage = rankCoverage(snapshot);
 const stage = stageLabel(manifest.stage);
-const published = formatDate(manifest.publishedAt);
+const buildLine = dataBuildLine(manifest);
+const coverageLine = rankCoverageLine(coverage.withText, coverage.total);
 
 const treeSections = snapshot.trees.map((tree) => {
   const talents = treeTalents(snapshot, tree).map((talent) => ({
@@ -78,14 +79,13 @@ function prereqLine(talent: TalentNode): string | null {
     <h1>WoW Forever {cls.name} Talent Tree &amp; Talents</h1>
     <p class="lede">
       Every {cls.name} talent in the current snapshot — rank text, grid
-      position, source status, and Classic comparison. Rank text coverage:
-      {' '}{coverage.withText} of {coverage.total} ranks; ranks without
-      confirmed text are collapsed into a short per-talent note rather than
-      repeated as placeholders.
+      position, source status, and Classic comparison. {coverageLine}; any
+      rank without text is collapsed into a short per-talent note rather than
+      repeated as a placeholder.
     </p>
     <p>
-      <span class="stage-badge">
-        {stage} data · generated <time datetime={manifest.publishedAt}>{published}</time> · {manifest.snapshotId}
+      <span class="stage-badge" data-testid="data-stamp">
+        {buildLine ?? `${stage} data`}
       </span>
     </p>
     <p>
@@ -101,7 +101,7 @@ function prereqLine(talent: TalentNode): string | null {
         <h2 id={`tree-${tree.treeId}`}>{tree.name}</h2>
         <p class="talent-meta">
           {tree.name} rank text coverage: {withText} of {total} ranks have
-          confirmed effect text.
+          recorded effect text.
         </p>
         <div class="table-scroll">
           <table class="data-table">

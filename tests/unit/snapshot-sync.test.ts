@@ -1,29 +1,82 @@
+import { createHash } from 'node:crypto';
+import { readFileSync } from 'node:fs';
+import path from 'node:path';
 import { describe, expect, it } from 'vitest';
+import { dataBuildLine, rankCoverageLine } from '../../src/data/credit';
 import { talentRegistry } from '../../src/data/talentRegistry';
 import type { ClassSnapshot, TalentNode } from '../../src/domain/talents/types';
 import { loadManifest, loadSnapshot } from '../helpers/snapshot';
 
 const manifest = loadManifest();
+const root = path.resolve(__dirname, '../..');
+const rawBytes = readFileSync(path.join(root, 'data-raw/talentsforever-data.json'));
+const raw = JSON.parse(rawBytes.toString('utf8'));
+const upstreamMeta = JSON.parse(
+  readFileSync(path.join(root, 'data-raw/upstream-meta.json'), 'utf8'),
+);
 
 function talent(snapshot: ClassSnapshot, name: string): TalentNode | undefined {
   return snapshot.talents.find((node) => node.name === name);
 }
 
-describe('beta build 70291 manifest and aliases', () => {
-  it('records the upstream build, dates, license, and the previous snapshot', () => {
-    expect(manifest.gameBuild).toBe('70291');
-    expect(manifest.publishedAt).toBe('2026-10-15');
+describe('manifest is derived from the raw upstream export', () => {
+  it('records the build, dates, license, hash, and the previous snapshots', () => {
+    const build = /\b1\.\d+\.\d+\.(\d+)\b/.exec(raw.talents.Warrior.source)?.[1];
+    expect(build).toBeTruthy();
+    expect(manifest.gameBuild).toBe(build);
     expect(manifest.sources[0]).toMatchObject({
       url: 'https://talentsforever.com/data.json',
-      recordedAt: '2026-10-14',
+      recordedAt: raw.generated,
       license: 'CC-BY-4.0',
     });
+    expect(manifest.checkedAt).toBe(upstreamMeta.checkedAt);
+    expect(manifest.publishedAt).toBe(upstreamMeta.checkedAt);
+    expect(manifest.sourceFileSha256).toBe(upstreamMeta.sha256);
+    expect(createHash('sha256').update(rawBytes).digest('hex')).toBe(upstreamMeta.sha256);
+    // Every earlier published snapshot stays openable.
     expect(manifest.legacySnapshotIds).toContain('snap-ce4da8695e9d');
+    expect(manifest.legacySnapshotIds).toContain('snap-29c345bcd595');
     expect(manifest.legacySnapshotIds).not.toContain(manifest.snapshotId);
     expect(manifest.ruleset.maxLevel).toBe(60);
     expect(manifest.ruleset.maxBudget).toBe(51);
   });
 
+  it('has recorded text for every rank, and the counts add up', () => {
+    const cov = manifest.coverage;
+    expect(cov.ranksTotal).toBeGreaterThan(1000);
+    expect(cov.ranksWithText).toBe(cov.ranksTotal);
+    expect(cov.ranksUnknown).toBe(0);
+    expect(cov.ranksCommunityRecorded + cov.ranksSourceEstimate + cov.ranksUnknown).toBe(
+      cov.ranksTotal,
+    );
+    let total = 0;
+    let withText = 0;
+    for (const file of manifest.classes) {
+      const snapshot = loadSnapshot(file.classId);
+      for (const t of snapshot.talents) {
+        for (const r of t.rankEffects) {
+          total += 1;
+          if (r.text !== null) withText += 1;
+        }
+      }
+    }
+    expect({ total, withText }).toEqual({ total: cov.ranksTotal, withText: cov.ranksWithText });
+  });
+
+  it('derives the displayed data stamp and coverage line from the manifest', () => {
+    const line = dataBuildLine(manifest);
+    expect(line).toContain(`beta build ${manifest.gameBuild}`);
+    expect(line).toContain('upstream export');
+    expect(line).toContain('checked');
+    expect(line).toContain('community export, not verified in-game');
+    expect(rankCoverageLine(manifest.coverage.ranksWithText, manifest.coverage.ranksTotal)).toMatch(
+      /^[\d,]+ of [\d,]+ ranks have recorded effect text$/,
+    );
+    expect(dataBuildLine({ ...manifest, gameBuild: null })).toBeNull();
+  });
+});
+
+describe('talent aliases and class structure', () => {
   it('aliases renamed talents and keeps removed ids without a target', () => {
     expect(talentRegistry['druid:mangle']).toMatchObject({
       status: 'renamed',
@@ -56,6 +109,38 @@ describe('beta build 70291 manifest and aliases', () => {
       'druid:king-of-the-jungle',
     ]) {
       expect(talentRegistry[id], id).toMatchObject({ status: 'removed', aliasOf: null });
+    }
+    expect(talentRegistry['mage:wake-of-fire']).toMatchObject({
+      status: 'renamed',
+      aliasOf: 'mage:improved-fire-blast',
+    });
+    expect(talentRegistry['shaman:improved-fire-nova']).toMatchObject({
+      status: 'renamed',
+      aliasOf: 'shaman:trial-by-fire',
+    });
+    for (const id of [
+      'shaman:call-of-thunder',
+      'priest:improved-fade',
+      'priest:shadow-affinity',
+      'warlock:malediction',
+    ]) {
+      expect(talentRegistry[id], id).toMatchObject({ status: 'removed', aliasOf: null });
+    }
+    for (const id of [
+      'mage:improved-fire-blast',
+      'mage:arcane-wrath',
+      'shaman:trial-by-fire',
+      'shaman:elemental-mastery',
+      'priest:dark-inspiration',
+      'warlock:grim-reach',
+    ]) {
+      expect(talentRegistry[id], id).toMatchObject({ status: 'active', aliasOf: null });
+    }
+    // No alias points at another alias or at a talent that is gone.
+    for (const [id, entry] of Object.entries(talentRegistry)) {
+      if (entry.status !== 'renamed') continue;
+      expect(entry.aliasOf, id).toBeTruthy();
+      expect(talentRegistry[entry.aliasOf as string]?.status, id).toBe('active');
     }
     expect(talentRegistry['druid:primal-bite']).toMatchObject({ status: 'active', aliasOf: null });
     expect(talentRegistry['warrior:iron-will']).toMatchObject({
@@ -138,10 +223,19 @@ describe('beta build 70291 manifest and aliases', () => {
     expect(talent(hunter, 'Redoubt')).toBeUndefined();
     expect(shaman.trees.map((tree) => tree.name)).toContain('Elemental');
     expect(shaman.trees.map((tree) => tree.treeId)).toContain('shaman:elemental');
-    expect(talent(shaman, 'Elemental Alacrity')?.row).toBe(2);
+    // Build 70425 moved Elemental Alacrity to row 2 and re-pointed Elemental Fury.
+    expect(talent(shaman, 'Elemental Alacrity')?.row).toBe(1);
+    expect(talent(shaman, 'Call of Thunder')).toBeUndefined();
     expect(talent(shaman, 'Elemental Fury')).toMatchObject({
       row: 5,
-      prerequisites: [{ talentId: 'shaman:call-of-thunder', requiredRank: 1 }],
+      prerequisites: [{ talentId: 'shaman:lightning-overload', requiredRank: 1 }],
     });
+    expect(talent(shaman, 'Trial by Fire')).toMatchObject({ row: 3, column: 0 });
+    expect(talent(loadSnapshot('mage'), 'Improved Fire Blast')).toMatchObject({
+      row: 0,
+      column: 0,
+      maxRank: 2,
+    });
+    expect(talent(loadSnapshot('mage'), 'Wake of Fire')).toBeUndefined();
   });
 });
