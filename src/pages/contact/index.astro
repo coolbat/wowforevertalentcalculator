@@ -1,0 +1,210 @@
+---
+import '../../styles/blog.css';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { loadManifest } from '@data/loadSnapshot';
+import {
+  CONTACT_EMAIL,
+  CONTACT_UPDATED,
+  GITHUB_ISSUES_URL,
+  OPERATOR_NAME,
+  SITE_NAME,
+  SITE_URL,
+} from '@data/site';
+
+const manifest = loadManifest();
+const mail = (subject: string) =>
+  `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}`;
+
+const contactJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ContactPage',
+  name: `Contact ${SITE_NAME}`,
+  url: new URL('/contact/', SITE_URL).href,
+  inLanguage: 'en',
+  about: { '@id': new URL('/#organization', SITE_URL).href },
+  mainEntity: {
+    '@type': 'Organization',
+    '@id': new URL('/#organization', SITE_URL).href,
+    name: SITE_NAME,
+    email: CONTACT_EMAIL,
+    contactPoint: {
+      '@type': 'ContactPoint',
+      contactType: 'customer support',
+      email: CONTACT_EMAIL,
+      availableLanguage: 'English',
+    },
+  },
+};
+---
+
+<BaseLayout
+  title="Contact — WoW Forever Talent Calculator"
+  description="How to contact the WoW Forever Talent Calculator: report a data correction or bug, ask a privacy question, send a copyright notice, or propose a collaboration."
+  dateModified={CONTACT_UPDATED}
+  breadcrumbs={[
+    { name: 'Home', url: '/' },
+    { name: 'Contact', url: '/contact/' },
+  ]}
+>
+  <section class="page-head">
+    <h1>Contact</h1>
+    <p class="lede">
+      The fastest way to reach us is email. For public corrections and bug
+      reports, the project's GitHub issue tracker also works. This is a small,
+      independent fan project run by the {OPERATOR_NAME}, and a real person
+      reads every message.
+    </p>
+    <p class="prose">
+      Email:
+      {' '}<a class="mail-link" href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
+      <br />
+      Public issues:
+      {' '}<a href={GITHUB_ISSUES_URL} rel="external">GitHub issue tracker</a>
+    </p>
+  </section>
+
+  <section class="page-section" aria-labelledby="reasons">
+    <h2 id="reasons">What to write to us about</h2>
+    <p class="prose">
+      Choosing the right subject helps us route your message. Each box below
+      lists what to include so we can act on it without a round of questions.
+    </p>
+    <div class="contact-grid">
+      <div class="panel">
+        <h3>Data correction</h3>
+        <p>
+          A rank text, row, maximum rank, prerequisite or Classic comparison
+          that does not match the game.
+        </p>
+        <ul>
+          <li>Class, tree and talent name, and the rank in question.</li>
+          <li>What the site shows and what the game shows.</li>
+          <li>A screenshot of the in-game tooltip, if you can.</li>
+          <li>
+            The game build number if you know it, and the snapshot ID
+            ({manifest.snapshotId} at the moment) from the
+            <a href="/sources/">Sources page</a>.
+          </li>
+        </ul>
+        <p>
+          <a href={mail('Data correction')}>Email a correction</a> ·
+          <a href={GITHUB_ISSUES_URL} rel="external">open a public issue</a>
+        </p>
+      </div>
+
+      <div class="panel">
+        <h3>Bug report</h3>
+        <p>Something on the site is broken, misaligned or behaves oddly.</p>
+        <ul>
+          <li>The page address.</li>
+          <li>Your device, operating system and browser.</li>
+          <li>What you did, what happened and what you expected.</li>
+          <li>
+            For a build problem, the share link. It contains only the build,
+            so it is safe to send.
+          </li>
+        </ul>
+        <p>
+          <a href={mail('Bug report')}>Email a bug report</a> ·
+          <a href={GITHUB_ISSUES_URL} rel="external">open a public issue</a>
+        </p>
+      </div>
+
+      <div class="panel">
+        <h3>Privacy request</h3>
+        <p>
+          Questions about this site's <a href="/privacy/">privacy policy</a>,
+          or a request to access, correct or delete personal data.
+        </p>
+        <ul>
+          <li>What you are asking for and which region's law applies.</li>
+          <li>
+            Details that help us find the right records. The site has no
+            accounts, so mail you send us is the main personal data we hold.
+          </li>
+        </ul>
+        <p>
+          <a href={mail('Privacy request')}>Email a privacy request</a>
+        </p>
+      </div>
+
+      <div class="panel">
+        <h3>Copyright or content notice</h3>
+        <p>
+          You believe something on this site infringes your rights, or you
+          are a rights holder who wants content changed or removed.
+        </p>
+        <ul>
+          <li>Which work you own or represent.</li>
+          <li>The address of each page or file on this site.</li>
+          <li>
+            A statement that you believe in good faith the use is not
+            authorized, and that your notice is accurate.
+          </li>
+          <li>Your name and a way to reach you.</li>
+        </ul>
+        <p>
+          <a href={mail('Copyright notice')}>Email a notice</a>
+        </p>
+      </div>
+
+      <div class="panel">
+        <h3>Collaboration or press</h3>
+        <p>
+          Community projects, data maintainers, streamers and writers who
+          want to work with us or cite us.
+        </p>
+        <ul>
+          <li>Who you are and a link to your work.</li>
+          <li>What you have in mind and any dates that matter.</li>
+        </ul>
+        <p>
+          <a href={mail('Collaboration')}>Email us</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section prose" aria-labelledby="response">
+    <h2 id="response">What to expect after you write</h2>
+    <p>
+      We read everything, but we run this site in spare time and cannot
+      promise a reply within a set number of days. Data corrections are
+      checked against the data we hold and, where we can, against the game;
+      confirmed fixes go out with the next data update or sooner, and larger
+      ones appear in the <a href="/changelog/">changelog</a>. Privacy and
+      copyright requests are handled within the periods that applicable law
+      sets. If you have not heard back after a couple of weeks, writing again
+      is fine.
+    </p>
+    <p>
+      We may quote a data correction in the changelog or on a talent page, but
+      we will not publish your name or email address without asking you first.
+    </p>
+  </section>
+
+  <section class="page-section prose" aria-labelledby="not-us">
+    <h2 id="not-us">What we cannot help with</h2>
+    <p>
+      This site is not run by, or connected to, Blizzard Entertainment, so we
+      cannot help with game accounts, subscriptions, purchases, bans, or
+      in-game problems. Blizzard's own
+      <a href="https://support.blizzard.com/" rel="external">support site</a>
+      is the right place for those. Please do not send passwords, payment
+      details or other sensitive information to us in any message.
+    </p>
+    <p>
+      Before writing about a data issue, it can help to read how our talent
+      data is sourced and labeled on the
+      <a href="/sources/">Sources page</a> or in the
+      <a href="/blog/where-wow-forever-talent-data-comes-from/">post on where the data comes from</a>.
+      More about who we are is on the <a href="/about/">About page</a>.
+    </p>
+  </section>
+
+  <script
+    type="application/ld+json"
+    is:inline
+    set:html={JSON.stringify(contactJsonLd)}
+  />
+</BaseLayout>

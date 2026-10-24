@@ -1,10 +1,13 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { formatDate } from '@data/derive';
+import { CONTACT_EMAIL, TERMS_UPDATED } from '@data/site';
 ---
 
 <BaseLayout
   title="Terms of Use — WoW Forever Talent Calculator"
-  description="Terms of use for WoW Forever Talent Calculator: a free, fan-made talent planning tool — acceptable use, data licensing, no warranty, and the independence notice."
+  description="Terms of use for WoW Forever Talent Calculator, a free fan-made talent planner: acceptable use, data licensing, no warranty and the independence notice."
+  dateModified={TERMS_UPDATED}
   breadcrumbs={[
     { name: 'Home', url: '/' },
     { name: 'Terms', url: '/terms/' },
@@ -16,6 +19,10 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       By using WoW Forever Talent Calculator you accept these terms. They are
       short on purpose — this is a free, fan-made tool, not a service with an
       account relationship.
+    </p>
+    <p class="prose">
+      Last updated:
+      {' '}<time datetime={TERMS_UPDATED}>{formatDate(TERMS_UPDATED)}</time>.
     </p>
   </section>
 
@@ -64,11 +71,36 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     </p>
   </section>
 
+  <section class="page-section prose" aria-labelledby="ip">
+    <h2 id="ip">Game content and intellectual property</h2>
+    <p>
+      World of Warcraft, its names, talent text and icons belong to Blizzard
+      Entertainment. They appear here only to help players identify and plan
+      talents, and no ownership is claimed. The license on the talent data
+      (CC BY 4.0) does not transfer any rights in Blizzard's material. If you
+      are a rights holder and want something changed or removed, use the
+      <a href="/contact/">contact page</a>.
+    </p>
+  </section>
+
+  <section class="page-section prose" aria-labelledby="ads-links">
+    <h2 id="ads-links">Advertising and links</h2>
+    <p>
+      The site shows ads served by Google AdSense. We do not pick individual ads
+      and do not endorse the advertisers. Links to other sites are
+      provided for convenience, and we are not responsible for their content.
+      How ads and analytics handle your data is described in the
+      <a href="/privacy/">Privacy Policy</a>.
+    </p>
+  </section>
+
   <section class="page-section prose" aria-labelledby="changes-terms">
     <h2 id="changes-terms">Changes to these terms</h2>
     <p>
       If these terms change, the updated version is published on this page.
-      Continued use after a change means you accept the new terms.
+      Continued use after a change means you accept the new terms. Questions
+      about these terms can go to
+      {' '}<a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
     </p>
   </section>
 </BaseLayout>

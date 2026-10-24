@@ -1,0 +1,106 @@
+---
+import '../../styles/blog.css';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { BLOG_POSTS, postPath } from '@data/blog';
+import { formatDate } from '@data/derive';
+import { SITE_NAME, SITE_URL } from '@data/site';
+
+const posts = [...BLOG_POSTS].sort((a, b) =>
+  b.datePublished.localeCompare(a.datePublished),
+);
+
+const blogJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Blog',
+  '@id': new URL('/blog/#blog', SITE_URL).href,
+  name: `${SITE_NAME} Blog`,
+  url: new URL('/blog/', SITE_URL).href,
+  inLanguage: 'en',
+  publisher: { '@id': new URL('/#organization', SITE_URL).href },
+  blogPost: posts.map((p) => ({
+    '@type': 'BlogPosting',
+    headline: p.title,
+    url: new URL(postPath(p.slug), SITE_URL).href,
+    datePublished: p.datePublished,
+    dateModified: p.dateModified,
+  })),
+};
+---
+
+<BaseLayout
+  title="Blog — WoW Forever Talent Calculator"
+  description="Guides and data notes from the WoW Forever Talent Calculator: how the calculator works, where talent data comes from, launch timeline and class structure."
+  dateModified={posts[0].dateModified}
+  breadcrumbs={[
+    { name: 'Home', url: '/' },
+    { name: 'Blog', url: '/blog/' },
+  ]}
+>
+  <section class="page-head">
+    <h1>Blog</h1>
+    <p class="lede">
+      Guides and data notes about planning talent builds for WoW Forever, and
+      about the data this site is built on.
+    </p>
+  </section>
+
+  <section class="page-section prose" aria-labelledby="blog-about">
+    <h2 id="blog-about">What you will find here</h2>
+    <p>
+      Posts on this blog explain how the calculator works, where its numbers
+      come from, and what the published WoW Forever timeline means for
+      players who want to plan ahead. They are written from the same dataset
+      the calculator uses, and posts that quote talent data generate those
+      sections from the current snapshot when the site is built, so they do
+      not drift from the reference pages.
+    </p>
+    <p>
+      We do not publish tier lists or "best build" rankings. The data we have
+      describes talent structure and effect text, not performance, and we
+      would rather say that than present an opinion as a result. If a post
+      turns out to be wrong, <a href="/contact/">tell us</a>: corrections are
+      made in place and the page shows an updated date when that happens. The
+      <a href="/about/">About page</a> describes our editorial approach in
+      more detail.
+    </p>
+  </section>
+
+  <section class="page-section" aria-labelledby="all-posts">
+    <h2 id="all-posts">All posts</h2>
+    <ul class="post-grid">
+      {
+        posts.map((p) => (
+          <li class="post-card">
+            <span class="post-kind">{p.kind}</span>
+            <h3>
+              <a href={postPath(p.slug)}>{p.title}</a>
+            </h3>
+            <p>{p.description}</p>
+            <p class="post-meta">
+              <time datetime={p.datePublished}>{formatDate(p.datePublished)}</time>
+              {' '}· {p.readingMinutes} min read
+            </p>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <section class="page-section prose" aria-labelledby="start-here">
+    <h2 id="start-here">Start somewhere practical</h2>
+    <p>
+      If you just want to plan a build, open the <a href="/">calculator</a>
+      or jump to a class such as <a href="/warrior/">Warrior</a>,
+      <a href="/mage/">Mage</a> or <a href="/druid/">Druid</a>. If you want
+      to read talent text without running anything, the
+      <a href="/talents/">talent reference</a> lists every rank as plain
+      HTML.
+    </p>
+  </section>
+
+  <script
+    type="application/ld+json"
+    is:inline
+    set:html={JSON.stringify(blogJsonLd)}
+  />
+</BaseLayout>

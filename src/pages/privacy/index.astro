@@ -1,96 +1,360 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { formatDate } from '@data/derive';
+import {
+  ADSENSE_PUBLISHER_ID,
+  CONTACT_EMAIL,
+  GA_MEASUREMENT_ID,
+  OPERATOR_NAME,
+  PRIVACY_UPDATED,
+} from '@data/site';
 ---
 
 <BaseLayout
-  title="Privacy — WoW Forever Talent Calculator"
-  description="Privacy notes for this site: builds stay in your browser, share links contain no personal fields, there are no accounts, usage is measured with Google Analytics 4, and pages may show Google AdSense ads."
+  title="Privacy Policy — WoW Forever Talent Calculator"
+  description="What this site stores in your browser, which third-party services it loads (Google Analytics, AdSense, Cloudflare), how to opt out, and your privacy rights."
+  dateModified={PRIVACY_UPDATED}
   breadcrumbs={[
     { name: 'Home', url: '/' },
     { name: 'Privacy', url: '/privacy/' },
   ]}
 >
   <section class="page-head">
-    <h1>Privacy</h1>
+    <h1>Privacy Policy</h1>
     <p class="lede">
-      This site is a static tool with no accounts and no server-side storage
-      of your builds. This page explains exactly what is stored, where, and
-      what a share link contains.
+      This site is a static tool with no accounts and no server-side storage of
+      your builds. This page lists what is stored on your device, which
+      third-party services load on our pages, what they may collect, and how to
+      limit it.
+    </p>
+    <p class="prose">
+      Last updated:
+      {' '}<time datetime={PRIVACY_UPDATED}>{formatDate(PRIVACY_UPDATED)}</time>.
+      This page describes how the site works today in plain language. It is
+      not legal advice.
     </p>
   </section>
 
-  <section class="page-section prose" aria-labelledby="local-storage">
-    <h2 id="local-storage">Local storage</h2>
+  <section class="page-section prose" aria-labelledby="summary">
+    <h2 id="summary">The short version</h2>
+    <ul>
+      <li>There are no accounts, forms or comments. We do not ask for your name or email to use the site.</li>
+      <li>Saved builds and drafts stay in your browser's local storage and are never uploaded.</li>
+      <li>
+        Three outside services are involved: Google Analytics (usage
+        statistics), Google AdSense (advertising) and Cloudflare (hosting and
+        delivery).
+      </li>
+      <li>
+        Google Analytics and Google AdSense can set cookies and process your IP
+        address and device details. The site does not currently show its own
+        cookie-consent banner.
+      </li>
+      <li>If you email us, we keep the message so we can answer it.</li>
+    </ul>
+  </section>
+
+  <section class="page-section prose" aria-labelledby="who">
+    <h2 id="who">Who is responsible</h2>
     <p>
-      Saved builds and your current draft are kept in your browser's
-      <code>localStorage</code> on your own device. They are never uploaded.
-      Clearing your browser data or switching devices removes them; the site
-      has no way to recover them for you. If storage is unavailable (private
-      modes, disabled storage), you can still build and copy a share link.
+      The site is run by the {OPERATOR_NAME}, an independent fan project. For
+      anything in this policy, including privacy requests, write to
+      {' '}<a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. The site is
+      not affiliated with or endorsed by Blizzard Entertainment.
     </p>
   </section>
 
-  <section class="page-section prose" aria-labelledby="share-links">
-    <h2 id="share-links">What share links contain</h2>
+  <section class="page-section prose" aria-labelledby="collect">
+    <h2 id="collect">What is collected, and by whom</h2>
     <p>
-      A share link encodes only the build itself: class, level, point
-      allocation, ruleset, and the data snapshot ID. It contains no name,
-      email, account identifier, or any other personal field. Anyone you send
-      the link to sees exactly the talent setup and nothing about you.
+      <strong>Information you give us.</strong> The site has no sign-up and no
+      contact form. If you email us, we receive your email address and
+      whatever you write or attach. We use it to reply, to check a data report,
+      and to keep a record of requests we have handled.
+    </p>
+    <p>
+      <strong>Information collected automatically.</strong> When your browser
+      loads a page, it connects to our host and to the services below. That
+      normally involves your IP address, browser and device type, the page you
+      requested, the referring page and the time. Cloudflare, which delivers
+      the site, processes this to serve pages and protect the site. Google
+      Analytics and Google AdSense collect their own data from your browser, as
+      described next.
+    </p>
+    <p>
+      <strong>Information that stays on your device.</strong> Your builds are
+      kept in local storage on your own device, as described below. We cannot
+      see them.
     </p>
   </section>
 
-  <section class="page-section prose" aria-labelledby="accounts">
-    <h2 id="accounts">Accounts</h2>
-    <p>
-      There is no sign-up, no login, and no user database.
+  <section class="page-section" aria-labelledby="third-parties">
+    <h2 id="third-parties">Third-party services on this site</h2>
+    <p class="prose">
+      We checked the site's pages and code for scripts and requests to other
+      domains. These are all of the third-party services that run on it.
     </p>
-  </section>
-
-  <section class="page-section prose" aria-labelledby="analytics">
-    <h2 id="analytics">Analytics</h2>
-    <p>
-      This site uses Google Analytics 4 (measurement ID G-8QSF02T2RF) to
-      collect aggregated, session-level usage statistics — page views,
-      scrolls, and outbound clicks — so we can see which pages need work.
-      Google Analytics sets a small number of first-party cookies (such as
-      <code>_ga</code>) to distinguish sessions. No personal fields from your
-      builds are sent. See
-      {' '}<a href="https://policies.google.com/privacy" rel="external">
-        Google's privacy policy
-      </a>
-      {' '}for how Google processes this data.
-    </p>
-  </section>
-
-  <section class="page-section prose" aria-labelledby="advertising">
-    <h2 id="advertising">Advertising</h2>
-    <p>
-      Pages may show ads served by Google AdSense (publisher ID
-      ca-pub-5207222122139436). Google and its partners may use cookies to
-      serve ads based on your visits to this and other sites. You can manage
-      personalized ads in
-      {' '}<a href="https://adssettings.google.com/" rel="external">
-        Google Ads Settings
-      </a>.
+    <div class="table-scroll">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th scope="col">Service</th>
+            <th scope="col">Purpose</th>
+            <th scope="col">What it may collect or set</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              Google Analytics 4<br />
+              (<code>{GA_MEASUREMENT_ID}</code>)
+            </td>
+            <td>Aggregated usage statistics, so we can see which pages are read and which need work.</td>
+            <td>
+              Page views, scrolling and outbound clicks, plus device,
+              browser, approximate location and referrer data. Sets first-party
+              cookies such as <code>_ga</code> to tell sessions and visitors
+              apart. Google states that GA4 does not log or store IP
+              addresses.
+              <a href="https://policies.google.com/privacy" rel="external">Google Privacy Policy</a>.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Google AdSense<br />
+              (<code>{ADSENSE_PUBLISHER_ID}</code>)
+            </td>
+            <td>Showing ads, which supports the site's running costs.</td>
+            <td>
+              Loads Google's ad script on every page. Google and its
+              advertising partners may use cookies and similar identifiers,
+              your IP address and device details to select, show and measure
+              ads, including ads based on your earlier visits to this and other
+              sites.
+              <a href="https://policies.google.com/technologies/partner-sites" rel="external">How Google uses information from sites that use its services</a>.
+            </td>
+          </tr>
+          <tr>
+            <td>Cloudflare</td>
+            <td>Hosting, content delivery, security and the site's DNS.</td>
+            <td>
+              Standard connection data (IP address, user agent, requested URL)
+              in server logs. Cloudflare also hides email addresses from
+              scrapers on our pages with a small script served from our own
+              domain, and may ask browsers to send it reports about network
+              errors. We did not see Cloudflare cookies on our pages when we
+              checked.
+              <a href="https://www.cloudflare.com/privacypolicy/" rel="external">Cloudflare Privacy Policy</a>.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="prose">
+      The site does not load other analytics or tag tools, session-replay tools,
+      social media widgets or pixels, third-party fonts, comment systems or
+      embedded video. Icons and fonts are served from our own host or your
+      device. If that changes, this page will change with it.
     </p>
   </section>
 
   <section class="page-section prose" aria-labelledby="cookies">
-    <h2 id="cookies">Cookies</h2>
+    <h2 id="cookies">Cookies and consent</h2>
     <p>
-      Besides the Google Analytics and Google AdSense cookies described above,
-      the site itself does not set tracking cookies. It is served as static
-      files; the hosting provider may process standard connection logs (IP
-      address, user agent) for security and delivery purposes under its own
+      The site's own code does not set cookies. The cookies on this site come
+      from Google Analytics (for example <code>_ga</code> and a cookie named
+      after our measurement ID) and from Google's advertising services.
+    </p>
+    <p>
+      <strong>No consent banner yet.</strong> Right now the site does not
+      display its own cookie-consent banner or consent-management tool, and
+      the Google scripts load as soon as a page opens. If you are in the
+      European Economic Area, the United Kingdom or Switzerland, or anywhere
+      else that requires consent for analytics and advertising cookies, the
+      controls in the next section are how you can opt out in the meantime.
+      Block the scripts in your browser and they will not run. The site
+      works fully without them.
+    </p>
+  </section>
+
+  <section class="page-section prose" aria-labelledby="advertising">
+    <h2 id="advertising">Advertising and how to opt out</h2>
+    <p>
+      Third-party vendors, including Google, use cookies to serve ads based on
+      a user's prior visits to this website or other websites. Google's use of
+      advertising cookies enables it and its partners to serve ads to you based
+      on your visit to this site and other sites on the internet. Ads are
+      chosen and delivered by Google. We do not select individual visitors for
+      ads and we receive no personal information about who saw them.
+    </p>
+    <p>You can limit or turn off personalized advertising here:</p>
+    <ul>
+      <li>
+        <a href="https://adssettings.google.com/" rel="external">Google Ads Settings</a>:
+        switch off ad personalization for your Google account.
+      </li>
+      <li>
+        <a href="https://optout.aboutads.info/" rel="external">aboutads.info</a>
+        (Digital Advertising Alliance, US) and the
+        <a href="https://optout.networkadvertising.org/" rel="external">Network Advertising Initiative opt-out</a>.
+      </li>
+      <li>
+        <a href="https://www.youronlinechoices.com/" rel="external">Your Online Choices</a>
+        for visitors in Europe.
+      </li>
+      <li>
+        The
+        <a href="https://tools.google.com/dlpage/gaoptout" rel="external">Google Analytics opt-out browser add-on</a>
+        to stop Google Analytics measuring your visits.
+      </li>
+      <li>
+        Your browser's own settings: you can delete cookies, block third-party
+        cookies, or use a content blocker. Instructions are in the help pages
+        of Chrome, Firefox, Safari and Edge.
+      </li>
+    </ul>
+    <p>
+      Opting out of personalized ads does not remove ads. You will still see
+      ads, but they will not be based on your interests. Because we do not
+      control Google's systems, the settings above are the dependable way to
+      manage them. The site does not itself change its behavior in response to
+      "Do Not Track" signals.
+    </p>
+  </section>
+
+  <section class="page-section prose" aria-labelledby="local-storage">
+    <h2 id="local-storage">Your builds and local storage</h2>
+    <p>
+      The calculator uses your browser's <code>localStorage</code>, which is
+      not a cookie and is not sent to any server. It holds a draft of your
+      current build for each class (keys that begin with
+      {' '}<code>wftc:draft:</code>) and your named builds (the key
+      {' '}<code>wftc:builds</code>), up to 50. The page also writes and
+      deletes a short test value to check that storage is available. All of
+      this stays on your device. Clearing your browser data or switching
+      devices removes it, and we cannot recover it for you. If storage is
+      unavailable, you can still build and copy a share link.
+    </p>
+    <h3>What a share link contains</h3>
+    <p>
+      A share link encodes the build only: class, level, ranks, ruleset and the
+      data snapshot ID. It is placed after a <code>#</code> in the address,
+      which browsers do not send to the host when they request a page. It does
+      not include your name, email or any account identifier. Scripts that run
+      in your browser, such as Google Analytics, can see the page address, so
+      treat a share link like any other URL you send to other people.
+    </p>
+  </section>
+
+  <section class="page-section prose" aria-labelledby="use">
+    <h2 id="use">Why we use data, and on what basis</h2>
+    <p>
+      We use the data above to run and secure the site, to understand which
+      pages are useful, to show ads that pay for the site, and to answer
+      people who write to us. Where the GDPR or UK GDPR applies, the legal
+      grounds that fit these uses are our legitimate interests in operating,
+      securing and improving a free service, and, for cookies and similar
+      technologies that are not strictly necessary, consent where the law
+      requires it. As the section on cookies says, the site does not yet
+      collect consent through a banner. For emails, we rely on our legitimate
+      interest in answering you.
+    </p>
+  </section>
+
+  <section class="page-section prose" aria-labelledby="sharing">
+    <h2 id="sharing">Who receives data</h2>
+    <p>
+      Data goes to the services in the table above, and to anyone the law
+      obliges us to disclose it to. We do not sell personal information for
+      money. Under California law, the use of advertising cookies by Google
+      can count as "sharing" or "selling" personal information for
+      cross-context advertising. The opt-out links in the advertising section
+      apply. Google and Cloudflare operate worldwide, so your data may be
+      processed outside your country, including in the United States, under
+      the transfer arrangements those companies describe in their own
       policies.
     </p>
   </section>
 
-  <section class="page-section prose">
+  <section class="page-section prose" aria-labelledby="retention">
+    <h2 id="retention">How long data is kept</h2>
     <p>
-      Questions about this policy? See the contact details on the
-      {' '}<a href="/about/">About</a> page.
+      Builds in local storage stay until you delete them. Emails are kept for
+      as long as needed to deal with your request and to keep a reasonable
+      record of it. Google Analytics, Google AdSense and Cloudflare retain data
+      under their own retention settings and policies. We see aggregate reports from them, and we do not try to link analytics
+      data to individuals.
+    </p>
+  </section>
+
+  <section class="page-section prose" aria-labelledby="rights">
+    <h2 id="rights">Your rights</h2>
+    <p>
+      Depending on where you live, you may have the right to ask for access to
+      your personal data, correction, deletion, restriction of processing,
+      portability, and to object to processing or withdraw consent you have
+      given. In the EEA, the UK and Switzerland you can complain to your local
+      data protection authority. Californians can ask to know, delete and
+      correct their personal information and to opt out of its sale or sharing,
+      without being treated worse for doing so.
+    </p>
+    <p>
+      To use any of these rights, email
+      {' '}<a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a> and say what
+      you are asking for. We aim to reply within 30 days. Because the site has
+      no accounts and we do not identify visitors in analytics, most personal
+      data about your browsing sits with Google and Cloudflare, not with us.
+      For that data, you can use
+      {' '}<a href="https://myaccount.google.com/data-and-privacy" rel="external">Google's data and privacy controls</a>
+      and Google's ad settings above. We may ask you for details to be able to
+      find a message you sent.
+    </p>
+  </section>
+
+  <section class="page-section prose" aria-labelledby="children">
+    <h2 id="children">Children</h2>
+    <p>
+      The site is not directed at children under 13, or under 16 where local law
+      sets that age. We do not knowingly collect personal information from
+      them. If you believe a child has emailed us, write to us and we will
+      delete the message.
+    </p>
+  </section>
+
+  <section class="page-section prose" aria-labelledby="links">
+    <h2 id="links">Links to other sites</h2>
+    <p>
+      The site links to Blizzard Entertainment, talentsforever.com, Creative
+      Commons, Google, GitHub and other sites. Those sites have their own
+      privacy practices, and this policy does not cover them.
+    </p>
+  </section>
+
+  <section class="page-section prose" aria-labelledby="security">
+    <h2 id="security">Security</h2>
+    <p>
+      The site is served over HTTPS. It is a static site with no database of
+      user data. No system is perfectly secure, but there is little data here
+      to protect: your builds never reach us.
+    </p>
+  </section>
+
+  <section class="page-section prose" aria-labelledby="changes">
+    <h2 id="changes">Changes to this policy</h2>
+    <p>
+      If the site starts using a new service, or changes how it handles data,
+      we update this page and its "last updated" date at the top. Please check
+      back from time to time. The <a href="/terms/">Terms of Use</a> sit
+      alongside this policy.
+    </p>
+  </section>
+
+  <section class="page-section prose" aria-labelledby="contact">
+    <h2 id="contact">Contact</h2>
+    <p>
+      Questions about this policy or a request about your data: email
+      {' '}<a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a> or use the
+      <a href="/contact/">contact page</a>.
     </p>
   </section>
 </BaseLayout>

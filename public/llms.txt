@@ -26,6 +26,8 @@
 - [Talent changes vs Classic](https://wowforevertalentcalculator.com/changes/): new / changed / moved / unchanged / removed counts per class
 - [Data & sources](https://wowforevertalentcalculator.com/sources/): snapshot IDs, evidence-status definitions, coverage, CC BY 4.0 attribution
 - [About](https://wowforevertalentcalculator.com/about/)
+- [Contact](https://wowforevertalentcalculator.com/contact/)
+- [Blog](https://wowforevertalentcalculator.com/blog/): guides and data notes (calculator how-to, points and row gates, data origin, launch timeline, Druid tree structure)
 - [Privacy](https://wowforevertalentcalculator.com/privacy/)
 - [Terms](https://wowforevertalentcalculator.com/terms/)
 

@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import '../styles/site.css';
 import { loadAllSnapshots, loadManifest } from '@data/loadSnapshot';
+import { CONTACT_EMAIL } from '@data/site';
 
 export interface Breadcrumb {
   name: string;
@@ -16,6 +17,7 @@ export interface Props {
   noindex?: boolean;
   lang?: string;
   dateModified?: string;
+  datePublished?: string;
   breadcrumbs?: Breadcrumb[];
   classColor?: string;
 }
@@ -28,6 +30,7 @@ const {
   noindex = false,
   lang = 'en',
   dateModified: dateModifiedProp,
+  datePublished: datePublishedProp,
   breadcrumbs,
   classColor,
 } = Astro.props;
@@ -89,7 +92,7 @@ const jsonLd: Record<string, unknown>[] = [
     isPartOf: { '@id': websiteId },
     author: { '@id': orgId },
     publisher: { '@id': orgId },
-    datePublished,
+    datePublished: datePublishedProp ?? datePublished,
     dateModified,
     inLanguage: lang,
   },
@@ -233,6 +236,7 @@ if (breadcrumbs && breadcrumbs.length > 0) {
             </details>
             <a href="/changes/">Changes</a>
             <a href="/sources/">Sources</a>
+            <a href="/blog/">Blog</a>
             <a href="/about/">About</a>
             <a href="/my-builds/">My Builds</a>
             <a href="/compare/">Compare</a>
@@ -266,9 +270,7 @@ if (breadcrumbs && breadcrumbs.length > 0) {
           <p>
             Independent fan-made tool. Not affiliated with or endorsed by
             Blizzard Entertainment. Contact:{' '}
-            <a href="mailto:contact@wowforevertalentcalculator.com">
-              contact@wowforevertalentcalculator.com
-            </a>
+            <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
           </p>
           <nav class="footer-nav" aria-label="Official sites">
             <span class="footer-label">Official sites:</span>
@@ -285,7 +287,8 @@ if (breadcrumbs && breadcrumbs.length > 0) {
           <nav class="footer-nav" aria-label="Footer">
             <a href="/sources/">Sources</a>
             <a href="/about/">About</a>
-            <a href="/about/#contact">Contact</a>
+            <a href="/blog/">Blog</a>
+            <a href="/contact/">Contact</a>
             <a href="/privacy/">Privacy</a>
             <a href="/terms/">Terms</a>
             <a href="/changes/">Changes</a>
