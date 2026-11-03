@@ -16,18 +16,29 @@ const STATIC_ROUTES = [
   '/talents/',
   '/changelog/',
   '/wow-forever-beta-end/',
+  '/wow-forever-launch/',
+  '/builds/',
 ];
 
 export const GET: APIRoute = ({ site }) => {
   const base = site ?? new URL('https://wowforevertalentcalculator.com');
   const routes = [
     ...STATIC_ROUTES,
-    ...CLASS_ORDER.flatMap((c) => [`/${c}/`, `/talents/${c}/`]),
+    ...CLASS_ORDER.flatMap((c) => [
+      `/${c}/`,
+      `/talents/${c}/`,
+      `/builds/${c}-leveling-build/`,
+    ]),
   ];
   // Build date for unchanged routes. Pin a route only when its content changes.
   const buildLastmod = new Date().toISOString().slice(0, 10);
   const contentLastmod: Record<string, string> = {
     '/wow-forever-beta-end/': '2026-10-18',
+    '/wow-forever-launch/': '2026-11-03',
+    '/builds/': '2026-11-03',
+    ...Object.fromEntries(
+      CLASS_ORDER.map((c) => [`/builds/${c}-leveling-build/`, '2026-11-03']),
+    ),
   };
   const body = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">

@@ -1,0 +1,221 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import {
+  CLASS_ORDER,
+  loadClassSnapshot,
+  loadManifest,
+} from '@data/loadSnapshot';
+import {
+  LEVELING_EDITORIAL,
+  collapsePicks,
+  generateLevelingBuild,
+  phaseSlices,
+} from '@data/levelingBuilds';
+
+const SITE_ORIGIN = 'https://wowforevertalentcalculator.com';
+const manifest = loadManifest();
+const ruleset = manifest.ruleset;
+
+export function getStaticPaths() {
+  return CLASS_ORDER.map((classId) => ({
+    params: { slug: `${classId}-leveling-build` },
+    props: { classId },
+  }));
+}
+
+const { classId } = Astro.props;
+const snapshot = loadClassSnapshot(classId);
+const editorial = LEVELING_EDITORIAL[classId];
+const result = generateLevelingBuild(snapshot, ruleset, classId, SITE_ORIGIN);
+const phases = phaseSlices(result.picks);
+
+const classLabel = result.className;
+const treeLabel = result.treeName;
+const spent = result.picks.length;
+const primaryPoints = result.build.allocation
+  ? Object.entries(result.build.allocation).reduce((sum, [id, rank]) => {
+      const node = snapshot.talents.find((t) => t.talentId === id);
+      return node?.treeId === editorial.treeId ? sum + rank : sum;
+    }, 0)
+  : 0;
+
+const phaseTables = [
+  {
+    id: 'lv10-20',
+    heading: `Levels 10–20 (points 1–${phases.early.length})`,
+    note: 'The opening skeleton: cheap damage and resource talents that every early pull benefits from.',
+    rows: collapsePicks(phases.early),
+  },
+  {
+    id: 'lv20-40',
+    heading: `Levels 20–40 (points ${phases.early.length + 1}–${phases.early.length + phases.mid.length})`,
+    note: 'The tree deepens: signature multi-rank talents come online and kill speed climbs.',
+    rows: collapsePicks(phases.mid),
+  },
+  {
+    id: 'lv40-60',
+    heading: `Levels 40–60 (points ${phases.early.length + phases.mid.length + 1}–${spent})`,
+    note: 'The capstone stretch: top-row payoffs plus any leftover points placed for maximum grind value.',
+    rows: collapsePicks(phases.late),
+  },
+];
+
+const classicStatusLabel: Record<string, string> = {
+  new: 'New in Forever',
+  changed: 'Changed vs Classic',
+  moved: 'Moved vs Classic',
+};
+
+const faqs = [
+  {
+    q: `What is the best ${classLabel} leveling build in WoW Forever?`,
+    a: `A full ${spent}-point ${treeLabel} spec is the safest solo route, exactly like the classic era: it favors sustained damage and low downtime. The take order above is generated from the current beta data and validated against the game's talent rules — open it in the calculator and adjust freely.`,
+  },
+  {
+    q: `When does ${classLabel} get each talent point in WoW Forever?`,
+    a: `The first talent point arrives at level 10 and you earn one more per level up to 51 points at level 60. The tables above list the exact level each point of this build is spent at.`,
+  },
+  {
+    q: `Is this ${treeLabel} ${classLabel} build different from Classic WoW?`,
+    a: result.classicDiffs.length > 0
+      ? `Yes. ${result.classicDiffs.length} talents in this build are new, changed, or moved relative to Classic — they are flagged in the list below. See the full class diff on the changes page.`
+      : `Every talent in this build also exists in Classic WoW, but some rank texts and grid positions differ in Forever. See the full class diff on the changes page.`,
+  },
+];
+
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
+
+const otherClasses = CLASS_ORDER.filter((c) => c !== classId);
+---
+
+<BaseLayout
+  title={`WoW Forever ${classLabel} Leveling Build — ${treeLabel} 51-Point Guide`}
+  description={`A free WoW Forever ${classLabel.toLowerCase()} leveling build: full ${treeLabel} take order to 51 points, level 10–60 breakpoints, Classic talent changes, and a one-click link that opens the build in the calculator.`}
+  dateModified="2026-11-03"
+  breadcrumbs={[
+    { name: 'Home', url: '/' },
+    { name: 'Builds', url: '/builds/' },
+    { name: `${classLabel} leveling`, url: `/builds/${classId}-leveling-build/` },
+  ]}
+>
+  <section class="page-head">
+    <h1>WoW Forever {classLabel} Leveling Build — {treeLabel} 51 Points</h1>
+    <p class="lede">
+      {editorial.tagline} This page gives you a complete, rules-validated
+      {spent}-point take order for levels 10–60, built from
+      snapshot {manifest.gameBuild ? `build ${manifest.gameBuild}` : 'data'} of the WoW Forever data set — plus a
+      one-click link that opens the exact build in our calculator.
+    </p>
+    <p>
+      <strong><a href={result.shareUrl}>Open this build in the calculator →</a></strong> ·
+      <a href={`/${classId}/`}>{classLabel} calculator →</a> ·
+      <a href={`/talents/${classId}/`}>{classLabel} talent reference →</a> ·
+      <a href="/wow-forever-launch/">Launch day guide →</a>
+    </p>
+  </section>
+
+  <section class="page-section prose" aria-labelledby="why-this-tree">
+    <h2 id="why-this-tree">Why {treeLabel} for leveling a {classLabel.toLowerCase()}</h2>
+    <p>{editorial.why}</p>
+    <ul>
+      {editorial.tips.map((tip) => <li>{tip}</li>)}
+    </ul>
+    <p>
+      The build below puts <strong>{primaryPoints} points into {treeLabel}</strong>
+      {spent - primaryPoints > 0
+        ? ` and spreads the remaining ${spent - primaryPoints} across the other trees for grind value.`
+        : '.'}
+      It is a starting skeleton, not a meta verdict — tuning changes every beta build.
+    </p>
+  </section>
+
+  {phaseTables.map((phase) => (
+    <section class="page-section" aria-labelledby={phase.id}>
+      <h2 id={phase.id}>{phase.heading}</h2>
+      <p>{phase.note}</p>
+      <div class="table-scroll">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th scope="col">Order</th>
+              <th scope="col">Level</th>
+              <th scope="col">Talent</th>
+              <th scope="col">Ranks</th>
+              <th scope="col">Effect</th>
+            </tr>
+          </thead>
+          <tbody>
+            {phase.rows.map((row) => (
+              <tr>
+                <td>{row.order}</td>
+                <td>{row.levelGained}</td>
+                <td>{row.name}</td>
+                <td>{row.ranksTaken}/{row.maxRank} ({row.points} pt{row.points > 1 ? 's' : ''})</td>
+                <td>{row.effectText}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  ))}
+
+  <section class="page-section prose" aria-labelledby="vs-classic">
+    <h2 id="vs-classic">How this build differs from Classic WoW</h2>
+    {result.classicDiffs.length > 0 ? (
+      <p>
+        {result.classicDiffs.length} talents in this build are new, changed, or
+        moved relative to the Classic trees:
+      </p>
+    ) : (
+      <p>No talent in this build is brand-new in Forever, but rank texts and positions still differ:</p>
+    )}
+    <ul>
+      {result.classicDiffs.map((diff) => (
+        <li>
+          <strong>{diff.name}</strong> — {classicStatusLabel[diff.status] ?? diff.status}
+        </li>
+      ))}
+    </ul>
+    <p>
+      <a href="/changes/">See every {classLabel.toLowerCase()} change vs Classic →</a>
+    </p>
+  </section>
+
+  <section class="page-section" aria-labelledby="faq">
+    <h2 id="faq">FAQ</h2>
+    {faqs.map((f) => (
+      <details class="faq-item">
+        <summary>{f.q}</summary>
+        <p>{f.a}</p>
+      </details>
+    ))}
+  </section>
+
+  <section class="page-section prose" aria-labelledby="more-builds">
+    <h2 id="more-builds">Leveling builds for every class</h2>
+    <p>
+      {otherClasses.map((c, i) => (
+        <>
+          {i > 0 && ' · '}
+          <a href={`/builds/${c}-leveling-build/`}>{c}</a>
+        </>
+      ))}
+      {' '}· <a href="/builds/">All builds →</a>
+    </p>
+  </section>
+
+  <script
+    type="application/ld+json"
+    is:inline
+    set:html={JSON.stringify(faqJsonLd)}
+  />
+</BaseLayout>
