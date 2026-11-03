@@ -20,6 +20,20 @@
 - [Warlock](https://wowforevertalentcalculator.com/warlock/)
 - [Druid](https://wowforevertalentcalculator.com/druid/)
 
+## Leveling builds (launch window)
+
+- [WoW Forever launch day guide — Nov 4 times, content, day-one builds](https://wowforevertalentcalculator.com/wow-forever-launch/)
+- [All leveling builds index](https://wowforevertalentcalculator.com/builds/)
+- [Warrior leveling build](https://wowforevertalentcalculator.com/builds/warrior-leveling-build/)
+- [Paladin leveling build](https://wowforevertalentcalculator.com/builds/paladin-leveling-build/)
+- [Hunter leveling build](https://wowforevertalentcalculator.com/builds/hunter-leveling-build/)
+- [Rogue leveling build](https://wowforevertalentcalculator.com/builds/rogue-leveling-build/)
+- [Priest leveling build](https://wowforevertalentcalculator.com/builds/priest-leveling-build/)
+- [Shaman leveling build](https://wowforevertalentcalculator.com/builds/shaman-leveling-build/)
+- [Mage leveling build](https://wowforevertalentcalculator.com/builds/mage-leveling-build/)
+- [Warlock leveling build](https://wowforevertalentcalculator.com/builds/warlock-leveling-build/)
+- [Druid leveling build](https://wowforevertalentcalculator.com/builds/druid-leveling-build/)
+
 ## Reference & policy pages
 
 - [Talent reference index](https://wowforevertalentcalculator.com/talents/): per-rank effect text, grid positions, Classic comparison

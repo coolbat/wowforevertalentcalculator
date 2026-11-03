@@ -1,0 +1,222 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LaunchCountdown from '@components/LaunchCountdown.astro';
+import { CLASS_ORDER, loadClassSnapshot, loadManifest } from '@data/loadSnapshot';
+import { LEVELING_EDITORIAL, generateLevelingBuild } from '@data/levelingBuilds';
+
+const SITE_ORIGIN = 'https://wowforevertalentcalculator.com';
+const manifest = loadManifest();
+const ruleset = manifest.ruleset;
+
+const classNames = new Map(
+  CLASS_ORDER.map((c) => {
+    const snapshot = loadClassSnapshot(c);
+    return [c, snapshot.classDef.name] as const;
+  }),
+);
+
+const builds = CLASS_ORDER.map((classId) => {
+  const snapshot = loadClassSnapshot(classId);
+  const generated = generateLevelingBuild(snapshot, ruleset, classId, SITE_ORIGIN);
+  return {
+    classId,
+    className: generated.className,
+    treeName: generated.treeName,
+    tagline: LEVELING_EDITORIAL[classId].tagline,
+  };
+});
+
+const faqs = [
+  {
+    q: 'When does WoW Forever launch?',
+    a: 'November 4, 2026, at 3:00 p.m. PST (23:00 UTC), worldwide and simultaneously in every region. In Central Europe that is midnight into November 5; in Korea it is 8:00 a.m. on November 5.',
+  },
+  {
+    q: 'Do I need to buy WoW Forever separately?',
+    a: 'No. Access is included with an active World of Warcraft subscription or Game Time. Upgrade editions such as the Skyborne Epic Pack are optional cosmetics-and-perks bundles, not access tickets.',
+  },
+  {
+    q: 'When does WoW Forever name reservation end?',
+    a: 'Early Name Reservation runs October 27 to November 3, 2026 (PST), for up to three characters, and requires any upgrade purchase. Names are first come, first served.',
+  },
+  {
+    q: 'What is new in WoW Forever at launch?',
+    a: 'A Classic+ reimagining of Azeroth: three new zones, three re-imagined classic zones, the new Darkspear Islands battleground, and the new playable race, the Skyborne Elves — all on classic talent-tree foundations.',
+  },
+  {
+    q: 'Can I plan my talent build before launch?',
+    a: 'Yes. Our calculator runs on beta build data through launch day, and every class has a ready-made leveling build with a one-click calculator link. Plan now, refine when you hit level 10 on a live realm.',
+  },
+];
+
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
+---
+
+<BaseLayout
+  title="WoW Forever Launch: Nov 4 Times by Region, Content & Day-One Builds"
+  description="WoW Forever goes live November 4, 2026 at 3 PM PST (23:00 UTC) worldwide. See launch start times by region, what is included at launch, name reservation dates, and a day-one talent build for every class."
+  dateModified="2026-11-03"
+  breadcrumbs={[
+    { name: 'Home', url: '/' },
+    { name: 'Launch day guide', url: '/wow-forever-launch/' },
+  ]}
+>
+  <section class="page-head">
+    <h1>WoW Forever Launch Day Guide: Times, Content &amp; Day-One Builds</h1>
+    <p class="lede">
+      World of Warcraft: Forever launches worldwide on
+      <strong>Wednesday, November 4, 2026, at 3:00 p.m. PST (23:00 UTC)</strong> —
+      included with a WoW subscription. This page collects the launch times,
+      what is coming at release, and a ready leveling build for all nine
+      classes so your first night is spent playing, not planning.
+    </p>
+    <p>
+      <a href="#day-one-builds">Jump to day-one builds →</a> ·
+      <a href="/wow-forever-beta-end/">Beta &amp; stress test recap →</a>
+    </p>
+  </section>
+
+  <section class="page-section" aria-label="Countdown to global launch">
+    <LaunchCountdown />
+  </section>
+
+  <section class="page-section" aria-labelledby="launch-times">
+    <h2 id="launch-times">WoW Forever launch time by region</h2>
+    <div class="table-scroll">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th scope="col">Region</th>
+            <th scope="col">Local launch time</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>US Pacific (PST)</td><td>Wed, November 4, 3:00 p.m.</td></tr>
+          <tr><td>US Eastern (EST)</td><td>Wed, November 4, 6:00 p.m.</td></tr>
+          <tr><td>UK (GMT)</td><td>Wed, November 4, 11:00 p.m.</td></tr>
+          <tr><td>Central Europe (CET)</td><td>Thu, November 5, 12:00 a.m. (midnight)</td></tr>
+          <tr><td>Taiwan (CST)</td><td>Thu, November 5, 7:00 a.m.</td></tr>
+          <tr><td>Korea (KST)</td><td>Thu, November 5, 8:00 a.m.</td></tr>
+          <tr><td>Sydney (AEDT)</td><td>Thu, November 5, 10:00 a.m.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      Realms open simultaneously worldwide; there is no rolling region-by-region
+      release. Early Name Reservation closes on <strong>November 3 (PST)</strong>.
+    </p>
+  </section>
+
+  <section class="page-section prose" aria-labelledby="what-is-forever">
+    <h2 id="what-is-forever">What WoW Forever is, and what is in it at launch</h2>
+    <p>
+      WoW Forever is Blizzard's Classic+ take on Azeroth: the classic game you
+      remember, grown in new directions. At launch it ships with
+      <strong>three brand-new zones</strong>, <strong>three re-imagined classic
+      zones</strong>, the new <strong>Darkspear Islands battleground</strong>,
+      and the new playable race, the <strong>Skyborne Elves</strong> — all built
+      on classic nine-class talent trees with 51-point budgets.
+    </p>
+    <p>
+      Access is included with a World of Warcraft subscription or Game Time.
+      Optional upgrades (like the Skyborne Epic Pack) add extras but are not
+      required to play.
+    </p>
+  </section>
+
+  <section class="page-section" aria-labelledby="day-one-builds">
+    <h2 id="day-one-builds">Day-one leveling builds: all 9 classes</h2>
+    <p>
+      Each guide lists the full take order from level 10 to 60, flags every
+      talent that differs from Classic, and opens the exact build in our
+      calculator with one click — generated from the
+      {manifest.gameBuild ? `current beta build ${manifest.gameBuild}` : 'current'} data.
+    </p>
+    <div class="table-scroll">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th scope="col">Class</th>
+            <th scope="col">Leveling tree</th>
+            <th scope="col">Plan it</th>
+          </tr>
+        </thead>
+        <tbody>
+          {builds.map((b) => (
+            <tr>
+              <td>{b.className}</td>
+              <td>{b.treeName} — {b.tagline}</td>
+              <td>
+                <a href={`/builds/${b.classId}-leveling-build/`}>Leveling build →</a> ·
+                <a href={`/${b.classId}/`}>Calculator →</a>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <p>
+      <a href="/builds/">All builds on one page →</a> ·
+      <a href="/changes/">Every talent change vs Classic →</a> ·
+      <a href="/changelog/">Data changelog →</a>
+    </p>
+  </section>
+
+  <section class="page-section prose" aria-labelledby="first-night">
+    <h2 id="first-night">Your first night checklist</h2>
+    <ol>
+      <li>Update the Battle.net app before 3:00 p.m. PST so the launcher is not the bottleneck.</li>
+      <li>Confirm your reserved names — reservation closes November 3 (PST).</li>
+      <li>Pick your class leveling build above and keep the calculator link handy on your phone.</li>
+      <li>Your first talent point lands at level 10; every level after adds one more, to 51 points at 60.</li>
+      <li>Expect queues on the new zones' gateway hubs — a pre-planned build makes any queue time theorycraft time.</li>
+    </ol>
+  </section>
+
+  <section class="page-section" aria-labelledby="faq">
+    <h2 id="faq">FAQ</h2>
+    {faqs.map((f) => (
+      <details class="faq-item">
+        <summary>{f.q}</summary>
+        <p>{f.a}</p>
+      </details>
+    ))}
+  </section>
+
+  <section class="page-section prose" aria-labelledby="sources">
+    <h2 id="sources">Sources</h2>
+    <ul>
+      <li>
+        <a
+          href="https://news.blizzard.com/en-us/article/24315820/world-of-warcraft-forever-goes-live-globally-november-4"
+          rel="external"
+        >Blizzard News: World of Warcraft: Forever Goes Live Globally November 4</a>
+      </li>
+      <li>
+        <a href="http://worldofwarcraft.blizzard.com/en-us/forever" rel="external">
+          Blizzard: What's included in World of Warcraft: Forever
+        </a>
+      </li>
+      <li>
+        <a
+          href="https://worldofwarcraft.blizzard.com/en-us/news/24302072/join-the-world-of-warcraft-forever-stress-test"
+          rel="external"
+        >Blizzard News: Join the World of Warcraft: Forever Stress Test</a>
+      </li>
+    </ul>
+  </section>
+
+  <script
+    type="application/ld+json"
+    is:inline
+    set:html={JSON.stringify(faqJsonLd)}
+  />
+</BaseLayout>

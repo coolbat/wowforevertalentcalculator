@@ -1,0 +1,100 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { CLASS_ORDER, loadClassSnapshot, loadManifest } from '@data/loadSnapshot';
+import { LEVELING_EDITORIAL, generateLevelingBuild } from '@data/levelingBuilds';
+
+const SITE_ORIGIN = 'https://wowforevertalentcalculator.com';
+const manifest = loadManifest();
+const ruleset = manifest.ruleset;
+
+const builds = CLASS_ORDER.map((classId) => {
+  const snapshot = loadClassSnapshot(classId);
+  const generated = generateLevelingBuild(snapshot, ruleset, classId, SITE_ORIGIN);
+  return {
+    classId,
+    className: generated.className,
+    treeName: generated.treeName,
+    tagline: LEVELING_EDITORIAL[classId].tagline,
+    shareUrl: generated.shareUrl,
+  };
+});
+---
+
+<BaseLayout
+  title="WoW Forever Leveling Builds — All 9 Classes, 51 Points Each"
+  description={`Free WoW Forever leveling builds for all 9 classes, generated and rule-validated from the latest beta data: full 51-point take orders from level 10 to 60, Classic talent changes, and one-click calculator links.`}
+  dateModified="2026-11-03"
+  breadcrumbs={[
+    { name: 'Home', url: '/' },
+    { name: 'Builds', url: '/builds/' },
+  ]}
+>
+  <section class="page-head">
+    <h1>WoW Forever Leveling Builds for All 9 Classes</h1>
+    <p class="lede">
+      One page per class: a complete 51-point leveling take order from level
+      10 to 60, built from the
+      {manifest.gameBuild ? ` current beta build ${manifest.gameBuild}` : ' current'} data and
+      validated against the game's own talent rules. Every build opens
+      one click away in the calculator so you can adjust it to your taste.
+    </p>
+    <p>
+      <a href="/wow-forever-launch/">WoW Forever launches November 4, 2026 — see the launch day guide →</a>
+    </p>
+  </section>
+
+  <section class="page-section" aria-labelledby="all-builds">
+    <h2 id="all-builds">Pick your class</h2>
+    <div class="table-scroll">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th scope="col">Class</th>
+            <th scope="col">Leveling tree</th>
+            <th scope="col">Why it works</th>
+            <th scope="col">Open</th>
+          </tr>
+        </thead>
+        <tbody>
+          {builds.map((b) => (
+            <tr>
+              <td>
+                <a href={`/builds/${b.classId}-leveling-build/`}>{b.className}</a>
+              </td>
+              <td>{b.treeName}</td>
+              <td>{b.tagline}</td>
+              <td>
+                <a href={b.shareUrl}>Build in calculator →</a> ·
+                <a href={`/builds/${b.classId}-leveling-build/`}>Guide →</a>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="page-section prose" aria-labelledby="how-to-use">
+    <h2 id="how-to-use">How to use these builds</h2>
+    <ul>
+      <li>
+        The take order is generated from the same data set the calculator
+        serves, so every point obeys row requirements and prerequisites —
+        nothing illegal, nothing wasted.
+      </li>
+      <li>
+        Builds are leveling skeletons, not endgame meta answers. At level 60,
+        respec to a raid or PvP spec and keep your leveling build for alts.
+      </li>
+      <li>
+        When a new beta build changes talents, these pages are regenerated —
+        see <a href="/changelog/">the changelog</a> for every data update.
+      </li>
+    </ul>
+    <p>
+      Also see <a href="/talents/">the full talent reference</a>,
+      <a href="/changes/">what changed vs Classic</a>, and
+      <a href="/">the calculator</a>.
+    </p>
+  </section>
+</BaseLayout>
