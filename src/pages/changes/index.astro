@@ -1,9 +1,9 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { loadManifest, loadAllSnapshots } from '@data/loadSnapshot';
+import { dataBuildLine, shortDate, upstreamExportDate } from '@data/credit';
 import {
   classChangeStats,
-  formatDate,
   removedClassicCount,
   stageLabel,
 } from '@data/derive';
@@ -40,7 +40,8 @@ const totals = classes.reduce(
 );
 
 const stage = stageLabel(manifest.stage);
-const published = formatDate(manifest.publishedAt);
+const buildLine = dataBuildLine(manifest);
+const exportDate = shortDate(upstreamExportDate(manifest));
 ---
 
 <BaseLayout
@@ -54,14 +55,14 @@ const published = formatDate(manifest.publishedAt);
   <section class="page-head">
     <h1>WoW Forever Talent Changes vs Classic</h1>
     <p class="lede">
-      How the {stage.toLowerCase()} snapshot ({published}) differs from
+      How the {stage.toLowerCase()} snapshot (upstream export {exportDate}) differs from
       Classic, counted per class from the reviewed dataset. Statuses compare
       each talent with its Classic counterpart; "removed" lists Classic
       talents that no longer appear at all.
     </p>
     <p>
-      <span class="stage-badge">
-        {stage} data · generated {published} · {manifest.snapshotId}
+      <span class="stage-badge" data-testid="data-stamp">
+        {buildLine ?? `${stage} data`}
       </span>
     </p>
   </section>

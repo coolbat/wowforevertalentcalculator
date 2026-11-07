@@ -1,5 +1,6 @@
 /**
- * Class-page sentences checked against beta build 70291.
+ * Class-page sentences checked against the snapshot data (still true for beta
+ * builds 70291 and 70425). Re-check them when a sync changes the talents named here.
  * Rows and columns are 1-based, the same numbering the talent reference uses.
  */
 export const CLASS_SNAPSHOT_NOTES: Partial<Record<string, readonly string[]>> = {

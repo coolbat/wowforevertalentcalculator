@@ -137,8 +137,11 @@ describe('legacy share urls from snap-ce4da8695e9d', () => {
       'mage:improved-fireball': 5,
       'mage:incineration': 3,
       'mage:pyroblast': 1,
-      'mage:wake-of-fire': 2,
+      // Wake of Fire became Improved Fire Blast in build 70425; the alias chain
+      // carries points from the 2026-09-15 snapshot straight to the new talent.
+      'mage:improved-fire-blast': 2,
     });
+    expect(migrated.build.allocation['mage:wake-of-fire'] ?? 0).toBe(0);
     expect(spentPoints(migrated.build.allocation)).toBe(16);
     expect(migrated.notes.some((note) => note.fromId === 'mage:hot-streak' && note.toId === 'mage:heating-up' && note.action === 'renamed')).toBe(true);
   });

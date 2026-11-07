@@ -8,7 +8,14 @@ import {
   removedClassicCount,
   stageLabel,
 } from '@data/derive';
-import { CC_BY_4_0_URL, dataBuildLine, TALENTSFOREVER_URL } from '@data/credit';
+import {
+  CC_BY_4_0_URL,
+  dataBuildLine,
+  rankCoverageLine,
+  shortDate,
+  TALENTSFOREVER_URL,
+  upstreamExportDate,
+} from '@data/credit';
 
 const manifest = loadManifest();
 const snapshots = loadAllSnapshots();
@@ -51,7 +58,13 @@ const perClass = snapshots.map((s) => {
 
 const stage = stageLabel(manifest.stage);
 const published = formatDate(manifest.publishedAt);
-const buildLine = dataBuildLine(manifest.gameBuild);
+const buildLine = dataBuildLine(manifest);
+const coverageLine = rankCoverageLine(
+  manifest.coverage.ranksWithText,
+  manifest.coverage.ranksTotal,
+);
+const exportDate = shortDate(upstreamExportDate(manifest));
+const checkedDate = shortDate(manifest.checkedAt ?? manifest.publishedAt);
 const ruleset = manifest.ruleset;
 ---
 
@@ -76,12 +89,12 @@ const ruleset = manifest.ruleset;
       per class, compare and share setups with a link, and keep builds saved
       locally — no sign-up, no login required. Whether you searched for a WoW
       Forever talent calculator or a Warcraft Forever talent calculator, this
-      free fan-made planner shows every rank's source status so you can see
-      what is confirmed and what is still unknown.
+      free fan-made planner shows every rank's source status, so you can see
+      where each effect text comes from.
     </p>
     <p>
-      <span class="stage-badge">
-        {stage} data · generated <time datetime={manifest.publishedAt}>{published}</time> · {manifest.snapshotId}
+      <span class="stage-badge" data-testid="data-coverage">
+        {stage} data · {coverageLine}
       </span>
     </p>
   </section>
@@ -213,11 +226,12 @@ const ruleset = manifest.ruleset;
     <details class="faq-item">
       <summary>Where does the talent data come from?</summary>
       <p>
-        From the talentsforever.com dataset, used under its CC BY 4.0 license
-        and recorded on {published}. Each rank effect keeps a per-field
-        evidence status (official, community record, source estimate, unknown,
-        and so on), which you can inspect on every talent's reference row and
-        on the <a href="/sources/">Sources</a> page.
+        From the talentsforever.com dataset, used under its CC BY 4.0 license.
+        The current snapshot is that site's export of {exportDate}, last
+        checked {checkedDate}. Each rank effect keeps its own evidence status
+        (for example community record or source estimate), which you can
+        inspect on every talent's reference row and on the
+        <a href="/sources/">Sources</a> page.
       </p>
     </details>
 
@@ -261,12 +275,14 @@ const ruleset = manifest.ruleset;
     </details>
 
     <details class="faq-item">
-      <summary>Is the preview data final?</summary>
+      <summary>Is the talent data final?</summary>
       <p>
-        No — the current snapshot is marked {stage.toLowerCase()}. Tree
-        structure has been reviewed, but many rank texts are still source
-        estimates or unknown. Ranks without confirmed text are labeled
-        "Unknown" instead of being filled with guesses.
+        No — the current snapshot is marked {stage.toLowerCase()}, and
+        Blizzard can still change talents before launch. {coverageLine}.
+        That text is a community export (Talents Forever, CC BY 4.0) of the
+        beta client files; this site has not verified it in-game. Each rank
+        keeps its own evidence status, and the <a href="/changelog/">Changelog</a>
+        lists what changed with each update.
       </p>
     </details>
   </section>

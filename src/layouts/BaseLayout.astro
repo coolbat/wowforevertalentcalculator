@@ -39,9 +39,9 @@ const isHome = Astro.url.pathname === '/';
 
 const SITE_NAME = 'WoW Forever Talent Calculator';
 const manifest = loadManifest();
-// Build timestamp: for a static site, dateModified advances on each deploy,
-// unless a page pins an explicit content-modified date.
-const dateModified = dateModifiedProp ?? new Date().toISOString();
+// Pages that do not pin their own date follow the data snapshot, so
+// dateModified moves when the data is synced, not on every deploy.
+const dateModified = dateModifiedProp ?? manifest.publishedAt;
 const datePublished = manifest.publishedAt;
 
 const orgId = new URL('/#organization', site).href;

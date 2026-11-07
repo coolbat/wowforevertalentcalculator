@@ -8,7 +8,9 @@ Stack: Astro (static) + React + TypeScript + versioned JSON snapshots. See `doc/
 
 ```bash
 npm install          # install dependencies
+npm run data:fetch   # manual: refresh data-raw/ from talentsforever.com/data.json (CC BY 4.0)
 npm run data:import  # normalize data-raw/talentsforever-data.json → public/data snapshots
+npm run data:diff    # compare the new snapshot with a git ref (default HEAD); --write-changelog adds the /changelog/ entry
 npm run dev          # local dev server
 npm run build        # data:import + static build → dist/
 npm run preview      # serve the production build locally (port 4321)
@@ -25,6 +27,17 @@ npm run test:e2e     # Playwright: key browser flows + SEO acceptance (needs dis
 - `src/components/calculator/` — the calculator island (desktop trees + mobile tabs/detail panel).
 - `src/pages/` — Astro routes (home, 9 class calculators, 9 reference pages, changes, sources, about, privacy, compare, my-builds, 404).
 - `public/data/` — immutable content-hashed snapshots + manifest. Old snapshots are never overwritten.
+
+## Syncing talent data
+
+Nothing about a game build is hard-coded. To pick up a new upstream export:
+
+1. `npm run data:fetch` (writes `data-raw/talentsforever-data.json` and `data-raw/upstream-meta.json` with the fetch time and sha256).
+2. `npm run data:import`. Review renames: `npm run data:diff` lists "possible renames" that are not aliased; add a verified one to `RENAMES` in `scripts/data/import.mjs` (same tree, same cell and icon, continuing effect text). Anything else that disappears is registered as removed and its points are refunded when an old share link opens.
+3. `npm run data:diff -- --old-ref origin/main --write-changelog` writes `src/data/changelog/<date>-build-<build>.json`, which `/changelog/` renders.
+4. `npm test`, open a PR, merge. Cloudflare builds from Git; `npm run build` re-runs the import and refuses to build if the raw file no longer matches `upstream-meta.json`.
+
+The build number, upstream export date, "checked" date, and rank coverage shown on the site come from `public/data/manifest.json`.
 
 ## Deployment (Cloudflare Pages, Git-connected)
 

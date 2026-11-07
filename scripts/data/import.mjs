@@ -15,6 +15,7 @@ import { fileURLToPath } from 'node:url';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 const RAW_PATH = path.join(root, 'data-raw/talentsforever-data.json');
+const META_PATH = path.join(root, 'data-raw/upstream-meta.json');
 const OUT_DATA = path.join(root, 'public/data');
 const OUT_GEN = path.join(root, 'src/data/generated');
 const OUT_MAP = path.join(root, 'src/data/mappings');
@@ -55,23 +56,30 @@ const CLASSIC_STATUS_MAP = {
   new: 'new',
 };
 
-/** This import publishes the 2026-10-14 upstream file (beta build 70291). */
-const PUBLISHED_AT = '2026-10-15';
-const GAME_BUILD = '70291';
-const RECORDED_AT = '2026-10-14';
+// Dates and the game build are derived from the raw export and its fetch
+// record (data-raw/upstream-meta.json, written by `npm run data:fetch`);
+// nothing about a particular build is hard-coded here.
 
 /**
- * Previous talent IDs whose talent continues under a new name.
- * Checked against build 70291: same tree, and either the same cell or
- * (Natural Instinct) the same icon plus the previous crit text.
- * Old IDs stay in the registry so share links keep those points.
+ * Talents that continue under a new name, keyed by their previous ID.
+ * Add an entry only after checking the new build: same tree, and either the
+ * same cell and icon or the same icon plus the previous effect text
+ * (`npm run data:diff` lists these candidates with that evidence). Old IDs
+ * stay in the registry so share links keep those points. Anything not listed
+ * here that disappears is registered as removed, and its points are
+ * refunded when an old link is opened.
  */
 const RENAMES = {
+  // build 70291 (2026-10-15 sync)
   'druid:mangle': 'druid:primal-bite',
   'druid:primal-fury': 'druid:blood-frenzy',
   'druid:predatory-instincts': 'druid:natural-instinct',
   'mage:hot-streak': 'mage:heating-up',
   'warlock:soul-harvesting': 'warlock:soul-harvest',
+  // build 70425 (2026-10-20 sync): same tree, same cell, same icon and rank
+  // count, and the new rank 1 text starts with the old rank 1 sentence.
+  'mage:wake-of-fire': 'mage:improved-fire-blast',
+  'shaman:improved-fire-nova': 'shaman:trial-by-fire',
 };
 
 function slugify(name) {
@@ -133,16 +141,13 @@ function fail(msg) {
   process.exit(1);
 }
 
-const raw = JSON.parse(await readFile(RAW_PATH, 'utf8'));
+const rawBytes = await readFile(RAW_PATH);
+const raw = JSON.parse(rawBytes.toString('utf8'));
 if (raw.license !== 'CC-BY-4.0') {
   fail(`unexpected license: ${raw.license}`);
 }
-if (raw.generated !== RECORDED_AT) {
-  fail(`expected generated ${RECORDED_AT}, got ${raw.generated}`);
-}
-const warriorSource = raw.talents?.Warrior?.source ?? '';
-if (!String(warriorSource).includes(GAME_BUILD)) {
-  fail(`warrior source does not mention build ${GAME_BUILD}`);
+if (!/^\d{4}-\d{2}-\d{2}$/.test(String(raw.generated))) {
+  fail(`unexpected generated date: ${raw.generated}`);
 }
 
 async function readJsonIfExists(file) {
@@ -152,6 +157,40 @@ async function readJsonIfExists(file) {
     return null;
   }
 }
+
+// The fetch record ties the "checked" date to the exact bytes next to it.
+const upstreamMeta = await readJsonIfExists(META_PATH);
+if (!upstreamMeta) {
+  fail('data-raw/upstream-meta.json is missing; run `npm run data:fetch`');
+}
+const RAW_SHA256 = sha256(rawBytes);
+if (upstreamMeta.sha256 !== RAW_SHA256) {
+  fail(
+    'data-raw/talentsforever-data.json does not match upstream-meta.json ' +
+      `(recorded ${upstreamMeta.sha256}, file is ${RAW_SHA256}); run \`npm run data:fetch\``,
+  );
+}
+if (upstreamMeta.generated !== raw.generated) {
+  fail(`upstream-meta generated ${upstreamMeta.generated} != raw ${raw.generated}`);
+}
+if (!/^\d{4}-\d{2}-\d{2}$/.test(String(upstreamMeta.checkedAt))) {
+  fail(`upstream-meta checkedAt is not a date: ${upstreamMeta.checkedAt}`);
+}
+
+// Game build: every class names the client build its trees were read from.
+const buildsByClass = {};
+for (const [name, data] of Object.entries(raw.talents ?? {})) {
+  const m = /\b1\.\d+\.\d+\.(\d+)\b/.exec(String(data?.source ?? ''));
+  buildsByClass[name] = m ? m[1] : null;
+}
+const buildSet = new Set(Object.values(buildsByClass));
+if (buildSet.size !== 1 || buildSet.has(null)) {
+  fail(`classes do not agree on one client build: ${JSON.stringify(buildsByClass)}`);
+}
+const GAME_BUILD = [...buildSet][0];
+const RECORDED_AT = raw.generated; // upstream export date
+const CHECKED_AT = upstreamMeta.checkedAt; // when we last fetched and compared it
+const PUBLISHED_AT = CHECKED_AT; // the sync this snapshot was published with
 
 const idRegistry = {};
 const classSnapshots = [];
@@ -444,8 +483,10 @@ const manifest = {
   rulesetId: RULESET.rulesetId,
   stage: 'preview',
   publishedAt: PUBLISHED_AT,
+  checkedAt: CHECKED_AT,
   gameBuild: GAME_BUILD,
   sourceDigest: sha256(JSON.stringify(raw.talents)),
+  sourceFileSha256: RAW_SHA256,
   sources: [
     {
       sourceId: 'src-talentsforever',
@@ -477,22 +518,37 @@ for (const id of Object.keys(previousRegistry).sort()) {
   if (mergedRegistry[id]) continue;
   const entry = previousRegistry[id];
   const aliasOf = RENAMES[id] ?? null;
-  if (aliasOf && mergedRegistry[aliasOf]) {
-    mergedRegistry[id] = {
-      classId: entry.classId,
-      sourceName: entry.sourceName,
-      sourceTree: entry.sourceTree,
-      status: 'renamed',
-      aliasOf,
-    };
+  mergedRegistry[id] = {
+    classId: entry.classId,
+    sourceName: entry.sourceName,
+    sourceTree: entry.sourceTree,
+    status: aliasOf ? 'renamed' : 'removed',
+    aliasOf,
+  };
+}
+for (const [from, to] of Object.entries(RENAMES)) {
+  if (!previousRegistry[from] && !mergedRegistry[from]) {
+    fail(`RENAMES lists ${from}, which is in neither the previous nor the new data`);
+  }
+  if (!mergedRegistry[to]) fail(`RENAMES target ${to} is not in the registry`);
+}
+// Resolve alias chains (A -> B -> C) so every old ID points straight at a
+// talent that exists now. An alias whose final target is gone becomes a
+// plain removal (its points are refunded).
+for (const [id, entry] of Object.entries(mergedRegistry)) {
+  if (entry.status !== 'renamed') continue;
+  const seen = new Set([id]);
+  let target = entry.aliasOf;
+  while (target && mergedRegistry[target]?.status === 'renamed') {
+    if (seen.has(target)) fail(`alias cycle at ${target}`);
+    seen.add(target);
+    target = mergedRegistry[target].aliasOf;
+  }
+  if (target && mergedRegistry[target]?.status === 'active') {
+    entry.aliasOf = target;
   } else {
-    mergedRegistry[id] = {
-      classId: entry.classId,
-      sourceName: entry.sourceName,
-      sourceTree: entry.sourceTree,
-      status: 'removed',
-      aliasOf: null,
-    };
+    entry.status = 'removed';
+    entry.aliasOf = null;
   }
 }
 const orderedRegistry = Object.fromEntries(
